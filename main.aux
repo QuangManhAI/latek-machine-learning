@@ -1,0 +1,249 @@
+\relax 
+\providecommand \babel@aux [2]{\global \let \babel@toc \@gobbletwo }
+\@nameuse{bbl@beforestart}
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\babel@aux{english}{}
+\pgfsyspdfmark {pgfid1}{19579138}{21598852}
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Executive Summary}{3}{chapter.1}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{lot}{\contentsline {table}{\numberline {1.1}{\ignorespaces Summary of all five projects}}{3}{table.caption.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Lab 01 — Email Spam Classification}{4}{chapter.2}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch:lab01}{{2}{4}{Lab 01 — Email Spam Classification}{chapter.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Problem Definition}{4}{section.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Dataset}{4}{subsection.2.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Complete Workflow}{5}{section.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Step 1 — Raw Data Overview and EDA}{5}{subsection.2.2.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Raw data quality diagnostics}}{5}{table.caption.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Source $\times $ label heatmap — pure-source blocks reveal confounding: Enron is overwhelmingly ham, HuggingFace/Kaggle are pure spam.}}{6}{figure.caption.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Step 2 — Text Preprocessing Pipeline}{6}{subsection.2.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Text shape analysis: ham emails tend to be longer with more unique words than spam.}}{7}{figure.caption.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Source family distribution across the dataset — multiple sources contribute to the combined corpus.}}{7}{figure.caption.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Step 2.4 — Vocabulary Analysis}{8}{subsection.2.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Top words by class — frequency comparison of most discriminative terms across ham and spam.}}{8}{figure.caption.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Wordcloud comparison: ham vs. spam vocabulary reveals distinct lexical signatures.}}{8}{figure.caption.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}Step 2.5 — Imbalance Strategy Decision}{9}{subsection.2.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.5}Step 3 — Balanced Dataset Construction}{9}{subsection.2.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.6}Step 4 — Ham Data V2 (Diversity Supplement)}{9}{subsection.2.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.7}Step 5 — Fixed Train/Test Split}{9}{subsection.2.2.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.8}Step 6 — TF-IDF Feature Engineering}{10}{subsection.2.2.8}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces TF-IDF parameter choices}}{10}{table.caption.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.9}Step 7 — Nearest Centroid Baseline}{10}{subsection.2.2.9}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.1}{\ignorespaces Nearest Centroid: zero-training baseline}}{10}{lstlisting.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.10}Step 8 — Three Models From Scratch (Pure NumPy)}{10}{subsection.2.2.10}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Three scratch model implementations}}{11}{table.caption.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Logistic Regression — Core Training Loop}{11}{table.caption.10}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.2}{\ignorespaces Logistic Regression: SGD with Binary Cross-Entropy}}{11}{lstlisting.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Linear SVM — Sub-Gradient Descent}{11}{lstnumber.2.2.13}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.3}{\ignorespaces Linear SVM: Sub-gradient descent with Hinge Loss}}{11}{lstlisting.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Loss Curve Diagnostics}{11}{lstnumber.2.3.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.11}Step 9 — Model Comparison and Double-Check}{12}{subsection.2.2.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{4-Panel Confusion Matrix (Default Threshold 0.5)}{12}{subsection.2.2.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Scratch vs. sklearn Verification}{12}{subsection.2.2.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.12}Step 10 — Threshold Tuning (Gold Standard Optimization)}{12}{subsection.2.2.12}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.4}{\ignorespaces Threshold sweep: find optimal operating point}}{13}{lstlisting.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Score Overlap Analysis}{13}{lstnumber.2.4.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Gold Standard Assessment}{13}{lstnumber.2.4.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.13}Step 11 — Failure Analysis}{13}{subsection.2.2.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Results and Analysis}{14}{section.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces 4-panel confusion matrix: centroid baseline vs. three scratch models at default threshold 0.5. All models show similar TN/TP quadrants; differences emerge in FP/FN corners.}}{14}{figure.caption.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces EDA: class distribution and preprocessing effects}}{15}{figure.caption.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Lab 02 — Store Sales Forecasting}{16}{chapter.3}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch:lab02}{{3}{16}{Lab 02 — Store Sales Forecasting}{chapter.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Problem Definition}{16}{section.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Dataset}{16}{subsection.3.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Complete Workflow}{16}{section.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Step 1 — Load Data \& Validate Schema}{16}{subsection.3.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Step 2 — Exploratory Data Analysis (8 Sub-steps)}{17}{subsection.3.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.1 — Missing Values}{17}{subsection.3.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Missing values analysis — oil prices are missing on weekends/holidays due to market closure; all other columns are complete.}}{17}{figure.caption.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.2 — Target Distribution}{17}{figure.caption.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Target distribution analysis: $\log _{1p}$ transform normalizes the heavily right-skewed sales data.}}{18}{figure.caption.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.3 — Product Family Analysis}{18}{figure.caption.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Product family analysis: Pareto distribution with top families dominating revenue.}}{18}{figure.caption.15}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.4 — Trend and Seasonality}{18}{figure.caption.15}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Trend and seasonality: gradual growth trend with strong weekly and annual patterns.}}{19}{figure.caption.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.5 — Promotion Impact}{19}{figure.caption.16}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Promotion impact: \texttt  {onpromotion} vs. sales showing positive correlation with diminishing returns at high promotion levels.}}{19}{figure.caption.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.6 — Store Characteristics}{19}{figure.caption.17}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Store characteristics: sales distribution by store type and cluster. Type A dominates volume; intra-type variance signals local effects.}}{19}{figure.caption.18}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.7 — Oil Price Correlation}{19}{figure.caption.18}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.8 — Holidays and Transactions}{20}{figure.caption.18}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Holiday analysis: sales patterns around national holidays — higher sales on holiday dates vs. normal days.}}{20}{figure.caption.19}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Revenue and quantity analysis across store-segments.}}{20}{figure.caption.20}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Geographic and product-level revenue breakdowns.}}{21}{figure.caption.21}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Supplementary EDA: revenue distribution and time-series patterns.}}{21}{figure.caption.22}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces Feature relationships and correlation analysis.}}{22}{figure.caption.23}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces Target and feature distribution comparisons.}}{22}{figure.caption.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Step 2.5 — Data Cleaning}{22}{subsection.3.2.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Scaling strategy per model family}}{23}{table.caption.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Step 3 — Feature Engineering}{23}{subsection.3.2.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Complete feature set: 20 features in 4 groups}}{23}{table.caption.26}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.1}{\ignorespaces Lag and rolling features with shift-16 guard}}{23}{lstlisting.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.5}Step 4 — Time-Based Train/Validation Split}{24}{subsection.3.2.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Time-based split — no random shuffling}}{24}{table.caption.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.6}Step 5 — Metrics and Preprocessing Pipelines}{24}{subsection.3.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Why RMSLE over RMSE?}{24}{subsection.3.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.7}Step 6 — Time-Series Baselines}{24}{subsection.3.2.7}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Four baseline forecasts}}{25}{table.caption.28}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.8}Step 7 — Train and Compare ML Models}{25}{subsection.3.2.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Ridge Regression — Closed-Form Solution}{25}{subsection.3.2.8}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.2}{\ignorespaces Ridge Regression: closed-form normal equation}}{25}{lstlisting.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Multi-Layer Perceptron — Mini-Batch SGD}{25}{lstnumber.3.2.9}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.3}{\ignorespaces MLP: forward pass, loss, backpropagation}}{25}{lstlisting.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{HistGradientBoosting — 160 Trees}{26}{lstnumber.3.3.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.9}Step 7 Improvements}{26}{subsection.3.2.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.10}Step 8 — Model Diagnostics}{26}{subsection.3.2.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.11}Step 9 — Final Model and Submission}{27}{subsection.3.2.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Results and Analysis}{27}{section.3.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.5}{\ignorespaces Full model comparison on 16-day validation set}}{27}{table.caption.29}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces Loss curves: Ridge (closed-form, no iteration), MLP (SGD epochs), HGB (boosting iterations with train/val split).}}{27}{figure.caption.30}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces EDA: target distribution analysis — raw sales (skewed), $\log _{1p}$(sales) (normalized), and boxplot of outliers.}}{27}{figure.caption.31}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces RMSLE comparison: baseline vs. ML models. HGB + Lag\_28 ensemble achieves lowest RMSLE across all categories.}}{28}{figure.caption.32}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces RMSLE improvement delta: ensemble blend reduces RMSLE over strongest individual model and baseline.}}{28}{figure.caption.33}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.17}{\ignorespaces Loss curves (log scale) and monthly revenue patterns.}}{28}{figure.caption.34}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.18}{\ignorespaces Actual vs. predicted scatter plots for both model variants.}}{29}{figure.caption.35}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.19}{\ignorespaces Residual analysis — symmetric around zero confirms unbiased predictions.}}{29}{figure.caption.36}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.20}{\ignorespaces Temporal residual patterns — error distribution across months.}}{29}{figure.caption.37}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.21}{\ignorespaces Category-level residuals — identifies which product families are hardest to forecast.}}{30}{figure.caption.38}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.22}{\ignorespaces Model B diagnostics: line plot and prediction analysis.}}{30}{figure.caption.39}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.23}{\ignorespaces Additional diagnostic views for both model variants.}}{30}{figure.caption.40}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.24}{\ignorespaces Feature importance and comprehensive EDA dashboard.}}{31}{figure.caption.41}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.25}{\ignorespaces Revenue and quantity supplementary EDA plots.}}{32}{figure.caption.42}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Lab 03 — Customer Segmentation}{34}{chapter.4}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch:lab03}{{4}{34}{Lab 03 — Customer Segmentation}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Problem Definition}{34}{section.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Dataset}{34}{subsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Complete Workflow}{34}{section.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Step 0 — Reproducibility Setup}{34}{subsection.4.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Step 2 — Raw Data Overview}{34}{subsection.4.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Step 3 — Data Quality Checks}{35}{subsection.4.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Data quality checks: missing values and outlier detection via boxplots and IQR method.}}{35}{figure.caption.43}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Duplicate row summary — exact row matches and their distribution across columns.}}{35}{figure.caption.44}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Step 4 — EDA Before Preprocessing}{36}{subsection.4.2.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces EDA before preprocessing — 6 diagnostic views}}{36}{table.caption.45}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces EDA before preprocessing: income-spending reveals 5 natural clusters; pairplot catches pairwise interactions.}}{36}{figure.caption.46}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Correlation heatmap — no $|r| > 0.7$ redundancies, confirming all features contribute independent information.}}{37}{figure.caption.47}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Age-based scatter analysis: spending and income patterns by age group.}}{37}{figure.caption.48}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Feature distributions before preprocessing: age (uniform), income (right-skewed), spending (bimodal).}}{38}{figure.caption.49}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Gender distribution — note any imbalance that may affect segment interpretation.}}{38}{figure.caption.50}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.5}Step 5 — Preprocessing and Feature Scaling}{38}{subsection.4.2.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Scaler comparison for clustering}}{38}{table.caption.51}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.6}Step 6 — Clustering Experiments}{39}{subsection.4.2.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces Clustering algorithms evaluated}}{39}{table.caption.52}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces Four complementary clustering metrics}}{39}{table.caption.53}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces K-Means diagnostics: elbow and silhouette identify optimal cluster count.}}{40}{figure.caption.54}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{K-Means From Scratch — Core Implementation}{40}{figure.caption.54}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.1}{\ignorespaces K-Means: k-means++ init + assignment-update loop}}{40}{lstlisting.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.7}Step 7 — Model Selection}{40}{subsection.4.2.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces The most important clustering result: K=5 clusters on Income vs. Spending Score with centroid markers — 5 distinct, well-separated customer segments.}}{41}{figure.caption.55}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Centroid Trajectory Visualization}{41}{figure.caption.55}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces Centroid trajectory: iteration-by-iteration movement from k-means++ initialization to convergence. Smooth paths within 8–12 iterations confirm stable optimization.}}{42}{figure.caption.56}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.8}Step 8 — Cluster Visualization}{42}{subsection.4.2.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces PCA 2D projection: first two principal components with cluster assignments — confirms cluster separation in reduced dimensionality.}}{43}{figure.caption.57}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces Age-based cluster scatter plots: spending and income patterns across clusters.}}{43}{figure.caption.58}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces Gaussian Mixture Model: soft clustering with covariance ellipses showing cluster shape and orientation.}}{44}{figure.caption.59}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.9}Step 9 — Segment Profiling}{44}{subsection.4.2.9}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.5}{\ignorespaces Five segments with recommended business actions}}{44}{table.caption.60}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.10}Step 11 — Deployment Check}{44}{subsection.4.2.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Results and Analysis}{45}{section.4.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces GMM with 4 components and covariance contours on Income vs. Spending scatter. Ellipses at 1$\sigma $, 2$\sigma $, and 3$\sigma $ reveal cluster shape and orientation.}}{45}{figure.caption.61}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces Cluster centers in original feature scale — inverse-transformed from StandardScaler for business-interpretable segment profiles.}}{45}{figure.caption.62}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.16}{\ignorespaces Agglomerative clustering dendrogram — hierarchical view of cluster merging distances on a sample subset.}}{46}{figure.caption.63}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Lab 3.1 — K-Means Image Segmentation}{47}{chapter.5}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch:lab31}{{5}{47}{Lab 3.1 — K-Means Image Segmentation}{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Problem Definition}{47}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Dataset}{47}{subsection.5.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Complete Workflow}{47}{section.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Step 0 — Setup and Reproducibility}{47}{subsection.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Step 1 — Load the Image}{48}{subsection.5.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Three RGB photographs used for image segmentation experiments.}}{48}{figure.caption.64}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Primary image loaded for K-Means pixel clustering.}}{49}{figure.caption.65}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Step 2 — Preprocess the Image}{49}{subsection.5.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces RGB, HSV, LAB color space previews for all three images.}}{50}{figure.caption.66}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Primary image color space comparison: RGB vs. HSV vs. LAB rendering. LAB provides perceptually uniform distances.}}{50}{figure.caption.67}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.4}Step 3 — Inspect the K-Means Implementation}{50}{subsection.5.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.5}Step 4 — K-Means Grid Experiment}{50}{subsection.5.2.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Expected behavior per K value}}{51}{table.caption.68}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Metrics Collected Per Run}{51}{table.caption.68}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.6}Step 4.1 — Elbow Method}{51}{subsection.5.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.7}Step 4.2 — Silhouette Analysis}{51}{subsection.5.2.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Silhouette analysis across images and K values — thick, uniform bars indicate well-separated clusters.}}{52}{figure.caption.69}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.8}Step 5 — Image Reconstruction}{52}{subsection.5.2.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Original vs. K=5 segmented reconstruction for all three images.}}{52}{figure.caption.70}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Primary image: original vs. K=5 segmented side-by-side comparison showing color quantization result.}}{53}{figure.caption.71}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.9}Step 6 — Visualize Results}{53}{subsection.5.2.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.10}Step 7 — Color Space Comparison}{53}{subsection.5.2.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.11}Step 8 — Sklearn Sanity Check}{53}{subsection.5.2.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.12}Step 9 — Output Verification}{54}{subsection.5.2.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Results and Analysis}{54}{section.5.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Segmentation metrics across K values}}{54}{table.caption.72}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces K-comparison grid: original image alongside K=2,3,5,8 segmentations. K=2 produces stark posterization; K=8 preserves near-original detail.}}{54}{figure.caption.73}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Diagnostic plots for optimal K selection}}{55}{figure.caption.74}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Supplementary elbow and K-comparison diagnostic plots across all pictures.}}{55}{figure.caption.75}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces K-comparison grids for pictures 2 and 3: original alongside K=2,3,5,8 segmentations.}}{56}{figure.caption.76}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces Convergence behavior and centroid color palette for segmented images.}}{56}{figure.caption.77}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces Centroid color palettes — each swatch represents a cluster's representative color. Muddy swatches indicate averaging dissimilar colors.}}{57}{figure.caption.78}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Lab 04 — California Housing Price Prediction}{58}{chapter.6}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch:lab04}{{6}{58}{Lab 04 — California Housing Price Prediction}{chapter.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Problem Definition}{58}{section.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Dataset}{58}{subsection.6.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Complete Workflow}{58}{section.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Step 1 — Setup and Load Data}{58}{subsection.6.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Step 2 — Exploratory Data Analysis (8 Sub-steps)}{59}{subsection.6.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.1 — Descriptive Statistics}{59}{subsection.6.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.2 — Missing Values}{59}{subsection.6.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Missing values bar chart — only \texttt  {total\_bedrooms} shows gaps ($\sim $1.5\%), all other columns are complete.}}{59}{figure.caption.79}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.3 — Feature Distributions}{59}{figure.caption.79}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Feature and target distributions — right-skewed count features, target capped at \$500,006.}}{59}{figure.caption.80}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.4 — Geographic Distribution}{60}{figure.caption.80}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Geographic distribution: price and population density overlay across California census blocks. Coastal regions show higher prices and population density.}}{60}{figure.caption.81}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.5 — Correlation Matrix}{60}{figure.caption.81}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Correlations with \texttt  {median\_house\_value}}}{60}{table.caption.82}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Correlation analysis: \texttt  {median\_income} dominates ($r \approx 0.69$); no other feature exceeds $|r| > 0.3$.}}{61}{figure.caption.83}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.6 — Scatter Matrix and Income vs. Price}{61}{figure.caption.83}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Scatter matrix and income-price relationship — positive trend with capped ceiling at \$500,006.}}{61}{figure.caption.84}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.7 — Ocean Proximity Analysis}{61}{figure.caption.84}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Ocean proximity analysis: \texttt  {<1H OCEAN} and \texttt  {NEAR BAY} have highest prices; \texttt  {INLAND} is cheapest.}}{62}{figure.caption.85}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.8 — Feature Engineering Experiments}{62}{figure.caption.85}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces Engineered feature correlations — at least one ratio feature shows $|r| > 0.2$ with target, confirming added signal.}}{62}{figure.caption.86}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}Step 3 — Data Preprocessing (Full Pipeline)}{62}{subsection.6.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.4}Step 3.8 — Log Transform for Skewed Features}{63}{subsection.6.2.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Log-transform impact per model family}}{63}{table.caption.87}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.5}Step 4 — Model Training and Evaluation}{63}{subsection.6.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Linear Regression}{63}{subsection.6.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Multi-Layer Perceptron}{63}{subsection.6.2.5}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.1}{\ignorespaces MLP: 3-layer forward pass, MSE loss, backpropagation}}{63}{lstlisting.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{HistGradientBoosting}{64}{lstnumber.6.1.24}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.2}{\ignorespaces HGB: binning + sequential tree fitting}}{64}{lstlisting.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Model Comparison}{64}{lstnumber.6.2.16}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces RMSE and MAE comparison: Linear, MLP, HGB (train vs. test). HGB typically leads both metrics.}}{65}{figure.caption.88}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.9}{\ignorespaces Training loss curves (log scale) for all three models. EMA-smoothed trends reveal convergence behavior.}}{65}{figure.caption.89}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.10}{\ignorespaces Geographic distribution of house prices across California. Coastal regions command premium prices; inland blocks are significantly cheaper.}}{65}{figure.caption.90}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.11}{\ignorespaces Loss comparison: training and validation loss across all three model families.}}{66}{figure.caption.91}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.12}{\ignorespaces Dual comparison: RMSE and R² metrics for all models with log-transformed vs. original features.}}{66}{figure.caption.92}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.6}Step 4.8 — Log-Transform Comparison}{66}{subsection.6.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.7}Step 4.9 — Logging and Reproducibility}{66}{subsection.6.2.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Results and Analysis}{66}{section.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Overall Conclusion}{68}{chapter.7}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch:conclusion}{{7}{68}{Overall Conclusion}{chapter.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7.1}{\ignorespaces Achievements and lessons across all five projects}}{68}{table.caption.93}\protected@file@percent }
+\ttl@finishall
+\newlabel{LastPage}{{7}{69}{}{page.69}{}}
+\gdef\lastpage@lastpage{69}
+\gdef\lastpage@lastpageHy{69}
+\gdef \@abspage@last{70}
