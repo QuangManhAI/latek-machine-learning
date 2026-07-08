@@ -6,7 +6,7 @@
 \usepackage{titlesec,titletoc}
 \usepackage[table]{xcolor}
 \usepackage{listings,tcolorbox,booktabs,multirow,enumitem}
-\usepackage{amsmath,amssymb,caption,subcaption,tikz,pgfplots}
+\usepackage{amsmath,amssymb,caption,tikz,pgfplots}
 \usepackage{fancyvrb,parskip,lastpage,setspace,xurl}
 \pgfplotsset{compat=1.18}
 
@@ -30,13 +30,13 @@
 \fancyhead[L]{\color{titleblue}\small ML Laboratory Report}
 \fancyhead[R]{\color{titleblue}\small\thepage}
 \renewcommand{\headrulewidth}{1pt}
-\renewcommand{\headrule}{\hbox to\headwidth{\color{sectionblue}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{sectionblue}\leaders\hrule height \headrulewidth}}
 
 \titleformat{\chapter}[display]{\normalfont\huge\bfseries\color{titleblue}}{\filleft\chaptertitlename\ \thechapter}{20pt}{\Huge}[\vspace{0.5ex}{\color{sectionblue}\titlerule[2pt]}\vspace{2ex}]
 \titleformat{\section}{\normalfont\Large\bfseries\color{sectionblue}}{\thesection}{1em}{}
 \titleformat{\subsection}{\normalfont\large\bfseries\color{subsectionblue}}{\thesubsection}{1em}{}
 
-\titlecontents{chapter}[0pt]{\addvspace{6pt}\bfseries\color{titleblue}}{\contentslabel[\thecontentslabel]{1.5em}}{}{\hfill\contentspage}
+\titlecontents{chapter}[0pt]{\addvspace{6pt}\bfseries\color{titleblue}}{\contentslabel[\thecontentslabel]{1.5em}}{}{\contentspage}
 
 \newtcolorbox{problembox}{colback=titleblue!5,colframe=titleblue!60,arc=4pt,title=\textbf{Problem Definition},fonttitle=\bfseries\color{titleblue},before skip=12pt,after skip=12pt}
 \newtcolorbox{resultbox}{colback=greenaccent!5,colframe=greenaccent!60,arc=4pt,title=\textbf{Results},fonttitle=\bfseries\color{greenaccent!80!black},before skip=12pt,after skip=12pt}
@@ -149,9 +149,16 @@ After cleaning, \texttt{filter\_trainable\_rows()} discards emails with fewer th
 The pipeline also runs \textbf{EDA after preprocessing but before balancing} (Step 2.2): this snapshot shows the natural label distribution, source spread, and text length profiles. The source $\times$ label heatmap reveals source confounding visually — solid-color blocks indicate pure sources.
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab01/text_length_boxplots.png}\caption{Text length distribution by class}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab01/text_shape_scatter.png}\caption{Text length vs. unique word count}\end{subfigure}
-\caption{Text shape analysis: ham emails tend to be longer with more unique words than spam.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab01/text_length_boxplots.png}
+  \caption{Text length distribution by class}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab01/text_shape_scatter.png}
+  \caption{Text length vs. unique word count}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
@@ -175,9 +182,16 @@ Before any balancing, we inspect the top 20 most frequent tokens per class. This
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab01/ham_wordcloud.png}\caption{Ham vocabulary — business \& conversational terms}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab01/spam_wordcloud.png}\caption{Spam vocabulary — action-oriented marketing terms}\end{subfigure}
-\caption{Wordcloud comparison: ham vs. spam vocabulary reveals distinct lexical signatures.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab01/ham_wordcloud.png}
+  \caption{Ham vocabulary — business \& conversational terms}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab01/spam_wordcloud.png}
+  \caption{Spam vocabulary — action-oriented marketing terms}
+\end{figure}
 \end{figure}
 
 \subsection{Step 2.5 — Imbalance Strategy Decision}
@@ -407,9 +421,16 @@ The threshold tuning pipeline produces 15–30 evaluated combinations. The selec
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab01/label_distribution.png}\caption{Severe class imbalance (73/27)}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab01/raw_vs_clean_length_scatter.png}\caption{Text length before vs. after cleaning}\end{subfigure}
-\caption{EDA: class distribution and preprocessing effects}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab01/label_distribution.png}
+  \caption{Severe class imbalance (73/27)}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab01/raw_vs_clean_length_scatter.png}
+  \caption{Text length before vs. after cleaning}
+\end{figure}
 \end{figure}
 
 \begin{notebox}
@@ -461,18 +482,37 @@ Oil prices (\texttt{dcoilwtico}) are missing on $\sim$43 days — structurally, 
 \end{itemize}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/eda_003.png}\caption{Target distribution — raw + $\log_{1p}$}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/eda_004.png}\caption{Target boxplot by segments}\end{subfigure}
-\caption{Target distribution analysis: $\log_{1p}$ transform normalizes the heavily right-skewed sales data.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/eda_003.png}
+  \caption{Target distribution — raw + $\log_{1p}$ — showing right skew.}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/lab02/eda_004.png}
+  \caption{Target boxplot by segments — reveals spread across different customer segments.}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/lab02/eda_018.png}
+  \caption{Target distribution analysis: $\log_{1p}$ transform normalizes the heavily right-skewed sales data.}
+\end{figure}
 \end{figure}
 
 \subsubsection{2.3 — Product Family Analysis}
 Top-15 families by total sales show a Pareto distribution — \texttt{GROCERY I}, \texttt{BEVERAGES}, \texttt{PRODUCE} dominate revenue. Year-over-year heatmaps reveal whether market composition is shifting. This informs: should we train one global model or one per family?
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/eda_002.png}\caption{Product family revenue breakdown}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/eda_016.png}\caption{Revenue by category}\end{subfigure}
-\caption{Product family analysis: Pareto distribution with top families dominating revenue.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/eda_002.png}
+  \caption{Product family revenue breakdown}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/eda_016.png}
+  \caption{Revenue by category}
+\end{figure}
 \end{figure}
 
 \subsubsection{2.4 — Trend and Seasonality}
@@ -484,9 +524,16 @@ Three plots reveal time-dependent patterns:
 \end{itemize}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/eda_007.png}\caption{Daily revenue rolling mean — trend}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/eda_008.png}\caption{Monthly revenue patterns}\end{subfigure}
-\caption{Trend and seasonality: gradual growth trend with strong weekly and annual patterns.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/eda_007.png}
+  \caption{Daily revenue rolling mean — trend}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/eda_008.png}
+  \caption{Monthly revenue patterns}
+\end{figure}
 \end{figure}
 
 \subsubsection{2.5 — Promotion Impact}
@@ -517,45 +564,112 @@ Ecuador is a major oil exporter — oil prices affect consumer spending. A dual-
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/eda_010.png}\caption{Revenue distribution}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/eda_011.png}\caption{Revenue boxplot by store}\end{subfigure}\\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/eda_010.png}
+  \caption{Revenue distribution}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/eda_011.png}
+  \caption{Revenue boxplot by store}
+\end{figure}\
 \vspace{4pt}
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/eda_012.png}\caption{Quantity vs. revenue}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/eda_013.png}\caption{Unit price vs. revenue}\end{subfigure}
-\caption{Revenue and quantity analysis across store-segments.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/eda_012.png}
+  \caption{Quantity vs. revenue}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/eda_013.png}
+  \caption{Unit price vs. revenue}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/eda_014.png}\caption{Revenue by region}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/eda_015.png}\caption{Top states by revenue}\end{subfigure}\\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/eda_014.png}
+  \caption{Revenue by region}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/eda_015.png}
+  \caption{Top states by revenue}
+\end{figure}\
 \vspace{4pt}
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/eda_017.png}\caption{Top products by revenue}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/eda_018.png}\caption{Revenue by category detail}\end{subfigure}
-\caption{Geographic and product-level revenue breakdowns.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/eda_017.png}
+  \caption{Top products by revenue}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/eda_018.png}
+  \caption{Revenue by category detail}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/notebook_revenue_distribution_boxplot.png}\caption{Revenue distribution boxplot}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/notebook_revenue_boxplot_by_segments.png}\caption{Revenue by segments}\end{subfigure}\\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/notebook_revenue_distribution_boxplot.png}
+  \caption{Revenue distribution boxplot}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/notebook_revenue_boxplot_by_segments.png}
+  \caption{Revenue by segments}
+\end{figure}\
 \vspace{4pt}
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/notebook_time_eda.png}\caption{Time-series EDA patterns}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/notebook_daily_revenue_rolling_mean.png}\caption{Daily revenue rolling mean}\end{subfigure}
-\caption{Supplementary EDA: revenue distribution and time-series patterns.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/notebook_time_eda.png}
+  \caption{Time-series EDA patterns}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/notebook_daily_revenue_rolling_mean.png}
+  \caption{Daily revenue rolling mean}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/notebook_product_geography_eda.png}\caption{Product geography analysis}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/notebook_relationship_eda.png}\caption{Feature relationship analysis}\end{subfigure}\\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/notebook_product_geography_eda.png}
+  \caption{Product geography analysis}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/notebook_relationship_eda.png}
+  \caption{Feature relationship analysis}
+\end{figure}\
 \vspace{4pt}
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/notebook_numeric_correlation_heatmap.png}\caption{Numeric correlation heatmap}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/notebook_scatter_grid_features_vs_revenue.png}\caption{Feature scatter grid vs. revenue}\end{subfigure}
-\caption{Feature relationships and correlation analysis.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/notebook_numeric_correlation_heatmap.png}
+  \caption{Numeric correlation heatmap}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/notebook_scatter_grid_features_vs_revenue.png}
+  \caption{Feature scatter grid vs. revenue}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/notebook_advanced_target_distribution.png}\caption{Advanced target distribution}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/notebook_density_original_vs_scaled.png}\caption{Density: original vs. scaled}\end{subfigure}
-\caption{Target and feature distribution comparisons.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/notebook_advanced_target_distribution.png}
+  \caption{Advanced target distribution}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/notebook_density_original_vs_scaled.png}
+  \caption{Density: original vs. scaled}
+\end{figure}
 \end{figure}
 
 \subsection{Step 2.5 — Data Cleaning}
@@ -777,68 +891,159 @@ HGB (scratch, 160 trees) & 0.4644 & 90.53 & 365.37 & 0.9143\\
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/loss_curves_log.png}\caption{Log-scale loss curves}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/monthly_revenue.png}\caption{Monthly revenue trend}\end{subfigure}
-\caption{Loss curves (log scale) and monthly revenue patterns.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/loss_curves_log.png}
+  \caption{Log-scale loss curves}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/monthly_revenue.png}
+  \caption{Monthly revenue trend}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/predicted_vs_actual_model_a_with_quantity.png}\caption{Model A: predicted vs. actual}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/predicted_vs_actual_model_b_no_quantity.png}\caption{Model B: predicted vs. actual}\end{subfigure}
-\caption{Actual vs. predicted scatter plots for both model variants.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/predicted_vs_actual_model_a_with_quantity.png}
+  \caption{Model A: predicted vs. actual}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/predicted_vs_actual_model_b_no_quantity.png}
+  \caption{Model B: predicted vs. actual}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/residuals_model_a_with_quantity.png}\caption{Residuals: Model A}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/residuals_model_b_no_quantity.png}\caption{Residuals: Model B}\end{subfigure}
-\caption{Residual analysis — symmetric around zero confirms unbiased predictions.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/residuals_model_a_with_quantity.png}
+  \caption{Residuals: Model A}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/residuals_model_b_no_quantity.png}
+  \caption{Residuals: Model B}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/residual_by_month_model_a_with_quantity.png}\caption{Residuals by month: Model A}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/residual_by_month_model_b_no_quantity.png}\caption{Residuals by month: Model B}\end{subfigure}
-\caption{Temporal residual patterns — error distribution across months.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/residual_by_month_model_a_with_quantity.png}
+  \caption{Residuals by month: Model A}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/residual_by_month_model_b_no_quantity.png}
+  \caption{Residuals by month: Model B}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/residual_by_category_model_a_with_quantity.png}\caption{Residuals by category: Model A}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/residual_by_category_model_b_no_quantity.png}\caption{Residuals by category: Model B}\end{subfigure}
-\caption{Category-level residuals — identifies which product families are hardest to forecast.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/residual_by_category_model_a_with_quantity.png}
+  \caption{Residuals by category: Model A}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/residual_by_category_model_b_no_quantity.png}
+  \caption{Residuals by category: Model B}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/notebook_model_b_actual_vs_predicted_line.png}\caption{Actual vs. predicted line plot}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/notebook_model_b_prediction_plots.png}\caption{Prediction analysis dashboard}\end{subfigure}
-\caption{Model B diagnostics: line plot and prediction analysis.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/notebook_model_b_actual_vs_predicted_line.png}
+  \caption{Actual vs. predicted line plot}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/notebook_model_b_prediction_plots.png}
+  \caption{Prediction analysis dashboard}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/notebook_model_b_epsilon_tube_style.png}\caption{Epsilon-tube style plot}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/notebook_model_a_prediction_plots.png}\caption{Model A prediction plots}\end{subfigure}
-\caption{Additional diagnostic views for both model variants.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/notebook_model_b_epsilon_tube_style.png}
+  \caption{Epsilon-tube style plot}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/notebook_model_a_prediction_plots.png}
+  \caption{Model A prediction plots}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/notebook_final_ridge_feature_weights.png}\caption{Ridge feature weights}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/notebook_full_eda_dashboard_like_sample.png}\caption{Full EDA dashboard}\end{subfigure}
-\caption{Feature importance and comprehensive EDA dashboard.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/notebook_final_ridge_feature_weights.png}
+  \caption{Ridge feature weights}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/notebook_full_eda_dashboard_like_sample.png}
+  \caption{Full EDA dashboard}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/revenue_distribution.png}\caption{Revenue distribution histogram}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/revenue_boxplot.png}\caption{Revenue boxplot}\end{subfigure}\\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/revenue_distribution.png}
+  \caption{Revenue distribution histogram}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/revenue_boxplot.png}
+  \caption{Revenue boxplot}
+\end{figure}\
 \vspace{4pt}
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/revenue_by_region.png}\caption{Revenue by region}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/revenue_by_category.png}\caption{Revenue by category}\end{subfigure}\\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/revenue_by_region.png}
+  \caption{Revenue by region}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/revenue_by_category.png}
+  \caption{Revenue by category}
+\end{figure}\
 \vspace{4pt}
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/quantity_distribution.png}\caption{Quantity distribution}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/quantity_vs_revenue.png}\caption{Quantity vs. revenue}\end{subfigure}\\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/quantity_distribution.png}
+  \caption{Quantity distribution}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/quantity_vs_revenue.png}
+  \caption{Quantity vs. revenue}
+\end{figure}\
 \vspace{4pt}
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/unit_price_vs_revenue.png}\caption{Unit price vs. revenue}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab02/top_products_by_revenue.png}\caption{Top products by revenue}\end{subfigure}\\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/unit_price_vs_revenue.png}
+  \caption{Unit price vs. revenue}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab02/top_products_by_revenue.png}
+  \caption{Top products by revenue}
+\end{figure}\
 \vspace{4pt}
-\begin{subfigure}[b]{\textwidth}\centering\includegraphics[width=0.48\textwidth]{figures/lab02/top_states_by_revenue.png}\caption{Top states by revenue}\end{subfigure}
-\caption{Revenue and quantity supplementary EDA plots.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.48\textwidth]{figures/lab02/top_states_by_revenue.png}
+  \caption{Top states by revenue}
+\end{figure}
 \end{figure}
 
 \begin{notebox}
@@ -883,9 +1088,16 @@ Four issues are catalogued before any transformation:
 The IQR method flags more points for right-skewed income data because it does not assume symmetry. A preprocessing report (markdown) is saved for audit trail.
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab03/missing_values.png}\caption{Missing values per column}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab03/boxplots_before.png}\caption{Boxplots: original scale outliers}\end{subfigure}
-\caption{Data quality checks: missing values and outlier detection via boxplots and IQR method.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab03/missing_values.png}
+  \caption{Missing values per column}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab03/boxplots_before.png}
+  \caption{Boxplots: original scale outliers}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
@@ -917,9 +1129,16 @@ Pairplot & All pairwise scatters in one grid — catches interactions a correlat
 The \textbf{Income vs. Spending scatter} is the most important plot in the entire notebook. The classic Mall Customers dataset typically shows \textbf{5 distinct clusters}: high/high, high/low, medium/medium, low/high, low/low.
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab03/scatter_annual_income_vs_spending_score_before.png}\caption{Income vs. Spending Score}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab03/pairplot_before.png}\caption{Pairwise scatter matrix}\end{subfigure}
-\caption{EDA before preprocessing: income-spending reveals 5 natural clusters; pairplot catches pairwise interactions.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab03/scatter_annual_income_vs_spending_score_before.png}
+  \caption{Income vs. Spending Score}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab03/pairplot_before.png}
+  \caption{Pairwise scatter matrix}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
@@ -928,16 +1147,34 @@ The \textbf{Income vs. Spending scatter} is the most important plot in the entir
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab03/scatter_age_vs_spending_score_before.png}\caption{Age vs. Spending Score}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab03/scatter_age_vs_annual_income_before.png}\caption{Age vs. Annual Income}\end{subfigure}
-\caption{Age-based scatter analysis: spending and income patterns by age group.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab03/scatter_age_vs_spending_score_before.png}
+  \caption{Age vs. Spending Score}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab03/scatter_age_vs_annual_income_before.png}
+  \caption{Age vs. Annual Income}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.32\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab03/distribution_age_before.png}\caption{Age distribution}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.32\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab03/distribution_annual_income_before.png}\caption{Annual income distribution}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.32\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab03/distribution_spending_score_before.png}\caption{Spending score distribution}\end{subfigure}
-\caption{Feature distributions before preprocessing: age (uniform), income (right-skewed), spending (bimodal).}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab03/distribution_age_before.png}
+  \caption{Age distribution}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab03/distribution_annual_income_before.png}
+  \caption{Annual income distribution}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab03/distribution_spending_score_before.png}
+  \caption{Spending score distribution}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
@@ -1005,9 +1242,16 @@ Davies-Bouldin & $\downarrow$ & Average similarity between each cluster and its 
 A \textbf{verification cell} runs both scratch and library implementations on a 100-sample subset, using the \textbf{Hungarian algorithm} (linear sum assignment) to align cluster labels. A partition match rate $> 90\%$ confirms correctness. The same verification is applied to GMM with relaxed tolerance.
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab03/kmeans_elbow_curve.png}\caption{Elbow curve — bend at K=3–5}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab03/kmeans_silhouette_curve.png}\caption{Silhouette vs. K — peak at 5 clusters}\end{subfigure}
-\caption{K-Means diagnostics: elbow and silhouette identify optimal cluster count.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab03/kmeans_elbow_curve.png}
+  \caption{Elbow curve — bend at K=3–5}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab03/kmeans_silhouette_curve.png}
+  \caption{Silhouette vs. K — peak at 5 clusters}
+\end{figure}
 \end{figure}
 
 \subsubsection{K-Means From Scratch — Core Implementation}
@@ -1084,15 +1328,29 @@ Centroids are inverse-transformed to original scale (reversing StandardScaler) f
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab03/clusters_age_vs_spending_score.png}\caption{Age vs. Spending Score}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab03/clusters_age_vs_annual_income.png}\caption{Age vs. Annual Income}\end{subfigure}
-\caption{Age-based cluster scatter plots: spending and income patterns across clusters.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab03/clusters_age_vs_spending_score.png}
+  \caption{Age vs. Spending Score}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab03/clusters_age_vs_annual_income.png}
+  \caption{Age vs. Annual Income}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab03/gmm_income_vs_spending.png}\caption{GMM on Income vs. Spending}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab03/gmm_contours.png}\caption{GMM covariance contours}\end{subfigure}
-\caption{Gaussian Mixture Model: soft clustering with covariance ellipses showing cluster shape and orientation.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab03/gmm_income_vs_spending.png}
+  \caption{GMM on Income vs. Spending}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab03/gmm_contours.png}
+  \caption{GMM covariance contours}
+\end{figure}
 \end{figure}
 
 \subsection{Step 9 — Segment Profiling}
@@ -1169,10 +1427,21 @@ The random seed (42) guarantees identical centroid initialization across runs. F
 Three image filenames are iterated. For each image, a summary prints: shape, dtype, pixel intensity range, and \textbf{unique RGB color count} — the baseline for measuring compression ratio. A healthy 350px image yields 3,000–30,000 unique colors. The displayed image confirms the file loaded correctly.
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.32\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/original_picture.png}\caption{Original Picture 1}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.32\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/original_picture_2.png}\caption{Original Picture 2}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.32\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/original_picture_3.png}\caption{Original Picture 3}\end{subfigure}
-\caption{Three RGB photographs used for image segmentation experiments.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/original_picture.png}
+  \caption{Original Picture 1}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/original_picture_2.png}
+  \caption{Original Picture 2}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/original_picture_3.png}
+  \caption{Original Picture 3}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
@@ -1188,10 +1457,21 @@ Three image filenames are iterated. For each image, a summary prints: shape, dty
 \end{enumerate}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.32\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/color_space_preview_picture.png}\caption{Color spaces: Picture 1}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.32\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/color_space_preview_picture_2.png}\caption{Color spaces: Picture 2}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.32\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/color_space_preview_picture_3.png}\caption{Color spaces: Picture 3}\end{subfigure}
-\caption{RGB, HSV, LAB color space previews for all three images.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/color_space_preview_picture.png}
+  \caption{Color spaces: Picture 1}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/color_space_preview_picture_2.png}
+  \caption{Color spaces: Picture 2}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/color_space_preview_picture_3.png}
+  \caption{Color spaces: Picture 3}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
@@ -1242,22 +1522,48 @@ Inertia is plotted against K. The ``elbow'' — where marginal gain flattens —
 Per-pixel silhouette: $s(i) = (b(i) - a(i)) / \max(a(i), b(i))$, where $a(i)$ is mean intra-cluster distance and $b(i)$ is mean distance to the nearest other cluster. The red dashed line marks the average. Uniformly thick bars at high scores indicate compact, well-separated clusters; thin bars near zero signal overlap.
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/silhouette_plot_picture_k5.png}\caption{Silhouette: Picture 1 at K=5}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/silhouette_plot_k5.png}\caption{Silhouette: K=5 detail}\end{subfigure}\\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/silhouette_plot_picture_k5.png}
+  \caption{Silhouette: Picture 1 at K=5}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/silhouette_plot_k5.png}
+  \caption{Silhouette: K=5 detail}
+\end{figure}\
 \vspace{4pt}
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/silhouette_plot_picture_2_k3.png}\caption{Silhouette: Picture 2 at K=3}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/silhouette_plot_picture_3_k5.png}\caption{Silhouette: Picture 3 at K=5}\end{subfigure}
-\caption{Silhouette analysis across images and K values — thick, uniform bars indicate well-separated clusters.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/silhouette_plot_picture_2_k3.png}
+  \caption{Silhouette: Picture 2 at K=3}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/silhouette_plot_picture_3_k5.png}
+  \caption{Silhouette: Picture 3 at K=5}
+\end{figure}
 \end{figure}
 
 \subsection{Step 5 — Image Reconstruction}
 Each pixel's cluster label (integer 0 to K$-$1) indexes into the \texttt{cluster\_centers\_} table. Centroid coordinates are clipped to [0, 255] (preventing wraparound from float means outside uint8 range) and rounded to uint8 (avoiding systematic truncation bias). Unique-color count after reconstruction should equal K; fewer means two centroids converged to the same color (degenerate cluster).
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.32\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/original_vs_segmented_picture.png}\caption{Original vs. Segmented: Pic 1}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.32\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/original_vs_segmented_picture_2.png}\caption{Original vs. Segmented: Pic 2}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.32\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/original_vs_segmented_picture_3.png}\caption{Original vs. Segmented: Pic 3}\end{subfigure}
-\caption{Original vs. K=5 segmented reconstruction for all three images.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/original_vs_segmented_picture.png}
+  \caption{Original vs. Segmented: Pic 1}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/original_vs_segmented_picture_2.png}
+  \caption{Original vs. Segmented: Pic 2}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/original_vs_segmented_picture_3.png}
+  \caption{Original vs. Segmented: Pic 3}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
@@ -1309,41 +1615,96 @@ Silhouette: 0.5180 (well-separated color regions). Convergence: 30 iterations.
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/elbow_plot_picture.png}\caption{Elbow: inertia vs. K — bend at K=3–5}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/convergence_plot_picture.png}\caption{Convergence: inertia decreases monotonically}\end{subfigure}
-\caption{Diagnostic plots for optimal K selection}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/elbow_plot_picture.png}
+  \caption{Elbow: inertia vs. K — bend at K=3–5}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/convergence_plot_picture.png}
+  \caption{Convergence: inertia decreases monotonically}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/elbow_plot_picture_2.png}\caption{Elbow curve: Picture 2}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/elbow_plot_picture_3.png}\caption{Elbow curve: Picture 3}\end{subfigure}\\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/elbow_plot_picture_2.png}
+  \caption{Elbow curve: Picture 2}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/elbow_plot_picture_3.png}
+  \caption{Elbow curve: Picture 3}
+\end{figure}\
 \vspace{4pt}
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/elbow_plot.png}\caption{Elbow curve: all pictures}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/k_comparison_grid.png}\caption{K-comparison grid}\end{subfigure}
-\caption{Supplementary elbow and K-comparison diagnostic plots across all pictures.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/elbow_plot.png}
+  \caption{Elbow curve: all pictures}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/k_comparison_grid.png}
+  \caption{K-comparison grid}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/k_comparison_grid_picture_2.png}\caption{K-comparison: Picture 2}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/k_comparison_grid_picture_3.png}\caption{K-comparison: Picture 3}\end{subfigure}
-\caption{K-comparison grids for pictures 2 and 3: original alongside K=2,3,5,8 segmentations.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/k_comparison_grid_picture_2.png}
+  \caption{K-comparison: Picture 2}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/k_comparison_grid_picture_3.png}
+  \caption{K-comparison: Picture 3}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/convergence_plot_picture_2.png}\caption{Convergence: Picture 2}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/convergence_plot_picture_3.png}\caption{Convergence: Picture 3}\end{subfigure}\\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/convergence_plot_picture_2.png}
+  \caption{Convergence: Picture 2}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/convergence_plot_picture_3.png}
+  \caption{Convergence: Picture 3}
+\end{figure}\
 \vspace{4pt}
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/convergence_plot.png}\caption{Convergence: all pictures}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/color_palette_picture_k5.png}\caption{Color palette at K=5}\end{subfigure}
-\caption{Convergence behavior and centroid color palette for segmented images.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/convergence_plot.png}
+  \caption{Convergence: all pictures}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/color_palette_picture_k5.png}
+  \caption{Color palette at K=5}
+\end{figure}
 \end{figure}
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/color_palette_picture_2_k3.png}\caption{Palette: Picture 2, K=3}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/color_palette_picture_3_k5.png}\caption{Palette: Picture 3, K=5}\end{subfigure}\\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/color_palette_picture_2_k3.png}
+  \caption{Palette: Picture 2, K=3}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/color_palette_picture_3_k5.png}
+  \caption{Palette: Picture 3, K=5}
+\end{figure}\
 \vspace{4pt}
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab31/color_palette_k5.png}\caption{Color palette K=5 detail}\end{subfigure}
-\caption{Centroid color palettes — each swatch represents a cluster's representative color. Muddy swatches indicate averaging dissimilar colors.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/color_palette_k5.png}
+  \caption{Color palette K=5 detail}
+\end{figure}
 \end{figure}
 
 \begin{notebox}
@@ -1391,9 +1752,16 @@ Only \texttt{total\_bedrooms} has missing data ($\sim$1.5\%). Median imputation 
 Histograms for all numeric features. Right-skewed count features (rooms, population) are candidates for $\log_{1p}$ transform. Target histogram shows a plateau/spike at \$500,006 — the artificial cap. If $>5\%$ of values hit the cap, consider treating this as censored regression.
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab04/eda_02_feature_distributions.png}\caption{Feature distributions}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab04/eda_03_target_distribution.png}\caption{Target distribution}\end{subfigure}
-\caption{Feature and target distributions — right-skewed count features, target capped at \$500,006.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab04/eda_02_feature_distributions.png}
+  \caption{Feature distributions}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab04/eda_03_target_distribution.png}
+  \caption{Target distribution}
+\end{figure}
 \end{figure}
 
 \subsubsection{2.4 — Geographic Distribution}
@@ -1424,27 +1792,48 @@ Histograms for all numeric features. Right-skewed count features (rooms, populat
 No single feature besides \texttt{median\_income} has $|r| > 0.3$, \textbf{motivating non-linear models}.
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab04/eda_06_correlation_heatmap.png}\caption{Correlation heatmap}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab04/eda_07_target_correlation_bar.png}\caption{Target correlation bar chart}\end{subfigure}
-\caption{Correlation analysis: \texttt{median\_income} dominates ($r \approx 0.69$); no other feature exceeds $|r| > 0.3$.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab04/eda_06_correlation_heatmap.png}
+  \caption{Correlation heatmap}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab04/eda_07_target_correlation_bar.png}
+  \caption{Target correlation bar chart}
+\end{figure}
 \end{figure}
 
 \subsubsection{2.6 — Scatter Matrix and Income vs. Price}
 \texttt{eda.plot\_scatter\_matrix()} shows pairwise scatters for top features — check for redundant pairs (e.g., \texttt{total\_rooms} vs. \texttt{households}). \texttt{eda.plot\_income\_vs\_price()} drills into the dominant predictor: a clear positive trend with a horizontal ceiling at \$500,006 and \textbf{heteroscedasticity} (variance grows with income).
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab04/eda_08_scatter_matrix.png}\caption{Scatter matrix}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab04/eda_09_income_vs_price.png}\caption{Income vs. price}\end{subfigure}
-\caption{Scatter matrix and income-price relationship — positive trend with capped ceiling at \$500,006.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab04/eda_08_scatter_matrix.png}
+  \caption{Scatter matrix}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab04/eda_09_income_vs_price.png}
+  \caption{Income vs. price}
+\end{figure}
 \end{figure}
 
 \subsubsection{2.7 — Ocean Proximity Analysis}
 Boxplots compare price distributions across 5 categories. \texttt{<1H OCEAN} and \texttt{NEAR BAY} command highest median prices; \texttt{INLAND} is the cheapest by a wide margin. If \texttt{INLAND} vs. non-INLAND captures most variance, consider an \texttt{is\_inland} binary feature.
 
 \begin{figure}[H]\centering
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab04/eda_10_ocean_proximity_bar.png}\caption{Ocean proximity bar chart}\end{subfigure}\hfill
-\begin{subfigure}[b]{0.48\textwidth}\centering\includegraphics[width=\textwidth]{figures/lab04/eda_11_ocean_proximity_boxplot.png}\caption{Ocean proximity boxplot}\end{subfigure}
-\caption{Ocean proximity analysis: \texttt{<1H OCEAN} and \texttt{NEAR BAY} have highest prices; \texttt{INLAND} is cheapest.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab04/eda_10_ocean_proximity_bar.png}
+  \caption{Ocean proximity bar chart}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab04/eda_11_ocean_proximity_boxplot.png}
+  \caption{Ocean proximity boxplot}
+\end{figure}
 \end{figure}
 
 \subsubsection{2.8 — Feature Engineering Experiments}
