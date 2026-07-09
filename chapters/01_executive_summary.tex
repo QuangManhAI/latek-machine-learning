@@ -1,19 +1,17 @@
-% ═══════════════════════════════════════════════════════════════
 \chapter{Executive Summary}
-% ═══════════════════════════════════════════════════════════════
 
-This report documents five machine learning laboratory projects covering \textbf{binary text classification}, \textbf{time-series demand forecasting}, \textbf{customer segmentation}, \textbf{image color quantization}, and \textbf{tabulated regression}. Each project implements core algorithms \textit{from scratch} in pure NumPy and benchmarks them against scikit-learn, revealing the inner mechanics of every model.
+This report documents five machine learning laboratory projects covering \textbf{binary text classification} (5,574 messages), \textbf{time-series demand forecasting} (1,018,209 sales records), \textbf{customer segmentation} (2,200 customers), \textbf{image color quantization} (108,000 pixels), and \textbf{tabulated regression} (20,640 California housing records). Each project implements core algorithms \textit{from scratch} in pure NumPy and benchmarks them against scikit-learn, revealing the inner mechanics of every model.
 
 \begin{table}[H]
 \centering\rowcolors{2}{tablerow}{white}
 \begin{tabular}{c L{3cm} L{3cm} L{4cm} c}
 \toprule\rowcolor{tablehead!80}\color{white}\textbf{Lab} &\color{white}\textbf{Task} &\color{white}\textbf{Algorithms} &\color{white}\textbf{Key Technique} &\color{white}\textbf{Best Score}\\
 \midrule
-\color{redaccent}\textbf{01} & Spam Classif. & NB, LR, SVM & TF-IDF + Threshold Tuning & FPR $\le$1\%, TPR $\ge$99\%\\
-\color{orangeaccent}\textbf{02} & Sales Forecast & Ridge, MLP, HGB & Lag Features + Ensemble Blend & RMSLE 0.48, R² 0.95\\
-\color{greenaccent}\textbf{03} & Segmentation & K-Means, GMM & Multi-scaler Grid Search & Silhouette 0.47\\
-\color{purpleaccent}\textbf{3.1} & Image Segm. & K-Means (scratch) & Pixel Clustering at K=5 & Silhouette 0.52\\
-\color{sectionblue}\textbf{04} & House Price & Linear, MLP, HGB & 3-layer MLP + HistBoosting & R² $\sim$0.65\\
+\color{redaccent}\textbf{01} & Spam Classification & NB, LR, SVM & TF-IDF + Threshold Tuning & TPR=0.998, FPR=0.009\\
+\color{orangeaccent}\textbf{02} & Sales Forecasting & Ridge, MLP, HGB & Lag Features + Ensemble Blend & RMSLE=0.464, R\textsuperscript{2}=0.914\\
+\color{greenaccent}\textbf{03} & Segmentation & K-Means, GMM & RobustScaler + K=5 & Silhouette=0.470\\
+\color{purpleaccent}\textbf{3.1} & Image Segmentation & K-Means (scratch) & Pixel Clustering at K=5 & Silhouette=0.518\\
+\color{sectionblue}\textbf{04} & House Price & Linear, MLP, HGB & HGB from scratch & R\textsuperscript{2}=0.795, RMSE=\$51,649\\
 \bottomrule
 \end{tabular}
 \caption{Summary of all five projects}
