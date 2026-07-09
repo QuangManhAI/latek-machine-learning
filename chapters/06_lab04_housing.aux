@@ -1,0 +1,83 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Lab 04 — California Housing Price Prediction}{85}{chapter.6}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch:lab04}{{6}{85}{Lab 04 — California Housing Price Prediction}{chapter.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Problem Definition}{85}{section.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Dataset}{85}{subsection.6.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Complete Workflow}{85}{section.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Step 1 — Setup and Load Data}{85}{subsection.6.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Step 2 — Exploratory Data Analysis (8 Sub-steps)}{86}{subsection.6.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.1 — Descriptive Statistics}{86}{subsection.6.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.2 — Missing Values}{86}{subsection.6.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Missing values bar chart — only \texttt  {total\_bedrooms} shows gaps ($\sim $1.5\%), all other columns are complete.}}{86}{figure.caption.178}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.3 — Feature Distributions}{86}{figure.caption.178}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Feature distributions}}{87}{figure.caption.180}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Target distribution}}{87}{figure.caption.181}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.4 — Geographic Distribution}{88}{figure.caption.181}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Geographic distribution: price and population density overlay across California census blocks. Coastal regions show higher prices and population density.}}{88}{figure.caption.182}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.5 — Correlation Matrix}{88}{figure.caption.182}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Correlations with \texttt  {median\_house\_value}}}{88}{table.caption.183}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Correlation heatmap}}{89}{figure.caption.185}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Target correlation bar chart}}{89}{figure.caption.186}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.6 — Scatter Matrix and Income vs. Price}{90}{figure.caption.186}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces Scatter matrix}}{91}{figure.caption.188}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces Income vs. price}}{91}{figure.caption.189}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.7 — Ocean Proximity Analysis}{92}{figure.caption.189}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.9}{\ignorespaces Ocean proximity bar chart}}{92}{figure.caption.191}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.10}{\ignorespaces Ocean proximity boxplot}}{92}{figure.caption.192}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2.8 — Feature Engineering Experiments}{92}{figure.caption.192}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.11}{\ignorespaces Engineered feature correlations — at least one ratio feature shows $|r| > 0.2$ with target, confirming added signal.}}{93}{figure.caption.193}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}Step 3 — Data Preprocessing (Full Pipeline)}{93}{subsection.6.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.4}Step 3.8 — Log Transform for Skewed Features}{94}{subsection.6.2.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Log-transform impact per model family}}{94}{table.caption.194}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.5}Step 4 — Model Training and Evaluation}{94}{subsection.6.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Linear Regression}{94}{subsection.6.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Multi-Layer Perceptron}{94}{subsection.6.2.5}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.1}{\ignorespaces MLP: 3-layer forward pass, MSE loss, backpropagation}}{94}{lstlisting.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{HistGradientBoosting}{95}{lstnumber.6.1.24}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.2}{\ignorespaces HGB: binning + sequential tree fitting}}{95}{lstlisting.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Model Comparison}{95}{lstnumber.6.2.16}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.12}{\ignorespaces RMSE and MAE comparison: Linear, MLP, HGB (train vs. test). HGB typically leads both metrics.}}{95}{figure.caption.195}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.13}{\ignorespaces Training loss curves (log scale) for all three models. EMA-smoothed trends reveal convergence behavior.}}{95}{figure.caption.196}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.14}{\ignorespaces Geographic distribution of house prices across California. Coastal regions command premium prices; inland blocks are significantly cheaper.}}{96}{figure.caption.197}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.15}{\ignorespaces Loss comparison: training and validation loss across all three model families.}}{96}{figure.caption.198}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.16}{\ignorespaces Dual comparison: RMSE and R² metrics for all models with log-transformed vs. original features.}}{96}{figure.caption.199}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.6}Step 4.8 — Log-Transform Comparison}{96}{subsection.6.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.7}Step 4.9 — Logging and Reproducibility}{97}{subsection.6.2.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Results and Analysis}{97}{section.6.3}\protected@file@percent }
+\@setckpt{chapters/06_lab04_housing}{
+\setcounter{page}{98}
+\setcounter{equation}{0}
+\setcounter{enumi}{7}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{6}
+\setcounter{section}{3}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{16}
+\setcounter{table}{2}
+\setcounter{float@type}{16}
+\setcounter{section@level}{0}
+\setcounter{Item}{35}
+\setcounter{Hfootnote}{0}
+\setcounter{bookmark@seq@number}{79}
+\setcounter{lstnumber}{17}
+\setcounter{tcbbreakpart}{1}
+\setcounter{tcblayer}{0}
+\setcounter{tcolorbox@number}{16}
+\setcounter{parentequation}{0}
+\setcounter{caption@flags}{2}
+\setcounter{continuedfloat}{0}
+\setcounter{FancyVerbLine}{0}
+\setcounter{lastpagecount}{0}
+\setcounter{lstlisting}{2}
+}

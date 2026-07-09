@@ -1,0 +1,81 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Lab 01 — Email Spam Classification}{4}{chapter.2}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch:lab01}{{2}{4}{Lab 01 — Email Spam Classification}{chapter.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Problem Definition}{4}{section.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Dataset}{4}{subsection.2.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Complete Workflow}{5}{section.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Step 1 — Raw Data Overview and EDA}{5}{subsection.2.2.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Raw data quality diagnostics}}{5}{table.caption.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Source $\times $ label heatmap — pure-source blocks reveal confounding: Enron is overwhelmingly ham, HuggingFace/Kaggle are pure spam.}}{6}{figure.caption.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Step 2 — Text Preprocessing Pipeline}{6}{subsection.2.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Text length distribution by class}}{7}{figure.caption.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Text length vs. unique word count}}{7}{figure.caption.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Source family distribution across the dataset — multiple sources contribute to the combined corpus.}}{8}{figure.caption.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Step 2.4 — Vocabulary Analysis}{8}{subsection.2.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Top words by class — frequency comparison of most discriminative terms across ham and spam.}}{9}{figure.caption.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Ham vocabulary — business \& conversational terms}}{10}{figure.caption.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Spam vocabulary — action-oriented marketing terms}}{10}{figure.caption.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}Step 2.5 — Imbalance Strategy Decision}{10}{subsection.2.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.5}Step 3 — Balanced Dataset Construction}{11}{subsection.2.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.6}Step 4 — Ham Data V2 (Diversity Supplement)}{11}{subsection.2.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.7}Step 5 — Fixed Train/Test Split}{11}{subsection.2.2.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.8}Step 6 — TF-IDF Feature Engineering}{11}{subsection.2.2.8}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces TF-IDF parameter choices}}{12}{table.caption.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.9}Step 7 — Nearest Centroid Baseline}{12}{subsection.2.2.9}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.1}{\ignorespaces Nearest Centroid: zero-training baseline}}{12}{lstlisting.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.10}Step 8 — Three Models From Scratch (Pure NumPy)}{12}{subsection.2.2.10}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Three scratch model implementations}}{13}{table.caption.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Logistic Regression — Core Training Loop}{13}{table.caption.14}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.2}{\ignorespaces Logistic Regression: SGD with Binary Cross-Entropy}}{13}{lstlisting.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Linear SVM — Sub-Gradient Descent}{13}{lstnumber.2.2.13}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.3}{\ignorespaces Linear SVM: Sub-gradient descent with Hinge Loss}}{13}{lstlisting.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Loss Curve Diagnostics}{13}{lstnumber.2.3.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.11}Step 9 — Model Comparison and Double-Check}{14}{subsection.2.2.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{4-Panel Confusion Matrix (Default Threshold 0.5)}{14}{subsection.2.2.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Scratch vs. sklearn Verification}{14}{subsection.2.2.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.12}Step 10 — Threshold Tuning (Gold Standard Optimization)}{14}{subsection.2.2.12}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.4}{\ignorespaces Threshold sweep: find optimal operating point}}{15}{lstlisting.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Score Overlap Analysis}{15}{lstnumber.2.4.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Gold Standard Assessment}{15}{lstnumber.2.4.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.13}Step 11 — Failure Analysis}{15}{subsection.2.2.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Results and Analysis}{16}{section.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces 4-panel confusion matrix: centroid baseline vs. three scratch models at default threshold 0.5. All models show similar TN/TP quadrants; differences emerge in FP/FN corners.}}{16}{figure.caption.15}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Severe class imbalance (73/27)}}{17}{figure.caption.17}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Text length before vs. after cleaning}}{17}{figure.caption.18}\protected@file@percent }
+\@setckpt{chapters/02_lab01_spam}{
+\setcounter{page}{19}
+\setcounter{equation}{0}
+\setcounter{enumi}{4}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{2}
+\setcounter{section}{3}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{10}
+\setcounter{table}{3}
+\setcounter{float@type}{16}
+\setcounter{section@level}{0}
+\setcounter{Item}{15}
+\setcounter{Hfootnote}{0}
+\setcounter{bookmark@seq@number}{19}
+\setcounter{lstnumber}{8}
+\setcounter{tcbbreakpart}{1}
+\setcounter{tcblayer}{0}
+\setcounter{tcolorbox@number}{4}
+\setcounter{parentequation}{0}
+\setcounter{caption@flags}{2}
+\setcounter{continuedfloat}{0}
+\setcounter{FancyVerbLine}{0}
+\setcounter{lastpagecount}{0}
+\setcounter{lstlisting}{4}
+}

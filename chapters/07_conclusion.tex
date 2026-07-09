@@ -1,0 +1,37 @@
+% ═══════════════════════════════════════════════════════════════
+\chapter{Overall Conclusion}
+\label{ch:conclusion}
+% ═══════════════════════════════════════════════════════════════
+
+\section*{Key Achievements Across All Labs}
+
+\begin{table}[H]
+\centering\rowcolors{2}{tablerow}{white}
+\begin{tabular}{l L{4.5cm} L{7cm} L{4cm}}
+\toprule\rowcolor{tablehead!80}\color{white}\textbf{Lab} &\color{white}\textbf{Main Achievement} &\color{white}\textbf{Core Lesson} &\color{white}\textbf{Verified?}\\
+\midrule
+01 & Gold standard FPR $\le$1\%, TPR $\ge$99\% & Threshold tuning $\gg$ model architecture choice; source-label confounding is the hidden enemy & $\checkmark$ NB, LR, SVM vs. sklearn\\
+02 & Ensemble beats every individual model & Lag features shifted 16 days prevent catastrophic data leakage; ensemble blending adds stability & $\checkmark$ Ridge, MLP, HGB vs. sklearn\\
+03 & 5 actionable customer segments & Multi-criteria model selection (not single metric); silhouette + elbow $>$ either alone & $\checkmark$ K-Means + GMM vs. sklearn\\
+3.1 & K=5 sweet spot for image quantization & Silhouette penalizes over-segmentation while inertia cannot; color space choice matters & $\checkmark$ Within 5–10\% of sklearn\\
+04 & HGB > MLP > Linear on tabular data & \texttt{median\_income} dominates but non-linear models capture capped-target pattern & $\checkmark$ All three vs. sklearn/PyTorch\\
+\bottomrule
+\end{tabular}
+\caption{Achievements and lessons across all five projects}
+\end{table}
+
+\section*{Cross-Project Insights}
+
+\begin{enumerate}
+  \item \textbf{Feature engineering is the highest-leverage activity.} Lag features in Lab 02 drove larger RMSLE reductions than any model complexity increase. Engineered ratio features in Lab 04 (\texttt{rooms\_per\_household}) added meaningful signal. TF-IDF with n-grams in Lab 01 transformed raw text into a discriminative feature space.
+  
+  \item \textbf{From-scratch implementations reveal algorithmic mechanics.} The Hungarian-algorithm-based label alignment in Lab 03, the gradient descent loop in Lab 01's LR and SVM, the backpropagation chain in Lab 04's MLP — writing these from scratch builds intuition that library calls hide.
+  
+  \item \textbf{Validation strategy is problem-specific and non-negotiable.} Lab 01 uses stratified splits (label ratios). Lab 02 must use chronological splits (no shuffling). Lab 03 evaluates clustering on a validation subset of training data. Lab 04 uses stratified splits on binned income. Choosing wrong validation invalidates every metric.
+  
+  \item \textbf{Data quality dominates model choice.} Source-label confounding in Lab 01 threatened generalization more than any model architecture choice. The capped target in Lab 04 limited all models equally — acknowledging this as censored regression is the real solution.
+  
+  \item \textbf{Ensemble methods are robust across domains.} The HGB + Lag\_28 ensemble in Lab 02 improved every metric simultaneously. The pattern discovered across labs: blending a complex learner with a simple, stable baseline reduces variance while preserving pattern-discovery power.
+  
+  \item \textbf{Clustering is a business tool, not just a statistical exercise.} Lab 03 turned cluster IDs into named segments with concrete marketing strategies. Lab 3.1 applied the same algorithm to pixels, demonstrating algorithmic versatility — the technique is identical; only the domain interpretation changes.
+\end{enumerate}

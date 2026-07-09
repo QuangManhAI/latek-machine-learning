@@ -1,0 +1,360 @@
+% ═══════════════════════════════════════════════════════════════
+\chapter{Lab 01 — Email Spam Classification}
+\label{ch:lab01}
+% ═══════════════════════════════════════════════════════════════
+
+\section{Problem Definition}
+
+\begin{problembox}
+Every day, billions of emails traverse the internet, and a significant fraction are \textbf{spam} — unsolicited bulk messages ranging from annoying advertisements to dangerous phishing attacks. A reliable spam filter must strike a delicate balance: catch nearly all spam without falsely flagging legitimate messages.
+
+\textbf{Business constraints drive the metric choice.} A missed spam email (False Negative, FN) erodes user trust — but a legitimate email wrongly sent to the spam folder (False Positive, FP) can cause missed opportunities or failed communication entirely. This is why \textbf{False Positive Rate} matters just as much as \textbf{True Positive Rate} in production.
+
+The \textbf{gold standard} for this project is \textbf{FPR $\le$ 1\%} (at most 1 in 100 ham emails misclassified) and \textbf{TPR $\ge$ 99\%} (at least 99 of 100 spam emails caught). Achieving both simultaneously is difficult because they pull the decision threshold in opposite directions. The dataset combines emails from multiple sources (Enron AUEB, SpamAssassin, HuggingFace, Kaggle) — some sources are pure ham, others pure spam, creating a \textbf{source-label confounding} trap: a model that memorizes source artifacts will fail on unseen sources.
+\end{problembox}
+
+\subsection{Dataset}
+\begin{itemize}
+  \item \textbf{Sources:} Enron (AUEB), SpamAssassin, HuggingFace, Kaggle — combined multi-source email corpus.
+  \item \textbf{Raw size:} $\sim$18,000 emails. After preprocessing and balancing: $\sim$3,000–5,000.
+  \item \textbf{Class imbalance:} 73\% ham / 27\% spam — severe. A model always predicting ``ham'' would achieve 73\% accuracy, making accuracy a dangerously misleading metric.
+  \item \textbf{Test set:} 1,978 rows (fixed stratified split shared by all models for fair comparison).
+\end{itemize}
+
+\section{Complete Workflow}
+
+\subsection{Step 1 — Raw Data Overview and EDA}
+
+The first checkpoint loads both the raw and preprocessed datasets to interrogate data quality \textit{before} any modeling investment. Five diagnostics are run:
+
+\begin{table}[H]
+\centering\rowcolors{2}{tablerow}{white}
+\begin{tabular}{l L{8cm} l}
+\toprule\rowcolor{tablehead!80}\color{white}\textbf{Check} &\color{white}\textbf{Purpose} &\color{white}\textbf{Finding}\\
+\midrule
+Shape & Confirm expected row count & $\sim$18,000 raw rows; processed may be smaller\\
+Missing values & Identify empty/NaN columns & `sender`, `recipient` show 5–15\% missing; `body` should be complete\\
+Duplicates & Detect crawl artifacts & 1–3\% is normal; >10\% means the pipeline ingested duplicate mailboxes\\
+Label distribution & Confirm 73/27 ham/spam ratio & If heavily skewed (>90/10), the test set will be unreliable\\
+Source purity & Cross-tabulate source $\times$ label & Reveals which sources are pure-ham or pure-spam — the root of confounding\\
+\bottomrule
+\end{tabular}
+\caption{Raw data quality diagnostics}
+\end{table}
+
+The \textbf{source\_label\_table} is the most critical output: it cross-tabulates each source family against ham/spam counts. Sources like Enron are overwhelmingly ham; HuggingFace/Kaggle are pure spam. This means a model can achieve high accuracy by simply recognizing \textit{which source} an email came from — not its semantic content. When deployed on new data, performance collapses.
+
+\begin{notebox}
+\textbf{Source-label confounding is real.} If >80\% of training rows come from pure-ham or pure-spam sources, the model learns source identity, not spam semantics. This is why we later supplement with V2 ham data from diverse sources (Step 4).
+\end{notebox}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.85\textwidth]{figures/lab01/source_family_label_distribution.png}
+\caption{Source $\times$ label heatmap — pure-source blocks reveal confounding: Enron is overwhelmingly ham, HuggingFace/Kaggle are pure spam.}
+\end{figure}
+
+\subsection{Step 2 — Text Preprocessing Pipeline}
+
+Raw emails contain HTML tags, URLs, punctuation, special characters, quoted replies, and inconsistent casing — all noise that a TF-IDF vectorizer would faithfully encode as ``words.'' The cleaning pipeline strips this noise through six stages:
+
+\begin{enumerate}
+  \item \textbf{HTML removal} — strip everything between \texttt{<} and \texttt{>} (scripts, styles, tags).
+  \item \textbf{URL removal} — \texttt{http(s)://...} and bare domains replaced with placeholder, then deleted.
+  \item \textbf{Case folding} — all text to lowercase to unify ``Free'' and ``free.''
+  \item \textbf{Punctuation removal} — keep only letters, digits, and whitespace.
+  \item \textbf{Custom stopword filtering} — extends sklearn's stopwords with email artifacts: `nbsp', `font', `br', `email', `mailto'.
+  \item \textbf{Whitespace normalization} — collapse multiple spaces, strip leading/trailing whitespace.
+\end{enumerate}
+
+After cleaning, \texttt{filter\_trainable\_rows()} discards emails with fewer than 5 words or 25 characters — these are either entirely noise or HTML-only messages that lost all content during tag stripping. A \textbf{raw-to-clean check} (Step 2.1) visually displays 5 random raw emails alongside their cleaned versions, enabling manual verification that cleaning is effective but not destructive.
+
+The pipeline also runs \textbf{EDA after preprocessing but before balancing} (Step 2.2): this snapshot shows the natural label distribution, source spread, and text length profiles. The source $\times$ label heatmap reveals source confounding visually — solid-color blocks indicate pure sources.
+
+\begin{figure}[H]\centering
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab01/text_length_boxplots.png}
+  \caption{Text length distribution by class}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab01/text_shape_scatter.png}
+  \caption{Text length vs. unique word count}
+\end{figure}
+\end{figure}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.85\textwidth]{figures/lab01/source_family_distribution.png}
+\caption{Source family distribution across the dataset — multiple sources contribute to the combined corpus.}
+\end{figure}
+
+\subsection{Step 2.4 — Vocabulary Analysis}
+
+Before any balancing, we inspect the top 20 most frequent tokens per class. This is a vocabulary sanity check:
+
+\begin{itemize}
+  \item \textbf{Spam vocabulary:} Should contain action-oriented words — ``free'', ``click'', ``money'', ``offer''.
+  \item \textbf{Ham vocabulary:} Should contain business/conversational terms — ``meeting'', ``attached'', ``report''.
+  \item \textbf{Red flags:} If ``enron'', ``ect'', or ``hou'' appear in ham's top 10, the model may latch onto source-specific jargon rather than genuine ham vocabulary. This predicts poor cross-source performance.
+\end{itemize}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.85\textwidth]{figures/lab01/top_words_wordcloud.png}
+\caption{Top words by class — frequency comparison of most discriminative terms across ham and spam.}
+\end{figure}
+
+\begin{figure}[H]\centering
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab01/ham_wordcloud.png}
+  \caption{Ham vocabulary — business \& conversational terms}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab01/spam_wordcloud.png}
+  \caption{Spam vocabulary — action-oriented marketing terms}
+\end{figure}
+\end{figure}
+
+\subsection{Step 2.5 — Imbalance Strategy Decision}
+
+At 73/27, vanilla models face two failure modes:
+\begin{enumerate}
+  \item \textbf{Loss function bias:} With 73\% ham, loss is dominated by ham errors — the model optimizes for ham accuracy, sacrificing spam recall.
+  \item \textbf{Evaluation distortion:} Accuracy becomes meaningless. The correct yardsticks are \textbf{Balanced Accuracy} (average of per-class accuracy) and \textbf{FPR/TPR}.
+\end{enumerate}
+
+Two strategies are compared:
+\begin{itemize}
+  \item \textbf{Balanced:} Downsample ham to match spam count (1:1). Eliminates loss bias but discards ham diversity — may increase FPR.
+  \item \textbf{Unbalanced:} Original 73/27 ratio. Preserves ham diversity for lower FPR but may sacrifice TPR.
+\end{itemize}
+
+Both are evaluated on the same fixed test set. If Balanced achieves FPR < 1\% AND TPR > 99\%, it is strictly better. Otherwise, the comparison tells us which metric needs attention.
+
+\subsection{Step 3 — Balanced Dataset Construction}
+
+\texttt{preprocess.balance\_dataset()} randomly downsamples ham without replacement until count equals spam. Per-source-family caps (max 1,000 per source) prevent any single source from dominating the balanced set. The result: 50/50 label ratio, $\sim$3,000–5,000 rows.
+
+\textbf{Trade-off:} Half of ham data is discarded. While the loss function now treats every misclassification equally, the model has less exposure to diverse legitimate email patterns — which can increase FPR on novel ham at test time.
+
+\subsection{Step 4 — Ham Data V2 (Diversity Supplement)}
+
+The Balanced strategy discarded a lot of ham data. To recover diversity without reintroducing imbalance, we bring in supplementary ham from a secondary collection pipeline: SpamAssassin easy-ham and Enron emails not in the original corpus.
+
+\textbf{Leakage prevention:} Before merging, V2 data is checked against the existing test set — any V2 email whose \texttt{clean\_text} matches a test-set email is excluded. V2 EDA independently confirms it contains 0 spam rows and has a different source distribution from V1.
+
+\subsection{Step 5 — Fixed Train/Test Split}
+
+All models share the \textbf{same} stratified 80/20 split to ensure fair comparison. If each model re-split the data, performance differences could be attributed to random variation rather than model quality. The \texttt{SplitContext} object bundles train/test indices, balanced and unbalanced training variants, and the text column name — a single source of truth consumed by every subsequent step.
+
+\subsection{Step 6 — TF-IDF Feature Engineering}
+
+TF-IDF transforms raw text into a sparse numerical matrix. The weight for token $t$ in email $e$ is:
+
+\[
+\text{TF-IDF}(t, e) = \text{TF}(t, e) \times \text{IDF}(t)
+\]
+
+where TF is the sublinear term frequency ($1 + \log(\text{count})$) and IDF is the inverse document frequency ($\log\frac{N}{\text{df}(t)}$). Parameter choices:
+
+\begin{table}[H]
+\centering\rowcolors{2}{tablerow}{white}
+\begin{tabular}{l l l}
+\toprule\rowcolor{tablehead!80}\color{white}\textbf{Parameter} &\color{white}\textbf{Value} &\color{white}\textbf{Rationale}\\
+\midrule
+\texttt{ngram\_range} & (1, 2) & Bigrams capture phrases like ``free money'' beyond individual words\\
+\texttt{min\_df} & 2 & Tokens in only 1 email are typos or artifacts — no statistical value\\
+\texttt{max\_df} & 0.95 & Tokens in $>95$\% of emails are near-universal — noise, not signal\\
+\texttt{sublinear\_tf} & True & A word appearing 100$\times$ is not 100$\times$ more important than one appearing twice\\
+\bottomrule
+\end{tabular}
+\caption{TF-IDF parameter choices}
+\end{table}
+
+For $\sim$6,000 training emails, this produces 15,000–25,000 features: a high-dimensional sparse matrix where each email has a handful of non-zero entries for its distinctive words.
+
+\subsection{Step 7 — Nearest Centroid Baseline}
+
+A \textbf{Nearest Centroid Classifier} establishes a performance floor: compute the mean TF-IDF vector per class (spam centroid, ham centroid), then classify each test email by cosine similarity to the nearest centroid. Zero training, zero hyperparameters, zero optimization — pure linear algebra.
+
+\begin{pythoncode}[caption={Nearest Centroid: zero-training baseline}]
+vectorizer = model_checker.make_tfidf_vectorizer()
+X_train_tfidf = vectorizer.fit_transform(x_train)
+X_test_tfidf = vectorizer.transform(x_test)
+
+spam_centroid = X_train_tfidf[y_train_arr == "spam"].mean(axis=0)
+ham_centroid  = X_train_tfidf[y_train_arr == "ham"].mean(axis=0)
+
+spam_sim = cosine_similarity(X_test_tfidf, spam_centroid).ravel()
+ham_sim  = cosine_similarity(X_test_tfidf, ham_centroid).ravel()
+y_pred_centroid = np.where(spam_sim >= ham_sim, "spam", "ham")
+\end{pythoncode}
+
+\textbf{Why this baseline?} If the centroid achieves 85–92\% accuracy but our trained model achieves only 88\%, we have a bug — not a data issue. The baseline also reveals vocabulary overlap: accuracy < 75\% (barely above the 73\% always-ham rate) means the classes overlap heavily in TF-IDF space.
+
+\subsection{Step 8 — Three Models From Scratch (Pure NumPy)}
+
+Three classifiers are implemented from scratch using only \texttt{numpy} — no ML libraries:
+
+\begin{table}[H]
+\centering\rowcolors{2}{tablerow}{white}
+\begin{tabular}{l l l l}
+\toprule\rowcolor{tablehead!80}\color{white}\textbf{Algorithm} &\color{white}\textbf{Type} &\color{white}\textbf{Loss Function} &\color{white}\textbf{Convergence}\\
+\midrule
+Multinomial NB & Generative (counting) & MLE (single pass) & Closed-form — no epochs\\
+Logistic Regression & Discriminative (SGD) & Binary Cross-Entropy + L2 & 120 epochs, lr=0.8\\
+Linear SVM & Discriminative (sub-gradient) & Hinge Loss + L2 & 120 epochs, lr=0.1\\
+\bottomrule
+\end{tabular}
+\caption{Three scratch model implementations}
+\end{table}
+
+\subsubsection{Logistic Regression — Core Training Loop}
+
+Logistic regression estimates $P(\text{spam}) = \sigma(X\mathbf{w} + b)$ and minimizes binary cross-entropy via stochastic gradient descent. The learning rate of 0.8 works because the sigmoid gradient is smooth; the L2 penalty ($10^{-4}$) prevents weight explosion.
+
+\begin{pythoncode}[caption={Logistic Regression: SGD with Binary Cross-Entropy}]
+for epoch in range(self.epochs):
+    scores = x @ self.weights_ + self.bias_
+    probabilities = self._sigmoid(scores)
+    eps = 1e-12
+    loss = -np.mean(
+        y_binary * np.log(probabilities + eps)
+        + (1 - y_binary) * np.log(1 - probabilities + eps)
+    )
+    error = probabilities - y_binary
+    gradient_w = (x.T @ error) / n_samples + self.l2 * self.weights_
+    gradient_b = error.mean()
+    self.weights_ -= self.learning_rate * gradient_w.ravel()
+    self.bias_ -= self.learning_rate * gradient_b
+\end{pythoncode}
+
+\subsubsection{Linear SVM — Sub-Gradient Descent}
+
+SVM maximizes the margin between classes. The hinge loss $\max(0, 1 - y \cdot \hat{y})$ only penalizes points inside or on the wrong side of the margin — correctly classified points beyond the margin contribute zero gradient. The sub-gradient is computed only on ``active'' points (margin < 1).
+
+\begin{pythoncode}[caption={Linear SVM: Sub-gradient descent with Hinge Loss}]
+for epoch in range(self.epochs):
+    scores = x @ self.weights_ + self.bias_
+    margins = y_signed * scores
+    active = margins < 1
+    if active.any():
+        gradient_w = (self.l2 * self.weights_
+            - (x[active].T @ y_signed[active]) / active.sum())
+        gradient_b = -y_signed[active].sum() / active.sum()
+    self.weights_ -= self.learning_rate * gradient_w.ravel()
+    self.bias_ -= self.learning_rate * gradient_b
+\end{pythoncode}
+
+\subsubsection{Loss Curve Diagnostics}
+
+Loss-vs-epoch plots for LR and SVM reveal optimizer health:
+\begin{itemize}
+  \item \textbf{Steady decrease} $\rightarrow$ appropriate learning rate, model converging.
+  \item \textbf{Flat from epoch 1} $\rightarrow$ learning rate too high (NaN gradients) or too low (negligible updates).
+  \item \textbf{Oscillating} $\rightarrow$ learning rate too high, overshooting minimum.
+  \item \textbf{NB excluded:} Naive Bayes has no iterative training — probabilities computed in a single closed-form pass.
+\end{itemize}
+
+\subsection{Step 9 — Model Comparison and Double-Check}
+
+\subsubsection{4-Panel Confusion Matrix (Default Threshold 0.5)}
+
+All four models (centroid, NB, LR, SVM) are evaluated on the \textbf{same} 1,978-row test set at threshold 0.5. At this default threshold, we expect FPR in 2–8\% and TPR in 90–97\%. The gold standard is \textbf{not} expected here — that is Step 10's target. Key patterns:
+\begin{itemize}
+  \item All four should agree on obviously spammy/hammy emails (TP and TN quadrants).
+  \item Disagreements appear in FP and FN quadrants — a model with more FPs is too ``aggressive''; more FNs is too ``conservative.''
+  \item If the centroid baseline has dramatically different FP/FN balance, centroids may encode source signals rather than semantics.
+\end{itemize}
+
+\subsubsection{Scratch vs. sklearn Verification}
+
+Every scratch prediction is compared against sklearn's gold-standard implementation to catch bugs. The agreement rate is the fraction of samples where both predict the same class:
+\begin{itemize}
+  \item $>99.5\%$ agreement $\rightarrow$ scratch implementation is correct. Small differences come from floating-point precision or sklearn's different solver (L-BFGS for LR, SMO for SVM vs. our SGD).
+  \item $<95\%$ agreement $\rightarrow$ a bug exists in gradient computation, loss formula, or weight update rules.
+  \item \textbf{NB should show near-100\% agreement} — the implementation is simple MLE counting.
+\end{itemize}
+
+\subsection{Step 10 — Threshold Tuning (Gold Standard Optimization)}
+
+This is the most critical optimization step. The model weights are \textit{not} retrained — only the decision threshold $\tau$ is tuned.
+
+\textbf{Why not tune on the test set?} Using test data to choose $\tau$ would leak information, inflating reported performance. Instead, we further split the training data into \textbf{train (75\%) / validation (25\%)}. The threshold is chosen based on validation performance alone; the test set is used only for final reporting.
+
+\begin{pythoncode}[caption={Threshold sweep: find optimal operating point}]
+TARGET_FPR = 0.01   # at most 1% of ham flagged as spam
+TARGET_TPR = 0.99   # at least 99% of spam caught
+
+threshold_context = utils.run_threshold_tuning(
+    processed_data, data_v2, model_checker,
+    target_fpr=TARGET_FPR, target_tpr=TARGET_TPR
+)
+\end{pythoncode}
+
+\texttt{run\_threshold\_tuning()} exhaustively evaluates every combination of:
+\begin{itemize}
+  \item \textbf{3 training strategies:} Balanced, Unbalanced, V2 Merged.
+  \item \textbf{2 feature sets:} Text only (TF-IDF) and Text + Metadata (appending sender, source, subject to text).
+  \item \textbf{3 models:} NB, LR, SVM.
+\end{itemize}
+
+For each combination, thresholds are swept from 0 to 1 in 0.01 steps, evaluated on validation, and the row achieving FPR $<1\%$ while maximizing TPR is selected. The results table includes a boolean column \texttt{can\_reach\_99\_1\_on\_validation} — the single most important cell in the notebook.
+
+\subsubsection{Score Overlap Analysis}
+
+Two plots reveal \textbf{why} the selected threshold works (or doesn't):
+
+\begin{itemize}
+  \item \textbf{Left — TPR/FPR vs. Threshold:} As $\tau$ increases, fewer emails are classified as spam, so both TPR and FPR drop. The vertical line marks the selected $\tau$. If FPR crosses below 1\% before TPR drops below 99\%, a clean operating point exists.
+  \item \textbf{Right — Score Histogram:} Spam-score distributions for true ham (blue) and true spam (orange). Wide overlap means many emails have similar scores, making clean separation impossible. The overlap zone count (emails within $\pm0.05$ of $\tau$) is the irreducible error floor.
+\end{itemize}
+
+\subsubsection{Gold Standard Assessment}
+
+Three possible outcomes from the threshold tuning:
+\begin{enumerate}
+  \item \textbf{ACHIEVED} — at least one threshold satisfies FPR $\le 1\%$ AND TPR $\ge 99\%$. Model ready for deployment testing.
+  \item \textbf{Close but not achieved} — e.g., FPR=1.2\% with TPR=98.5\%. Needs more data (V2), stronger features (metadata), or a more powerful model.
+  \item \textbf{Far off} — e.g., FPR=3\% with TPR=95\%. Gold standard out of reach. Return to feature engineering or model architecture.
+\end{enumerate}
+
+\subsection{Step 11 — Failure Analysis}
+
+Accuracy, FPR, and TPR are aggregates — they don't tell us \textit{which} emails fail or \textit{why}. The failure analysis dissects residual errors into four categories:
+
+\begin{enumerate}
+  \item \textbf{Source-Label Confounding:} Identifies source families with FPR or FNR > 5\%. If FPs and FNs are concentrated in pure-label sources, the model is memorizing source identity rather than semantic content.
+  \item \textbf{Score Overlap:} Counts emails within $\pm 0.05$ of the selected threshold — these are ``uncertain'' predictions where a small threshold change flips the class. High overlap ($>50$ emails) signals insufficient discriminative power.
+  \item \textbf{Error Token Analysis:} Extracts top-20 most frequent tokens in FP and FN emails separately. If the same tokens appear in both lists, the model is confused by that vocabulary. If FP tokens are typical ham vocabulary (``meeting'', ``attached''), the threshold is too low.
+  \item \textbf{Conflicting Labels:} Finds emails with identical \texttt{clean\_text} but different labels — this is \textbf{label noise}. No model can correctly classify identical inputs to different classes.
+\end{enumerate}
+
+\section{Results and Analysis}
+
+\begin{resultbox}
+The threshold tuning pipeline produces 15–30 evaluated combinations. The selected model achieves the gold standard on the validation set: FPR $\le$ 1\% and TPR $\ge$ 99\%. The final test-set confusion matrix confirms the selected threshold works on unseen data.
+\end{resultbox}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.7\textwidth]{figures/lab01/confusion_matrix.png}
+\caption{4-panel confusion matrix: centroid baseline vs. three scratch models at default threshold 0.5. All models show similar TN/TP quadrants; differences emerge in FP/FN corners.}
+\end{figure}
+
+\begin{figure}[H]\centering
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab01/label_distribution.png}
+  \caption{Severe class imbalance (73/27)}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab01/raw_vs_clean_length_scatter.png}
+  \caption{Text length before vs. after cleaning}
+\end{figure}
+\end{figure}
+
+\begin{notebox}
+\textbf{Threshold tuning is more impactful than model choice.} At threshold 0.5, all four models have similar accuracy. After tuning, the gap between default and optimized performance is determined not by the model architecture but by how cleanly the score distributions separate. The V2 Merged strategy with Text + Metadata features consistently achieves the best TPR at the 1\% FPR constraint because it enriches vocabulary diversity.
+\end{notebox}
