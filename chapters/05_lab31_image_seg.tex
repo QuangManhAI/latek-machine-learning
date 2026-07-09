@@ -1,0 +1,309 @@
+% ═══════════════════════════════════════════════════════════════
+\chapter{Lab 3.1 — K-Means Image Segmentation}
+\label{ch:lab31}
+% ═══════════════════════════════════════════════════════════════
+
+\section{Problem Definition}
+
+\begin{problembox}
+Apply K-Means clustering to \textbf{pixel color quantization}: reduce an RGB photograph from hundreds of thousands of unique colors to \textbf{K representative centroids}. The same algorithm underlying JPEG compression, artistic palette extraction, and automated object isolation. Evaluate K $\in \{2, 3, 5, 8\}$; select the K that best balances visual fidelity and compression.
+\end{problembox}
+
+\subsection{Dataset}
+\begin{itemize}
+  \item \textbf{Input:} Three RGB photographs — primary image resized to $262\times350 = 91{,}700$ pixels. If absent, a deterministic landscape is synthesized.
+  \item \textbf{Feature space:} Each pixel is a point in $\mathbb{R}^3$ with (R, G, B) channels $\in [0, 255]$.
+\end{itemize}
+
+\section{Complete Workflow}
+
+\subsection{Step 0 — Setup and Reproducibility}
+The random seed (42) guarantees identical centroid initialization across runs. Five custom modules — \texttt{utils}, \texttt{image\_io}, \texttt{kmeans}, \texttt{visualization}, \texttt{run\_pipeline} — are imported from \texttt{src/}. Output directories are created: \texttt{data/raw/} (source images), \texttt{data/processed/} (resized and segmented artifacts), \texttt{reports/figures/} (all plots).
+
+\subsection{Step 1 — Load the Image}
+Three image filenames are iterated. For each image, a summary prints: shape, dtype, pixel intensity range, and \textbf{unique RGB color count} — the baseline for measuring compression ratio. A healthy 350px image yields 3,000–30,000 unique colors. The displayed image confirms the file loaded correctly.
+
+\begin{figure}[H]\centering
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/original_picture.png}
+  \caption{Original Picture 1}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/original_picture_2.png}
+  \caption{Original Picture 2}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/original_picture_3.png}
+  \caption{Original Picture 3}
+\end{figure}
+\end{figure}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.7\textwidth]{figures/lab31/original_image.png}
+\caption{Primary image loaded for K-Means pixel clustering.}
+\end{figure}
+
+\subsection{Step 2 — Preprocess the Image}
+\begin{enumerate}
+  \item \textbf{Resize:} Max dimension capped at 350px — an uncompressed 4000$\times$3000 image (12M points) is computationally prohibitive. 350px bounds pixels to $\sim$122,500, large enough to preserve spatial structure but fast enough for clustering in seconds.
+  \item \textbf{Flatten:} \texttt{flatten\_pixels()} reshapes $(H, W, C) \rightarrow (H\!\times\!W, C)$ — the canonical input for vectorized distance computations.
+  \item \textbf{Color space preview:} The image is rendered in RGB, HSV, and LAB for visual comparison. \textbf{RGB} clusters raw channel co-occurrence; \textbf{HSV} separates chromatic content (hue) from intensity (value); \textbf{LAB} approximates human perceptual distance — Euclidean proximity in LAB correlates more closely with visible color difference.
+\end{enumerate}
+
+\begin{figure}[H]\centering
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/color_space_preview_picture.png}
+  \caption{Color spaces: Picture 1}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/color_space_preview_picture_2.png}
+  \caption{Color spaces: Picture 2}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/color_space_preview_picture_3.png}
+  \caption{Color spaces: Picture 3}
+\end{figure}
+\end{figure}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.78\textwidth]{figures/lab31/color_space_preview.png}
+\caption{Primary image color space comparison: RGB vs. HSV vs. LAB rendering. LAB provides perceptually uniform distances.}
+\end{figure}
+
+\subsection{Step 3 — Inspect the K-Means Implementation}
+\texttt{KMeansFromScratch} is instantiated with K=3 and printed. The implementation uses zero scikit-learn calls — every operation is NumPy:
+\begin{itemize}
+  \item \textbf{Initialization:} Selects K random pixels as starting centroids.
+  \item \textbf{Assignment:} Squared Euclidean distance from every pixel to every centroid; assign to nearest.
+  \item \textbf{Update:} Recompute centroids as the channel-wise mean of all assigned pixels.
+  \item \textbf{Convergence:} Terminate when mean centroid displacement $<$ \texttt{tol}. Empty clusters are re-seeded from the farthest point.
+\end{itemize}
+
+Centroid shift is tracked as the \textbf{mean} Euclidean displacement — more stable than maximum displacement when one cluster converges slowly while others have settled.
+
+\subsection{Step 4 — K-Means Grid Experiment}
+The core experiment: for each image and K, fit the custom model, reconstruct the segmented image, and collect metrics:
+
+\begin{table}[H]
+\centering\rowcolors{2}{tablerow}{white}
+\begin{tabular}{c c c c}
+\toprule\rowcolor{tablehead!80}\color{white}\textbf{K} &\color{white}\textbf{Visual Result} &\color{white}\textbf{Use Case} &\color{white}\textbf{Expected Iters}\\
+\midrule
+2 & Harsh two-tone posterization & Silhouette extraction, binary masks & 5–10\\
+3 & Sky/ground/object separation & Simple landscape segmentation & 10–20\\
+5 & Texture preserved, edges sharp & Balanced compression & 20–30\\
+8 & Near-photographic fidelity & Near-lossless color reduction & 30–50\\
+\bottomrule
+\end{tabular}
+\caption{Expected behavior per K value}
+\end{table}
+
+\subsubsection{Metrics Collected Per Run}
+\begin{itemize}
+  \item \textbf{Inertia:} Within-cluster sum of squared distances. Always decreases with K — never use alone.
+  \item \textbf{Iterations to convergence:} If $\text{n\_iter\_} = \text{max\_iter}$, the model did not converge.
+  \item \textbf{Silhouette:} Computed on a 2,000-pixel random sample (full $O(N^2)$ pairwise distance on 91k pixels would require $>50$ GB RAM). Values $>0.5$ = strong structure; $<0.2$ = overlapping clusters.
+  \item \textbf{Compression ratio:} $\text{unique\_colors\_before} / \text{unique\_colors\_after}$. A ratio of 1000:1 means thousands of colors compressed to K.
+\end{itemize}
+
+\subsection{Step 4.1 — Elbow Method}
+Inertia is plotted against K. The ``elbow'' — where marginal gain flattens — identifies diminishing returns. For landscape images, the bend is at K=3–5. When no obvious bend exists (smooth gradient images), silhouette analysis serves as the tie-breaker.
+
+\subsection{Step 4.2 — Silhouette Analysis}
+Per-pixel silhouette: $s(i) = (b(i) - a(i)) / \max(a(i), b(i))$, where $a(i)$ is mean intra-cluster distance and $b(i)$ is mean distance to the nearest other cluster. The red dashed line marks the average. Uniformly thick bars at high scores indicate compact, well-separated clusters; thin bars near zero signal overlap.
+
+\begin{figure}[H]\centering
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/silhouette_plot_picture_k5.png}
+  \caption{Silhouette: Picture 1 at K=5}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/silhouette_plot_k5.png}
+  \caption{Silhouette: K=5 detail}
+\end{figure}\
+\vspace{4pt}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/silhouette_plot_picture_2_k3.png}
+  \caption{Silhouette: Picture 2 at K=3}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/silhouette_plot_picture_3_k5.png}
+  \caption{Silhouette: Picture 3 at K=5}
+\end{figure}
+\end{figure}
+
+\subsection{Step 5 — Image Reconstruction}
+Each pixel's cluster label (integer 0 to K$-$1) indexes into the \texttt{cluster\_centers\_} table. Centroid coordinates are clipped to [0, 255] (preventing wraparound from float means outside uint8 range) and rounded to uint8 (avoiding systematic truncation bias). Unique-color count after reconstruction should equal K; fewer means two centroids converged to the same color (degenerate cluster).
+
+\begin{figure}[H]\centering
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/original_vs_segmented_picture.png}
+  \caption{Original vs. Segmented: Pic 1}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/original_vs_segmented_picture_2.png}
+  \caption{Original vs. Segmented: Pic 2}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/original_vs_segmented_picture_3.png}
+  \caption{Original vs. Segmented: Pic 3}
+\end{figure}
+\end{figure}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.78\textwidth]{figures/lab31/original_vs_segmented.png}
+\caption{Primary image: original vs. K=5 segmented side-by-side comparison showing color quantization result.}
+\end{figure}
+
+\subsection{Step 6 — Visualize Results}
+Three diagnostic views:
+\begin{enumerate}
+  \item \textbf{K-comparison grid:} Original alongside K=2,3,5,8 segmented variants — visual trade-off assessment.
+  \item \textbf{Convergence plot:} Inertia per iteration, all K on one plot. Monotonic descent flattening within 10–20 iterations = healthy. Spikes = empty cluster re-initialization.
+  \item \textbf{Centroid color palette:} Each cluster's centroid rendered as a swatch. Muddy swatches = centroid averaging many dissimilar colors; visually identical swatches = degenerate clusters.
+\end{enumerate}
+
+\subsection{Step 7 — Color Space Comparison}
+K-Means is fit in RGB, HSV, and LAB at each image's optimal K. Inertia values are \textbf{not directly comparable} across spaces (different coordinate scales) — compare convergence stability and visual quality instead. LAB often groups shadowed pixels with their lit counterparts of the same material (e.g., a shadowed green leaf stays in ``green'' rather than being swept into ``dark'').
+
+\subsection{Step 8 — Sklearn Sanity Check}
+\texttt{sklearn.cluster.KMeans} (with \texttt{n\_init=10}) is run at the optimal K. Manual vs. sklearn inertia should agree within $\pm 5\%$. Differences arise from random-pixel vs. k-means++ initialization, floating-point accumulation order, and empty-cluster handling strategies. Consistently higher manual inertia ($>10\%$) suggests a bug; lower inertia indicates a fortunate initialization.
+
+\subsection{Step 9 — Output Verification}
+Every expected artifact is enumerated and checked for existence — resized images, segmented images at all K, comparison grids, convergence/silhouette/elbow plots, color palettes, and the metrics CSV. Output: \texttt{OK} or \texttt{MISSING} per path.
+
+\section{Results and Analysis}
+
+\begin{resultbox}
+\textbf{Selected K = 5} — best balance of visual simplicity and scene detail.\\
+Silhouette: 0.5180 (well-separated color regions). Convergence: 30 iterations.
+\end{resultbox}
+
+\begin{table}[H]
+\centering\rowcolors{2}{tablerow}{white}
+\begin{tabular}{c c c c}
+\toprule\rowcolor{tablehead!80}\color{white}\textbf{K} &\color{white}\textbf{Inertia} &\color{white}\textbf{Silhouette} &\color{white}\textbf{Iters}\\
+\midrule
+2 & 261,719,604 & 0.6894 & 6\\
+3 & 126,918,501 & 0.6210 & 16\\
+\rowcolor{greenaccent!15}\textbf{5} & \textbf{69,047,213} & \textbf{0.5180} & \textbf{30}\\
+8 & 41,557,214 & 0.4919 & 49\\
+\bottomrule
+\end{tabular}
+\caption{Segmentation metrics across K values}
+\end{table}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.9\textwidth]{figures/lab31/k_comparison_grid_picture.png}
+\caption{K-comparison grid: original image alongside K=2,3,5,8 segmentations. K=2 produces stark posterization; K=8 preserves near-original detail.}
+\end{figure}
+
+\begin{figure}[H]\centering
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/elbow_plot_picture.png}
+  \caption{Elbow: inertia vs. K — bend at K=3–5}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/convergence_plot_picture.png}
+  \caption{Convergence: inertia decreases monotonically}
+\end{figure}
+\end{figure}
+
+\begin{figure}[H]\centering
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/elbow_plot_picture_2.png}
+  \caption{Elbow curve: Picture 2}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/elbow_plot_picture_3.png}
+  \caption{Elbow curve: Picture 3}
+\end{figure}\
+\vspace{4pt}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/elbow_plot.png}
+  \caption{Elbow curve: all pictures}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/k_comparison_grid.png}
+  \caption{K-comparison grid}
+\end{figure}
+\end{figure}
+
+\begin{figure}[H]\centering
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/k_comparison_grid_picture_2.png}
+  \caption{K-comparison: Picture 2}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/k_comparison_grid_picture_3.png}
+  \caption{K-comparison: Picture 3}
+\end{figure}
+\end{figure}
+
+\begin{figure}[H]\centering
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/convergence_plot_picture_2.png}
+  \caption{Convergence: Picture 2}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/convergence_plot_picture_3.png}
+  \caption{Convergence: Picture 3}
+\end{figure}\
+\vspace{4pt}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/convergence_plot.png}
+  \caption{Convergence: all pictures}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/color_palette_picture_k5.png}
+  \caption{Color palette at K=5}
+\end{figure}
+\end{figure}
+
+\begin{figure}[H]\centering
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/color_palette_picture_2_k3.png}
+  \caption{Palette: Picture 2, K=3}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/color_palette_picture_3_k5.png}
+  \caption{Palette: Picture 3, K=5}
+\end{figure}\
+\vspace{4pt}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab31/color_palette_k5.png}
+  \caption{Color palette K=5 detail}
+\end{figure}
+\end{figure}
+
+\begin{notebox}
+\textbf{Always use silhouette alongside elbow for choosing K.} Inertia is guaranteed to decrease with more clusters — it can never penalize over-segmentation. Silhouette can penalize fragmented clusters by detecting overlap. The convergence plot shows monotonic descent for all K, confirming healthy optimization. K=5 is selected because the elbow flattens after this point and silhouette remains strong (0.52) without excessive iterations.
+\end{notebox}

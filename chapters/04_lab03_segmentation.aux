@@ -1,0 +1,86 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Lab 03 — Customer Segmentation}{47}{chapter.4}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch:lab03}{{4}{47}{Lab 03 — Customer Segmentation}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Problem Definition}{47}{section.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Dataset}{47}{subsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Complete Workflow}{47}{section.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Step 0 — Reproducibility Setup}{47}{subsection.4.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Step 2 — Raw Data Overview}{47}{subsection.4.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Step 3 — Data Quality Checks}{48}{subsection.4.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Missing values per column}}{49}{figure.caption.100}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Boxplots: original scale outliers}}{49}{figure.caption.101}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Duplicate row summary — exact row matches and their distribution across columns.}}{50}{figure.caption.102}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Step 4 — EDA Before Preprocessing}{50}{subsection.4.2.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces EDA before preprocessing — 6 diagnostic views}}{50}{table.caption.103}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Income vs. Spending Score}}{51}{figure.caption.105}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Pairwise scatter matrix}}{51}{figure.caption.106}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Correlation heatmap — no $|r| > 0.7$ redundancies, confirming all features contribute independent information.}}{52}{figure.caption.107}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Age vs. Spending Score}}{53}{figure.caption.109}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Age vs. Annual Income}}{53}{figure.caption.110}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces Age distribution}}{54}{figure.caption.112}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces Annual income distribution}}{54}{figure.caption.113}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces Spending score distribution}}{54}{figure.caption.114}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces Gender distribution — note any imbalance that may affect segment interpretation.}}{55}{figure.caption.115}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.5}Step 5 — Preprocessing and Feature Scaling}{55}{subsection.4.2.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Scaler comparison for clustering}}{55}{table.caption.116}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.6}Step 6 — Clustering Experiments}{55}{subsection.4.2.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces Clustering algorithms evaluated}}{56}{table.caption.117}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces Four complementary clustering metrics}}{56}{table.caption.118}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces Elbow curve — bend at K=3–5}}{57}{figure.caption.120}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces Silhouette vs. K — peak at 5 clusters}}{57}{figure.caption.121}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{K-Means From Scratch — Core Implementation}{58}{figure.caption.121}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.1}{\ignorespaces K-Means: k-means++ init + assignment-update loop}}{58}{lstlisting.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.7}Step 7 — Model Selection}{58}{subsection.4.2.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces The most important clustering result: K=5 clusters on Income vs. Spending Score with centroid markers — 5 distinct, well-separated customer segments.}}{59}{figure.caption.122}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Centroid Trajectory Visualization}{59}{figure.caption.122}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.16}{\ignorespaces Centroid trajectory: iteration-by-iteration movement from k-means++ initialization to convergence. Smooth paths within 8–12 iterations confirm stable optimization.}}{60}{figure.caption.123}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.8}Step 8 — Cluster Visualization}{60}{subsection.4.2.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.17}{\ignorespaces PCA 2D projection: first two principal components with cluster assignments — confirms cluster separation in reduced dimensionality.}}{61}{figure.caption.124}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.18}{\ignorespaces Age vs. Spending Score}}{62}{figure.caption.126}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.19}{\ignorespaces Age vs. Annual Income}}{62}{figure.caption.127}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.20}{\ignorespaces GMM on Income vs. Spending}}{63}{figure.caption.129}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.21}{\ignorespaces GMM covariance contours}}{63}{figure.caption.130}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.9}Step 9 — Segment Profiling}{64}{subsection.4.2.9}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.5}{\ignorespaces Five segments with recommended business actions}}{64}{table.caption.131}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.10}Step 11 — Deployment Check}{64}{subsection.4.2.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Results and Analysis}{64}{section.4.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.22}{\ignorespaces GMM with 4 components and covariance contours on Income vs. Spending scatter. Ellipses at 1$\sigma $, 2$\sigma $, and 3$\sigma $ reveal cluster shape and orientation.}}{65}{figure.caption.132}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.23}{\ignorespaces Cluster centers in original feature scale — inverse-transformed from StandardScaler for business-interpretable segment profiles.}}{65}{figure.caption.133}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.24}{\ignorespaces Agglomerative clustering dendrogram — hierarchical view of cluster merging distances on a sample subset.}}{66}{figure.caption.134}\protected@file@percent }
+\@setckpt{chapters/04_lab03_segmentation}{
+\setcounter{page}{67}
+\setcounter{equation}{0}
+\setcounter{enumi}{5}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{4}
+\setcounter{section}{3}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{24}
+\setcounter{table}{5}
+\setcounter{float@type}{16}
+\setcounter{section@level}{0}
+\setcounter{Item}{22}
+\setcounter{Hfootnote}{0}
+\setcounter{bookmark@seq@number}{50}
+\setcounter{lstnumber}{23}
+\setcounter{tcbbreakpart}{1}
+\setcounter{tcblayer}{0}
+\setcounter{tcolorbox@number}{10}
+\setcounter{parentequation}{0}
+\setcounter{caption@flags}{2}
+\setcounter{continuedfloat}{0}
+\setcounter{FancyVerbLine}{0}
+\setcounter{lastpagecount}{0}
+\setcounter{lstlisting}{1}
+}

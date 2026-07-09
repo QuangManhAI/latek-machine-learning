@@ -1,0 +1,269 @@
+% ═══════════════════════════════════════════════════════════════
+\chapter{Lab 04 — California Housing Price Prediction}
+\label{ch:lab04}
+% ═══════════════════════════════════════════════════════════════
+
+\section{Problem Definition}
+
+\begin{problembox}
+Predict \textbf{median house value} (USD) from census-block features using three regression models built \textit{from scratch} in pure NumPy. The dataset is the classic California Housing dataset (1990 census). Success criteria: \textbf{RMSE $< \$75{,}000$}, \textbf{R² $> 0.60$}, \textbf{MAPE $< 30\%$}. Every component — gradient descent, backpropagation, histogram-based tree splitting — is implemented from scratch without high-level ML libraries.
+\end{problembox}
+
+\subsection{Dataset}
+\begin{itemize}
+  \item \textbf{Source:} California Housing (1990 census), 20,640 rows, 10 columns.
+  \item \textbf{Features:} 8 numeric (longitude, latitude, housing\_median\_age, total\_rooms, total\_bedrooms, population, households, median\_income) + 1 categorical (ocean\_proximity, 5 levels).
+  \item \textbf{Target:} \texttt{median\_house\_value}, capped at \$500,006.
+  \item \textbf{Split:} Stratified 80/20 on binned \texttt{median\_income} — 16,512 train, 4,128 test.
+\end{itemize}
+
+\section{Complete Workflow}
+
+\subsection{Step 1 — Setup and Load Data}
+Key libraries imported, project root resolved, \texttt{src/lab04} added to \texttt{sys.path} for custom module access. Raw CSV loaded: 20,640 rows, 10 columns. \texttt{d.head()}, \texttt{.info()}, \texttt{.describe()} provide the first look.
+
+\subsection{Step 2 — Exploratory Data Analysis (8 Sub-steps)}
+
+\subsubsection{2.1 — Descriptive Statistics}
+\texttt{df.describe()} confirms: \texttt{median\_house\_value} capped at \$500,006; \texttt{total\_rooms}, \texttt{total\_bedrooms}, \texttt{population} are right-skewed (large 75th-percentile–max gaps). \texttt{ocean\_proximity} value counts show 5 categories — if any have $<30$ samples, merge with neighbors.
+
+\subsubsection{2.2 — Missing Values}
+Only \texttt{total\_bedrooms} has missing data ($\sim$1.5\%). Median imputation is safe for any column with $<10\%$ missing. \texttt{eda.plot\_missing\_values()} renders a bar chart.
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.72\textwidth]{figures/lab04/eda_01_missing_values.png}
+\caption{Missing values bar chart — only \texttt{total\_bedrooms} shows gaps ($\sim$1.5\%), all other columns are complete.}
+\end{figure}
+
+\subsubsection{2.3 — Feature Distributions}
+Histograms for all numeric features. Right-skewed count features (rooms, population) are candidates for $\log_{1p}$ transform. Target histogram shows a plateau/spike at \$500,006 — the artificial cap. If $>5\%$ of values hit the cap, consider treating this as censored regression.
+
+\begin{figure}[H]\centering
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab04/eda_02_feature_distributions.png}
+  \caption{Feature distributions}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab04/eda_03_target_distribution.png}
+  \caption{Target distribution}
+\end{figure}
+\end{figure}
+
+\subsubsection{2.4 — Geographic Distribution}
+\texttt{eda.plot\_geographic\_distribution()} renders longitude vs. latitude with color-coded prices. Coastal areas (Los Angeles, San Francisco Bay) command higher prices; inland blocks form a distinct low-price cluster. \textbf{Location is a strong, non-linear predictor} — linear models will struggle with spatial patterns.
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.78\textwidth]{figures/lab04/eda_05_geo_price_population.png}
+\caption{Geographic distribution: price and population density overlay across California census blocks. Coastal regions show higher prices and population density.}
+\end{figure}
+
+\subsubsection{2.5 — Correlation Matrix}
+\texttt{eda.plot\_correlation\_matrix()} produces a heatmap + sorted correlations with target:
+
+\begin{table}[H]
+\centering\rowcolors{2}{tablerow}{white}
+\begin{tabular}{l c l}
+\toprule\rowcolor{tablehead!80}\color{white}\textbf{Feature} &\color{white}\textbf{$r$ with Target} &\color{white}\textbf{Implication}\\
+\midrule
+\texttt{median\_income} & $\sim$0.69 & Dominates linear signal — essential feature\\
+\texttt{total\_rooms} / \texttt{households} & $\sim$0.15–0.20 & Weak positive — may benefit tree/MLP\\
+\texttt{latitude} & $\sim -0.14$ & Southern blocks cheaper\\
+\texttt{housing\_median\_age} & $\sim$0.11 & Slight positive\\
+\bottomrule
+\end{tabular}
+\caption{Correlations with \texttt{median\_house\_value}}
+\end{table}
+
+No single feature besides \texttt{median\_income} has $|r| > 0.3$, \textbf{motivating non-linear models}.
+
+\begin{figure}[H]\centering
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab04/eda_06_correlation_heatmap.png}
+  \caption{Correlation heatmap}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab04/eda_07_target_correlation_bar.png}
+  \caption{Target correlation bar chart}
+\end{figure}
+\end{figure}
+
+\subsubsection{2.6 — Scatter Matrix and Income vs. Price}
+\texttt{eda.plot\_scatter\_matrix()} shows pairwise scatters for top features — check for redundant pairs (e.g., \texttt{total\_rooms} vs. \texttt{households}). \texttt{eda.plot\_income\_vs\_price()} drills into the dominant predictor: a clear positive trend with a horizontal ceiling at \$500,006 and \textbf{heteroscedasticity} (variance grows with income).
+
+\begin{figure}[H]\centering
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab04/eda_08_scatter_matrix.png}
+  \caption{Scatter matrix}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab04/eda_09_income_vs_price.png}
+  \caption{Income vs. price}
+\end{figure}
+\end{figure}
+
+\subsubsection{2.7 — Ocean Proximity Analysis}
+Boxplots compare price distributions across 5 categories. \texttt{<1H OCEAN} and \texttt{NEAR BAY} command highest median prices; \texttt{INLAND} is the cheapest by a wide margin. If \texttt{INLAND} vs. non-INLAND captures most variance, consider an \texttt{is\_inland} binary feature.
+
+\begin{figure}[H]\centering
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab04/eda_10_ocean_proximity_bar.png}
+  \caption{Ocean proximity bar chart}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/lab04/eda_11_ocean_proximity_boxplot.png}
+  \caption{Ocean proximity boxplot}
+\end{figure}
+\end{figure}
+
+\subsubsection{2.8 — Feature Engineering Experiments}
+Three ratio features are tested for correlation with the target:
+\begin{itemize}
+  \item \texttt{rooms\_per\_household} — larger homes $\rightarrow$ higher value (moderate positive).
+  \item \texttt{population\_per\_household} — denser households $\rightarrow$ lower value (weak negative).
+  \item \texttt{bedrooms\_per\_room} — overcrowding $\rightarrow$ lower value (moderate negative).
+\end{itemize}
+At least one shows $|r| > 0.2$, justifying inclusion in the final pipeline.
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.78\textwidth]{figures/lab04/eda_12_correlation_engineered.png}
+\caption{Engineered feature correlations — at least one ratio feature shows $|r| > 0.2$ with target, confirming added signal.}
+\end{figure}
+
+\subsection{Step 3 — Data Preprocessing (Full Pipeline)}
+
+\begin{enumerate}
+  \item \textbf{Stratified split:} \texttt{StratifiedShuffleSplit} on binned \texttt{median\_income} (5 bins) with 80/20 ratio. Prevents training or test set from being disproportionately wealthy/poor. \texttt{income\_cat} is dropped after splitting.
+  \item \textbf{Missing value imputation:} \texttt{SimpleImputer(strategy="median")} fills \texttt{total\_bedrooms} gaps. Median is robust to outliers; imputation statistics are stored in \texttt{imputer.statistics\_}.
+  \item \textbf{One-hot encoding:} \texttt{OneHotEncoder(sparse\_output=False)} converts 5 \texttt{ocean\_proximity} categories to 5 binary columns.
+  \item \textbf{Custom feature engineering:} \texttt{CombinedAttributesAdder} (sklearn-compatible transformer) adds the 3 ratio features. Placing this inside the Pipeline ensures consistent application to train and test data.
+  \item \textbf{Pipeline assembly:} A \texttt{ColumnTransformer} combines the numeric pipeline (\texttt{SimpleImputer $\rightarrow$ CombinedAttributesAdder $\rightarrow$ StandardScaler}) and categorical pipeline (\texttt{OneHotEncoder}) into one callable object.
+  \item \textbf{Standardization:} \texttt{StandardScaler} centers all features to $\mu=0, \sigma=1$. Critical for gradient-based models (Linear, MLP); harmless for tree models (HGB).
+  \item \textbf{Target standardization:} A separate \texttt{StandardScaler} transforms \texttt{median\_house\_value} to $\mu=0, \sigma=1$ for stable training; inverse-transformed for metric reporting.
+\end{enumerate}
+
+\textbf{Output dimensions:} $X_{\text{train}}$: $(16512, 16)$, $X_{\text{test}}$: $(4128, 16)$. The 16 columns = 9 original numeric + 3 engineered ratios + 4 one-hot (5 categories minus the dropped reference).
+
+\subsection{Step 3.8 — Log Transform for Skewed Features}
+Four count features (\texttt{total\_rooms}, \texttt{total\_bedrooms}, \texttt{population}, \texttt{households}) are $\log_{1p}$-transformed at the raw data level, before entering the preprocessing pipeline. \texttt{log1p} handles zero values gracefully.
+
+\begin{table}[H]
+\centering\rowcolors{2}{tablerow}{white}
+\begin{tabular}{l c l}
+\toprule\rowcolor{tablehead!80}\color{white}\textbf{Model} &\color{white}\textbf{Benefit?} &\color{white}\textbf{Reason}\\
+\midrule
+Linear Regression & Yes & Reduces leverage of extreme count values on OLS\\
+MLP & Slightly & Eases gradient flow for rare high-count blocks\\
+HGB & Neutral & Tree splits are invariant to monotonic transforms\\
+\bottomrule
+\end{tabular}
+\caption{Log-transform impact per model family}
+\end{table}
+
+\subsection{Step 4 — Model Training and Evaluation}
+
+\subsubsection{Linear Regression}
+Gradient descent with lr=0.05 for 200 epochs. With only 16 standardized features, convergence is fast — linear models serve as the interpretable baseline. R² typically in 0.55–0.65 range.
+
+\subsubsection{Multi-Layer Perceptron}
+3-layer architecture: input $\rightarrow$ (64, ReLU) $\rightarrow$ (32, ReLU) $\rightarrow$ (1, linear). He initialization ($\sqrt{2/\text{fan\_in}}$) prevents vanishing gradients. Full-batch gradient descent for 500 epochs, lr=0.1:
+
+\begin{pythoncode}[caption={MLP: 3-layer forward pass, MSE loss, backpropagation}]
+for epoch in range(self.epochs):
+    # ── Forward ──
+    z1 = self.z(X, self.b1, self.W1)     # 64 ReLU
+    a1 = self.relu(z1)
+    z2 = self.z(a1, self.b2, self.W2)    # 32 ReLU
+    a2 = self.relu(z2)
+    z3 = self.z(a2, self.b3, self.W3)    # 1 Linear
+    loss = self.MSE(z3, y)
+    
+    # ── Backward ──
+    d_loss_y_pred = 2 * (z3 - y) / y.size
+    d_loss_W3 = np.dot(a2.T, d_loss_y_pred)
+    d_loss_a2 = np.dot(d_loss_y_pred, self.W3.T)
+    d_loss_z2 = d_loss_a2 * (z2 > 0)     # ReLU gradient
+    d_loss_W2 = np.dot(a1.T, d_loss_z2)
+    d_loss_a1 = np.dot(d_loss_z2, self.W2.T)
+    d_loss_z1 = d_loss_a1 * (z1 > 0)     # ReLU gradient
+    d_loss_W1 = np.dot(X.T, d_loss_z1)
+    
+    # ── Gradient Descent ──
+    self.W3 -= self.lr * d_loss_W3;  self.W2 -= self.lr * d_loss_W2
+    self.W1 -= self.lr * d_loss_W1
+    self.b3 -= self.lr * d_loss_b3;  self.b2 -= self.lr * d_loss_b2
+    self.b1 -= self.lr * d_loss_b1
+\end{pythoncode}
+
+\subsubsection{HistGradientBoosting}
+Ensemble of 50 shallow trees (max\_depth=4, min\_samples\_leaf=20) with learning\_rate=0.1. Continuous features are binned into $\le 256$ bins using percentile-based thresholds. Each tree fits on the negative gradient of MSE loss, and predictions accumulate additively:
+
+\begin{pythoncode}[caption={HGB: binning + sequential tree fitting}]
+# Pre-compute bin thresholds
+for j in range(n_features):
+    thresholds = np.percentile(X[:, j],
+        np.linspace(0, 100, max_bins + 1)[1:-1])
+    self.bin_thresholds.append(np.unique(thresholds))
+
+# Sequential residual fitting
+self.base_pred = np.mean(y)
+y_pred = np.full(n_samples, self.base_pred)
+for m in range(self.n_estimators):
+    residuals = y - y_pred
+    tree = HistDecisionTreeRegressorScratch(
+        max_depth=self.max_depth, min_samples_leaf=20)
+    tree.fit(X_binned, residuals, self.bin_thresholds)
+    y_pred += self.learning_rate * tree.predict(X)
+    self.trees.append(tree)
+\end{pythoncode}
+
+\subsubsection{Model Comparison}
+All three models evaluated on identical train/test splits:
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.82\textwidth]{figures/lab04/comparison_bar.png}
+\caption{RMSE and MAE comparison: Linear, MLP, HGB (train vs. test). HGB typically leads both metrics.}
+\end{figure}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.82\textwidth]{figures/lab04/loss_curves.png}
+\caption{Training loss curves (log scale) for all three models. EMA-smoothed trends reveal convergence behavior.}
+\end{figure}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.72\textwidth]{figures/lab04/eda_04_geo_basic.png}
+\caption{Geographic distribution of house prices across California. Coastal regions command premium prices; inland blocks are significantly cheaper.}
+\end{figure}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.78\textwidth]{figures/lab04/loss_comparison.png}
+\caption{Loss comparison: training and validation loss across all three model families.}
+\end{figure}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.78\textwidth]{figures/lab04/comparison_dual.png}
+\caption{Dual comparison: RMSE and R² metrics for all models with log-transformed vs. original features.}
+\end{figure}
+
+\subsection{Step 4.8 — Log-Transform Comparison}
+All three models are re-trained on $\log_{1p}$-transformed features and compared against the original feature runs. The comparison table shows RMSE and R² deltas per model, confirming that log transform provides a small but consistent improvement for gradient-based models while leaving HGB unchanged.
+
+\subsection{Step 4.9 — Logging and Reproducibility}
+All metrics, comparison charts, and loss curves are saved to \texttt{log/<timestamp>/} — mirroring the \texttt{scripts/train.py} behavior for full reproducibility.
+
+\section{Results and Analysis}
+
+\begin{resultbox}
+HistGradientBoosting is expected to achieve the best overall RMSE on tabular data due to its ability to capture non-linear feature interactions and invariance to feature scaling. The MLP outperforms Linear Regression on non-linear patterns (geographic clustering, income-price curvature) but may require more epochs or regularization to match tree-based models on this dataset size. Full scratch-vs-library benchmarking ensures implementation correctness within 5–10\%.
+\end{resultbox}
+
+\begin{notebox}
+\textbf{\texttt{median\_income} is the single strongest predictor} with Pearson correlation $\sim$0.69 to target. However, the capped target (\$500,006) creates a plateau that linear models cannot explain — this is why non-linear models (HGB, MLP) outperform Linear Regression. The geographic scatter confirms location is a strong predictor, but the model needs non-linear capacity to separate coastal vs. inland price clusters. Log transform helps gradient-based models by stabilizing skewed count distributions, particularly reducing the leverage of a few extremely high-population blocks.
+\end{notebox}
