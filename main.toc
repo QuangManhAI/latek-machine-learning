@@ -77,40 +77,40 @@
 \contentsline {subsection}{\numberline {5.2.1}Setup and Reproducibility}{86}{subsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.2.2}Load the Image}{87}{subsection.5.2.2}%
 \contentsline {subsection}{\numberline {5.2.3}Preprocess the Image}{89}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}Inspect the K-Means Implementation}{91}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.4}Inspect the K-Means Implementation}{90}{subsection.5.2.4}%
 \contentsline {subsection}{\numberline {5.2.5}K-Means Grid Experiment}{91}{subsection.5.2.5}%
-\contentsline {subsubsection}{Metrics Collected Per Run}{91}{table.caption.118}%
-\contentsline {subsubsection}{Elbow Method}{92}{table.caption.118}%
-\contentsline {subsubsection}{Silhouette Analysis}{92}{table.caption.118}%
-\contentsline {subsection}{\numberline {5.2.6}Image Reconstruction}{94}{subsection.5.2.6}%
-\contentsline {subsection}{\numberline {5.2.7}Visualize Results}{96}{subsection.5.2.7}%
-\contentsline {subsection}{\numberline {5.2.8}Color Space Comparison}{96}{subsection.5.2.8}%
-\contentsline {subsection}{\numberline {5.2.9}Sklearn Sanity Check}{97}{subsection.5.2.9}%
-\contentsline {subsection}{\numberline {5.2.10}Output Verification}{97}{subsection.5.2.10}%
-\contentsline {section}{\numberline {5.3}Results and Analysis}{97}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Lab 04 — California Housing Price Prediction}{105}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Problem Definition}{105}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Dataset}{105}{subsection.6.1.1}%
-\contentsline {section}{\numberline {6.2}Complete Workflow}{105}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Setup and Load Data}{106}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Exploratory Data Analysis}{106}{subsection.6.2.2}%
-\contentsline {subsubsection}{Descriptive Statistics}{106}{subsection.6.2.2}%
-\contentsline {subsubsection}{Missing Values}{106}{subsection.6.2.2}%
-\contentsline {subsubsection}{Feature Distributions}{106}{figure.caption.152}%
-\contentsline {subsubsection}{Geographic Distribution}{108}{figure.caption.154}%
-\contentsline {subsubsection}{Correlation Matrix}{108}{figure.caption.155}%
-\contentsline {subsubsection}{Scatter Matrix and Income vs. Price}{111}{figure.caption.158}%
-\contentsline {subsubsection}{Ocean Proximity Analysis}{113}{figure.caption.160}%
-\contentsline {subsubsection}{Feature Engineering Experiments}{114}{figure.caption.163}%
-\contentsline {subsection}{\numberline {6.2.3}Data Preprocessing (Full Pipeline)}{115}{subsection.6.2.3}%
-\contentsline {subsection}{\numberline {6.2.4}Log Transform for Skewed Features}{116}{subsection.6.2.4}%
-\contentsline {subsection}{\numberline {6.2.5}Model Training and Evaluation}{117}{subsection.6.2.5}%
-\contentsline {subsubsection}{Linear Regression}{117}{subsection.6.2.5}%
-\contentsline {subsubsection}{Multi-Layer Perceptron}{117}{subsection.6.2.5}%
-\contentsline {subsubsection}{HistGradientBoosting}{118}{lstnumber.6.1.24}%
-\contentsline {subsubsection}{Model Comparison}{119}{lstnumber.6.2.16}%
-\contentsline {subsubsection}{Log-Transform Comparison}{120}{figure.caption.172}%
-\contentsline {subsubsection}{Logging and Reproducibility}{121}{figure.caption.172}%
-\contentsline {section}{\numberline {6.3}Results and Analysis}{121}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Overall Conclusion}{123}{chapter.7}%
+\contentsline {subsubsection}{Metrics Collected Per Run}{91}{table.caption.114}%
+\contentsline {subsubsection}{Elbow Method}{91}{table.caption.114}%
+\contentsline {subsubsection}{Silhouette Analysis}{93}{figure.caption.117}%
+\contentsline {subsection}{\numberline {5.2.6}Image Reconstruction}{96}{subsection.5.2.6}%
+\contentsline {subsection}{\numberline {5.2.7}Visualize Results}{98}{subsection.5.2.7}%
+\contentsline {subsection}{\numberline {5.2.8}Color Space Comparison}{103}{subsection.5.2.8}%
+\contentsline {subsection}{\numberline {5.2.9}Sklearn Sanity Check}{103}{subsection.5.2.9}%
+\contentsline {subsection}{\numberline {5.2.10}Output Verification}{103}{subsection.5.2.10}%
+\contentsline {section}{\numberline {5.3}Results and Analysis}{104}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Lab 04 — California Housing Price Prediction}{106}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Problem Definition}{106}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Dataset}{106}{subsection.6.1.1}%
+\contentsline {section}{\numberline {6.2}Complete Workflow}{106}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Setup and Load Data}{107}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Exploratory Data Analysis}{107}{subsection.6.2.2}%
+\contentsline {subsubsection}{Descriptive Statistics}{107}{subsection.6.2.2}%
+\contentsline {subsubsection}{Missing Values}{107}{subsection.6.2.2}%
+\contentsline {subsubsection}{Feature Distributions}{107}{figure.caption.135}%
+\contentsline {subsubsection}{Geographic Distribution}{109}{figure.caption.137}%
+\contentsline {subsubsection}{Correlation Matrix}{109}{figure.caption.138}%
+\contentsline {subsubsection}{Scatter Matrix and Income vs. Price}{112}{figure.caption.141}%
+\contentsline {subsubsection}{Ocean Proximity Analysis}{114}{figure.caption.143}%
+\contentsline {subsubsection}{Feature Engineering Experiments}{115}{figure.caption.146}%
+\contentsline {subsection}{\numberline {6.2.3}Data Preprocessing (Full Pipeline)}{116}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.4}Log Transform for Skewed Features}{117}{subsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.2.5}Model Training and Evaluation}{118}{subsection.6.2.5}%
+\contentsline {subsubsection}{Linear Regression}{118}{subsection.6.2.5}%
+\contentsline {subsubsection}{Multi-Layer Perceptron}{118}{subsection.6.2.5}%
+\contentsline {subsubsection}{HistGradientBoosting}{119}{lstnumber.6.1.24}%
+\contentsline {subsubsection}{Model Comparison}{120}{lstnumber.6.2.16}%
+\contentsline {subsubsection}{Log-Transform Comparison}{121}{figure.caption.155}%
+\contentsline {subsubsection}{Logging and Reproducibility}{122}{figure.caption.155}%
+\contentsline {section}{\numberline {6.3}Results and Analysis}{122}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Overall Conclusion}{124}{chapter.7}%
 \contentsfinish 
