@@ -12,18 +12,18 @@
 \contentsline {subsection}{\numberline {2.2.6}Ham Data V2 (Diversity Supplement)}{12}{subsection.2.2.6}%
 \contentsline {subsection}{\numberline {2.2.7}Fixed Train/Test Split}{12}{subsection.2.2.7}%
 \contentsline {subsection}{\numberline {2.2.8}TF-IDF Feature Engineering}{12}{subsection.2.2.8}%
-\contentsline {subsection}{\numberline {2.2.9}Nearest Centroid Baseline}{13}{subsection.2.2.9}%
+\contentsline {subsection}{\numberline {2.2.9}Nearest Centroid Baseline}{14}{subsection.2.2.9}%
 \contentsline {subsection}{\numberline {2.2.10}Three Models From Scratch (Pure NumPy)}{14}{subsection.2.2.10}%
-\contentsline {subsubsection}{Logistic Regression — Core Training Loop}{14}{table.caption.12}%
+\contentsline {subsubsection}{Logistic Regression — Core Training Loop}{15}{table.caption.12}%
 \contentsline {subsubsection}{Linear SVM — Sub-Gradient Descent}{15}{lstnumber.2.2.13}%
-\contentsline {subsubsection}{Loss Curve Diagnostics}{15}{lstnumber.2.3.10}%
+\contentsline {subsubsection}{Loss Curve Diagnostics}{16}{lstnumber.2.3.10}%
 \contentsline {subsection}{\numberline {2.2.11}Model Comparison and Double-Check}{16}{subsection.2.2.11}%
 \contentsline {subsubsection}{Four-Panel Confusion Matrix (Default Threshold 0.500)}{16}{subsection.2.2.11}%
-\contentsline {subsubsection}{Scratch vs. sklearn Verification}{16}{subsection.2.2.11}%
+\contentsline {subsubsection}{Scratch vs. sklearn Verification}{17}{subsection.2.2.11}%
 \contentsline {subsection}{\numberline {2.2.12}Threshold Tuning (Gold Standard Optimization)}{17}{subsection.2.2.12}%
 \contentsline {subsubsection}{Score Overlap Analysis}{18}{lstnumber.2.4.7}%
 \contentsline {subsubsection}{Gold Standard Assessment}{18}{lstnumber.2.4.7}%
-\contentsline {subsection}{\numberline {2.2.13}Failure Analysis}{18}{subsection.2.2.13}%
+\contentsline {subsection}{\numberline {2.2.13}Failure Analysis}{19}{subsection.2.2.13}%
 \contentsline {section}{\numberline {2.3}Results and Analysis}{20}{section.2.3}%
 \contentsline {chapter}{\numberline {3}Lab 02 — Store Sales Forecasting}{24}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Problem Definition}{24}{section.3.1}%
