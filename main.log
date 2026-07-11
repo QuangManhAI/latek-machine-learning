@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.26)  11 JUL 2026 12:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.26)  11 JUL 2026 12:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1125,22 +1125,10 @@ Chapter 2.
 
 
 ]
-Overfull \hbox (312.94333pt too wide) in paragraph at lines 30--40
- [][] 
- []
-
-<figures/lab01/source_family_label_distribution.png, id=429, 722.7pt x 585.387p
-t>
-File: figures/lab01/source_family_label_distribution.png Graphic file (type png
-)
-<use figures/lab01/source_family_label_distribution.png>
-Package pdftex.def Info: figures/lab01/source_family_label_distribution.png  us
-ed on input line 50.
-(pdftex.def)             Requested size: 386.96027pt x 313.44244pt.
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
-l.53 
+l.48 
      
 You should say `\leaders <box or rule><hskip or vskip>'.
 I found the <box or rule>, but there's no suitable
@@ -1159,11 +1147,20 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [5]
+<figures/lab01/source_family_label_distribution.png, id=437, 722.7pt x 585.387p
+t>
+File: figures/lab01/source_family_label_distribution.png Graphic file (type png
+)
+<use figures/lab01/source_family_label_distribution.png>
+Package pdftex.def Info: figures/lab01/source_family_label_distribution.png  us
+ed on input line 50.
+(pdftex.def)             Requested size: 386.96027pt x 313.44244pt.
+
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
-l.68 
-     
+l.62   \item \textbf
+                    {Punctuation removal} â€” keep only letters, digits, and...
 You should say `\leaders <box or rule><hskip or vskip>'.
 I found the <box or rule>, but there's no suitable
 <hskip or vskip>, so I'm ignoring these leaders.
@@ -1181,13 +1178,13 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [6 <./figures/lab01/source_family_label_distribution.png>]
-<figures/lab01/text_length_boxplots.png, id=451, 1011.78pt x 433.62pt>
+<figures/lab01/text_length_boxplots.png, id=448, 1011.78pt x 433.62pt>
 File: figures/lab01/text_length_boxplots.png Graphic file (type png)
 <use figures/lab01/text_length_boxplots.png>
 Package pdftex.def Info: figures/lab01/text_length_boxplots.png  used on input 
 line 73.
 (pdftex.def)             Requested size: 455.24411pt x 195.10735pt.
-<figures/lab01/text_shape_scatter.png, id=452, 722.7pt x 505.89pt>
+<figures/lab01/text_shape_scatter.png, id=449, 722.7pt x 505.89pt>
 File: figures/lab01/text_shape_scatter.png Graphic file (type png)
 <use figures/lab01/text_shape_scatter.png>
 Package pdftex.def Info: figures/lab01/text_shape_scatter.png  used on input li
@@ -1216,7 +1213,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [7 <./figures/lab01/text_length_boxplots.png>]
-<figures/lab01/source_family_distribution.png, id=459, 722.7pt x 585.387pt>
+<figures/lab01/source_family_distribution.png, id=460, 722.7pt x 585.387pt>
 File: figures/lab01/source_family_distribution.png Graphic file (type png)
 <use figures/lab01/source_family_distribution.png>
 Package pdftex.def Info: figures/lab01/source_family_distribution.png  used on 
@@ -1250,7 +1247,7 @@ Overfull \hbox (0.71106pt too wide) in paragraph at lines 92--93
 ented words ^^V ``free'', ``click'', ``money'',
  []
 
-<figures/lab01/top_words_wordcloud.png, id=466, 867.24pt x 505.89pt>
+<figures/lab01/top_words_wordcloud.png, id=467, 867.24pt x 505.89pt>
 File: figures/lab01/top_words_wordcloud.png Graphic file (type png)
 <use figures/lab01/top_words_wordcloud.png>
 Package pdftex.def Info: figures/lab01/top_words_wordcloud.png  used on input l
@@ -1278,13 +1275,13 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [9 <./figures/lab01/source_family_distribution.png>]
-<figures/lab01/ham_wordcloud.png, id=473, 867.24pt x 505.89pt>
+<figures/lab01/ham_wordcloud.png, id=474, 867.24pt x 505.89pt>
 File: figures/lab01/ham_wordcloud.png Graphic file (type png)
 <use figures/lab01/ham_wordcloud.png>
 Package pdftex.def Info: figures/lab01/ham_wordcloud.png  used on input line 10
 4.
 (pdftex.def)             Requested size: 455.24411pt x 265.55762pt.
-<figures/lab01/spam_wordcloud.png, id=474, 867.24pt x 505.89pt>
+<figures/lab01/spam_wordcloud.png, id=475, 867.24pt x 505.89pt>
 File: figures/lab01/spam_wordcloud.png Graphic file (type png)
 <use figures/lab01/spam_wordcloud.png>
 Package pdftex.def Info: figures/lab01/spam_wordcloud.png  used on input line 1
@@ -1358,24 +1355,19 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [12]
-Overfull \hbox (439.39171pt too wide) in paragraph at lines 161--170
- [][] 
- []
-
-(/usr/local/texlive/2026basic/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2025/11/14 1.11b listings language file
-)
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 187.
-
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
-l.195 spam_sim 
-               = cosine_similarity(X_test_tfidf, spam_centroid).ravel()
+l.186 
+      
 You should say `\leaders <box or rule><hskip or vskip>'.
 I found the <box or rule>, but there's no suitable
 <hskip or vskip>, so I'm ignoring these leaders.
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (22.0pt): 
@@ -1384,16 +1376,21 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[13]
-Overfull \hbox (116.73036pt too wide) in paragraph at lines 215--223
+[13] (/usr/local/texlive/2026basic/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 187.
+
+Overfull \hbox (5.32083pt too wide) in paragraph at lines 215--223
  [][] 
  []
 
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
-l.230 ...gression: SGD with Binary Cross-Entropy}]
-                                                  
+l.225 
+      
 You should say `\leaders <box or rule><hskip or vskip>'.
 I found the <box or rule>, but there's no suitable
 <hskip or vskip>, so I'm ignoring these leaders.
@@ -1417,16 +1414,11 @@ LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
-l.271   \item \textbf
-                     {NB excluded:} Naive Bayes has no iterative training â€...
+l.260     self.
+               bias_ -= self.learning_rate * gradient_b
 You should say `\leaders <box or rule><hskip or vskip>'.
 I found the <box or rule>, but there's no suitable
 <hskip or vskip>, so I'm ignoring these leaders.
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
 
 
 Package fancyhdr Warning: \headheight is too small (22.0pt): 
@@ -1439,8 +1431,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
-l.302   \item \textbf
-                     {NB should show near-100.000\% agreement} because the M...
+l.292   \item T
+               he centroid's FP/FN balance reveals whether centroids encode ...
 You should say `\leaders <box or rule><hskip or vskip>'.
 I found the <box or rule>, but there's no suitable
 <hskip or vskip>, so I'm ignoring these leaders.
@@ -1491,8 +1483,8 @@ Alternatively, save the file in UTF-8 using your editor or another tool
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
-l.338   \item \textbf
-                     {TPR/FPR vs. Threshold:} As $\tau$ increases (more cons...
+l.325   \item \textbf
+                     {2 feature sets:} Text only (TF-IDF on cleaned body tex...
 You should say `\leaders <box or rule><hskip or vskip>'.
 I found the <box or rule>, but there's no suitable
 <hskip or vskip>, so I'm ignoring these leaders.
@@ -1513,8 +1505,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
-l.359   \item \textbf
-                     {Error Token Analysis:} Extracts the top 20 most freque...
+l.350 \end{enumerate}
+                     
 You should say `\leaders <box or rule><hskip or vskip>'.
 I found the <box or rule>, but there's no suitable
 <hskip or vskip>, so I'm ignoring these leaders.
@@ -5172,11 +5164,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  41061 strings out of 469006
  945641 string characters out of 5454813
- 1802370 words of memory out of 5000000
+ 1799625 words of memory out of 5000000
  68561 multiletter control sequences out of 15000+600000
  649784 words of font info for 97 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 98i,18n,108p,1900b,2237s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,18n,108p,1900b,2106s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/quangmanh/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/jknapp
 en/ec/tcbx1200.600pk> </Users/quangmanh/Library/texlive/2026basic/texmf-var/fon
 ts/pk/ljfour/jknappen/ec/ecit1000.600pk> </Users/quangmanh/Library/texlive/2026
@@ -5209,7 +5201,7 @@ s/cm/cmsy10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/
 amsfonts/symbols/msam10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (126 pages, 44508973 bytes).
+Output written on main.pdf (126 pages, 44509305 bytes).
 PDF statistics:
  2395 PDF objects out of 2487 (max. 8388607)
  1358 compressed objects within 14 object streams
