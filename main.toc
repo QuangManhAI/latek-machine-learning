@@ -22,95 +22,95 @@
 \contentsline {subsubsection}{Scratch vs. sklearn Verification}{17}{subsection.2.2.11}%
 \contentsline {subsection}{\numberline {2.2.12}Threshold Tuning (Gold Standard Optimization)}{17}{subsection.2.2.12}%
 \contentsline {subsubsection}{Score Overlap Analysis}{18}{lstnumber.2.4.7}%
-\contentsline {subsubsection}{Gold Standard Assessment}{18}{lstnumber.2.4.7}%
+\contentsline {subsubsection}{Gold Standard Assessment}{19}{lstnumber.2.4.7}%
 \contentsline {subsection}{\numberline {2.2.13}Failure Analysis}{19}{subsection.2.2.13}%
 \contentsline {section}{\numberline {2.3}Results and Analysis}{20}{section.2.3}%
-\contentsline {chapter}{\numberline {3}Lab 02 — Store Sales Forecasting}{24}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Problem Definition}{24}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Dataset}{24}{subsection.3.1.1}%
-\contentsline {section}{\numberline {3.2}Complete Workflow}{24}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Load Data \& Validate Schema}{24}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Exploratory Data Analysis (8 Sub-steps)}{25}{subsection.3.2.2}%
-\contentsline {subsubsection}{Missing Values}{25}{subsection.3.2.2}%
-\contentsline {subsubsection}{Target Distribution}{25}{figure.caption.16}%
-\contentsline {subsubsection}{Product Family Analysis}{27}{figure.caption.19}%
-\contentsline {subsubsection}{Trend and Seasonality}{27}{figure.caption.21}%
-\contentsline {subsubsection}{Promotion Impact}{28}{figure.caption.23}%
-\contentsline {subsubsection}{Store Characteristics}{29}{figure.caption.24}%
-\contentsline {subsubsection}{Oil Price Correlation}{29}{figure.caption.25}%
-\contentsline {subsubsection}{Holidays and Transactions}{29}{figure.caption.25}%
-\contentsline {subsection}{\numberline {3.2.3}Data Cleaning}{37}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Feature Engineering}{38}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Time-Based Train/Validation Split}{39}{subsection.3.2.5}%
-\contentsline {subsection}{\numberline {3.2.6}Metrics and Preprocessing Pipelines}{40}{subsection.3.2.6}%
-\contentsline {subsubsection}{Why RMSLE over RMSE?}{40}{subsection.3.2.6}%
-\contentsline {subsection}{\numberline {3.2.7}Time-Series Baselines}{41}{subsection.3.2.7}%
-\contentsline {subsection}{\numberline {3.2.8}Train and Compare ML Models}{42}{subsection.3.2.8}%
-\contentsline {subsubsection}{Ridge Regression — Closed-Form Solution}{42}{subsection.3.2.8}%
-\contentsline {subsubsection}{Multi-Layer Perceptron — Mini-Batch SGD}{42}{lstnumber.3.2.9}%
-\contentsline {subsubsection}{HistGradientBoosting — 160 Trees}{43}{lstnumber.3.3.16}%
-\contentsline {subsection}{\numberline {3.2.9}Model Improvements}{43}{subsection.3.2.9}%
-\contentsline {subsection}{\numberline {3.2.10}Model Diagnostics}{44}{subsection.3.2.10}%
-\contentsline {subsection}{\numberline {3.2.11}Final Model and Submission}{44}{subsection.3.2.11}%
-\contentsline {section}{\numberline {3.3}Results and Analysis}{45}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Lab 03 --- Customer Segmentation}{62}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Problem Definition}{62}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Dataset}{62}{subsection.4.1.1}%
-\contentsline {section}{\numberline {4.2}Complete Workflow}{62}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Reproducibility Setup}{62}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Raw Data Overview}{63}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Data Quality Checks}{63}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}EDA Before Preprocessing}{64}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Preprocessing and Feature Scaling}{72}{subsection.4.2.5}%
-\contentsline {subsection}{\numberline {4.2.6}Clustering Experiments}{73}{subsection.4.2.6}%
-\contentsline {subsubsection}{K-Means From Scratch --- Core Implementation}{75}{figure.caption.96}%
-\contentsline {subsection}{\numberline {4.2.7}Model Selection}{76}{subsection.4.2.7}%
-\contentsline {subsubsection}{Centroid Trajectory Visualization}{77}{figure.caption.97}%
-\contentsline {subsection}{\numberline {4.2.8}Cluster Visualization}{78}{subsection.4.2.8}%
-\contentsline {subsection}{\numberline {4.2.9}Segment Profiling}{82}{subsection.4.2.9}%
-\contentsline {subsection}{\numberline {4.2.10}Deployment Check}{83}{subsection.4.2.10}%
-\contentsline {section}{\numberline {4.3}Results and Analysis}{83}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Lab 3.1 — K-Means Image Segmentation}{86}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Problem Definition}{86}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Dataset}{86}{subsection.5.1.1}%
-\contentsline {section}{\numberline {5.2}Complete Workflow}{86}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Setup and Reproducibility}{86}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Load the Image}{87}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Preprocess the Image}{89}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}Inspect the K-Means Implementation}{90}{subsection.5.2.4}%
-\contentsline {subsection}{\numberline {5.2.5}K-Means Grid Experiment}{91}{subsection.5.2.5}%
-\contentsline {subsubsection}{Metrics Collected Per Run}{91}{table.caption.114}%
-\contentsline {subsubsection}{Elbow Method}{91}{table.caption.114}%
-\contentsline {subsubsection}{Silhouette Analysis}{93}{figure.caption.117}%
-\contentsline {subsection}{\numberline {5.2.6}Image Reconstruction}{96}{subsection.5.2.6}%
-\contentsline {subsection}{\numberline {5.2.7}Visualize Results}{98}{subsection.5.2.7}%
-\contentsline {subsection}{\numberline {5.2.8}Color Space Comparison}{103}{subsection.5.2.8}%
-\contentsline {subsection}{\numberline {5.2.9}Sklearn Sanity Check}{103}{subsection.5.2.9}%
-\contentsline {subsection}{\numberline {5.2.10}Output Verification}{103}{subsection.5.2.10}%
-\contentsline {section}{\numberline {5.3}Results and Analysis}{104}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Lab 04 — California Housing Price Prediction}{106}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Problem Definition}{106}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Dataset}{106}{subsection.6.1.1}%
-\contentsline {section}{\numberline {6.2}Complete Workflow}{106}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Setup and Load Data}{107}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Exploratory Data Analysis}{107}{subsection.6.2.2}%
-\contentsline {subsubsection}{Descriptive Statistics}{107}{subsection.6.2.2}%
-\contentsline {subsubsection}{Missing Values}{107}{subsection.6.2.2}%
-\contentsline {subsubsection}{Feature Distributions}{107}{figure.caption.135}%
-\contentsline {subsubsection}{Geographic Distribution}{109}{figure.caption.137}%
-\contentsline {subsubsection}{Correlation Matrix}{109}{figure.caption.138}%
-\contentsline {subsubsection}{Scatter Matrix and Income vs. Price}{112}{figure.caption.141}%
-\contentsline {subsubsection}{Ocean Proximity Analysis}{114}{figure.caption.143}%
-\contentsline {subsubsection}{Feature Engineering Experiments}{115}{figure.caption.146}%
-\contentsline {subsection}{\numberline {6.2.3}Data Preprocessing (Full Pipeline)}{116}{subsection.6.2.3}%
-\contentsline {subsection}{\numberline {6.2.4}Log Transform for Skewed Features}{117}{subsection.6.2.4}%
-\contentsline {subsection}{\numberline {6.2.5}Model Training and Evaluation}{118}{subsection.6.2.5}%
-\contentsline {subsubsection}{Linear Regression}{118}{subsection.6.2.5}%
-\contentsline {subsubsection}{Multi-Layer Perceptron}{118}{subsection.6.2.5}%
-\contentsline {subsubsection}{HistGradientBoosting}{119}{lstnumber.6.1.24}%
-\contentsline {subsubsection}{Model Comparison}{120}{lstnumber.6.2.16}%
-\contentsline {subsubsection}{Log-Transform Comparison}{121}{figure.caption.155}%
-\contentsline {subsubsection}{Logging and Reproducibility}{122}{figure.caption.155}%
-\contentsline {section}{\numberline {6.3}Results and Analysis}{122}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Overall Conclusion}{124}{chapter.7}%
+\contentsline {chapter}{\numberline {3}Lab 02 — Store Sales Forecasting}{25}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Problem Definition}{25}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Dataset}{25}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Complete Workflow}{25}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Load Data \& Validate Schema}{25}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Exploratory Data Analysis (8 Sub-steps)}{26}{subsection.3.2.2}%
+\contentsline {subsubsection}{Missing Values}{26}{subsection.3.2.2}%
+\contentsline {subsubsection}{Target Distribution}{26}{figure.caption.16}%
+\contentsline {subsubsection}{Product Family Analysis}{28}{figure.caption.19}%
+\contentsline {subsubsection}{Trend and Seasonality}{28}{figure.caption.21}%
+\contentsline {subsubsection}{Promotion Impact}{29}{figure.caption.23}%
+\contentsline {subsubsection}{Store Characteristics}{30}{figure.caption.24}%
+\contentsline {subsubsection}{Oil Price Correlation}{30}{figure.caption.25}%
+\contentsline {subsubsection}{Holidays and Transactions}{30}{figure.caption.25}%
+\contentsline {subsection}{\numberline {3.2.3}Data Cleaning}{38}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Feature Engineering}{39}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Time-Based Train/Validation Split}{40}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Metrics and Preprocessing Pipelines}{41}{subsection.3.2.6}%
+\contentsline {subsubsection}{Why RMSLE over RMSE?}{41}{subsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.2.7}Time-Series Baselines}{42}{subsection.3.2.7}%
+\contentsline {subsection}{\numberline {3.2.8}Train and Compare ML Models}{43}{subsection.3.2.8}%
+\contentsline {subsubsection}{Ridge Regression — Closed-Form Solution}{43}{subsection.3.2.8}%
+\contentsline {subsubsection}{Multi-Layer Perceptron — Mini-Batch SGD}{43}{lstnumber.3.2.9}%
+\contentsline {subsubsection}{HistGradientBoosting — 160 Trees}{44}{lstnumber.3.3.16}%
+\contentsline {subsection}{\numberline {3.2.9}Model Improvements}{44}{subsection.3.2.9}%
+\contentsline {subsection}{\numberline {3.2.10}Model Diagnostics}{45}{subsection.3.2.10}%
+\contentsline {subsection}{\numberline {3.2.11}Final Model and Submission}{45}{subsection.3.2.11}%
+\contentsline {section}{\numberline {3.3}Results and Analysis}{46}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Lab 03 --- Customer Segmentation}{63}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Problem Definition}{63}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Dataset}{63}{subsection.4.1.1}%
+\contentsline {section}{\numberline {4.2}Complete Workflow}{63}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Reproducibility Setup}{63}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Raw Data Overview}{64}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Data Quality Checks}{64}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}EDA Before Preprocessing}{65}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Preprocessing and Feature Scaling}{73}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}Clustering Experiments}{74}{subsection.4.2.6}%
+\contentsline {subsubsection}{K-Means From Scratch --- Core Implementation}{76}{figure.caption.96}%
+\contentsline {subsection}{\numberline {4.2.7}Model Selection}{77}{subsection.4.2.7}%
+\contentsline {subsubsection}{Centroid Trajectory Visualization}{78}{figure.caption.97}%
+\contentsline {subsection}{\numberline {4.2.8}Cluster Visualization}{79}{subsection.4.2.8}%
+\contentsline {subsection}{\numberline {4.2.9}Segment Profiling}{83}{subsection.4.2.9}%
+\contentsline {subsection}{\numberline {4.2.10}Deployment Check}{84}{subsection.4.2.10}%
+\contentsline {section}{\numberline {4.3}Results and Analysis}{84}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Lab 3.1 — K-Means Image Segmentation}{87}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Problem Definition}{87}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Dataset}{87}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}Complete Workflow}{87}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Setup and Reproducibility}{87}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Load the Image}{88}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Preprocess the Image}{90}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Inspect the K-Means Implementation}{91}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}K-Means Grid Experiment}{92}{subsection.5.2.5}%
+\contentsline {subsubsection}{Metrics Collected Per Run}{92}{table.caption.114}%
+\contentsline {subsubsection}{Elbow Method}{92}{table.caption.114}%
+\contentsline {subsubsection}{Silhouette Analysis}{94}{figure.caption.117}%
+\contentsline {subsection}{\numberline {5.2.6}Image Reconstruction}{97}{subsection.5.2.6}%
+\contentsline {subsection}{\numberline {5.2.7}Visualize Results}{99}{subsection.5.2.7}%
+\contentsline {subsection}{\numberline {5.2.8}Color Space Comparison}{104}{subsection.5.2.8}%
+\contentsline {subsection}{\numberline {5.2.9}Sklearn Sanity Check}{104}{subsection.5.2.9}%
+\contentsline {subsection}{\numberline {5.2.10}Output Verification}{104}{subsection.5.2.10}%
+\contentsline {section}{\numberline {5.3}Results and Analysis}{105}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Lab 04 — California Housing Price Prediction}{107}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Problem Definition}{107}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Dataset}{107}{subsection.6.1.1}%
+\contentsline {section}{\numberline {6.2}Complete Workflow}{107}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Setup and Load Data}{108}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Exploratory Data Analysis}{108}{subsection.6.2.2}%
+\contentsline {subsubsection}{Descriptive Statistics}{108}{subsection.6.2.2}%
+\contentsline {subsubsection}{Missing Values}{108}{subsection.6.2.2}%
+\contentsline {subsubsection}{Feature Distributions}{108}{figure.caption.135}%
+\contentsline {subsubsection}{Geographic Distribution}{110}{figure.caption.137}%
+\contentsline {subsubsection}{Correlation Matrix}{110}{figure.caption.138}%
+\contentsline {subsubsection}{Scatter Matrix and Income vs. Price}{113}{figure.caption.141}%
+\contentsline {subsubsection}{Ocean Proximity Analysis}{115}{figure.caption.143}%
+\contentsline {subsubsection}{Feature Engineering Experiments}{116}{figure.caption.146}%
+\contentsline {subsection}{\numberline {6.2.3}Data Preprocessing (Full Pipeline)}{117}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.4}Log Transform for Skewed Features}{118}{subsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.2.5}Model Training and Evaluation}{119}{subsection.6.2.5}%
+\contentsline {subsubsection}{Linear Regression}{119}{subsection.6.2.5}%
+\contentsline {subsubsection}{Multi-Layer Perceptron}{119}{subsection.6.2.5}%
+\contentsline {subsubsection}{HistGradientBoosting}{120}{lstnumber.6.1.24}%
+\contentsline {subsubsection}{Model Comparison}{121}{lstnumber.6.2.16}%
+\contentsline {subsubsection}{Log-Transform Comparison}{122}{figure.caption.155}%
+\contentsline {subsubsection}{Logging and Reproducibility}{123}{figure.caption.155}%
+\contentsline {section}{\numberline {6.3}Results and Analysis}{123}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Overall Conclusion}{125}{chapter.7}%
 \contentsfinish 
