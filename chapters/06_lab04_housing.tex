@@ -9,7 +9,7 @@ Predict \textbf{median house value} (USD) from census-block features using three
 
 \subsection{Dataset}
 \begin{itemize}
-  \item \textbf{Source:} California Housing (1990 census), 20,640 rows, 10 columns (9 numeric + 1 categorical).
+  \item \textbf{Source:} California Housing (1990 census), 20,640 rows, 10 columns (8 numeric predictors, 1 categorical predictor, 1 numeric target).
   \item \textbf{Features:} 8 numeric (longitude, latitude, housing\_median\_age, total\_rooms, total\_bedrooms, population, households, median\_income) + 1 categorical (ocean\_proximity, 5 levels).
   \item \textbf{Target:} \texttt{median\_house\_value}, capped at \$500,001.
   \item \textbf{Split:} Stratified 80/20 on binned \texttt{median\_income} — 16,512 train, 4,128 test.
@@ -118,13 +118,13 @@ The 5 categories exhibit stark price stratification:
 \texttt{INLAND}      & 6,551 & Lowest median price by a wide margin; Central Valley\\
 \texttt{NEAR OCEAN}  & 2,658 & Intermediate price; suburban coastal fringe\\
 \texttt{NEAR BAY}    & 2,290 & High median price; San Francisco Bay proximity\\
-\texttt{ISLAND}      & 5     & Negligible sample size — merged with NEAR OCEAN\\
+\texttt{ISLAND}      & 5     & Negligible sample size — kept as is despite sparsity\\
 \bottomrule
 \end{tabular}
 \caption{Ocean proximity category counts and characteristics}
 \end{table}
 
-The ISLAND category (5 samples) is too sparse for meaningful one-hot encoding and is merged with NEAR OCEAN, reducing the categorical encoding to 4 one-hot columns. The price disparity between INLAND (cheapest) and non-INLAND categories is substantial enough to consider an \texttt{is\_inland} binary feature as a high-signal engineering candidate, though the full one-hot encoding is used to preserve granularity.
+The ISLAND category contains only 5 samples, which is too sparse to learn a reliable coefficient. However, the notebook retains all 5 categories in the one-hot encoding, as merging would risk masking any extreme price signal present in these few blocks. The price disparity between INLAND (cheapest) and non-INLAND categories is substantial enough to consider an \texttt{is\_inland} binary feature as a high-signal engineering candidate. The price disparity between INLAND (cheapest) and non-INLAND categories is substantial enough to consider an \texttt{is\_inland} binary feature as a high-signal engineering candidate, though the full one-hot encoding is used to preserve granularity.
 
 \begin{figure}[H]
   \centering
@@ -166,14 +166,14 @@ The engineered features demonstrate the value of domain-aware feature constructi
 \begin{enumerate}
   \item \textbf{Stratified split:} \texttt{StratifiedShuffleSplit} on binned \texttt{median\_income} (5 bins) with 80/20 ratio. This prevents either the training or test set from being disproportionately wealthy or poor, ensuring that both sets span the full income distribution. \texttt{income\_cat} is dropped after splitting.
   \item \textbf{Missing value imputation:} \texttt{SimpleImputer(strategy="median")} fills the 207 missing \texttt{total\_bedrooms} values. Median imputation is chosen over mean because \texttt{total\_bedrooms} is right-skewed and the median is robust to the extreme high-count blocks. Imputation statistics are stored in \texttt{imputer.statistics\_}.
-  \item \textbf{One-hot encoding:} \texttt{OneHotEncoder(sparse\_output=False)} converts 5 \texttt{ocean\_proximity} categories (after ISLAND merge) to 4 binary columns (one reference category dropped to avoid the dummy variable trap).
+  \item \textbf{One-hot encoding:} \texttt{OneHotEncoder(sparse\_output=False)} converts the 5 \texttt{ocean\_proximity} categories into 5 binary indicator columns (no reference category dropped; all categories are retained as explicit columns).
   \item \textbf{Custom feature engineering:} \texttt{CombinedAttributesAdder} — a scikit-learn-compatible transformer — adds 3 ratio features: \texttt{rooms\_per\_household}, \texttt{population\_per\_household}, and \texttt{bedrooms\_per\_room}. Embedding this inside the Pipeline guarantees consistent application to both train and test data.
   \item \textbf{Pipeline assembly:} A \texttt{ColumnTransformer} combines the numeric pipeline (\texttt{SimpleImputer} $\rightarrow$ \texttt{CombinedAttributesAdder} $\rightarrow$ \texttt{StandardScaler}) and categorical pipeline (\texttt{OneHotEncoder}) into a single callable transformation object.
   \item \textbf{Standardization:} \texttt{StandardScaler} transforms all features to $\mu = 0$, $\sigma = 1$. This is critical for gradient-based models (Linear Regression, MLP) where unscaled features cause uneven gradient magnitudes and slow convergence. Tree-based models (HGB) are split-invariant to scaling and are unaffected, though standardization is applied uniformly for pipeline consistency.
   \item \textbf{Target standardization:} A separate \texttt{StandardScaler} transforms \texttt{median\_house\_value} to $\mu = 0$, $\sigma = 1$ for numerically stable gradient descent training. Predictions are inverse-transformed for metric reporting.
 \end{enumerate}
 
-\textbf{Output dimensions:} $X_{\text{train}}$ becomes $(16512, 16)$ and $X_{\text{test}}$ becomes $(4128, 16)$. The 16 columns correspond to: 9 original numeric features + 3 engineered ratio features + 4 one-hot encoded ocean proximity categories (5 categories minus the ISLAND merge and one dropped reference).
+\textbf{Output dimensions:} $X_{\text{train}}$ becomes $(16512, 16)$ and $X_{\text{test}}$ becomes $(4128, 16)$. The 16 columns correspond to: 8 original numeric features + 3 engineered ratio features (\texttt{rooms\_per\_household}, \texttt{population\_per\_household}, \texttt{bedrooms\_per\_room}) + 5 one-hot encoded ocean proximity categories (all 5 categories retained).
 
 \subsection{Log Transform for Skewed Features}
 
