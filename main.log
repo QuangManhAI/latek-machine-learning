@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.26)  12 JUL 2026 16:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.26)  13 JUL 2026 01:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1077,17 +1077,17 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.56 ... --- Customer Segmentation}{62}{chapter.4}
+l.56 ... --- Customer Segmentation}{63}{chapter.4}
                                                   % [1
 
 ]
 Overfull \hbox (2.03697pt too wide) detected at line 91
- \T1/cmr/bx/n/12 106
+ \T1/cmr/bx/n/12 107
  []
 
 
 Overfull \hbox (2.03697pt too wide) detected at line 115
- \T1/cmr/bx/n/12 124
+ \T1/cmr/bx/n/12 125
  []
 
 )
@@ -1160,7 +1160,7 @@ ed on input line 50.
 <to be read again> 
                    }
 l.62   \item \textbf
-                    {Punctuation removal} â€” keep only letters, digits, and...
+                    {Punctuation removal} â€” keep only letters, digits, whi...
 You should say `\leaders <box or rule><hskip or vskip>'.
 I found the <box or rule>, but there's no suitable
 <hskip or vskip>, so I'm ignoring these leaders.
@@ -1450,49 +1450,19 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [16]
-
-! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC€).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.312 ...tighter than the 0.010 gold standard â€” 
-                                                  forces a margin of safety
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! LaTeX Error: Invalid UTF-8 byte "94.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.312 ...tighter than the 0.010 gold standard â€” 
-                                                  forces a margin of safety
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
+Overfull \hbox (2.0234pt too wide) in paragraph at lines 301--302
+\T1/cmr/m/n/12 dis-agree-ment stems from sklearn us-ing L-BFGS (a quasi-Newton 
+second-order solver)
+ []
 
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
-l.325   \item \textbf
-                     {2 feature sets:} Text only (TF-IDF on cleaned body tex...
+l.320 )
+       
 You should say `\leaders <box or rule><hskip or vskip>'.
 I found the <box or rule>, but there's no suitable
 <hskip or vskip>, so I'm ignoring these leaders.
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
 
 
 Package fancyhdr Warning: \headheight is too small (22.0pt): 
@@ -1505,8 +1475,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
-l.350 \end{enumerate}
-                     
+l.342 \end{itemize}
+                   
 You should say `\leaders <box or rule><hskip or vskip>'.
 I found the <box or rule>, but there's no suitable
 <hskip or vskip>, so I'm ignoring these leaders.
@@ -1527,8 +1497,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
-l.383 
-      
+l.368 \end{enumerate}
+                     
 You should say `\leaders <box or rule><hskip or vskip>'.
 I found the <box or rule>, but there's no suitable
 <hskip or vskip>, so I'm ignoring these leaders.
@@ -1550,13 +1520,13 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 File: figures/lab01/confusion_matrix.png Graphic file (type png)
 <use figures/lab01/confusion_matrix.png>
 Package pdftex.def Info: figures/lab01/confusion_matrix.png  used on input line
- 385.
+ 387.
 (pdftex.def)             Requested size: 318.66948pt x 239.01443pt.
 
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
-l.388 
+l.390 
       
 You should say `\leaders <box or rule><hskip or vskip>'.
 I found the <box or rule>, but there's no suitable
@@ -1579,19 +1549,19 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 File: figures/lab01/label_distribution.png Graphic file (type png)
 <use figures/lab01/label_distribution.png>
 Package pdftex.def Info: figures/lab01/label_distribution.png  used on input li
-ne 391.
+ne 393.
 (pdftex.def)             Requested size: 455.24411pt x 341.44843pt.
 <figures/lab01/raw_vs_clean_length_scatter.png, id=599, 722.7pt x 505.89pt>
 File: figures/lab01/raw_vs_clean_length_scatter.png Graphic file (type png)
 <use figures/lab01/raw_vs_clean_length_scatter.png>
 Package pdftex.def Info: figures/lab01/raw_vs_clean_length_scatter.png  used on
- input line 396.
+ input line 398.
 (pdftex.def)             Requested size: 455.24411pt x 318.67378pt.
 
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
-l.398 \end{figure}
+l.400 \end{figure}
                   
 You should say `\leaders <box or rule><hskip or vskip>'.
 I found the <box or rule>, but there's no suitable
@@ -1613,7 +1583,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
-l.399 
+l.401 
       
 You should say `\leaders <box or rule><hskip or vskip>'.
 I found the <box or rule>, but there's no suitable
@@ -1654,28 +1624,49 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [23 <./figures/lab01/raw_vs_clean_length_scatter.png>]
+! Leaders not followed by proper glue.
+<to be read again> 
+                   }
+l.59 \include{chapters/02_lab01_spam}
+                                     
+You should say `\leaders <box or rule><hskip or vskip>'.
+I found the <box or rule>, but there's no suitable
+<hskip or vskip>, so I'm ignoring these leaders.
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (22.0pt): 
+(fancyhdr)                Make it at least 24.01996pt, for example:
+(fancyhdr)                \setlength{\headheight}{24.01996pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
+
+[24]
 \openout2 = `chapters/03_lab02_sales.aux'.
 
-
-(./chapters/03_lab02_sales.tex
+ (./chapters/03_lab02_sales.tex
 Chapter 3.
-[24
+[25
 
 
 
 
 ]
-<figures/lab02/eda_001.png, id=624, 705.3552pt x 271.7352pt>
+<figures/lab02/eda_001.png, id=628, 705.3552pt x 271.7352pt>
 File: figures/lab02/eda_001.png Graphic file (type png)
 <use figures/lab02/eda_001.png>
 Package pdftex.def Info: figures/lab02/eda_001.png  used on input line 31.
 (pdftex.def)             Requested size: 355.08984pt x 136.79604pt.
-<figures/lab02/eda_003.png, id=625, 1264.725pt x 416.2752pt>
+<figures/lab02/eda_003.png, id=629, 1264.725pt x 416.2752pt>
 File: figures/lab02/eda_003.png Graphic file (type png)
 <use figures/lab02/eda_003.png>
 Package pdftex.def Info: figures/lab02/eda_003.png  used on input line 44.
 (pdftex.def)             Requested size: 455.24411pt x 149.8399pt.
-<figures/lab02/eda_004.png, id=626, 1071.0414pt x 773.289pt>
+<figures/lab02/eda_004.png, id=630, 1071.0414pt x 773.289pt>
 File: figures/lab02/eda_004.png Graphic file (type png)
 <use figures/lab02/eda_004.png>
 Package pdftex.def Info: figures/lab02/eda_004.png  used on input line 48.
@@ -1702,8 +1693,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[25 <./figures/lab02/eda_001.png>]
-<figures/lab02/eda_018.png, id=633, 1283.5152pt x 416.2752pt>
+[26 <./figures/lab02/eda_001.png>]
+<figures/lab02/eda_018.png, id=637, 1283.5152pt x 416.2752pt>
 File: figures/lab02/eda_018.png Graphic file (type png)
 <use figures/lab02/eda_018.png>
 Package pdftex.def Info: figures/lab02/eda_018.png  used on input line 52.
@@ -1730,14 +1721,14 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[26 <./figures/lab02/eda_003.png> <./figures/lab02/eda_004.png> <./figures/lab0
+[27 <./figures/lab02/eda_003.png> <./figures/lab02/eda_004.png> <./figures/lab0
 2/eda_018.png>]
-<figures/lab02/eda_002.png, id=644, 1283.5152pt x 344.0052pt>
+<figures/lab02/eda_002.png, id=648, 1283.5152pt x 344.0052pt>
 File: figures/lab02/eda_002.png Graphic file (type png)
 <use figures/lab02/eda_002.png>
 Package pdftex.def Info: figures/lab02/eda_002.png  used on input line 60.
 (pdftex.def)             Requested size: 455.24411pt x 122.00984pt.
-<figures/lab02/eda_016.png, id=645, 1138.9752pt x 416.2752pt>
+<figures/lab02/eda_016.png, id=649, 1138.9752pt x 416.2752pt>
 File: figures/lab02/eda_016.png Graphic file (type png)
 <use figures/lab02/eda_016.png>
 Package pdftex.def Info: figures/lab02/eda_016.png  used on input line 64.
@@ -1764,18 +1755,18 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[27 <./figures/lab02/eda_002.png> <./figures/lab02/eda_016.png>]
-<figures/lab02/eda_007.png, id=654, 1283.5152pt x 416.2752pt>
+[28 <./figures/lab02/eda_002.png> <./figures/lab02/eda_016.png>]
+<figures/lab02/eda_007.png, id=658, 1283.5152pt x 416.2752pt>
 File: figures/lab02/eda_007.png Graphic file (type png)
 <use figures/lab02/eda_007.png>
 Package pdftex.def Info: figures/lab02/eda_007.png  used on input line 77.
 (pdftex.def)             Requested size: 455.24411pt x 147.64217pt.
-<figures/lab02/eda_008.png, id=655, 1283.5152pt x 344.0052pt>
+<figures/lab02/eda_008.png, id=659, 1283.5152pt x 344.0052pt>
 File: figures/lab02/eda_008.png Graphic file (type png)
 <use figures/lab02/eda_008.png>
 Package pdftex.def Info: figures/lab02/eda_008.png  used on input line 81.
 (pdftex.def)             Requested size: 455.24411pt x 122.00984pt.
-<figures/lab02/eda_005.png, id=656, 1283.5152pt x 344.0052pt>
+<figures/lab02/eda_005.png, id=660, 1283.5152pt x 344.0052pt>
 File: figures/lab02/eda_005.png Graphic file (type png)
 <use figures/lab02/eda_005.png>
 Package pdftex.def Info: figures/lab02/eda_005.png  used on input line 89.
@@ -1802,8 +1793,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[28 <./figures/lab02/eda_007.png> <./figures/lab02/eda_008.png>]
-<figures/lab02/eda_006.png, id=665, 1283.5152pt x 344.0052pt>
+[29 <./figures/lab02/eda_007.png> <./figures/lab02/eda_008.png>]
+<figures/lab02/eda_006.png, id=669, 1283.5152pt x 344.0052pt>
 File: figures/lab02/eda_006.png Graphic file (type png)
 <use figures/lab02/eda_006.png>
 Package pdftex.def Info: figures/lab02/eda_006.png  used on input line 97.
@@ -1830,23 +1821,23 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[29 <./figures/lab02/eda_005.png> <./figures/lab02/eda_006.png>]
-<figures/lab02/eda_009.png, id=674, 818.0964pt x 705.3552pt>
+[30 <./figures/lab02/eda_005.png> <./figures/lab02/eda_006.png>]
+<figures/lab02/eda_009.png, id=679, 818.0964pt x 705.3552pt>
 File: figures/lab02/eda_009.png Graphic file (type png)
 <use figures/lab02/eda_009.png>
 Package pdftex.def Info: figures/lab02/eda_009.png  used on input line 108.
 (pdftex.def)             Requested size: 355.08984pt x 306.14897pt.
-<figures/lab02/eda_010.png, id=675, 1430.946pt x 367.1316pt>
+<figures/lab02/eda_010.png, id=680, 1430.946pt x 367.1316pt>
 File: figures/lab02/eda_010.png Graphic file (type png)
 <use figures/lab02/eda_010.png>
 Package pdftex.def Info: figures/lab02/eda_010.png  used on input line 113.
 (pdftex.def)             Requested size: 455.24411pt x 116.79546pt.
-<figures/lab02/eda_011.png, id=676, 1408.5423pt x 367.1316pt>
+<figures/lab02/eda_011.png, id=681, 1408.5423pt x 367.1316pt>
 File: figures/lab02/eda_011.png Graphic file (type png)
 <use figures/lab02/eda_011.png>
 Package pdftex.def Info: figures/lab02/eda_011.png  used on input line 117.
 (pdftex.def)             Requested size: 455.24411pt x 118.65532pt.
-<figures/lab02/eda_012.png, id=677, 1435.2822pt x 367.1316pt>
+<figures/lab02/eda_012.png, id=682, 1435.2822pt x 367.1316pt>
 File: figures/lab02/eda_012.png Graphic file (type png)
 <use figures/lab02/eda_012.png>
 Package pdftex.def Info: figures/lab02/eda_012.png  used on input line 121.
@@ -1873,18 +1864,18 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[30 <./figures/lab02/eda_009.png> <./figures/lab02/eda_010.png>]
-<figures/lab02/eda_013.png, id=687, 1138.9752pt x 367.1316pt>
+[31 <./figures/lab02/eda_009.png> <./figures/lab02/eda_010.png>]
+<figures/lab02/eda_013.png, id=691, 1138.9752pt x 367.1316pt>
 File: figures/lab02/eda_013.png Graphic file (type png)
 <use figures/lab02/eda_013.png>
 Package pdftex.def Info: figures/lab02/eda_013.png  used on input line 125.
 (pdftex.def)             Requested size: 455.24411pt x 146.73799pt.
-<figures/lab02/eda_014.png, id=688, 1059.4782pt x 344.0052pt>
+<figures/lab02/eda_014.png, id=692, 1059.4782pt x 344.0052pt>
 File: figures/lab02/eda_014.png Graphic file (type png)
 <use figures/lab02/eda_014.png>
 Package pdftex.def Info: figures/lab02/eda_014.png  used on input line 130.
 (pdftex.def)             Requested size: 455.24411pt x 147.81436pt.
-<figures/lab02/eda_015.png, id=689, 1428.0552pt x 367.1316pt>
+<figures/lab02/eda_015.png, id=693, 1428.0552pt x 367.1316pt>
 File: figures/lab02/eda_015.png Graphic file (type png)
 <use figures/lab02/eda_015.png>
 Package pdftex.def Info: figures/lab02/eda_015.png  used on input line 134.
@@ -1911,9 +1902,9 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[31 <./figures/lab02/eda_011.png> <./figures/lab02/eda_012.png> <./figures/lab0
+[32 <./figures/lab02/eda_011.png> <./figures/lab02/eda_012.png> <./figures/lab0
 2/eda_013.png>]
-<figures/lab02/eda_017.png, id=700, 1138.9752pt x 344.0052pt>
+<figures/lab02/eda_017.png, id=704, 1138.9752pt x 344.0052pt>
 File: figures/lab02/eda_017.png Graphic file (type png)
 <use figures/lab02/eda_017.png>
 Package pdftex.def Info: figures/lab02/eda_017.png  used on input line 138.
@@ -1944,9 +1935,9 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[32 <./figures/lab02/eda_014.png> <./figures/lab02/eda_015.png> <./figures/lab0
+[33 <./figures/lab02/eda_014.png> <./figures/lab02/eda_015.png> <./figures/lab0
 2/eda_017.png>]
-<figures/lab02/notebook_revenue_distribution_boxplot.png, id=711, 1011.78pt x 3
+<figures/lab02/notebook_revenue_distribution_boxplot.png, id=715, 1011.78pt x 3
 61.35pt>
 File: figures/lab02/notebook_revenue_distribution_boxplot.png Graphic file (typ
 e png)
@@ -1954,7 +1945,7 @@ e png)
 Package pdftex.def Info: figures/lab02/notebook_revenue_distribution_boxplot.pn
 g  used on input line 147.
 (pdftex.def)             Requested size: 455.24411pt x 162.58945pt.
-<figures/lab02/notebook_revenue_boxplot_by_segments.png, id=712, 1156.32pt x 43
+<figures/lab02/notebook_revenue_boxplot_by_segments.png, id=716, 1156.32pt x 43
 3.62pt>
 File: figures/lab02/notebook_revenue_boxplot_by_segments.png Graphic file (type
  png)
@@ -1962,13 +1953,13 @@ File: figures/lab02/notebook_revenue_boxplot_by_segments.png Graphic file (type
 Package pdftex.def Info: figures/lab02/notebook_revenue_boxplot_by_segments.png
   used on input line 151.
 (pdftex.def)             Requested size: 455.24411pt x 170.71231pt.
-<figures/lab02/notebook_time_eda.png, id=713, 1156.32pt x 361.35pt>
+<figures/lab02/notebook_time_eda.png, id=717, 1156.32pt x 361.35pt>
 File: figures/lab02/notebook_time_eda.png Graphic file (type png)
 <use figures/lab02/notebook_time_eda.png>
 Package pdftex.def Info: figures/lab02/notebook_time_eda.png  used on input lin
 e 155.
 (pdftex.def)             Requested size: 455.24411pt x 142.26025pt.
-<figures/lab02/notebook_daily_revenue_rolling_mean.png, id=714, 1084.05pt x 433
+<figures/lab02/notebook_daily_revenue_rolling_mean.png, id=718, 1084.05pt x 433
 .62pt>
 File: figures/lab02/notebook_daily_revenue_rolling_mean.png Graphic file (type 
 png)
@@ -1998,16 +1989,16 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[33 <./figures/lab02/notebook_revenue_distribution_boxplot.png> <./figures/lab0
+[34 <./figures/lab02/notebook_revenue_distribution_boxplot.png> <./figures/lab0
 2/notebook_revenue_boxplot_by_segments.png>]
-<figures/lab02/notebook_product_geography_eda.png, id=724, 1156.32pt x 794.97pt
+<figures/lab02/notebook_product_geography_eda.png, id=728, 1156.32pt x 794.97pt
 >
 File: figures/lab02/notebook_product_geography_eda.png Graphic file (type png)
 <use figures/lab02/notebook_product_geography_eda.png>
 Package pdftex.def Info: figures/lab02/notebook_product_geography_eda.png  used
  on input line 164.
 (pdftex.def)             Requested size: 455.24411pt x 312.97258pt.
-<figures/lab02/notebook_relationship_eda.png, id=725, 1011.78pt x 361.35pt>
+<figures/lab02/notebook_relationship_eda.png, id=729, 1011.78pt x 361.35pt>
 File: figures/lab02/notebook_relationship_eda.png Graphic file (type png)
 <use figures/lab02/notebook_relationship_eda.png>
 Package pdftex.def Info: figures/lab02/notebook_relationship_eda.png  used on i
@@ -2035,9 +2026,9 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[34 <./figures/lab02/notebook_time_eda.png> <./figures/lab02/notebook_daily_rev
+[35 <./figures/lab02/notebook_time_eda.png> <./figures/lab02/notebook_daily_rev
 enue_rolling_mean.png>]
-<figures/lab02/notebook_numeric_correlation_heatmap.png, id=734, 578.16pt x 433
+<figures/lab02/notebook_numeric_correlation_heatmap.png, id=738, 578.16pt x 433
 .62pt>
 File: figures/lab02/notebook_numeric_correlation_heatmap.png Graphic file (type
  png)
@@ -2045,7 +2036,7 @@ File: figures/lab02/notebook_numeric_correlation_heatmap.png Graphic file (type
 Package pdftex.def Info: figures/lab02/notebook_numeric_correlation_heatmap.png
   used on input line 172.
 (pdftex.def)             Requested size: 455.24411pt x 341.43124pt.
-<figures/lab02/notebook_scatter_grid_features_vs_revenue.png, id=735, 1300.86pt
+<figures/lab02/notebook_scatter_grid_features_vs_revenue.png, id=739, 1300.86pt
  x 722.7pt>
 File: figures/lab02/notebook_scatter_grid_features_vs_revenue.png Graphic file 
 (type png)
@@ -2075,9 +2066,9 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[35 <./figures/lab02/notebook_product_geography_eda.png> <./figures/lab02/noteb
+[36 <./figures/lab02/notebook_product_geography_eda.png> <./figures/lab02/noteb
 ook_relationship_eda.png>]
-<figures/lab02/notebook_advanced_target_distribution.png, id=744, 1084.05pt x 7
+<figures/lab02/notebook_advanced_target_distribution.png, id=749, 1084.05pt x 7
 22.7pt>
 File: figures/lab02/notebook_advanced_target_distribution.png Graphic file (typ
 e png)
@@ -2085,7 +2076,7 @@ e png)
 Package pdftex.def Info: figures/lab02/notebook_advanced_target_distribution.pn
 g  used on input line 181.
 (pdftex.def)             Requested size: 455.24411pt x 303.49884pt.
-<figures/lab02/notebook_density_original_vs_scaled.png, id=745, 1084.05pt x 361
+<figures/lab02/notebook_density_original_vs_scaled.png, id=750, 1084.05pt x 361
 .35pt>
 File: figures/lab02/notebook_density_original_vs_scaled.png Graphic file (type 
 png)
@@ -2115,7 +2106,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[36 <./figures/lab02/notebook_numeric_correlation_heatmap.png> <./figures/lab02
+[37 <./figures/lab02/notebook_numeric_correlation_heatmap.png> <./figures/lab02
 /notebook_scatter_grid_features_vs_revenue.png>]
 Overfull \hbox (753.59404pt too wide) in paragraph at lines 195--203
  [][] 
@@ -2142,7 +2133,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[37 <./figures/lab02/notebook_advanced_target_distribution.png> <./figures/lab0
+[38 <./figures/lab02/notebook_advanced_target_distribution.png> <./figures/lab0
 2/notebook_density_original_vs_scaled.png>]
 ! Leaders not followed by proper glue.
 <to be read again> 
@@ -2165,7 +2156,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[38]
+[39]
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
@@ -2187,7 +2178,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[39]
+[40]
 Overfull \hbox (3.6295pt too wide) in paragraph at lines 289--290
 []\T1/cmr/bx/n/12 One-hot pipeline \T1/cmr/m/n/12 ^^V \T1/cmtt/m/n/12 MedianImp
 uter $\OMS/cmsy/m/n/12 !$ \T1/cmtt/m/n/12 StandardScaler / OneHotEncoder\T1/cmr
@@ -2215,7 +2206,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[40]
+[41]
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
@@ -2237,7 +2228,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[41]
+[42]
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
@@ -2254,7 +2245,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[42]
+[43]
 Overfull \hbox (16.10872pt too wide) in paragraph at lines 371--372
 []\T1/cmr/bx/n/12 Log-Transformed Fea-tures: \T1/cmr/m/n/12 Right-skewed nu-mer
 -i-cal fea-tures (\T1/cmtt/m/n/12 onpromotion\T1/cmr/m/n/12 , \T1/cmtt/m/n/12 d
@@ -2282,7 +2273,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[43]
+[44]
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
@@ -2304,7 +2295,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[44]
+[45]
 Overfull \hbox (3.16124pt too wide) in paragraph at lines 423--424
 []\T1/cmr/bx/n/12 Log-transforming fea-tures ben-e-fits lin-ear mod-els dis-pro
 -por-tion-ately. \T1/cmr/m/n/12 Ridge
@@ -2331,8 +2322,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[45]
-<figures/lab02/loss_curves_nolog.png, id=850, 1428.537pt x 365.6862pt>
+[46]
+<figures/lab02/loss_curves_nolog.png, id=854, 1428.537pt x 365.6862pt>
 File: figures/lab02/loss_curves_nolog.png Graphic file (type png)
 <use figures/lab02/loss_curves_nolog.png>
 Package pdftex.def Info: figures/lab02/loss_curves_nolog.png  used on input lin
@@ -2342,13 +2333,13 @@ File: figures/lab02/eda_001.png Graphic file (type png)
 <use figures/lab02/eda_001.png>
 Package pdftex.def Info: figures/lab02/eda_001.png  used on input line 432.
 (pdftex.def)             Requested size: 341.43307pt x 131.53432pt.
-<figures/lab02/rmsle_comparison.png, id=851, 1066.7052pt x 344.0052pt>
+<figures/lab02/rmsle_comparison.png, id=855, 1066.7052pt x 344.0052pt>
 File: figures/lab02/rmsle_comparison.png Graphic file (type png)
 <use figures/lab02/rmsle_comparison.png>
 Package pdftex.def Info: figures/lab02/rmsle_comparison.png  used on input line
  437.
 (pdftex.def)             Requested size: 373.3035pt x 120.38786pt.
-<figures/lab02/rmsle_delta.png, id=852, 560.8152pt x 270.2898pt>
+<figures/lab02/rmsle_delta.png, id=856, 560.8152pt x 270.2898pt>
 File: figures/lab02/rmsle_delta.png Graphic file (type png)
 <use figures/lab02/rmsle_delta.png>
 Package pdftex.def Info: figures/lab02/rmsle_delta.png  used on input line 442.
@@ -2376,21 +2367,21 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[46 <./figures/lab02/loss_curves_nolog.png> <./figures/lab02/rmsle_comparison.p
+[47 <./figures/lab02/loss_curves_nolog.png> <./figures/lab02/rmsle_comparison.p
 ng>]
-<figures/lab02/loss_curves_log.png, id=862, 1428.537pt x 365.6862pt>
+<figures/lab02/loss_curves_log.png, id=866, 1428.537pt x 365.6862pt>
 File: figures/lab02/loss_curves_log.png Graphic file (type png)
 <use figures/lab02/loss_curves_log.png>
 Package pdftex.def Info: figures/lab02/loss_curves_log.png  used on input line 
 447.
 (pdftex.def)             Requested size: 455.24411pt x 116.53651pt.
-<figures/lab02/monthly_revenue.png, id=863, 867.24pt x 361.35pt>
+<figures/lab02/monthly_revenue.png, id=867, 867.24pt x 361.35pt>
 File: figures/lab02/monthly_revenue.png Graphic file (type png)
 <use figures/lab02/monthly_revenue.png>
 Package pdftex.def Info: figures/lab02/monthly_revenue.png  used on input line 
 451.
 (pdftex.def)             Requested size: 455.24411pt x 189.68402pt.
-<figures/lab02/predicted_vs_actual_model_a_with_quantity.png, id=864, 505.89pt 
+<figures/lab02/predicted_vs_actual_model_a_with_quantity.png, id=868, 505.89pt 
 x 505.89pt>
 File: figures/lab02/predicted_vs_actual_model_a_with_quantity.png Graphic file 
 (type png)
@@ -2398,7 +2389,7 @@ File: figures/lab02/predicted_vs_actual_model_a_with_quantity.png Graphic file
 Package pdftex.def Info: figures/lab02/predicted_vs_actual_model_a_with_quantit
 y.png  used on input line 456.
 (pdftex.def)             Requested size: 455.24411pt x 455.25046pt.
-<figures/lab02/predicted_vs_actual_model_b_no_quantity.png, id=865, 505.89pt x 
+<figures/lab02/predicted_vs_actual_model_b_no_quantity.png, id=869, 505.89pt x 
 505.89pt>
 File: figures/lab02/predicted_vs_actual_model_b_no_quantity.png Graphic file (t
 ype png)
@@ -2428,7 +2419,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[47 <./figures/lab02/rmsle_delta.png> <./figures/lab02/loss_curves_log.png> <./
+[48 <./figures/lab02/rmsle_delta.png> <./figures/lab02/loss_curves_log.png> <./
 figures/lab02/monthly_revenue.png>]
 ! Leaders not followed by proper glue.
 <to be read again> 
@@ -2451,8 +2442,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[48 <./figures/lab02/predicted_vs_actual_model_a_with_quantity.png>]
-<figures/lab02/residuals_model_a_with_quantity.png, id=883, 650.43pt x 361.35pt
+[49 <./figures/lab02/predicted_vs_actual_model_a_with_quantity.png>]
+<figures/lab02/residuals_model_a_with_quantity.png, id=887, 650.43pt x 361.35pt
 >
 File: figures/lab02/residuals_model_a_with_quantity.png Graphic file (type png)
 
@@ -2460,7 +2451,7 @@ File: figures/lab02/residuals_model_a_with_quantity.png Graphic file (type png)
 Package pdftex.def Info: figures/lab02/residuals_model_a_with_quantity.png  use
 d on input line 465.
 (pdftex.def)             Requested size: 455.24411pt x 252.92122pt.
-<figures/lab02/residuals_model_b_no_quantity.png, id=884, 650.43pt x 361.35pt>
+<figures/lab02/residuals_model_b_no_quantity.png, id=888, 650.43pt x 361.35pt>
 File: figures/lab02/residuals_model_b_no_quantity.png Graphic file (type png)
 <use figures/lab02/residuals_model_b_no_quantity.png>
 Package pdftex.def Info: figures/lab02/residuals_model_b_no_quantity.png  used 
@@ -2488,8 +2479,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[49 <./figures/lab02/predicted_vs_actual_model_b_no_quantity.png>]
-<figures/lab02/residual_by_month_model_a_with_quantity.png, id=891, 722.7pt x 2
+[50 <./figures/lab02/predicted_vs_actual_model_b_no_quantity.png>]
+<figures/lab02/residual_by_month_model_a_with_quantity.png, id=895, 722.7pt x 2
 89.08pt>
 File: figures/lab02/residual_by_month_model_a_with_quantity.png Graphic file (t
 ype png)
@@ -2497,7 +2488,7 @@ ype png)
 Package pdftex.def Info: figures/lab02/residual_by_month_model_a_with_quantity.
 png  used on input line 474.
 (pdftex.def)             Requested size: 455.24411pt x 182.0993pt.
-<figures/lab02/residual_by_month_model_b_no_quantity.png, id=892, 722.7pt x 289
+<figures/lab02/residual_by_month_model_b_no_quantity.png, id=896, 722.7pt x 289
 .08pt>
 File: figures/lab02/residual_by_month_model_b_no_quantity.png Graphic file (typ
 e png)
@@ -2527,9 +2518,9 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[50 <./figures/lab02/residuals_model_a_with_quantity.png> <./figures/lab02/resi
+[51 <./figures/lab02/residuals_model_a_with_quantity.png> <./figures/lab02/resi
 duals_model_b_no_quantity.png>]
-<figures/lab02/residual_by_category_model_a_with_quantity.png, id=901, 794.97pt
+<figures/lab02/residual_by_category_model_a_with_quantity.png, id=905, 794.97pt
  x 433.62pt>
 File: figures/lab02/residual_by_category_model_a_with_quantity.png Graphic file
  (type png)
@@ -2537,7 +2528,7 @@ File: figures/lab02/residual_by_category_model_a_with_quantity.png Graphic file
 Package pdftex.def Info: figures/lab02/residual_by_category_model_a_with_quanti
 ty.png  used on input line 483.
 (pdftex.def)             Requested size: 455.24411pt x 248.32385pt.
-<figures/lab02/residual_by_category_model_b_no_quantity.png, id=902, 794.97pt x
+<figures/lab02/residual_by_category_model_b_no_quantity.png, id=906, 794.97pt x
  433.62pt>
 File: figures/lab02/residual_by_category_model_b_no_quantity.png Graphic file (
 type png)
@@ -2567,9 +2558,9 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[51 <./figures/lab02/residual_by_month_model_a_with_quantity.png> <./figures/la
+[52 <./figures/lab02/residual_by_month_model_a_with_quantity.png> <./figures/la
 b02/residual_by_month_model_b_no_quantity.png>]
-<figures/lab02/notebook_model_b_actual_vs_predicted_line.png, id=911, 1084.05pt
+<figures/lab02/notebook_model_b_actual_vs_predicted_line.png, id=915, 1084.05pt
  x 433.62pt>
 File: figures/lab02/notebook_model_b_actual_vs_predicted_line.png Graphic file 
 (type png)
@@ -2577,7 +2568,7 @@ File: figures/lab02/notebook_model_b_actual_vs_predicted_line.png Graphic file
 Package pdftex.def Info: figures/lab02/notebook_model_b_actual_vs_predicted_lin
 e.png  used on input line 492.
 (pdftex.def)             Requested size: 455.24411pt x 182.0993pt.
-<figures/lab02/notebook_model_b_prediction_plots.png, id=912, 1011.78pt x 361.3
+<figures/lab02/notebook_model_b_prediction_plots.png, id=916, 1011.78pt x 361.3
 5pt>
 File: figures/lab02/notebook_model_b_prediction_plots.png Graphic file (type pn
 g)
@@ -2607,9 +2598,9 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[52 <./figures/lab02/residual_by_category_model_a_with_quantity.png> <./figures
+[53 <./figures/lab02/residual_by_category_model_a_with_quantity.png> <./figures
 /lab02/residual_by_category_model_b_no_quantity.png>]
-<figures/lab02/notebook_model_b_epsilon_tube_style.png, id=921, 722.7pt x 578.1
+<figures/lab02/notebook_model_b_epsilon_tube_style.png, id=925, 722.7pt x 578.1
 6pt>
 File: figures/lab02/notebook_model_b_epsilon_tube_style.png Graphic file (type 
 png)
@@ -2617,7 +2608,7 @@ png)
 Package pdftex.def Info: figures/lab02/notebook_model_b_epsilon_tube_style.png 
  used on input line 501.
 (pdftex.def)             Requested size: 455.24411pt x 364.19861pt.
-<figures/lab02/notebook_model_a_prediction_plots.png, id=922, 1011.78pt x 361.3
+<figures/lab02/notebook_model_a_prediction_plots.png, id=926, 1011.78pt x 361.3
 5pt>
 File: figures/lab02/notebook_model_a_prediction_plots.png Graphic file (type pn
 g)
@@ -2647,9 +2638,9 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[53 <./figures/lab02/notebook_model_b_actual_vs_predicted_line.png> <./figures/
+[54 <./figures/lab02/notebook_model_b_actual_vs_predicted_line.png> <./figures/
 lab02/notebook_model_b_prediction_plots.png>]
-<figures/lab02/notebook_final_ridge_feature_weights.png, id=932, 794.97pt x 505
+<figures/lab02/notebook_final_ridge_feature_weights.png, id=937, 794.97pt x 505
 .89pt>
 File: figures/lab02/notebook_final_ridge_feature_weights.png Graphic file (type
  png)
@@ -2657,7 +2648,7 @@ File: figures/lab02/notebook_final_ridge_feature_weights.png Graphic file (type
 Package pdftex.def Info: figures/lab02/notebook_final_ridge_feature_weights.png
   used on input line 510.
 (pdftex.def)             Requested size: 455.24411pt x 289.71115pt.
-<figures/lab02/notebook_full_eda_dashboard_like_sample.png, id=933, 1445.4pt x 
+<figures/lab02/notebook_full_eda_dashboard_like_sample.png, id=938, 1445.4pt x 
 1084.05pt>
 File: figures/lab02/notebook_full_eda_dashboard_like_sample.png Graphic file (t
 ype png)
@@ -2687,7 +2678,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[54 <./figures/lab02/notebook_model_b_epsilon_tube_style.png> <./figures/lab02/
+[55 <./figures/lab02/notebook_model_b_epsilon_tube_style.png> <./figures/lab02/
 notebook_model_a_prediction_plots.png>]
 ! Leaders not followed by proper glue.
 <to be read again> 
@@ -2710,14 +2701,14 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[55 <./figures/lab02/notebook_final_ridge_feature_weights.png>]
-<figures/lab02/revenue_distribution.png, id=949, 722.7pt x 433.62pt>
+[56 <./figures/lab02/notebook_final_ridge_feature_weights.png>]
+<figures/lab02/revenue_distribution.png, id=953, 722.7pt x 433.62pt>
 File: figures/lab02/revenue_distribution.png Graphic file (type png)
 <use figures/lab02/revenue_distribution.png>
 Package pdftex.def Info: figures/lab02/revenue_distribution.png  used on input 
 line 519.
 (pdftex.def)             Requested size: 455.24411pt x 273.14896pt.
-<figures/lab02/revenue_boxplot.png, id=950, 722.7pt x 289.08pt>
+<figures/lab02/revenue_boxplot.png, id=954, 722.7pt x 289.08pt>
 File: figures/lab02/revenue_boxplot.png Graphic file (type png)
 <use figures/lab02/revenue_boxplot.png>
 Package pdftex.def Info: figures/lab02/revenue_boxplot.png  used on input line 
@@ -2745,14 +2736,14 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[56 <./figures/lab02/notebook_full_eda_dashboard_like_sample.png>]
-<figures/lab02/revenue_by_region.png, id=957, 794.97pt x 433.62pt>
+[57 <./figures/lab02/notebook_full_eda_dashboard_like_sample.png>]
+<figures/lab02/revenue_by_region.png, id=961, 794.97pt x 433.62pt>
 File: figures/lab02/revenue_by_region.png Graphic file (type png)
 <use figures/lab02/revenue_by_region.png>
 Package pdftex.def Info: figures/lab02/revenue_by_region.png  used on input lin
 e 527.
 (pdftex.def)             Requested size: 455.24411pt x 248.32385pt.
-<figures/lab02/revenue_by_category.png, id=958, 794.97pt x 433.62pt>
+<figures/lab02/revenue_by_category.png, id=962, 794.97pt x 433.62pt>
 File: figures/lab02/revenue_by_category.png Graphic file (type png)
 <use figures/lab02/revenue_by_category.png>
 Package pdftex.def Info: figures/lab02/revenue_by_category.png  used on input l
@@ -2780,15 +2771,15 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[57 <./figures/lab02/revenue_distribution.png> <./figures/lab02/revenue_boxplot
+[58 <./figures/lab02/revenue_distribution.png> <./figures/lab02/revenue_boxplot
 .png>]
-<figures/lab02/quantity_distribution.png, id=967, 578.16pt x 289.08pt>
+<figures/lab02/quantity_distribution.png, id=971, 578.16pt x 289.08pt>
 File: figures/lab02/quantity_distribution.png Graphic file (type png)
 <use figures/lab02/quantity_distribution.png>
 Package pdftex.def Info: figures/lab02/quantity_distribution.png  used on input
  line 535.
 (pdftex.def)             Requested size: 455.24411pt x 227.62082pt.
-<figures/lab02/quantity_vs_revenue.png, id=968, 578.16pt x 433.62pt>
+<figures/lab02/quantity_vs_revenue.png, id=972, 578.16pt x 433.62pt>
 File: figures/lab02/quantity_vs_revenue.png Graphic file (type png)
 <use figures/lab02/quantity_vs_revenue.png>
 Package pdftex.def Info: figures/lab02/quantity_vs_revenue.png  used on input l
@@ -2816,15 +2807,15 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[58 <./figures/lab02/revenue_by_region.png> <./figures/lab02/revenue_by_categor
+[59 <./figures/lab02/revenue_by_region.png> <./figures/lab02/revenue_by_categor
 y.png>]
-<figures/lab02/unit_price_vs_revenue.png, id=977, 578.16pt x 433.62pt>
+<figures/lab02/unit_price_vs_revenue.png, id=981, 578.16pt x 433.62pt>
 File: figures/lab02/unit_price_vs_revenue.png Graphic file (type png)
 <use figures/lab02/unit_price_vs_revenue.png>
 Package pdftex.def Info: figures/lab02/unit_price_vs_revenue.png  used on input
  line 543.
 (pdftex.def)             Requested size: 455.24411pt x 341.43124pt.
-<figures/lab02/top_products_by_revenue.png, id=978, 794.97pt x 433.62pt>
+<figures/lab02/top_products_by_revenue.png, id=982, 794.97pt x 433.62pt>
 File: figures/lab02/top_products_by_revenue.png Graphic file (type png)
 <use figures/lab02/top_products_by_revenue.png>
 Package pdftex.def Info: figures/lab02/top_products_by_revenue.png  used on inp
@@ -2852,9 +2843,9 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[59 <./figures/lab02/quantity_distribution.png> <./figures/lab02/quantity_vs_re
+[60 <./figures/lab02/quantity_distribution.png> <./figures/lab02/quantity_vs_re
 venue.png>]
-<figures/lab02/top_states_by_revenue.png, id=987, 794.97pt x 433.62pt>
+<figures/lab02/top_states_by_revenue.png, id=992, 794.97pt x 433.62pt>
 File: figures/lab02/top_states_by_revenue.png Graphic file (type png)
 <use figures/lab02/top_states_by_revenue.png>
 Package pdftex.def Info: figures/lab02/top_states_by_revenue.png  used on input
@@ -2882,7 +2873,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[60 <./figures/lab02/unit_price_vs_revenue.png> <./figures/lab02/top_products_b
+[61 <./figures/lab02/unit_price_vs_revenue.png> <./figures/lab02/top_products_b
 y_revenue.png>])
 ! Leaders not followed by proper glue.
 <to be read again> 
@@ -2905,7 +2896,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[61 <./figures/lab02/top_states_by_revenue.png>]
+[62 <./figures/lab02/top_states_by_revenue.png>]
 \openout2 = `chapters/04_lab03_segmentation.aux'.
 
 
@@ -2926,19 +2917,19 @@ Overfull \hbox (20.71005pt too wide) in paragraph at lines 23--24
 m/n/12 age\T1/cmr/m/n/12 , \T1/cmtt/m/n/12 annual_income\T1/cmr/m/n/12 ,
  []
 
-[62
+[63
 
 
 
 
 ]
-<figures/lab03/missing_values.png, id=1007, 566.41612pt x 277.33612pt>
+<figures/lab03/missing_values.png, id=1011, 566.41612pt x 277.33612pt>
 File: figures/lab03/missing_values.png Graphic file (type png)
 <use figures/lab03/missing_values.png>
 Package pdftex.def Info: figures/lab03/missing_values.png  used on input line 3
 8.
 (pdftex.def)             Requested size: 455.24411pt x 222.90175pt.
-<figures/lab03/boxplots_before.png, id=1008, 927.76613pt x 301.72725pt>
+<figures/lab03/boxplots_before.png, id=1012, 927.76613pt x 301.72725pt>
 File: figures/lab03/boxplots_before.png Graphic file (type png)
 <use figures/lab03/boxplots_before.png>
 Package pdftex.def Info: figures/lab03/boxplots_before.png  used on input line 
@@ -2966,8 +2957,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[63 <./figures/lab03/missing_values.png>]
-<figures/lab03/duplicate_summary.png, id=1015, 494.14612pt x 277.33612pt>
+[64 <./figures/lab03/missing_values.png>]
+<figures/lab03/duplicate_summary.png, id=1019, 494.14612pt x 277.33612pt>
 File: figures/lab03/duplicate_summary.png Graphic file (type png)
 <use figures/lab03/duplicate_summary.png>
 Package pdftex.def Info: figures/lab03/duplicate_summary.png  used on input lin
@@ -2995,14 +2986,14 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[64 <./figures/lab03/boxplots_before.png> <./figures/lab03/duplicate_summary.pn
+[65 <./figures/lab03/boxplots_before.png> <./figures/lab03/duplicate_summary.pn
 g>]
 Overfull \hbox (12.80077pt too wide) in paragraph at lines 75--76
 \T1/cmr/m/n/12 high/low, medium/medium, low/high, low/low. Each clus-ter rep-re
 -sents a co-her-ent spending-
  []
 
-<figures/lab03/scatter_annual_income_vs_spending_score_before.png, id=1024, 494
+<figures/lab03/scatter_annual_income_vs_spending_score_before.png, id=1028, 494
 .14612pt x 349.60612pt>
 File: figures/lab03/scatter_annual_income_vs_spending_score_before.png Graphic 
 file (type png)
@@ -3031,8 +3022,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[65]
-<figures/lab03/pairplot_before.png, id=1030, 615.19838pt x 555.57562pt>
+[66]
+<figures/lab03/pairplot_before.png, id=1035, 615.19838pt x 555.57562pt>
 File: figures/lab03/pairplot_before.png Graphic file (type png)
 <use figures/lab03/pairplot_before.png>
 Package pdftex.def Info: figures/lab03/pairplot_before.png  used on input line 
@@ -3060,8 +3051,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[66 <./figures/lab03/scatter_annual_income_vs_spending_score_before.png>]
-<figures/lab03/correlation_heatmap_before.png, id=1038, 410.58394pt x 359.09157
+[67 <./figures/lab03/scatter_annual_income_vs_spending_score_before.png>]
+<figures/lab03/correlation_heatmap_before.png, id=1042, 410.58394pt x 359.09157
 pt>
 File: figures/lab03/correlation_heatmap_before.png Graphic file (type png)
 <use figures/lab03/correlation_heatmap_before.png>
@@ -3090,8 +3081,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[67 <./figures/lab03/pairplot_before.png>]
-<figures/lab03/scatter_age_vs_spending_score_before.png, id=1045, 494.14612pt x
+[68 <./figures/lab03/pairplot_before.png>]
+<figures/lab03/scatter_age_vs_spending_score_before.png, id=1049, 494.14612pt x
  349.60612pt>
 File: figures/lab03/scatter_age_vs_spending_score_before.png Graphic file (type
  png)
@@ -3121,8 +3112,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[68 <./figures/lab03/correlation_heatmap_before.png>]
-<figures/lab03/scatter_age_vs_annual_income_before.png, id=1052, 494.14612pt x 
+[69 <./figures/lab03/correlation_heatmap_before.png>]
+<figures/lab03/scatter_age_vs_annual_income_before.png, id=1056, 494.14612pt x 
 349.60612pt>
 File: figures/lab03/scatter_age_vs_annual_income_before.png Graphic file (type 
 png)
@@ -3152,15 +3143,15 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[69 <./figures/lab03/scatter_age_vs_spending_score_before.png>]
-<figures/lab03/distribution_age_before.png, id=1059, 566.41612pt x 313.47113pt>
+[70 <./figures/lab03/scatter_age_vs_spending_score_before.png>]
+<figures/lab03/distribution_age_before.png, id=1063, 566.41612pt x 313.47113pt>
 
 File: figures/lab03/distribution_age_before.png Graphic file (type png)
 <use figures/lab03/distribution_age_before.png>
 Package pdftex.def Info: figures/lab03/distribution_age_before.png  used on inp
 ut line 109.
 (pdftex.def)             Requested size: 455.24411pt x 251.94432pt.
-<figures/lab03/distribution_annual_income_before.png, id=1060, 566.41612pt x 31
+<figures/lab03/distribution_annual_income_before.png, id=1064, 566.41612pt x 31
 3.47113pt>
 File: figures/lab03/distribution_annual_income_before.png Graphic file (type pn
 g)
@@ -3190,9 +3181,9 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[70 <./figures/lab03/scatter_age_vs_annual_income_before.png> <./figures/lab03/
+[71 <./figures/lab03/scatter_age_vs_annual_income_before.png> <./figures/lab03/
 distribution_age_before.png>]
-<figures/lab03/distribution_spending_score_before.png, id=1069, 566.41612pt x 3
+<figures/lab03/distribution_spending_score_before.png, id=1073, 566.41612pt x 3
 13.47113pt>
 File: figures/lab03/distribution_spending_score_before.png Graphic file (type p
 ng)
@@ -3200,7 +3191,7 @@ ng)
 Package pdftex.def Info: figures/lab03/distribution_spending_score_before.png  
 used on input line 121.
 (pdftex.def)             Requested size: 455.24411pt x 251.94432pt.
-<figures/lab03/gender_distribution_before.png, id=1070, 421.87613pt x 277.33612
+<figures/lab03/gender_distribution_before.png, id=1074, 421.87613pt x 277.33612
 pt>
 File: figures/lab03/gender_distribution_before.png Graphic file (type png)
 <use figures/lab03/gender_distribution_before.png>
@@ -3229,7 +3220,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[71 <./figures/lab03/distribution_annual_income_before.png> <./figures/lab03/di
+[72 <./figures/lab03/distribution_annual_income_before.png> <./figures/lab03/di
 stribution_spending_score_before.png>]
 ! Leaders not followed by proper glue.
 <to be read again> 
@@ -3252,8 +3243,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[72 <./figures/lab03/gender_distribution_before.png>]
-<figures/lab03/kmeans_elbow_curve.png, id=1087, 494.14612pt x 313.47113pt>
+[73 <./figures/lab03/gender_distribution_before.png>]
+<figures/lab03/kmeans_elbow_curve.png, id=1091, 494.14612pt x 313.47113pt>
 File: figures/lab03/kmeans_elbow_curve.png Graphic file (type png)
 <use figures/lab03/kmeans_elbow_curve.png>
 Package pdftex.def Info: figures/lab03/kmeans_elbow_curve.png  used on input li
@@ -3281,8 +3272,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[73]
-<figures/lab03/kmeans_silhouette_curve.png, id=1094, 494.14612pt x 313.47113pt>
+[74]
+<figures/lab03/kmeans_silhouette_curve.png, id=1099, 494.14612pt x 313.47113pt>
 
 File: figures/lab03/kmeans_silhouette_curve.png Graphic file (type png)
 <use figures/lab03/kmeans_silhouette_curve.png>
@@ -3311,7 +3302,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[74 <./figures/lab03/kmeans_elbow_curve.png>]
+[75 <./figures/lab03/kmeans_elbow_curve.png>]
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
@@ -3328,8 +3319,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[75 <./figures/lab03/kmeans_silhouette_curve.png>]
-<figures/lab03/clusters_annual_income_vs_spending_score.png, id=1131, 566.41612
+[76 <./figures/lab03/kmeans_silhouette_curve.png>]
+<figures/lab03/clusters_annual_income_vs_spending_score.png, id=1135, 566.41612
 pt x 385.74112pt>
 File: figures/lab03/clusters_annual_income_vs_spending_score.png Graphic file (
 type png)
@@ -3359,8 +3350,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[76]
-<figures/lab03/centroid_paths.png, id=1141, 787.38165pt x 570.933pt>
+[77]
+<figures/lab03/centroid_paths.png, id=1145, 787.38165pt x 570.933pt>
 File: figures/lab03/centroid_paths.png Graphic file (type png)
 <use figures/lab03/centroid_paths.png>
 Package pdftex.def Info: figures/lab03/centroid_paths.png  used on input line 2
@@ -3388,8 +3379,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[77 <./figures/lab03/clusters_annual_income_vs_spending_score.png>]
-<figures/lab03/clusters_pca_projection.png, id=1148, 566.41612pt x 385.74112pt>
+[78 <./figures/lab03/clusters_annual_income_vs_spending_score.png>]
+<figures/lab03/clusters_pca_projection.png, id=1153, 566.41612pt x 385.74112pt>
 
 File: figures/lab03/clusters_pca_projection.png Graphic file (type png)
 <use figures/lab03/clusters_pca_projection.png>
@@ -3418,15 +3409,15 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[78 <./figures/lab03/centroid_paths.png>]
-<figures/lab03/clusters_age_vs_spending_score.png, id=1156, 566.41612pt x 385.7
+[79 <./figures/lab03/centroid_paths.png>]
+<figures/lab03/clusters_age_vs_spending_score.png, id=1160, 566.41612pt x 385.7
 4112pt>
 File: figures/lab03/clusters_age_vs_spending_score.png Graphic file (type png)
 <use figures/lab03/clusters_age_vs_spending_score.png>
 Package pdftex.def Info: figures/lab03/clusters_age_vs_spending_score.png  used
  on input line 281.
 (pdftex.def)             Requested size: 455.24411pt x 310.02948pt.
-<figures/lab03/clusters_age_vs_annual_income.png, id=1157, 566.41612pt x 385.74
+<figures/lab03/clusters_age_vs_annual_income.png, id=1161, 566.41612pt x 385.74
 112pt>
 File: figures/lab03/clusters_age_vs_annual_income.png Graphic file (type png)
 <use figures/lab03/clusters_age_vs_annual_income.png>
@@ -3455,9 +3446,9 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[79 <./figures/lab03/clusters_pca_projection.png> <./figures/lab03/clusters_age
+[80 <./figures/lab03/clusters_pca_projection.png> <./figures/lab03/clusters_age
 _vs_spending_score.png>]
-<figures/lab03/gmm_income_vs_spending.png, id=1166, 502.9992pt x 366.8907pt>
+<figures/lab03/gmm_income_vs_spending.png, id=1170, 502.9992pt x 366.8907pt>
 File: figures/lab03/gmm_income_vs_spending.png Graphic file (type png)
 <use figures/lab03/gmm_income_vs_spending.png>
 Package pdftex.def Info: figures/lab03/gmm_income_vs_spending.png  used on inpu
@@ -3485,8 +3476,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[80 <./figures/lab03/clusters_age_vs_annual_income.png>]
-<figures/lab03/gmm_contours.png, id=1173, 549.252pt x 394.5942pt>
+[81 <./figures/lab03/clusters_age_vs_annual_income.png>]
+<figures/lab03/gmm_contours.png, id=1177, 549.252pt x 394.5942pt>
 File: figures/lab03/gmm_contours.png Graphic file (type png)
 <use figures/lab03/gmm_contours.png>
 Package pdftex.def Info: figures/lab03/gmm_contours.png  used on input line 299
@@ -3514,7 +3505,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[81 <./figures/lab03/gmm_income_vs_spending.png>]
+[82 <./figures/lab03/gmm_income_vs_spending.png>]
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
@@ -3536,8 +3527,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[82 <./figures/lab03/gmm_contours.png>]
-<figures/lab03/gmm_contours_comparison.png, id=1187, 533.5935pt x 398.2077pt>
+[83 <./figures/lab03/gmm_contours.png>]
+<figures/lab03/gmm_contours_comparison.png, id=1191, 533.5935pt x 398.2077pt>
 File: figures/lab03/gmm_contours_comparison.png Graphic file (type png)
 <use figures/lab03/gmm_contours_comparison.png>
 Package pdftex.def Info: figures/lab03/gmm_contours_comparison.png  used on inp
@@ -3565,15 +3556,15 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[83]
-<figures/lab03/cluster_centers_original_scale.png, id=1192, 566.41612pt x 349.6
+[84]
+<figures/lab03/cluster_centers_original_scale.png, id=1197, 566.41612pt x 349.6
 0612pt>
 File: figures/lab03/cluster_centers_original_scale.png Graphic file (type png)
 <use figures/lab03/cluster_centers_original_scale.png>
 Package pdftex.def Info: figures/lab03/cluster_centers_original_scale.png  used
  on input line 342.
 (pdftex.def)             Requested size: 355.08984pt x 219.17009pt.
-<figures/lab03/agglomerative_dendrogram_sample.png, id=1193, 710.05275pt x 350.
+<figures/lab03/agglomerative_dendrogram_sample.png, id=1198, 710.05275pt x 350.
 05782pt>
 File: figures/lab03/agglomerative_dendrogram_sample.png Graphic file (type png)
 
@@ -3603,7 +3594,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[84 <./figures/lab03/gmm_contours_comparison.png> <./figures/lab03/cluster_cent
+[85 <./figures/lab03/gmm_contours_comparison.png> <./figures/lab03/cluster_cent
 ers_original_scale.png>])
 ! Leaders not followed by proper glue.
 <to be read again> 
@@ -3626,25 +3617,25 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[85 <./figures/lab03/agglomerative_dendrogram_sample.png>]
+[86 <./figures/lab03/agglomerative_dendrogram_sample.png>]
 \openout2 = `chapters/05_lab31_image_seg.aux'.
 
 
 (./chapters/05_lab31_image_seg.tex
 Chapter 5.
-[86
+[87
 
 
 
 
 ]
-<figures/lab31/original_picture.png, id=1214, 1927.2pt x 2569.6pt>
+<figures/lab31/original_picture.png, id=1218, 1927.2pt x 2569.6pt>
 File: figures/lab31/original_picture.png Graphic file (type png)
 <use figures/lab31/original_picture.png>
 Package pdftex.def Info: figures/lab31/original_picture.png  used on input line
  25.
 (pdftex.def)             Requested size: 386.96027pt x 515.91055pt.
-<figures/lab31/original_picture_2.png, id=1215, 5492.52pt x 3661.68pt>
+<figures/lab31/original_picture_2.png, id=1219, 5492.52pt x 3661.68pt>
 File: figures/lab31/original_picture_2.png Graphic file (type png)
 <use figures/lab31/original_picture_2.png>
 Package pdftex.def Info: figures/lab31/original_picture_2.png  used on input li
@@ -3672,8 +3663,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[87 <./figures/lab31/original_picture.png (PNG copy)>]
-<figures/lab31/original_picture_3.png, id=1221, 738.76pt x 738.76pt>
+[88 <./figures/lab31/original_picture.png (PNG copy)>]
+<figures/lab31/original_picture_3.png, id=1225, 738.76pt x 738.76pt>
 File: figures/lab31/original_picture_3.png Graphic file (type png)
 <use figures/lab31/original_picture_3.png>
 Package pdftex.def Info: figures/lab31/original_picture_3.png  used on input li
@@ -3701,8 +3692,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[88 <./figures/lab31/original_picture_2.png (PNG copy)>]
-<figures/lab31/color_space_preview_picture.png, id=1227, 752.96306pt x 281.853p
+[89 <./figures/lab31/original_picture_2.png (PNG copy)>]
+<figures/lab31/color_space_preview_picture.png, id=1232, 752.96306pt x 281.853p
 t>
 File: figures/lab31/color_space_preview_picture.png Graphic file (type png)
 <use figures/lab31/color_space_preview_picture.png>
@@ -3731,15 +3722,15 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[89 <./figures/lab31/original_picture_3.png (PNG copy)>]
-<figures/lab31/color_space_preview_picture_2.png, id=1237, 860.013pt x 212.7448
+[90 <./figures/lab31/original_picture_3.png (PNG copy)>]
+<figures/lab31/color_space_preview_picture_2.png, id=1242, 860.013pt x 212.7448
 1pt>
 File: figures/lab31/color_space_preview_picture_2.png Graphic file (type png)
 <use figures/lab31/color_space_preview_picture_2.png>
 Package pdftex.def Info: figures/lab31/color_space_preview_picture_2.png  used 
 on input line 52.
 (pdftex.def)             Requested size: 386.96027pt x 95.72453pt.
-<figures/lab31/color_space_preview_picture_3.png, id=1238, 849.62419pt x 294.04
+<figures/lab31/color_space_preview_picture_3.png, id=1243, 849.62419pt x 294.04
 857pt>
 File: figures/lab31/color_space_preview_picture_3.png Graphic file (type png)
 <use figures/lab31/color_space_preview_picture_3.png>
@@ -3768,14 +3759,14 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[90 <./figures/lab31/color_space_preview_picture.png> <./figures/lab31/color_sp
+[91 <./figures/lab31/color_space_preview_picture.png> <./figures/lab31/color_sp
 ace_preview_picture_2.png> <./figures/lab31/color_space_preview_picture_3.png>]
 
 Overfull \hbox (31.32779pt too wide) in paragraph at lines 77--86
  [][] 
  []
 
-<figures/lab31/elbow_plot_picture.png, id=1250, 570.48131pt x 353.67131pt>
+<figures/lab31/elbow_plot_picture.png, id=1254, 570.48131pt x 353.67131pt>
 File: figures/lab31/elbow_plot_picture.png Graphic file (type png)
 <use figures/lab31/elbow_plot_picture.png>
 Package pdftex.def Info: figures/lab31/elbow_plot_picture.png  used on input li
@@ -3802,14 +3793,14 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[91]
-<figures/lab31/elbow_plot_picture_2.png, id=1256, 570.48131pt x 353.67131pt>
+[92]
+<figures/lab31/elbow_plot_picture_2.png, id=1260, 570.48131pt x 353.67131pt>
 File: figures/lab31/elbow_plot_picture_2.png Graphic file (type png)
 <use figures/lab31/elbow_plot_picture_2.png>
 Package pdftex.def Info: figures/lab31/elbow_plot_picture_2.png  used on input 
 line 108.
 (pdftex.def)             Requested size: 364.19667pt x 225.78761pt.
-<figures/lab31/elbow_plot_picture_3.png, id=1257, 570.48131pt x 353.67131pt>
+<figures/lab31/elbow_plot_picture_3.png, id=1261, 570.48131pt x 353.67131pt>
 File: figures/lab31/elbow_plot_picture_3.png Graphic file (type png)
 <use figures/lab31/elbow_plot_picture_3.png>
 Package pdftex.def Info: figures/lab31/elbow_plot_picture_3.png  used on input 
@@ -3837,9 +3828,9 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[92 <./figures/lab31/elbow_plot_picture.png> <./figures/lab31/elbow_plot_pictur
+[93 <./figures/lab31/elbow_plot_picture.png> <./figures/lab31/elbow_plot_pictur
 e_2.png>]
-<figures/lab31/silhouette_plot_picture_k5.png, id=1266, 570.48131pt x 425.94131
+<figures/lab31/silhouette_plot_picture_k5.png, id=1270, 570.48131pt x 425.94131
 pt>
 File: figures/lab31/silhouette_plot_picture_k5.png Graphic file (type png)
 <use figures/lab31/silhouette_plot_picture_k5.png>
@@ -3868,8 +3859,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[93 <./figures/lab31/elbow_plot_picture_3.png>]
-<figures/lab31/silhouette_plot_picture_2_k3.png, id=1273, 570.48131pt x 425.941
+[94 <./figures/lab31/elbow_plot_picture_3.png>]
+<figures/lab31/silhouette_plot_picture_2_k3.png, id=1277, 570.48131pt x 425.941
 31pt>
 File: figures/lab31/silhouette_plot_picture_2_k3.png Graphic file (type png)
 <use figures/lab31/silhouette_plot_picture_2_k3.png>
@@ -3898,8 +3889,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[94 <./figures/lab31/silhouette_plot_picture_k5.png>]
-<figures/lab31/silhouette_plot_picture_3_k5.png, id=1280, 570.48131pt x 425.941
+[95 <./figures/lab31/silhouette_plot_picture_k5.png>]
+<figures/lab31/silhouette_plot_picture_3_k5.png, id=1284, 570.48131pt x 425.941
 31pt>
 File: figures/lab31/silhouette_plot_picture_3_k5.png Graphic file (type png)
 <use figures/lab31/silhouette_plot_picture_3_k5.png>
@@ -3928,8 +3919,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[95 <./figures/lab31/silhouette_plot_picture_2_k3.png>]
-<figures/lab31/original_vs_segmented_picture.png, id=1287, 514.92375pt x 281.85
+[96 <./figures/lab31/silhouette_plot_picture_2_k3.png>]
+<figures/lab31/original_vs_segmented_picture.png, id=1292, 514.92375pt x 281.85
 3pt>
 File: figures/lab31/original_vs_segmented_picture.png Graphic file (type png)
 <use figures/lab31/original_vs_segmented_picture.png>
@@ -3958,8 +3949,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[96 <./figures/lab31/silhouette_plot_picture_3_k5.png>]
-<figures/lab31/original_vs_segmented_picture_2.png, id=1295, 715.473pt x 259.26
+[97 <./figures/lab31/silhouette_plot_picture_3_k5.png>]
+<figures/lab31/original_vs_segmented_picture_2.png, id=1299, 715.473pt x 259.26
 863pt>
 File: figures/lab31/original_vs_segmented_picture_2.png Graphic file (type png)
 
@@ -3967,7 +3958,7 @@ File: figures/lab31/original_vs_segmented_picture_2.png Graphic file (type png)
 Package pdftex.def Info: figures/lab31/original_vs_segmented_picture_2.png  use
 d on input line 146.
 (pdftex.def)             Requested size: 386.96027pt x 140.2245pt.
-<figures/lab31/original_vs_segmented_picture_3.png, id=1296, 606.16463pt x 281.
+<figures/lab31/original_vs_segmented_picture_3.png, id=1300, 606.16463pt x 281.
 853pt>
 File: figures/lab31/original_vs_segmented_picture_3.png Graphic file (type png)
 
@@ -3997,9 +3988,9 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[97 <./figures/lab31/original_vs_segmented_picture.png> <./figures/lab31/origin
+[98 <./figures/lab31/original_vs_segmented_picture.png> <./figures/lab31/origin
 al_vs_segmented_picture_2.png>]
-<figures/lab31/k_comparison_grid_picture.png, id=1305, 794.51831pt x 498.663pt>
+<figures/lab31/k_comparison_grid_picture.png, id=1309, 794.51831pt x 498.663pt>
 
 File: figures/lab31/k_comparison_grid_picture.png Graphic file (type png)
 <use figures/lab31/k_comparison_grid_picture.png>
@@ -4028,15 +4019,15 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[98 <./figures/lab31/original_vs_segmented_picture_3.png>]
-<figures/lab31/convergence_plot_picture.png, id=1315, 570.48131pt x 353.67131pt
+[99 <./figures/lab31/original_vs_segmented_picture_3.png>]
+<figures/lab31/convergence_plot_picture.png, id=1319, 570.48131pt x 353.67131pt
 >
 File: figures/lab31/convergence_plot_picture.png Graphic file (type png)
 <use figures/lab31/convergence_plot_picture.png>
 Package pdftex.def Info: figures/lab31/convergence_plot_picture.png  used on in
 put line 170.
 (pdftex.def)             Requested size: 386.96027pt x 239.89967pt.
-<figures/lab31/color_palette_picture_k5.png, id=1316, 302.63063pt x 118.79381pt
+<figures/lab31/color_palette_picture_k5.png, id=1320, 302.63063pt x 118.79381pt
 >
 File: figures/lab31/color_palette_picture_k5.png Graphic file (type png)
 <use figures/lab31/color_palette_picture_k5.png>
@@ -4065,16 +4056,16 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[99 <./figures/lab31/k_comparison_grid_picture.png> <./figures/lab31/convergenc
-e_plot_picture.png>]
-<figures/lab31/k_comparison_grid_picture_2.png, id=1325, 860.013pt x 481.49887p
+[100 <./figures/lab31/k_comparison_grid_picture.png> <./figures/lab31/convergen
+ce_plot_picture.png>]
+<figures/lab31/k_comparison_grid_picture_2.png, id=1329, 860.013pt x 481.49887p
 t>
 File: figures/lab31/k_comparison_grid_picture_2.png Graphic file (type png)
 <use figures/lab31/k_comparison_grid_picture_2.png>
 Package pdftex.def Info: figures/lab31/k_comparison_grid_picture_2.png  used on
  input line 180.
 (pdftex.def)             Requested size: 386.96027pt x 216.65044pt.
-<figures/lab31/k_comparison_grid_picture_3.png, id=1326, 829.74994pt x 498.663p
+<figures/lab31/k_comparison_grid_picture_3.png, id=1330, 829.74994pt x 498.663p
 t>
 File: figures/lab31/k_comparison_grid_picture_3.png Graphic file (type png)
 <use figures/lab31/k_comparison_grid_picture_3.png>
@@ -4103,16 +4094,16 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[100 <./figures/lab31/color_palette_picture_k5.png> <./figures/lab31/k_comparis
+[101 <./figures/lab31/color_palette_picture_k5.png> <./figures/lab31/k_comparis
 on_grid_picture_2.png>]
-<figures/lab31/convergence_plot_picture_2.png, id=1335, 570.48131pt x 353.67131
+<figures/lab31/convergence_plot_picture_2.png, id=1339, 570.48131pt x 353.67131
 pt>
 File: figures/lab31/convergence_plot_picture_2.png Graphic file (type png)
 <use figures/lab31/convergence_plot_picture_2.png>
 Package pdftex.def Info: figures/lab31/convergence_plot_picture_2.png  used on 
 input line 190.
 (pdftex.def)             Requested size: 386.96027pt x 239.89967pt.
-<figures/lab31/convergence_plot_picture_3.png, id=1336, 570.48131pt x 353.67131
+<figures/lab31/convergence_plot_picture_3.png, id=1340, 570.48131pt x 353.67131
 pt>
 File: figures/lab31/convergence_plot_picture_3.png Graphic file (type png)
 <use figures/lab31/convergence_plot_picture_3.png>
@@ -4141,16 +4132,16 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[101 <./figures/lab31/k_comparison_grid_picture_3.png> <./figures/lab31/converg
+[102 <./figures/lab31/k_comparison_grid_picture_3.png> <./figures/lab31/converg
 ence_plot_picture_2.png>]
-<figures/lab31/color_palette_picture_2_k3.png, id=1345, 228.55388pt x 107.95331
+<figures/lab31/color_palette_picture_2_k3.png, id=1350, 228.55388pt x 107.95331
 pt>
 File: figures/lab31/color_palette_picture_2_k3.png Graphic file (type png)
 <use figures/lab31/color_palette_picture_2_k3.png>
 Package pdftex.def Info: figures/lab31/color_palette_picture_2_k3.png  used on 
 input line 200.
 (pdftex.def)             Requested size: 364.19667pt x 172.03696pt.
-<figures/lab31/color_palette_picture_3_k5.png, id=1346, 302.63063pt x 118.79381
+<figures/lab31/color_palette_picture_3_k5.png, id=1351, 302.63063pt x 118.79381
 pt>
 File: figures/lab31/color_palette_picture_3_k5.png Graphic file (type png)
 <use figures/lab31/color_palette_picture_3_k5.png>
@@ -4179,7 +4170,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[102 <./figures/lab31/convergence_plot_picture_3.png> <./figures/lab31/color_pa
+[103 <./figures/lab31/convergence_plot_picture_3.png> <./figures/lab31/color_pa
 lette_picture_2_k3.png> <./figures/lab31/color_palette_picture_3_k5.png>]
 Overfull \hbox (6.52388pt too wide) in paragraph at lines 230--231
 \T1/cmtt/m/n/12 picture_2.jpg\T1/cmr/m/n/12 : man-ual=12,493,797.555 vs. sklear
@@ -4207,7 +4198,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[103]
+[104]
 Underfull \hbox (badness 1048) in paragraph at lines 238--241
 \T1/cmr/m/n/12 Auxiliary re-sults: \T1/cmtt/m/n/12 picture_2.jpg \T1/cmr/m/n/12
  at K=3 (sil-hou-ette 0.748, 10 it-er-a-tions);
@@ -4235,7 +4226,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[104]
+[105]
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
@@ -4257,7 +4248,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[105]
+[106]
 \openout2 = `chapters/06_lab04_housing.aux'.
 
  (./chapters/06_lab04_housing.tex
@@ -4268,7 +4259,7 @@ Overfull \hbox (37.48938pt too wide) in paragraph at lines 13--14
 t-e-gor-i-cal (ocean_proximity,
  []
 
-[106
+[107
 
 
 
@@ -4280,13 +4271,13 @@ house_value \T1/cmr/m/n/12 capped at $500,001; \T1/cmtt/m/n/12 total_rooms\T1/c
 mr/m/n/12 , \T1/cmtt/m/n/12 total_bedrooms\T1/cmr/m/n/12 ,
  []
 
-<figures/lab04/eda_01_missing_values.png, id=1376, 578.16pt x 289.08pt>
+<figures/lab04/eda_01_missing_values.png, id=1381, 578.16pt x 289.08pt>
 File: figures/lab04/eda_01_missing_values.png Graphic file (type png)
 <use figures/lab04/eda_01_missing_values.png>
 Package pdftex.def Info: figures/lab04/eda_01_missing_values.png  used on input
  line 32.
 (pdftex.def)             Requested size: 327.7763pt x 163.88628pt.
-<figures/lab04/eda_02_feature_distributions.png, id=1377, 867.24pt x 578.16pt>
+<figures/lab04/eda_02_feature_distributions.png, id=1382, 867.24pt x 578.16pt>
 File: figures/lab04/eda_02_feature_distributions.png Graphic file (type png)
 <use figures/lab04/eda_02_feature_distributions.png>
 Package pdftex.def Info: figures/lab04/eda_02_feature_distributions.png  used o
@@ -4313,8 +4304,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[107 <./figures/lab04/eda_01_missing_values.png>]
-<figures/lab04/eda_03_target_distribution.png, id=1385, 578.16pt x 361.35pt>
+[108 <./figures/lab04/eda_01_missing_values.png>]
+<figures/lab04/eda_03_target_distribution.png, id=1390, 578.16pt x 361.35pt>
 File: figures/lab04/eda_03_target_distribution.png Graphic file (type png)
 <use figures/lab04/eda_03_target_distribution.png>
 Package pdftex.def Info: figures/lab04/eda_03_target_distribution.png  used on 
@@ -4342,9 +4333,9 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[108 <./figures/lab04/eda_02_feature_distributions.png> <./figures/lab04/eda_03
+[109 <./figures/lab04/eda_02_feature_distributions.png> <./figures/lab04/eda_03
 _target_distribution.png>]
-<figures/lab04/eda_05_geo_price_population.png, id=1395, 722.7pt x 505.89pt>
+<figures/lab04/eda_05_geo_price_population.png, id=1399, 722.7pt x 505.89pt>
 File: figures/lab04/eda_05_geo_price_population.png Graphic file (type png)
 <use figures/lab04/eda_05_geo_price_population.png>
 Package pdftex.def Info: figures/lab04/eda_05_geo_price_population.png  used on
@@ -4376,7 +4367,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[109 <./figures/lab04/eda_05_geo_price_population.png>]
+[110 <./figures/lab04/eda_05_geo_price_population.png>]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 80.
 
@@ -4385,7 +4376,7 @@ Overfull \hbox (27.69345pt too wide) in paragraph at lines 80--81
 enge: \T1/cmr/bx/n/12 no fea-ture be-sides \T1/cmtt/m/n/12 median_income
  []
 
-<figures/lab04/eda_06_correlation_heatmap.png, id=1402, 722.7pt x 578.16pt>
+<figures/lab04/eda_06_correlation_heatmap.png, id=1406, 722.7pt x 578.16pt>
 File: figures/lab04/eda_06_correlation_heatmap.png Graphic file (type png)
 <use figures/lab04/eda_06_correlation_heatmap.png>
 Package pdftex.def Info: figures/lab04/eda_06_correlation_heatmap.png  used on 
@@ -4412,8 +4403,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[110]
-<figures/lab04/eda_07_target_correlation_bar.png, id=1408, 578.16pt x 361.35pt>
+[111]
+<figures/lab04/eda_07_target_correlation_bar.png, id=1412, 578.16pt x 361.35pt>
 
 File: figures/lab04/eda_07_target_correlation_bar.png Graphic file (type png)
 <use figures/lab04/eda_07_target_correlation_bar.png>
@@ -4442,8 +4433,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[111 <./figures/lab04/eda_06_correlation_heatmap.png>]
-<figures/lab04/eda_08_scatter_matrix.png, id=1415, 867.24pt x 578.16pt>
+[112 <./figures/lab04/eda_06_correlation_heatmap.png>]
+<figures/lab04/eda_08_scatter_matrix.png, id=1419, 867.24pt x 578.16pt>
 File: figures/lab04/eda_08_scatter_matrix.png Graphic file (type png)
 <use figures/lab04/eda_08_scatter_matrix.png>
 Package pdftex.def Info: figures/lab04/eda_08_scatter_matrix.png  used on input
@@ -4471,8 +4462,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[112 <./figures/lab04/eda_07_target_correlation_bar.png>]
-<figures/lab04/eda_09_income_vs_price.png, id=1422, 578.16pt x 433.62pt>
+[113 <./figures/lab04/eda_07_target_correlation_bar.png>]
+<figures/lab04/eda_09_income_vs_price.png, id=1426, 578.16pt x 433.62pt>
 File: figures/lab04/eda_09_income_vs_price.png Graphic file (type png)
 <use figures/lab04/eda_09_income_vs_price.png>
 Package pdftex.def Info: figures/lab04/eda_09_income_vs_price.png  used on inpu
@@ -4500,8 +4491,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[113 <./figures/lab04/eda_08_scatter_matrix.png>]
-<figures/lab04/eda_10_ocean_proximity_bar.png, id=1429, 1011.78pt x 361.35pt>
+[114 <./figures/lab04/eda_08_scatter_matrix.png>]
+<figures/lab04/eda_10_ocean_proximity_bar.png, id=1434, 1011.78pt x 361.35pt>
 File: figures/lab04/eda_10_ocean_proximity_bar.png Graphic file (type png)
 <use figures/lab04/eda_10_ocean_proximity_bar.png>
 Package pdftex.def Info: figures/lab04/eda_10_ocean_proximity_bar.png  used on 
@@ -4529,8 +4520,8 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[114 <./figures/lab04/eda_09_income_vs_price.png>]
-<figures/lab04/eda_11_ocean_proximity_boxplot.png, id=1438, 722.7pt x 361.35pt>
+[115 <./figures/lab04/eda_09_income_vs_price.png>]
+<figures/lab04/eda_11_ocean_proximity_boxplot.png, id=1442, 722.7pt x 361.35pt>
 
 File: figures/lab04/eda_11_ocean_proximity_boxplot.png Graphic file (type png)
 <use figures/lab04/eda_11_ocean_proximity_boxplot.png>
@@ -4563,9 +4554,9 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[115 <./figures/lab04/eda_10_ocean_proximity_bar.png> <./figures/lab04/eda_11_o
+[116 <./figures/lab04/eda_10_ocean_proximity_bar.png> <./figures/lab04/eda_11_o
 cean_proximity_boxplot.png>]
-<figures/lab04/eda_12_correlation_engineered.png, id=1448, 650.43pt x 433.62pt>
+<figures/lab04/eda_12_correlation_engineered.png, id=1452, 650.43pt x 433.62pt>
 
 File: figures/lab04/eda_12_correlation_engineered.png Graphic file (type png)
 <use figures/lab04/eda_12_correlation_engineered.png>
@@ -4626,7 +4617,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[116 <./figures/lab04/eda_12_correlation_engineered.png>]
+[117 <./figures/lab04/eda_12_correlation_engineered.png>]
 Overfull \hbox (29.10011pt too wide) in paragraph at lines 173--174
 []\T1/cmr/bx/n/12 Target stan-dard-iza-tion: \T1/cmr/m/n/12 A sep-a-rate \T1/cm
 tt/m/n/12 StandardScaler \T1/cmr/m/n/12 trans-forms \T1/cmtt/m/n/12 median_hous
@@ -4659,7 +4650,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[117]
+[118]
 
 ! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC”).
 
@@ -4951,7 +4942,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[118]
+[119]
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
@@ -4973,20 +4964,20 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[119]
-<figures/lab04/comparison_bar.png, id=1519, 1011.78pt x 289.08pt>
+[120]
+<figures/lab04/comparison_bar.png, id=1524, 1011.78pt x 289.08pt>
 File: figures/lab04/comparison_bar.png Graphic file (type png)
 <use figures/lab04/comparison_bar.png>
 Package pdftex.def Info: figures/lab04/comparison_bar.png  used on input line 2
 77.
 (pdftex.def)             Requested size: 373.3035pt x 106.65797pt.
-<figures/lab04/loss_curves.png, id=1520, 1300.86pt x 289.08pt>
+<figures/lab04/loss_curves.png, id=1525, 1300.86pt x 289.08pt>
 File: figures/lab04/loss_curves.png Graphic file (type png)
 <use figures/lab04/loss_curves.png>
 Package pdftex.def Info: figures/lab04/loss_curves.png  used on input line 282.
 
 (pdftex.def)             Requested size: 373.3035pt x 82.95326pt.
-<figures/lab04/eda_04_geo_basic.png, id=1521, 722.7pt x 505.89pt>
+<figures/lab04/eda_04_geo_basic.png, id=1526, 722.7pt x 505.89pt>
 File: figures/lab04/eda_04_geo_basic.png Graphic file (type png)
 <use figures/lab04/eda_04_geo_basic.png>
 Package pdftex.def Info: figures/lab04/eda_04_geo_basic.png  used on input line
@@ -5014,14 +5005,14 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[120 <./figures/lab04/comparison_bar.png> <./figures/lab04/loss_curves.png>]
-<figures/lab04/loss_comparison.png, id=1532, 1084.05pt x 289.08pt>
+[121 <./figures/lab04/comparison_bar.png> <./figures/lab04/loss_curves.png>]
+<figures/lab04/loss_comparison.png, id=1536, 1084.05pt x 289.08pt>
 File: figures/lab04/loss_comparison.png Graphic file (type png)
 <use figures/lab04/loss_comparison.png>
 Package pdftex.def Info: figures/lab04/loss_comparison.png  used on input line 
 292.
 (pdftex.def)             Requested size: 355.08984pt x 94.69093pt.
-<figures/lab04/comparison_dual.png, id=1533, 1011.78pt x 289.08pt>
+<figures/lab04/comparison_dual.png, id=1537, 1011.78pt x 289.08pt>
 File: figures/lab04/comparison_dual.png Graphic file (type png)
 <use figures/lab04/comparison_dual.png>
 Package pdftex.def Info: figures/lab04/comparison_dual.png  used on input line 
@@ -5054,7 +5045,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[121 <./figures/lab04/eda_04_geo_basic.png> <./figures/lab04/loss_comparison.pn
+[122 <./figures/lab04/eda_04_geo_basic.png> <./figures/lab04/loss_comparison.pn
 g> <./figures/lab04/comparison_dual.png>])
 ! Leaders not followed by proper glue.
 <to be read again> 
@@ -5077,7 +5068,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[122]
+[123]
 ! Leaders not followed by proper glue.
 <to be read again> 
                    }
@@ -5099,7 +5090,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[123]
+[124]
 \openout2 = `chapters/07_conclusion.aux'.
 
  (./chapters/07_conclusion.tex
@@ -5109,7 +5100,7 @@ Overfull \hbox (55.94179pt too wide) in paragraph at lines 8--18
  [][] 
  []
 
-[124
+[125
 
 
 
@@ -5142,7 +5133,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
-[125] 
+[126] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./main.aux (./chapters/01_executive_summary.aux) (./chapters/02_lab01_spam.aux
 ) (./chapters/03_lab02_sales.aux) (./chapters/04_lab03_segmentation.aux)
@@ -5157,9 +5148,9 @@ Package rerunfilecheck Info: File `main.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  41061 strings out of 469006
- 945641 string characters out of 5454813
- 1799625 words of memory out of 5000000
- 68561 multiletter control sequences out of 15000+600000
+ 945622 string characters out of 5454813
+ 1799624 words of memory out of 5000000
+ 68560 multiletter control sequences out of 15000+600000
  649784 words of font info for 97 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  98i,18n,108p,1900b,2106s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -5195,10 +5186,10 @@ s/cm/cmsy10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/
 amsfonts/symbols/msam10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (126 pages, 44509502 bytes).
+Output written on main.pdf (127 pages, 44511461 bytes).
 PDF statistics:
- 2395 PDF objects out of 2487 (max. 8388607)
- 1358 compressed objects within 14 object streams
- 556 named destinations out of 1000 (max. 500000)
+ 2401 PDF objects out of 2487 (max. 8388607)
+ 1362 compressed objects within 14 object streams
+ 557 named destinations out of 1000 (max. 500000)
  1271 words of extra memory for PDF output out of 10000 (max. 10000000)
 
