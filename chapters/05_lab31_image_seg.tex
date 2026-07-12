@@ -9,7 +9,7 @@ Apply K-Means clustering to \textbf{pixel color quantization}: reduce an RGB pho
 
 \subsection{Dataset}
 \begin{itemize}
-  \item \textbf{Input:} Three RGB photographs. The primary image (\texttt{picture.jpg}) has original resolution $2560\times1920$, resized to $262\times350 = 91{,}700$ pixels with 47{,}119 unique colors. The auxiliary images are \texttt{picture\_2.jpg} ($3648\times5472$, resized to $233\times350 = 81{,}550$ pixels, 8{,}231 unique colors) and \texttt{picture\_3.jpg} ($736\times736$, resized to $350\times350 = 122{,}500$ pixels, 25{,}290 unique colors). If any image is absent, a deterministic landscape is synthesized.
+  \item \textbf{Input:} Three RGB photographs. The primary image (\texttt{picture.jpg}) has original resolution $2560\times1920$, resized to $262\times350 = 91{,}700$ pixels with 47{,}119 unique colors. The auxiliary images are \texttt{picture\_2.jpg} ($3648\times5472$, resized to $233\times350 = 81{,}550$ pixels, 8{,}231 unique colors) and \texttt{picture\_3.jpg} ($736\times736$, resized to $350\times350 = 122{,}500$ pixels, 12{,}631 unique colors). If any image is absent, a deterministic landscape is synthesized.
   \item \textbf{Feature space:} Each pixel is a point in $\mathbb{R}^3$ with (R, G, B) channels $\in [0, 255]$.
 \end{itemize}
 
@@ -19,7 +19,7 @@ Apply K-Means clustering to \textbf{pixel color quantization}: reduce an RGB pho
 The random seed (42) guarantees identical centroid initialization across runs. Five custom modules — \texttt{utils}, \texttt{image\_io}, \texttt{kmeans}, \texttt{visualization}, \texttt{run\_pipeline} — are imported from \texttt{src/}. Output directories are created: \texttt{data/raw/} (source images), \texttt{data/processed/} (resized and segmented artifacts), \texttt{reports/figures/} (all plots).
 
 \subsection{Load the Image}
-Three image filenames are iterated. For each image, the loader prints: shape, dtype, pixel intensity range, and \textbf{unique RGB color count} — the baseline for measuring compression ratio. The primary image (\texttt{picture.jpg}) contains 47{,}119 unique colors at original resolution $2560\times1920$; \texttt{picture\_2.jpg} yields 8{,}231 unique colors from $3648\times5472$; \texttt{picture\_3.jpg} yields 25{,}290 unique colors from $736\times736$. All three load correctly with valid uint8 pixel data in the $[0, 255]$ range.
+Three image filenames are iterated. For each image, the loader prints: shape, dtype, pixel intensity range, and \textbf{unique RGB color count} — the baseline for measuring compression ratio. The primary image (\texttt{picture.jpg}) contains 47{,}119 unique colors at original resolution $2560\times1920$; \texttt{picture\_2.jpg} yields 8{,}231 unique colors from $3648\times5472$; \texttt{picture\_3.jpg} yields 12{,}631 unique colors from $736\times736$. All three load correctly with valid uint8 pixel data in the $[0, 255]$ range.
 
 \begin{figure}[H]\centering
 \includegraphics[width=0.85\textwidth]{figures/lab31/original_picture.png}
@@ -33,7 +33,7 @@ Three image filenames are iterated. For each image, the loader prints: shape, dt
 
 \begin{figure}[H]\centering
 \includegraphics[width=0.85\textwidth]{figures/lab31/original_picture_3.png}
-\caption{Figure 5.1c: Auxiliary image 3 (\texttt{picture\_3.jpg}) — 25{,}290 unique colors at $736\times736$ original resolution.}
+\caption{Figure 5.1c: Auxiliary image 3 (\texttt{picture\_3.jpg}) — 12{,}631 unique colors at $736\times736$ original resolution.}
 \end{figure}
 
 \subsection{Preprocess the Image}
@@ -111,7 +111,7 @@ This pattern is consistent across all three images: the curve is steep at low K 
 
 \begin{figure}[H]\centering
 \includegraphics[width=0.80\textwidth]{figures/lab31/elbow_plot_picture_3.png}
-\caption{Elbow curve for \texttt{picture\_3.jpg}: bend at K=5, consistent with its 25{,}290 unique colors requiring more centroids for adequate representation.}
+\caption{Elbow curve for \texttt{picture\_3.jpg}: bend at K=5, consistent with its 12{,}631 unique colors requiring more centroids for adequate representation.}
 \end{figure}
 
 \subsubsection{Silhouette Analysis}
@@ -149,7 +149,7 @@ Each pixel's cluster label (integer 0 to K$-$1) indexes into the \texttt{cluster
 
 \begin{figure}[H]\centering
 \includegraphics[width=0.85\textwidth]{figures/lab31/original_vs_segmented_picture_3.png}
-\caption{Original vs. K=5 segmented comparison for \texttt{picture\_3.jpg}. Compression ratio of 5{,}058.000:1 from 25{,}290 unique colors.}
+\caption{Original vs. K=5 segmented comparison for \texttt{picture\_3.jpg}. Compression ratio of 2{,}526.200:1 from 12{,}631 unique colors.}
 \end{figure}
 
 \subsection{Visualize Results}
@@ -224,7 +224,7 @@ LAB & 28{,}720{,}070.000 & 27\\
 
 Inertia values are \textbf{not directly comparable} across spaces due to different coordinate scales. HSV's higher inertia (141{,}224{,}700.000) reflects the hue channel's circular topology — a pixel with hue $0^\circ$ and another with hue $359^\circ$ are visually nearly identical (both red) but maximally distant in Euclidean space, inflating within-cluster variance. LAB produces the lowest raw inertia (28{,}720{,}070.000) because its $L^*$, $a^*$, $b^*$ axes are designed to be perceptually uniform: equal Euclidean distances in LAB correspond to approximately equal perceived color differences. This makes LAB the most natural space for K-Means clustering when visual coherence is the objective. LAB also converges fastest (27 iterations vs. 30 for RGB and 43 for HSV), suggesting that the perceptually uniform geometry yields better-separated, more compact clusters that stabilize more quickly. In practice, LAB tends to group shadowed pixels with their lit counterparts of the same material — a shadowed green leaf stays in the ``green'' cluster rather than being swept into ``dark'' — producing segmentations that align more closely with human perception.
 
-For the auxiliary images, similar patterns hold. \texttt{picture\_2.jpg} achieves optimal results at K=3 (RGB inertia 12{,}493{,}797.555, silhouette 0.748, 10 iterations) — its lower unique-color count (8{,}231) means fewer distinct color regions exist, and three centroids suffice to capture them. \texttt{picture\_3.jpg} performs best at K=5 (RGB inertia 64{,}041{,}523.375, silhouette 0.835, 11 iterations) — its high silhouette indicates well-isolated clusters despite its 25{,}290 unique colors.
+For the auxiliary images, similar patterns hold. \texttt{picture\_2.jpg} achieves optimal results at K=3 (RGB inertia 12{,}493{,}797.555, silhouette 0.748, 10 iterations) — its lower unique-color count (8{,}231) means fewer distinct color regions exist, and three centroids suffice to capture them. \texttt{picture\_3.jpg} performs best at K=5 (RGB inertia 64{,}041{,}523.375, silhouette 0.835, 11 iterations) — its high silhouette indicates well-isolated clusters despite its 12{,}631 unique colors.
 
 \subsection{Sklearn Sanity Check}
 \texttt{sklearn.cluster.KMeans} (with \texttt{n\_init=10}) is run at each image's optimal K. Manual vs.\ sklearn inertia agrees within $\pm 0.010\%$ for all three images. For the primary image: manual=69{,}047{,}213.344 vs. sklearn=69{,}054{,}300.816 (difference $<$ 0.011\%). For \texttt{picture\_2.jpg}: manual=12{,}493{,}797.555 vs. sklearn=12{,}493{,}842.783. For \texttt{picture\_3.jpg}: both implementations converge to identical inertia of 64{,}041{,}523.375. The near-perfect agreement confirms the custom implementation is correct to within floating-point precision. Consistently higher manual inertia ($>10\%$) would suggest a bug; lower inertia would indicate a fortunate random initialization.
