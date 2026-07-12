@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.26)  13 JUL 2026 01:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.26)  13 JUL 2026 02:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1147,7 +1147,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [5]
-<figures/lab01/source_family_label_distribution.png, id=437, 722.7pt x 585.387p
+<figures/lab01/source_family_label_distribution.png, id=436, 722.7pt x 585.387p
 t>
 File: figures/lab01/source_family_label_distribution.png Graphic file (type png
 )
@@ -1178,13 +1178,13 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [6 <./figures/lab01/source_family_label_distribution.png>]
-<figures/lab01/text_length_boxplots.png, id=448, 1011.78pt x 433.62pt>
+<figures/lab01/text_length_boxplots.png, id=447, 1011.78pt x 433.62pt>
 File: figures/lab01/text_length_boxplots.png Graphic file (type png)
 <use figures/lab01/text_length_boxplots.png>
 Package pdftex.def Info: figures/lab01/text_length_boxplots.png  used on input 
 line 73.
 (pdftex.def)             Requested size: 455.24411pt x 195.10735pt.
-<figures/lab01/text_shape_scatter.png, id=449, 722.7pt x 505.89pt>
+<figures/lab01/text_shape_scatter.png, id=448, 722.7pt x 505.89pt>
 File: figures/lab01/text_shape_scatter.png Graphic file (type png)
 <use figures/lab01/text_shape_scatter.png>
 Package pdftex.def Info: figures/lab01/text_shape_scatter.png  used on input li
@@ -1213,7 +1213,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [7 <./figures/lab01/text_length_boxplots.png>]
-<figures/lab01/source_family_distribution.png, id=460, 722.7pt x 585.387pt>
+<figures/lab01/source_family_distribution.png, id=459, 722.7pt x 585.387pt>
 File: figures/lab01/source_family_distribution.png Graphic file (type png)
 <use figures/lab01/source_family_distribution.png>
 Package pdftex.def Info: figures/lab01/source_family_distribution.png  used on 
@@ -1247,7 +1247,7 @@ Overfull \hbox (0.71106pt too wide) in paragraph at lines 92--93
 ented words ^^V ``free'', ``click'', ``money'',
  []
 
-<figures/lab01/top_words_wordcloud.png, id=467, 867.24pt x 505.89pt>
+<figures/lab01/top_words_wordcloud.png, id=466, 867.24pt x 505.89pt>
 File: figures/lab01/top_words_wordcloud.png Graphic file (type png)
 <use figures/lab01/top_words_wordcloud.png>
 Package pdftex.def Info: figures/lab01/top_words_wordcloud.png  used on input l
@@ -1275,13 +1275,13 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [9 <./figures/lab01/source_family_distribution.png>]
-<figures/lab01/ham_wordcloud.png, id=474, 867.24pt x 505.89pt>
+<figures/lab01/ham_wordcloud.png, id=473, 867.24pt x 505.89pt>
 File: figures/lab01/ham_wordcloud.png Graphic file (type png)
 <use figures/lab01/ham_wordcloud.png>
 Package pdftex.def Info: figures/lab01/ham_wordcloud.png  used on input line 10
 4.
 (pdftex.def)             Requested size: 455.24411pt x 265.55762pt.
-<figures/lab01/spam_wordcloud.png, id=475, 867.24pt x 505.89pt>
+<figures/lab01/spam_wordcloud.png, id=474, 867.24pt x 505.89pt>
 File: figures/lab01/spam_wordcloud.png Graphic file (type png)
 <use figures/lab01/spam_wordcloud.png>
 Package pdftex.def Info: figures/lab01/spam_wordcloud.png  used on input line 1
@@ -1516,7 +1516,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [19]
-<figures/lab01/confusion_matrix.png, id=593, 462.528pt x 346.896pt>
+<figures/lab01/confusion_matrix.png, id=592, 462.528pt x 346.896pt>
 File: figures/lab01/confusion_matrix.png Graphic file (type png)
 <use figures/lab01/confusion_matrix.png>
 Package pdftex.def Info: figures/lab01/confusion_matrix.png  used on input line
@@ -1545,13 +1545,13 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [20]
-<figures/lab01/label_distribution.png, id=598, 462.528pt x 346.896pt>
+<figures/lab01/label_distribution.png, id=597, 462.528pt x 346.896pt>
 File: figures/lab01/label_distribution.png Graphic file (type png)
 <use figures/lab01/label_distribution.png>
 Package pdftex.def Info: figures/lab01/label_distribution.png  used on input li
 ne 393.
 (pdftex.def)             Requested size: 455.24411pt x 341.44843pt.
-<figures/lab01/raw_vs_clean_length_scatter.png, id=599, 722.7pt x 505.89pt>
+<figures/lab01/raw_vs_clean_length_scatter.png, id=598, 722.7pt x 505.89pt>
 File: figures/lab01/raw_vs_clean_length_scatter.png Graphic file (type png)
 <use figures/lab01/raw_vs_clean_length_scatter.png>
 Package pdftex.def Info: figures/lab01/raw_vs_clean_length_scatter.png  used on
@@ -1656,17 +1656,17 @@ Chapter 3.
 
 
 ]
-<figures/lab02/eda_001.png, id=628, 705.3552pt x 271.7352pt>
+<figures/lab02/eda_001.png, id=627, 705.3552pt x 271.7352pt>
 File: figures/lab02/eda_001.png Graphic file (type png)
 <use figures/lab02/eda_001.png>
 Package pdftex.def Info: figures/lab02/eda_001.png  used on input line 31.
 (pdftex.def)             Requested size: 355.08984pt x 136.79604pt.
-<figures/lab02/eda_003.png, id=629, 1264.725pt x 416.2752pt>
+<figures/lab02/eda_003.png, id=628, 1264.725pt x 416.2752pt>
 File: figures/lab02/eda_003.png Graphic file (type png)
 <use figures/lab02/eda_003.png>
 Package pdftex.def Info: figures/lab02/eda_003.png  used on input line 44.
 (pdftex.def)             Requested size: 455.24411pt x 149.8399pt.
-<figures/lab02/eda_004.png, id=630, 1071.0414pt x 773.289pt>
+<figures/lab02/eda_004.png, id=629, 1071.0414pt x 773.289pt>
 File: figures/lab02/eda_004.png Graphic file (type png)
 <use figures/lab02/eda_004.png>
 Package pdftex.def Info: figures/lab02/eda_004.png  used on input line 48.
@@ -1694,7 +1694,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [26 <./figures/lab02/eda_001.png>]
-<figures/lab02/eda_018.png, id=637, 1283.5152pt x 416.2752pt>
+<figures/lab02/eda_018.png, id=636, 1283.5152pt x 416.2752pt>
 File: figures/lab02/eda_018.png Graphic file (type png)
 <use figures/lab02/eda_018.png>
 Package pdftex.def Info: figures/lab02/eda_018.png  used on input line 52.
@@ -1723,12 +1723,12 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [27 <./figures/lab02/eda_003.png> <./figures/lab02/eda_004.png> <./figures/lab0
 2/eda_018.png>]
-<figures/lab02/eda_002.png, id=648, 1283.5152pt x 344.0052pt>
+<figures/lab02/eda_002.png, id=647, 1283.5152pt x 344.0052pt>
 File: figures/lab02/eda_002.png Graphic file (type png)
 <use figures/lab02/eda_002.png>
 Package pdftex.def Info: figures/lab02/eda_002.png  used on input line 60.
 (pdftex.def)             Requested size: 455.24411pt x 122.00984pt.
-<figures/lab02/eda_016.png, id=649, 1138.9752pt x 416.2752pt>
+<figures/lab02/eda_016.png, id=648, 1138.9752pt x 416.2752pt>
 File: figures/lab02/eda_016.png Graphic file (type png)
 <use figures/lab02/eda_016.png>
 Package pdftex.def Info: figures/lab02/eda_016.png  used on input line 64.
@@ -1756,17 +1756,17 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [28 <./figures/lab02/eda_002.png> <./figures/lab02/eda_016.png>]
-<figures/lab02/eda_007.png, id=658, 1283.5152pt x 416.2752pt>
+<figures/lab02/eda_007.png, id=657, 1283.5152pt x 416.2752pt>
 File: figures/lab02/eda_007.png Graphic file (type png)
 <use figures/lab02/eda_007.png>
 Package pdftex.def Info: figures/lab02/eda_007.png  used on input line 77.
 (pdftex.def)             Requested size: 455.24411pt x 147.64217pt.
-<figures/lab02/eda_008.png, id=659, 1283.5152pt x 344.0052pt>
+<figures/lab02/eda_008.png, id=658, 1283.5152pt x 344.0052pt>
 File: figures/lab02/eda_008.png Graphic file (type png)
 <use figures/lab02/eda_008.png>
 Package pdftex.def Info: figures/lab02/eda_008.png  used on input line 81.
 (pdftex.def)             Requested size: 455.24411pt x 122.00984pt.
-<figures/lab02/eda_005.png, id=660, 1283.5152pt x 344.0052pt>
+<figures/lab02/eda_005.png, id=659, 1283.5152pt x 344.0052pt>
 File: figures/lab02/eda_005.png Graphic file (type png)
 <use figures/lab02/eda_005.png>
 Package pdftex.def Info: figures/lab02/eda_005.png  used on input line 89.
@@ -1794,7 +1794,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [29 <./figures/lab02/eda_007.png> <./figures/lab02/eda_008.png>]
-<figures/lab02/eda_006.png, id=669, 1283.5152pt x 344.0052pt>
+<figures/lab02/eda_006.png, id=668, 1283.5152pt x 344.0052pt>
 File: figures/lab02/eda_006.png Graphic file (type png)
 <use figures/lab02/eda_006.png>
 Package pdftex.def Info: figures/lab02/eda_006.png  used on input line 97.
@@ -1822,22 +1822,22 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [30 <./figures/lab02/eda_005.png> <./figures/lab02/eda_006.png>]
-<figures/lab02/eda_009.png, id=679, 818.0964pt x 705.3552pt>
+<figures/lab02/eda_009.png, id=678, 818.0964pt x 705.3552pt>
 File: figures/lab02/eda_009.png Graphic file (type png)
 <use figures/lab02/eda_009.png>
 Package pdftex.def Info: figures/lab02/eda_009.png  used on input line 108.
 (pdftex.def)             Requested size: 355.08984pt x 306.14897pt.
-<figures/lab02/eda_010.png, id=680, 1430.946pt x 367.1316pt>
+<figures/lab02/eda_010.png, id=679, 1430.946pt x 367.1316pt>
 File: figures/lab02/eda_010.png Graphic file (type png)
 <use figures/lab02/eda_010.png>
 Package pdftex.def Info: figures/lab02/eda_010.png  used on input line 113.
 (pdftex.def)             Requested size: 455.24411pt x 116.79546pt.
-<figures/lab02/eda_011.png, id=681, 1408.5423pt x 367.1316pt>
+<figures/lab02/eda_011.png, id=680, 1408.5423pt x 367.1316pt>
 File: figures/lab02/eda_011.png Graphic file (type png)
 <use figures/lab02/eda_011.png>
 Package pdftex.def Info: figures/lab02/eda_011.png  used on input line 117.
 (pdftex.def)             Requested size: 455.24411pt x 118.65532pt.
-<figures/lab02/eda_012.png, id=682, 1435.2822pt x 367.1316pt>
+<figures/lab02/eda_012.png, id=681, 1435.2822pt x 367.1316pt>
 File: figures/lab02/eda_012.png Graphic file (type png)
 <use figures/lab02/eda_012.png>
 Package pdftex.def Info: figures/lab02/eda_012.png  used on input line 121.
@@ -1865,17 +1865,17 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [31 <./figures/lab02/eda_009.png> <./figures/lab02/eda_010.png>]
-<figures/lab02/eda_013.png, id=691, 1138.9752pt x 367.1316pt>
+<figures/lab02/eda_013.png, id=690, 1138.9752pt x 367.1316pt>
 File: figures/lab02/eda_013.png Graphic file (type png)
 <use figures/lab02/eda_013.png>
 Package pdftex.def Info: figures/lab02/eda_013.png  used on input line 125.
 (pdftex.def)             Requested size: 455.24411pt x 146.73799pt.
-<figures/lab02/eda_014.png, id=692, 1059.4782pt x 344.0052pt>
+<figures/lab02/eda_014.png, id=691, 1059.4782pt x 344.0052pt>
 File: figures/lab02/eda_014.png Graphic file (type png)
 <use figures/lab02/eda_014.png>
 Package pdftex.def Info: figures/lab02/eda_014.png  used on input line 130.
 (pdftex.def)             Requested size: 455.24411pt x 147.81436pt.
-<figures/lab02/eda_015.png, id=693, 1428.0552pt x 367.1316pt>
+<figures/lab02/eda_015.png, id=692, 1428.0552pt x 367.1316pt>
 File: figures/lab02/eda_015.png Graphic file (type png)
 <use figures/lab02/eda_015.png>
 Package pdftex.def Info: figures/lab02/eda_015.png  used on input line 134.
@@ -1904,7 +1904,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [32 <./figures/lab02/eda_011.png> <./figures/lab02/eda_012.png> <./figures/lab0
 2/eda_013.png>]
-<figures/lab02/eda_017.png, id=704, 1138.9752pt x 344.0052pt>
+<figures/lab02/eda_017.png, id=703, 1138.9752pt x 344.0052pt>
 File: figures/lab02/eda_017.png Graphic file (type png)
 <use figures/lab02/eda_017.png>
 Package pdftex.def Info: figures/lab02/eda_017.png  used on input line 138.
@@ -1937,7 +1937,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [33 <./figures/lab02/eda_014.png> <./figures/lab02/eda_015.png> <./figures/lab0
 2/eda_017.png>]
-<figures/lab02/notebook_revenue_distribution_boxplot.png, id=715, 1011.78pt x 3
+<figures/lab02/notebook_revenue_distribution_boxplot.png, id=714, 1011.78pt x 3
 61.35pt>
 File: figures/lab02/notebook_revenue_distribution_boxplot.png Graphic file (typ
 e png)
@@ -1945,7 +1945,7 @@ e png)
 Package pdftex.def Info: figures/lab02/notebook_revenue_distribution_boxplot.pn
 g  used on input line 147.
 (pdftex.def)             Requested size: 455.24411pt x 162.58945pt.
-<figures/lab02/notebook_revenue_boxplot_by_segments.png, id=716, 1156.32pt x 43
+<figures/lab02/notebook_revenue_boxplot_by_segments.png, id=715, 1156.32pt x 43
 3.62pt>
 File: figures/lab02/notebook_revenue_boxplot_by_segments.png Graphic file (type
  png)
@@ -1953,13 +1953,13 @@ File: figures/lab02/notebook_revenue_boxplot_by_segments.png Graphic file (type
 Package pdftex.def Info: figures/lab02/notebook_revenue_boxplot_by_segments.png
   used on input line 151.
 (pdftex.def)             Requested size: 455.24411pt x 170.71231pt.
-<figures/lab02/notebook_time_eda.png, id=717, 1156.32pt x 361.35pt>
+<figures/lab02/notebook_time_eda.png, id=716, 1156.32pt x 361.35pt>
 File: figures/lab02/notebook_time_eda.png Graphic file (type png)
 <use figures/lab02/notebook_time_eda.png>
 Package pdftex.def Info: figures/lab02/notebook_time_eda.png  used on input lin
 e 155.
 (pdftex.def)             Requested size: 455.24411pt x 142.26025pt.
-<figures/lab02/notebook_daily_revenue_rolling_mean.png, id=718, 1084.05pt x 433
+<figures/lab02/notebook_daily_revenue_rolling_mean.png, id=717, 1084.05pt x 433
 .62pt>
 File: figures/lab02/notebook_daily_revenue_rolling_mean.png Graphic file (type 
 png)
@@ -1991,14 +1991,14 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [34 <./figures/lab02/notebook_revenue_distribution_boxplot.png> <./figures/lab0
 2/notebook_revenue_boxplot_by_segments.png>]
-<figures/lab02/notebook_product_geography_eda.png, id=728, 1156.32pt x 794.97pt
+<figures/lab02/notebook_product_geography_eda.png, id=727, 1156.32pt x 794.97pt
 >
 File: figures/lab02/notebook_product_geography_eda.png Graphic file (type png)
 <use figures/lab02/notebook_product_geography_eda.png>
 Package pdftex.def Info: figures/lab02/notebook_product_geography_eda.png  used
  on input line 164.
 (pdftex.def)             Requested size: 455.24411pt x 312.97258pt.
-<figures/lab02/notebook_relationship_eda.png, id=729, 1011.78pt x 361.35pt>
+<figures/lab02/notebook_relationship_eda.png, id=728, 1011.78pt x 361.35pt>
 File: figures/lab02/notebook_relationship_eda.png Graphic file (type png)
 <use figures/lab02/notebook_relationship_eda.png>
 Package pdftex.def Info: figures/lab02/notebook_relationship_eda.png  used on i
@@ -2028,7 +2028,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [35 <./figures/lab02/notebook_time_eda.png> <./figures/lab02/notebook_daily_rev
 enue_rolling_mean.png>]
-<figures/lab02/notebook_numeric_correlation_heatmap.png, id=738, 578.16pt x 433
+<figures/lab02/notebook_numeric_correlation_heatmap.png, id=737, 578.16pt x 433
 .62pt>
 File: figures/lab02/notebook_numeric_correlation_heatmap.png Graphic file (type
  png)
@@ -2036,7 +2036,7 @@ File: figures/lab02/notebook_numeric_correlation_heatmap.png Graphic file (type
 Package pdftex.def Info: figures/lab02/notebook_numeric_correlation_heatmap.png
   used on input line 172.
 (pdftex.def)             Requested size: 455.24411pt x 341.43124pt.
-<figures/lab02/notebook_scatter_grid_features_vs_revenue.png, id=739, 1300.86pt
+<figures/lab02/notebook_scatter_grid_features_vs_revenue.png, id=738, 1300.86pt
  x 722.7pt>
 File: figures/lab02/notebook_scatter_grid_features_vs_revenue.png Graphic file 
 (type png)
@@ -2068,7 +2068,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [36 <./figures/lab02/notebook_product_geography_eda.png> <./figures/lab02/noteb
 ook_relationship_eda.png>]
-<figures/lab02/notebook_advanced_target_distribution.png, id=749, 1084.05pt x 7
+<figures/lab02/notebook_advanced_target_distribution.png, id=748, 1084.05pt x 7
 22.7pt>
 File: figures/lab02/notebook_advanced_target_distribution.png Graphic file (typ
 e png)
@@ -2076,7 +2076,7 @@ e png)
 Package pdftex.def Info: figures/lab02/notebook_advanced_target_distribution.pn
 g  used on input line 181.
 (pdftex.def)             Requested size: 455.24411pt x 303.49884pt.
-<figures/lab02/notebook_density_original_vs_scaled.png, id=750, 1084.05pt x 361
+<figures/lab02/notebook_density_original_vs_scaled.png, id=749, 1084.05pt x 361
 .35pt>
 File: figures/lab02/notebook_density_original_vs_scaled.png Graphic file (type 
 png)
@@ -2323,7 +2323,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [46]
-<figures/lab02/loss_curves_nolog.png, id=854, 1428.537pt x 365.6862pt>
+<figures/lab02/loss_curves_nolog.png, id=853, 1428.537pt x 365.6862pt>
 File: figures/lab02/loss_curves_nolog.png Graphic file (type png)
 <use figures/lab02/loss_curves_nolog.png>
 Package pdftex.def Info: figures/lab02/loss_curves_nolog.png  used on input lin
@@ -2333,13 +2333,13 @@ File: figures/lab02/eda_001.png Graphic file (type png)
 <use figures/lab02/eda_001.png>
 Package pdftex.def Info: figures/lab02/eda_001.png  used on input line 432.
 (pdftex.def)             Requested size: 341.43307pt x 131.53432pt.
-<figures/lab02/rmsle_comparison.png, id=855, 1066.7052pt x 344.0052pt>
+<figures/lab02/rmsle_comparison.png, id=854, 1066.7052pt x 344.0052pt>
 File: figures/lab02/rmsle_comparison.png Graphic file (type png)
 <use figures/lab02/rmsle_comparison.png>
 Package pdftex.def Info: figures/lab02/rmsle_comparison.png  used on input line
  437.
 (pdftex.def)             Requested size: 373.3035pt x 120.38786pt.
-<figures/lab02/rmsle_delta.png, id=856, 560.8152pt x 270.2898pt>
+<figures/lab02/rmsle_delta.png, id=855, 560.8152pt x 270.2898pt>
 File: figures/lab02/rmsle_delta.png Graphic file (type png)
 <use figures/lab02/rmsle_delta.png>
 Package pdftex.def Info: figures/lab02/rmsle_delta.png  used on input line 442.
@@ -2369,19 +2369,19 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [47 <./figures/lab02/loss_curves_nolog.png> <./figures/lab02/rmsle_comparison.p
 ng>]
-<figures/lab02/loss_curves_log.png, id=866, 1428.537pt x 365.6862pt>
+<figures/lab02/loss_curves_log.png, id=865, 1428.537pt x 365.6862pt>
 File: figures/lab02/loss_curves_log.png Graphic file (type png)
 <use figures/lab02/loss_curves_log.png>
 Package pdftex.def Info: figures/lab02/loss_curves_log.png  used on input line 
 447.
 (pdftex.def)             Requested size: 455.24411pt x 116.53651pt.
-<figures/lab02/monthly_revenue.png, id=867, 867.24pt x 361.35pt>
+<figures/lab02/monthly_revenue.png, id=866, 867.24pt x 361.35pt>
 File: figures/lab02/monthly_revenue.png Graphic file (type png)
 <use figures/lab02/monthly_revenue.png>
 Package pdftex.def Info: figures/lab02/monthly_revenue.png  used on input line 
 451.
 (pdftex.def)             Requested size: 455.24411pt x 189.68402pt.
-<figures/lab02/predicted_vs_actual_model_a_with_quantity.png, id=868, 505.89pt 
+<figures/lab02/predicted_vs_actual_model_a_with_quantity.png, id=867, 505.89pt 
 x 505.89pt>
 File: figures/lab02/predicted_vs_actual_model_a_with_quantity.png Graphic file 
 (type png)
@@ -2389,7 +2389,7 @@ File: figures/lab02/predicted_vs_actual_model_a_with_quantity.png Graphic file
 Package pdftex.def Info: figures/lab02/predicted_vs_actual_model_a_with_quantit
 y.png  used on input line 456.
 (pdftex.def)             Requested size: 455.24411pt x 455.25046pt.
-<figures/lab02/predicted_vs_actual_model_b_no_quantity.png, id=869, 505.89pt x 
+<figures/lab02/predicted_vs_actual_model_b_no_quantity.png, id=868, 505.89pt x 
 505.89pt>
 File: figures/lab02/predicted_vs_actual_model_b_no_quantity.png Graphic file (t
 ype png)
@@ -2443,7 +2443,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [49 <./figures/lab02/predicted_vs_actual_model_a_with_quantity.png>]
-<figures/lab02/residuals_model_a_with_quantity.png, id=887, 650.43pt x 361.35pt
+<figures/lab02/residuals_model_a_with_quantity.png, id=886, 650.43pt x 361.35pt
 >
 File: figures/lab02/residuals_model_a_with_quantity.png Graphic file (type png)
 
@@ -2451,7 +2451,7 @@ File: figures/lab02/residuals_model_a_with_quantity.png Graphic file (type png)
 Package pdftex.def Info: figures/lab02/residuals_model_a_with_quantity.png  use
 d on input line 465.
 (pdftex.def)             Requested size: 455.24411pt x 252.92122pt.
-<figures/lab02/residuals_model_b_no_quantity.png, id=888, 650.43pt x 361.35pt>
+<figures/lab02/residuals_model_b_no_quantity.png, id=887, 650.43pt x 361.35pt>
 File: figures/lab02/residuals_model_b_no_quantity.png Graphic file (type png)
 <use figures/lab02/residuals_model_b_no_quantity.png>
 Package pdftex.def Info: figures/lab02/residuals_model_b_no_quantity.png  used 
@@ -2480,7 +2480,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [50 <./figures/lab02/predicted_vs_actual_model_b_no_quantity.png>]
-<figures/lab02/residual_by_month_model_a_with_quantity.png, id=895, 722.7pt x 2
+<figures/lab02/residual_by_month_model_a_with_quantity.png, id=894, 722.7pt x 2
 89.08pt>
 File: figures/lab02/residual_by_month_model_a_with_quantity.png Graphic file (t
 ype png)
@@ -2488,7 +2488,7 @@ ype png)
 Package pdftex.def Info: figures/lab02/residual_by_month_model_a_with_quantity.
 png  used on input line 474.
 (pdftex.def)             Requested size: 455.24411pt x 182.0993pt.
-<figures/lab02/residual_by_month_model_b_no_quantity.png, id=896, 722.7pt x 289
+<figures/lab02/residual_by_month_model_b_no_quantity.png, id=895, 722.7pt x 289
 .08pt>
 File: figures/lab02/residual_by_month_model_b_no_quantity.png Graphic file (typ
 e png)
@@ -2520,7 +2520,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [51 <./figures/lab02/residuals_model_a_with_quantity.png> <./figures/lab02/resi
 duals_model_b_no_quantity.png>]
-<figures/lab02/residual_by_category_model_a_with_quantity.png, id=905, 794.97pt
+<figures/lab02/residual_by_category_model_a_with_quantity.png, id=904, 794.97pt
  x 433.62pt>
 File: figures/lab02/residual_by_category_model_a_with_quantity.png Graphic file
  (type png)
@@ -2528,7 +2528,7 @@ File: figures/lab02/residual_by_category_model_a_with_quantity.png Graphic file
 Package pdftex.def Info: figures/lab02/residual_by_category_model_a_with_quanti
 ty.png  used on input line 483.
 (pdftex.def)             Requested size: 455.24411pt x 248.32385pt.
-<figures/lab02/residual_by_category_model_b_no_quantity.png, id=906, 794.97pt x
+<figures/lab02/residual_by_category_model_b_no_quantity.png, id=905, 794.97pt x
  433.62pt>
 File: figures/lab02/residual_by_category_model_b_no_quantity.png Graphic file (
 type png)
@@ -2560,7 +2560,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [52 <./figures/lab02/residual_by_month_model_a_with_quantity.png> <./figures/la
 b02/residual_by_month_model_b_no_quantity.png>]
-<figures/lab02/notebook_model_b_actual_vs_predicted_line.png, id=915, 1084.05pt
+<figures/lab02/notebook_model_b_actual_vs_predicted_line.png, id=914, 1084.05pt
  x 433.62pt>
 File: figures/lab02/notebook_model_b_actual_vs_predicted_line.png Graphic file 
 (type png)
@@ -2568,7 +2568,7 @@ File: figures/lab02/notebook_model_b_actual_vs_predicted_line.png Graphic file
 Package pdftex.def Info: figures/lab02/notebook_model_b_actual_vs_predicted_lin
 e.png  used on input line 492.
 (pdftex.def)             Requested size: 455.24411pt x 182.0993pt.
-<figures/lab02/notebook_model_b_prediction_plots.png, id=916, 1011.78pt x 361.3
+<figures/lab02/notebook_model_b_prediction_plots.png, id=915, 1011.78pt x 361.3
 5pt>
 File: figures/lab02/notebook_model_b_prediction_plots.png Graphic file (type pn
 g)
@@ -2600,7 +2600,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [53 <./figures/lab02/residual_by_category_model_a_with_quantity.png> <./figures
 /lab02/residual_by_category_model_b_no_quantity.png>]
-<figures/lab02/notebook_model_b_epsilon_tube_style.png, id=925, 722.7pt x 578.1
+<figures/lab02/notebook_model_b_epsilon_tube_style.png, id=924, 722.7pt x 578.1
 6pt>
 File: figures/lab02/notebook_model_b_epsilon_tube_style.png Graphic file (type 
 png)
@@ -2608,7 +2608,7 @@ png)
 Package pdftex.def Info: figures/lab02/notebook_model_b_epsilon_tube_style.png 
  used on input line 501.
 (pdftex.def)             Requested size: 455.24411pt x 364.19861pt.
-<figures/lab02/notebook_model_a_prediction_plots.png, id=926, 1011.78pt x 361.3
+<figures/lab02/notebook_model_a_prediction_plots.png, id=925, 1011.78pt x 361.3
 5pt>
 File: figures/lab02/notebook_model_a_prediction_plots.png Graphic file (type pn
 g)
@@ -2640,7 +2640,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [54 <./figures/lab02/notebook_model_b_actual_vs_predicted_line.png> <./figures/
 lab02/notebook_model_b_prediction_plots.png>]
-<figures/lab02/notebook_final_ridge_feature_weights.png, id=937, 794.97pt x 505
+<figures/lab02/notebook_final_ridge_feature_weights.png, id=936, 794.97pt x 505
 .89pt>
 File: figures/lab02/notebook_final_ridge_feature_weights.png Graphic file (type
  png)
@@ -2648,7 +2648,7 @@ File: figures/lab02/notebook_final_ridge_feature_weights.png Graphic file (type
 Package pdftex.def Info: figures/lab02/notebook_final_ridge_feature_weights.png
   used on input line 510.
 (pdftex.def)             Requested size: 455.24411pt x 289.71115pt.
-<figures/lab02/notebook_full_eda_dashboard_like_sample.png, id=938, 1445.4pt x 
+<figures/lab02/notebook_full_eda_dashboard_like_sample.png, id=937, 1445.4pt x 
 1084.05pt>
 File: figures/lab02/notebook_full_eda_dashboard_like_sample.png Graphic file (t
 ype png)
@@ -2702,13 +2702,13 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [56 <./figures/lab02/notebook_final_ridge_feature_weights.png>]
-<figures/lab02/revenue_distribution.png, id=953, 722.7pt x 433.62pt>
+<figures/lab02/revenue_distribution.png, id=952, 722.7pt x 433.62pt>
 File: figures/lab02/revenue_distribution.png Graphic file (type png)
 <use figures/lab02/revenue_distribution.png>
 Package pdftex.def Info: figures/lab02/revenue_distribution.png  used on input 
 line 519.
 (pdftex.def)             Requested size: 455.24411pt x 273.14896pt.
-<figures/lab02/revenue_boxplot.png, id=954, 722.7pt x 289.08pt>
+<figures/lab02/revenue_boxplot.png, id=953, 722.7pt x 289.08pt>
 File: figures/lab02/revenue_boxplot.png Graphic file (type png)
 <use figures/lab02/revenue_boxplot.png>
 Package pdftex.def Info: figures/lab02/revenue_boxplot.png  used on input line 
@@ -2737,13 +2737,13 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [57 <./figures/lab02/notebook_full_eda_dashboard_like_sample.png>]
-<figures/lab02/revenue_by_region.png, id=961, 794.97pt x 433.62pt>
+<figures/lab02/revenue_by_region.png, id=960, 794.97pt x 433.62pt>
 File: figures/lab02/revenue_by_region.png Graphic file (type png)
 <use figures/lab02/revenue_by_region.png>
 Package pdftex.def Info: figures/lab02/revenue_by_region.png  used on input lin
 e 527.
 (pdftex.def)             Requested size: 455.24411pt x 248.32385pt.
-<figures/lab02/revenue_by_category.png, id=962, 794.97pt x 433.62pt>
+<figures/lab02/revenue_by_category.png, id=961, 794.97pt x 433.62pt>
 File: figures/lab02/revenue_by_category.png Graphic file (type png)
 <use figures/lab02/revenue_by_category.png>
 Package pdftex.def Info: figures/lab02/revenue_by_category.png  used on input l
@@ -2773,13 +2773,13 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [58 <./figures/lab02/revenue_distribution.png> <./figures/lab02/revenue_boxplot
 .png>]
-<figures/lab02/quantity_distribution.png, id=971, 578.16pt x 289.08pt>
+<figures/lab02/quantity_distribution.png, id=970, 578.16pt x 289.08pt>
 File: figures/lab02/quantity_distribution.png Graphic file (type png)
 <use figures/lab02/quantity_distribution.png>
 Package pdftex.def Info: figures/lab02/quantity_distribution.png  used on input
  line 535.
 (pdftex.def)             Requested size: 455.24411pt x 227.62082pt.
-<figures/lab02/quantity_vs_revenue.png, id=972, 578.16pt x 433.62pt>
+<figures/lab02/quantity_vs_revenue.png, id=971, 578.16pt x 433.62pt>
 File: figures/lab02/quantity_vs_revenue.png Graphic file (type png)
 <use figures/lab02/quantity_vs_revenue.png>
 Package pdftex.def Info: figures/lab02/quantity_vs_revenue.png  used on input l
@@ -2809,13 +2809,13 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [59 <./figures/lab02/revenue_by_region.png> <./figures/lab02/revenue_by_categor
 y.png>]
-<figures/lab02/unit_price_vs_revenue.png, id=981, 578.16pt x 433.62pt>
+<figures/lab02/unit_price_vs_revenue.png, id=980, 578.16pt x 433.62pt>
 File: figures/lab02/unit_price_vs_revenue.png Graphic file (type png)
 <use figures/lab02/unit_price_vs_revenue.png>
 Package pdftex.def Info: figures/lab02/unit_price_vs_revenue.png  used on input
  line 543.
 (pdftex.def)             Requested size: 455.24411pt x 341.43124pt.
-<figures/lab02/top_products_by_revenue.png, id=982, 794.97pt x 433.62pt>
+<figures/lab02/top_products_by_revenue.png, id=981, 794.97pt x 433.62pt>
 File: figures/lab02/top_products_by_revenue.png Graphic file (type png)
 <use figures/lab02/top_products_by_revenue.png>
 Package pdftex.def Info: figures/lab02/top_products_by_revenue.png  used on inp
@@ -2845,7 +2845,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [60 <./figures/lab02/quantity_distribution.png> <./figures/lab02/quantity_vs_re
 venue.png>]
-<figures/lab02/top_states_by_revenue.png, id=992, 794.97pt x 433.62pt>
+<figures/lab02/top_states_by_revenue.png, id=991, 794.97pt x 433.62pt>
 File: figures/lab02/top_states_by_revenue.png Graphic file (type png)
 <use figures/lab02/top_states_by_revenue.png>
 Package pdftex.def Info: figures/lab02/top_states_by_revenue.png  used on input
@@ -2923,13 +2923,13 @@ m/n/12 age\T1/cmr/m/n/12 , \T1/cmtt/m/n/12 annual_income\T1/cmr/m/n/12 ,
 
 
 ]
-<figures/lab03/missing_values.png, id=1011, 566.41612pt x 277.33612pt>
+<figures/lab03/missing_values.png, id=1010, 566.41612pt x 277.33612pt>
 File: figures/lab03/missing_values.png Graphic file (type png)
 <use figures/lab03/missing_values.png>
 Package pdftex.def Info: figures/lab03/missing_values.png  used on input line 3
 8.
 (pdftex.def)             Requested size: 455.24411pt x 222.90175pt.
-<figures/lab03/boxplots_before.png, id=1012, 927.76613pt x 301.72725pt>
+<figures/lab03/boxplots_before.png, id=1011, 927.76613pt x 301.72725pt>
 File: figures/lab03/boxplots_before.png Graphic file (type png)
 <use figures/lab03/boxplots_before.png>
 Package pdftex.def Info: figures/lab03/boxplots_before.png  used on input line 
@@ -2958,7 +2958,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [64 <./figures/lab03/missing_values.png>]
-<figures/lab03/duplicate_summary.png, id=1019, 494.14612pt x 277.33612pt>
+<figures/lab03/duplicate_summary.png, id=1018, 494.14612pt x 277.33612pt>
 File: figures/lab03/duplicate_summary.png Graphic file (type png)
 <use figures/lab03/duplicate_summary.png>
 Package pdftex.def Info: figures/lab03/duplicate_summary.png  used on input lin
@@ -2993,7 +2993,7 @@ Overfull \hbox (12.80077pt too wide) in paragraph at lines 75--76
 -sents a co-her-ent spending-
  []
 
-<figures/lab03/scatter_annual_income_vs_spending_score_before.png, id=1028, 494
+<figures/lab03/scatter_annual_income_vs_spending_score_before.png, id=1027, 494
 .14612pt x 349.60612pt>
 File: figures/lab03/scatter_annual_income_vs_spending_score_before.png Graphic 
 file (type png)
@@ -3023,7 +3023,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [66]
-<figures/lab03/pairplot_before.png, id=1035, 615.19838pt x 555.57562pt>
+<figures/lab03/pairplot_before.png, id=1034, 615.19838pt x 555.57562pt>
 File: figures/lab03/pairplot_before.png Graphic file (type png)
 <use figures/lab03/pairplot_before.png>
 Package pdftex.def Info: figures/lab03/pairplot_before.png  used on input line 
@@ -3052,7 +3052,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [67 <./figures/lab03/scatter_annual_income_vs_spending_score_before.png>]
-<figures/lab03/correlation_heatmap_before.png, id=1042, 410.58394pt x 359.09157
+<figures/lab03/correlation_heatmap_before.png, id=1041, 410.58394pt x 359.09157
 pt>
 File: figures/lab03/correlation_heatmap_before.png Graphic file (type png)
 <use figures/lab03/correlation_heatmap_before.png>
@@ -3082,7 +3082,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [68 <./figures/lab03/pairplot_before.png>]
-<figures/lab03/scatter_age_vs_spending_score_before.png, id=1049, 494.14612pt x
+<figures/lab03/scatter_age_vs_spending_score_before.png, id=1048, 494.14612pt x
  349.60612pt>
 File: figures/lab03/scatter_age_vs_spending_score_before.png Graphic file (type
  png)
@@ -3113,7 +3113,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [69 <./figures/lab03/correlation_heatmap_before.png>]
-<figures/lab03/scatter_age_vs_annual_income_before.png, id=1056, 494.14612pt x 
+<figures/lab03/scatter_age_vs_annual_income_before.png, id=1055, 494.14612pt x 
 349.60612pt>
 File: figures/lab03/scatter_age_vs_annual_income_before.png Graphic file (type 
 png)
@@ -3144,14 +3144,14 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [70 <./figures/lab03/scatter_age_vs_spending_score_before.png>]
-<figures/lab03/distribution_age_before.png, id=1063, 566.41612pt x 313.47113pt>
+<figures/lab03/distribution_age_before.png, id=1062, 566.41612pt x 313.47113pt>
 
 File: figures/lab03/distribution_age_before.png Graphic file (type png)
 <use figures/lab03/distribution_age_before.png>
 Package pdftex.def Info: figures/lab03/distribution_age_before.png  used on inp
 ut line 109.
 (pdftex.def)             Requested size: 455.24411pt x 251.94432pt.
-<figures/lab03/distribution_annual_income_before.png, id=1064, 566.41612pt x 31
+<figures/lab03/distribution_annual_income_before.png, id=1063, 566.41612pt x 31
 3.47113pt>
 File: figures/lab03/distribution_annual_income_before.png Graphic file (type pn
 g)
@@ -3183,7 +3183,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [71 <./figures/lab03/scatter_age_vs_annual_income_before.png> <./figures/lab03/
 distribution_age_before.png>]
-<figures/lab03/distribution_spending_score_before.png, id=1073, 566.41612pt x 3
+<figures/lab03/distribution_spending_score_before.png, id=1072, 566.41612pt x 3
 13.47113pt>
 File: figures/lab03/distribution_spending_score_before.png Graphic file (type p
 ng)
@@ -3191,7 +3191,7 @@ ng)
 Package pdftex.def Info: figures/lab03/distribution_spending_score_before.png  
 used on input line 121.
 (pdftex.def)             Requested size: 455.24411pt x 251.94432pt.
-<figures/lab03/gender_distribution_before.png, id=1074, 421.87613pt x 277.33612
+<figures/lab03/gender_distribution_before.png, id=1073, 421.87613pt x 277.33612
 pt>
 File: figures/lab03/gender_distribution_before.png Graphic file (type png)
 <use figures/lab03/gender_distribution_before.png>
@@ -3244,7 +3244,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [73 <./figures/lab03/gender_distribution_before.png>]
-<figures/lab03/kmeans_elbow_curve.png, id=1091, 494.14612pt x 313.47113pt>
+<figures/lab03/kmeans_elbow_curve.png, id=1090, 494.14612pt x 313.47113pt>
 File: figures/lab03/kmeans_elbow_curve.png Graphic file (type png)
 <use figures/lab03/kmeans_elbow_curve.png>
 Package pdftex.def Info: figures/lab03/kmeans_elbow_curve.png  used on input li
@@ -3273,7 +3273,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [74]
-<figures/lab03/kmeans_silhouette_curve.png, id=1099, 494.14612pt x 313.47113pt>
+<figures/lab03/kmeans_silhouette_curve.png, id=1098, 494.14612pt x 313.47113pt>
 
 File: figures/lab03/kmeans_silhouette_curve.png Graphic file (type png)
 <use figures/lab03/kmeans_silhouette_curve.png>
@@ -3320,7 +3320,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [76 <./figures/lab03/kmeans_silhouette_curve.png>]
-<figures/lab03/clusters_annual_income_vs_spending_score.png, id=1135, 566.41612
+<figures/lab03/clusters_annual_income_vs_spending_score.png, id=1134, 566.41612
 pt x 385.74112pt>
 File: figures/lab03/clusters_annual_income_vs_spending_score.png Graphic file (
 type png)
@@ -3351,7 +3351,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [77]
-<figures/lab03/centroid_paths.png, id=1145, 787.38165pt x 570.933pt>
+<figures/lab03/centroid_paths.png, id=1144, 787.38165pt x 570.933pt>
 File: figures/lab03/centroid_paths.png Graphic file (type png)
 <use figures/lab03/centroid_paths.png>
 Package pdftex.def Info: figures/lab03/centroid_paths.png  used on input line 2
@@ -3380,7 +3380,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [78 <./figures/lab03/clusters_annual_income_vs_spending_score.png>]
-<figures/lab03/clusters_pca_projection.png, id=1153, 566.41612pt x 385.74112pt>
+<figures/lab03/clusters_pca_projection.png, id=1152, 566.41612pt x 385.74112pt>
 
 File: figures/lab03/clusters_pca_projection.png Graphic file (type png)
 <use figures/lab03/clusters_pca_projection.png>
@@ -3410,14 +3410,14 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [79 <./figures/lab03/centroid_paths.png>]
-<figures/lab03/clusters_age_vs_spending_score.png, id=1160, 566.41612pt x 385.7
+<figures/lab03/clusters_age_vs_spending_score.png, id=1159, 566.41612pt x 385.7
 4112pt>
 File: figures/lab03/clusters_age_vs_spending_score.png Graphic file (type png)
 <use figures/lab03/clusters_age_vs_spending_score.png>
 Package pdftex.def Info: figures/lab03/clusters_age_vs_spending_score.png  used
  on input line 281.
 (pdftex.def)             Requested size: 455.24411pt x 310.02948pt.
-<figures/lab03/clusters_age_vs_annual_income.png, id=1161, 566.41612pt x 385.74
+<figures/lab03/clusters_age_vs_annual_income.png, id=1160, 566.41612pt x 385.74
 112pt>
 File: figures/lab03/clusters_age_vs_annual_income.png Graphic file (type png)
 <use figures/lab03/clusters_age_vs_annual_income.png>
@@ -3448,7 +3448,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [80 <./figures/lab03/clusters_pca_projection.png> <./figures/lab03/clusters_age
 _vs_spending_score.png>]
-<figures/lab03/gmm_income_vs_spending.png, id=1170, 502.9992pt x 366.8907pt>
+<figures/lab03/gmm_income_vs_spending.png, id=1169, 502.9992pt x 366.8907pt>
 File: figures/lab03/gmm_income_vs_spending.png Graphic file (type png)
 <use figures/lab03/gmm_income_vs_spending.png>
 Package pdftex.def Info: figures/lab03/gmm_income_vs_spending.png  used on inpu
@@ -3477,7 +3477,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [81 <./figures/lab03/clusters_age_vs_annual_income.png>]
-<figures/lab03/gmm_contours.png, id=1177, 549.252pt x 394.5942pt>
+<figures/lab03/gmm_contours.png, id=1176, 549.252pt x 394.5942pt>
 File: figures/lab03/gmm_contours.png Graphic file (type png)
 <use figures/lab03/gmm_contours.png>
 Package pdftex.def Info: figures/lab03/gmm_contours.png  used on input line 299
@@ -3528,7 +3528,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [83 <./figures/lab03/gmm_contours.png>]
-<figures/lab03/gmm_contours_comparison.png, id=1191, 533.5935pt x 398.2077pt>
+<figures/lab03/gmm_contours_comparison.png, id=1190, 533.5935pt x 398.2077pt>
 File: figures/lab03/gmm_contours_comparison.png Graphic file (type png)
 <use figures/lab03/gmm_contours_comparison.png>
 Package pdftex.def Info: figures/lab03/gmm_contours_comparison.png  used on inp
@@ -3557,14 +3557,14 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [84]
-<figures/lab03/cluster_centers_original_scale.png, id=1197, 566.41612pt x 349.6
+<figures/lab03/cluster_centers_original_scale.png, id=1196, 566.41612pt x 349.6
 0612pt>
 File: figures/lab03/cluster_centers_original_scale.png Graphic file (type png)
 <use figures/lab03/cluster_centers_original_scale.png>
 Package pdftex.def Info: figures/lab03/cluster_centers_original_scale.png  used
  on input line 342.
 (pdftex.def)             Requested size: 355.08984pt x 219.17009pt.
-<figures/lab03/agglomerative_dendrogram_sample.png, id=1198, 710.05275pt x 350.
+<figures/lab03/agglomerative_dendrogram_sample.png, id=1197, 710.05275pt x 350.
 05782pt>
 File: figures/lab03/agglomerative_dendrogram_sample.png Graphic file (type png)
 
@@ -3629,13 +3629,13 @@ Chapter 5.
 
 
 ]
-<figures/lab31/original_picture.png, id=1218, 1927.2pt x 2569.6pt>
+<figures/lab31/original_picture.png, id=1217, 1927.2pt x 2569.6pt>
 File: figures/lab31/original_picture.png Graphic file (type png)
 <use figures/lab31/original_picture.png>
 Package pdftex.def Info: figures/lab31/original_picture.png  used on input line
  25.
 (pdftex.def)             Requested size: 386.96027pt x 515.91055pt.
-<figures/lab31/original_picture_2.png, id=1219, 5492.52pt x 3661.68pt>
+<figures/lab31/original_picture_2.png, id=1218, 5492.52pt x 3661.68pt>
 File: figures/lab31/original_picture_2.png Graphic file (type png)
 <use figures/lab31/original_picture_2.png>
 Package pdftex.def Info: figures/lab31/original_picture_2.png  used on input li
@@ -3664,7 +3664,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [88 <./figures/lab31/original_picture.png (PNG copy)>]
-<figures/lab31/original_picture_3.png, id=1225, 738.76pt x 738.76pt>
+<figures/lab31/original_picture_3.png, id=1224, 738.76pt x 738.76pt>
 File: figures/lab31/original_picture_3.png Graphic file (type png)
 <use figures/lab31/original_picture_3.png>
 Package pdftex.def Info: figures/lab31/original_picture_3.png  used on input li
@@ -3693,7 +3693,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [89 <./figures/lab31/original_picture_2.png (PNG copy)>]
-<figures/lab31/color_space_preview_picture.png, id=1232, 752.96306pt x 281.853p
+<figures/lab31/color_space_preview_picture.png, id=1231, 752.96306pt x 281.853p
 t>
 File: figures/lab31/color_space_preview_picture.png Graphic file (type png)
 <use figures/lab31/color_space_preview_picture.png>
@@ -3723,14 +3723,14 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [90 <./figures/lab31/original_picture_3.png (PNG copy)>]
-<figures/lab31/color_space_preview_picture_2.png, id=1242, 860.013pt x 212.7448
+<figures/lab31/color_space_preview_picture_2.png, id=1241, 860.013pt x 212.7448
 1pt>
 File: figures/lab31/color_space_preview_picture_2.png Graphic file (type png)
 <use figures/lab31/color_space_preview_picture_2.png>
 Package pdftex.def Info: figures/lab31/color_space_preview_picture_2.png  used 
 on input line 52.
 (pdftex.def)             Requested size: 386.96027pt x 95.72453pt.
-<figures/lab31/color_space_preview_picture_3.png, id=1243, 849.62419pt x 294.04
+<figures/lab31/color_space_preview_picture_3.png, id=1242, 849.62419pt x 294.04
 857pt>
 File: figures/lab31/color_space_preview_picture_3.png Graphic file (type png)
 <use figures/lab31/color_space_preview_picture_3.png>
@@ -3766,7 +3766,7 @@ Overfull \hbox (31.32779pt too wide) in paragraph at lines 77--86
  [][] 
  []
 
-<figures/lab31/elbow_plot_picture.png, id=1254, 570.48131pt x 353.67131pt>
+<figures/lab31/elbow_plot_picture.png, id=1253, 570.48131pt x 353.67131pt>
 File: figures/lab31/elbow_plot_picture.png Graphic file (type png)
 <use figures/lab31/elbow_plot_picture.png>
 Package pdftex.def Info: figures/lab31/elbow_plot_picture.png  used on input li
@@ -3794,13 +3794,13 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [92]
-<figures/lab31/elbow_plot_picture_2.png, id=1260, 570.48131pt x 353.67131pt>
+<figures/lab31/elbow_plot_picture_2.png, id=1259, 570.48131pt x 353.67131pt>
 File: figures/lab31/elbow_plot_picture_2.png Graphic file (type png)
 <use figures/lab31/elbow_plot_picture_2.png>
 Package pdftex.def Info: figures/lab31/elbow_plot_picture_2.png  used on input 
 line 108.
 (pdftex.def)             Requested size: 364.19667pt x 225.78761pt.
-<figures/lab31/elbow_plot_picture_3.png, id=1261, 570.48131pt x 353.67131pt>
+<figures/lab31/elbow_plot_picture_3.png, id=1260, 570.48131pt x 353.67131pt>
 File: figures/lab31/elbow_plot_picture_3.png Graphic file (type png)
 <use figures/lab31/elbow_plot_picture_3.png>
 Package pdftex.def Info: figures/lab31/elbow_plot_picture_3.png  used on input 
@@ -3830,7 +3830,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [93 <./figures/lab31/elbow_plot_picture.png> <./figures/lab31/elbow_plot_pictur
 e_2.png>]
-<figures/lab31/silhouette_plot_picture_k5.png, id=1270, 570.48131pt x 425.94131
+<figures/lab31/silhouette_plot_picture_k5.png, id=1269, 570.48131pt x 425.94131
 pt>
 File: figures/lab31/silhouette_plot_picture_k5.png Graphic file (type png)
 <use figures/lab31/silhouette_plot_picture_k5.png>
@@ -3860,7 +3860,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [94 <./figures/lab31/elbow_plot_picture_3.png>]
-<figures/lab31/silhouette_plot_picture_2_k3.png, id=1277, 570.48131pt x 425.941
+<figures/lab31/silhouette_plot_picture_2_k3.png, id=1276, 570.48131pt x 425.941
 31pt>
 File: figures/lab31/silhouette_plot_picture_2_k3.png Graphic file (type png)
 <use figures/lab31/silhouette_plot_picture_2_k3.png>
@@ -3890,7 +3890,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [95 <./figures/lab31/silhouette_plot_picture_k5.png>]
-<figures/lab31/silhouette_plot_picture_3_k5.png, id=1284, 570.48131pt x 425.941
+<figures/lab31/silhouette_plot_picture_3_k5.png, id=1283, 570.48131pt x 425.941
 31pt>
 File: figures/lab31/silhouette_plot_picture_3_k5.png Graphic file (type png)
 <use figures/lab31/silhouette_plot_picture_3_k5.png>
@@ -3920,7 +3920,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [96 <./figures/lab31/silhouette_plot_picture_2_k3.png>]
-<figures/lab31/original_vs_segmented_picture.png, id=1292, 514.92375pt x 281.85
+<figures/lab31/original_vs_segmented_picture.png, id=1291, 514.92375pt x 281.85
 3pt>
 File: figures/lab31/original_vs_segmented_picture.png Graphic file (type png)
 <use figures/lab31/original_vs_segmented_picture.png>
@@ -3950,7 +3950,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [97 <./figures/lab31/silhouette_plot_picture_3_k5.png>]
-<figures/lab31/original_vs_segmented_picture_2.png, id=1299, 715.473pt x 259.26
+<figures/lab31/original_vs_segmented_picture_2.png, id=1298, 715.473pt x 259.26
 863pt>
 File: figures/lab31/original_vs_segmented_picture_2.png Graphic file (type png)
 
@@ -3958,7 +3958,7 @@ File: figures/lab31/original_vs_segmented_picture_2.png Graphic file (type png)
 Package pdftex.def Info: figures/lab31/original_vs_segmented_picture_2.png  use
 d on input line 146.
 (pdftex.def)             Requested size: 386.96027pt x 140.2245pt.
-<figures/lab31/original_vs_segmented_picture_3.png, id=1300, 606.16463pt x 281.
+<figures/lab31/original_vs_segmented_picture_3.png, id=1299, 606.16463pt x 281.
 853pt>
 File: figures/lab31/original_vs_segmented_picture_3.png Graphic file (type png)
 
@@ -3990,7 +3990,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [98 <./figures/lab31/original_vs_segmented_picture.png> <./figures/lab31/origin
 al_vs_segmented_picture_2.png>]
-<figures/lab31/k_comparison_grid_picture.png, id=1309, 794.51831pt x 498.663pt>
+<figures/lab31/k_comparison_grid_picture.png, id=1308, 794.51831pt x 498.663pt>
 
 File: figures/lab31/k_comparison_grid_picture.png Graphic file (type png)
 <use figures/lab31/k_comparison_grid_picture.png>
@@ -4020,14 +4020,14 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [99 <./figures/lab31/original_vs_segmented_picture_3.png>]
-<figures/lab31/convergence_plot_picture.png, id=1319, 570.48131pt x 353.67131pt
+<figures/lab31/convergence_plot_picture.png, id=1318, 570.48131pt x 353.67131pt
 >
 File: figures/lab31/convergence_plot_picture.png Graphic file (type png)
 <use figures/lab31/convergence_plot_picture.png>
 Package pdftex.def Info: figures/lab31/convergence_plot_picture.png  used on in
 put line 170.
 (pdftex.def)             Requested size: 386.96027pt x 239.89967pt.
-<figures/lab31/color_palette_picture_k5.png, id=1320, 302.63063pt x 118.79381pt
+<figures/lab31/color_palette_picture_k5.png, id=1319, 302.63063pt x 118.79381pt
 >
 File: figures/lab31/color_palette_picture_k5.png Graphic file (type png)
 <use figures/lab31/color_palette_picture_k5.png>
@@ -4058,14 +4058,14 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [100 <./figures/lab31/k_comparison_grid_picture.png> <./figures/lab31/convergen
 ce_plot_picture.png>]
-<figures/lab31/k_comparison_grid_picture_2.png, id=1329, 860.013pt x 481.49887p
+<figures/lab31/k_comparison_grid_picture_2.png, id=1328, 860.013pt x 481.49887p
 t>
 File: figures/lab31/k_comparison_grid_picture_2.png Graphic file (type png)
 <use figures/lab31/k_comparison_grid_picture_2.png>
 Package pdftex.def Info: figures/lab31/k_comparison_grid_picture_2.png  used on
  input line 180.
 (pdftex.def)             Requested size: 386.96027pt x 216.65044pt.
-<figures/lab31/k_comparison_grid_picture_3.png, id=1330, 829.74994pt x 498.663p
+<figures/lab31/k_comparison_grid_picture_3.png, id=1329, 829.74994pt x 498.663p
 t>
 File: figures/lab31/k_comparison_grid_picture_3.png Graphic file (type png)
 <use figures/lab31/k_comparison_grid_picture_3.png>
@@ -4096,14 +4096,14 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [101 <./figures/lab31/color_palette_picture_k5.png> <./figures/lab31/k_comparis
 on_grid_picture_2.png>]
-<figures/lab31/convergence_plot_picture_2.png, id=1339, 570.48131pt x 353.67131
+<figures/lab31/convergence_plot_picture_2.png, id=1338, 570.48131pt x 353.67131
 pt>
 File: figures/lab31/convergence_plot_picture_2.png Graphic file (type png)
 <use figures/lab31/convergence_plot_picture_2.png>
 Package pdftex.def Info: figures/lab31/convergence_plot_picture_2.png  used on 
 input line 190.
 (pdftex.def)             Requested size: 386.96027pt x 239.89967pt.
-<figures/lab31/convergence_plot_picture_3.png, id=1340, 570.48131pt x 353.67131
+<figures/lab31/convergence_plot_picture_3.png, id=1339, 570.48131pt x 353.67131
 pt>
 File: figures/lab31/convergence_plot_picture_3.png Graphic file (type png)
 <use figures/lab31/convergence_plot_picture_3.png>
@@ -4134,14 +4134,14 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [102 <./figures/lab31/k_comparison_grid_picture_3.png> <./figures/lab31/converg
 ence_plot_picture_2.png>]
-<figures/lab31/color_palette_picture_2_k3.png, id=1350, 228.55388pt x 107.95331
+<figures/lab31/color_palette_picture_2_k3.png, id=1349, 228.55388pt x 107.95331
 pt>
 File: figures/lab31/color_palette_picture_2_k3.png Graphic file (type png)
 <use figures/lab31/color_palette_picture_2_k3.png>
 Package pdftex.def Info: figures/lab31/color_palette_picture_2_k3.png  used on 
 input line 200.
 (pdftex.def)             Requested size: 364.19667pt x 172.03696pt.
-<figures/lab31/color_palette_picture_3_k5.png, id=1351, 302.63063pt x 118.79381
+<figures/lab31/color_palette_picture_3_k5.png, id=1350, 302.63063pt x 118.79381
 pt>
 File: figures/lab31/color_palette_picture_3_k5.png Graphic file (type png)
 <use figures/lab31/color_palette_picture_3_k5.png>
@@ -4271,13 +4271,13 @@ house_value \T1/cmr/m/n/12 capped at $500,001; \T1/cmtt/m/n/12 total_rooms\T1/c
 mr/m/n/12 , \T1/cmtt/m/n/12 total_bedrooms\T1/cmr/m/n/12 ,
  []
 
-<figures/lab04/eda_01_missing_values.png, id=1381, 578.16pt x 289.08pt>
+<figures/lab04/eda_01_missing_values.png, id=1380, 578.16pt x 289.08pt>
 File: figures/lab04/eda_01_missing_values.png Graphic file (type png)
 <use figures/lab04/eda_01_missing_values.png>
 Package pdftex.def Info: figures/lab04/eda_01_missing_values.png  used on input
  line 32.
 (pdftex.def)             Requested size: 327.7763pt x 163.88628pt.
-<figures/lab04/eda_02_feature_distributions.png, id=1382, 867.24pt x 578.16pt>
+<figures/lab04/eda_02_feature_distributions.png, id=1381, 867.24pt x 578.16pt>
 File: figures/lab04/eda_02_feature_distributions.png Graphic file (type png)
 <use figures/lab04/eda_02_feature_distributions.png>
 Package pdftex.def Info: figures/lab04/eda_02_feature_distributions.png  used o
@@ -4305,7 +4305,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [108 <./figures/lab04/eda_01_missing_values.png>]
-<figures/lab04/eda_03_target_distribution.png, id=1390, 578.16pt x 361.35pt>
+<figures/lab04/eda_03_target_distribution.png, id=1389, 578.16pt x 361.35pt>
 File: figures/lab04/eda_03_target_distribution.png Graphic file (type png)
 <use figures/lab04/eda_03_target_distribution.png>
 Package pdftex.def Info: figures/lab04/eda_03_target_distribution.png  used on 
@@ -4335,7 +4335,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [109 <./figures/lab04/eda_02_feature_distributions.png> <./figures/lab04/eda_03
 _target_distribution.png>]
-<figures/lab04/eda_05_geo_price_population.png, id=1399, 722.7pt x 505.89pt>
+<figures/lab04/eda_05_geo_price_population.png, id=1398, 722.7pt x 505.89pt>
 File: figures/lab04/eda_05_geo_price_population.png Graphic file (type png)
 <use figures/lab04/eda_05_geo_price_population.png>
 Package pdftex.def Info: figures/lab04/eda_05_geo_price_population.png  used on
@@ -4376,7 +4376,7 @@ Overfull \hbox (27.69345pt too wide) in paragraph at lines 80--81
 enge: \T1/cmr/bx/n/12 no fea-ture be-sides \T1/cmtt/m/n/12 median_income
  []
 
-<figures/lab04/eda_06_correlation_heatmap.png, id=1406, 722.7pt x 578.16pt>
+<figures/lab04/eda_06_correlation_heatmap.png, id=1405, 722.7pt x 578.16pt>
 File: figures/lab04/eda_06_correlation_heatmap.png Graphic file (type png)
 <use figures/lab04/eda_06_correlation_heatmap.png>
 Package pdftex.def Info: figures/lab04/eda_06_correlation_heatmap.png  used on 
@@ -4404,7 +4404,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [111]
-<figures/lab04/eda_07_target_correlation_bar.png, id=1412, 578.16pt x 361.35pt>
+<figures/lab04/eda_07_target_correlation_bar.png, id=1411, 578.16pt x 361.35pt>
 
 File: figures/lab04/eda_07_target_correlation_bar.png Graphic file (type png)
 <use figures/lab04/eda_07_target_correlation_bar.png>
@@ -4434,7 +4434,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [112 <./figures/lab04/eda_06_correlation_heatmap.png>]
-<figures/lab04/eda_08_scatter_matrix.png, id=1419, 867.24pt x 578.16pt>
+<figures/lab04/eda_08_scatter_matrix.png, id=1418, 867.24pt x 578.16pt>
 File: figures/lab04/eda_08_scatter_matrix.png Graphic file (type png)
 <use figures/lab04/eda_08_scatter_matrix.png>
 Package pdftex.def Info: figures/lab04/eda_08_scatter_matrix.png  used on input
@@ -4463,7 +4463,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [113 <./figures/lab04/eda_07_target_correlation_bar.png>]
-<figures/lab04/eda_09_income_vs_price.png, id=1426, 578.16pt x 433.62pt>
+<figures/lab04/eda_09_income_vs_price.png, id=1425, 578.16pt x 433.62pt>
 File: figures/lab04/eda_09_income_vs_price.png Graphic file (type png)
 <use figures/lab04/eda_09_income_vs_price.png>
 Package pdftex.def Info: figures/lab04/eda_09_income_vs_price.png  used on inpu
@@ -4492,7 +4492,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [114 <./figures/lab04/eda_08_scatter_matrix.png>]
-<figures/lab04/eda_10_ocean_proximity_bar.png, id=1434, 1011.78pt x 361.35pt>
+<figures/lab04/eda_10_ocean_proximity_bar.png, id=1433, 1011.78pt x 361.35pt>
 File: figures/lab04/eda_10_ocean_proximity_bar.png Graphic file (type png)
 <use figures/lab04/eda_10_ocean_proximity_bar.png>
 Package pdftex.def Info: figures/lab04/eda_10_ocean_proximity_bar.png  used on 
@@ -4521,7 +4521,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [115 <./figures/lab04/eda_09_income_vs_price.png>]
-<figures/lab04/eda_11_ocean_proximity_boxplot.png, id=1442, 722.7pt x 361.35pt>
+<figures/lab04/eda_11_ocean_proximity_boxplot.png, id=1441, 722.7pt x 361.35pt>
 
 File: figures/lab04/eda_11_ocean_proximity_boxplot.png Graphic file (type png)
 <use figures/lab04/eda_11_ocean_proximity_boxplot.png>
@@ -4556,7 +4556,7 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 
 [116 <./figures/lab04/eda_10_ocean_proximity_bar.png> <./figures/lab04/eda_11_o
 cean_proximity_boxplot.png>]
-<figures/lab04/eda_12_correlation_engineered.png, id=1452, 650.43pt x 433.62pt>
+<figures/lab04/eda_12_correlation_engineered.png, id=1451, 650.43pt x 433.62pt>
 
 File: figures/lab04/eda_12_correlation_engineered.png Graphic file (type png)
 <use figures/lab04/eda_12_correlation_engineered.png>
@@ -4965,19 +4965,19 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [120]
-<figures/lab04/comparison_bar.png, id=1524, 1011.78pt x 289.08pt>
+<figures/lab04/comparison_bar.png, id=1523, 1011.78pt x 289.08pt>
 File: figures/lab04/comparison_bar.png Graphic file (type png)
 <use figures/lab04/comparison_bar.png>
 Package pdftex.def Info: figures/lab04/comparison_bar.png  used on input line 2
 77.
 (pdftex.def)             Requested size: 373.3035pt x 106.65797pt.
-<figures/lab04/loss_curves.png, id=1525, 1300.86pt x 289.08pt>
+<figures/lab04/loss_curves.png, id=1524, 1300.86pt x 289.08pt>
 File: figures/lab04/loss_curves.png Graphic file (type png)
 <use figures/lab04/loss_curves.png>
 Package pdftex.def Info: figures/lab04/loss_curves.png  used on input line 282.
 
 (pdftex.def)             Requested size: 373.3035pt x 82.95326pt.
-<figures/lab04/eda_04_geo_basic.png, id=1526, 722.7pt x 505.89pt>
+<figures/lab04/eda_04_geo_basic.png, id=1525, 722.7pt x 505.89pt>
 File: figures/lab04/eda_04_geo_basic.png Graphic file (type png)
 <use figures/lab04/eda_04_geo_basic.png>
 Package pdftex.def Info: figures/lab04/eda_04_geo_basic.png  used on input line
@@ -5006,13 +5006,13 @@ Package fancyhdr Warning: \headheight is too small (22.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.01996pt}.
 
 [121 <./figures/lab04/comparison_bar.png> <./figures/lab04/loss_curves.png>]
-<figures/lab04/loss_comparison.png, id=1536, 1084.05pt x 289.08pt>
+<figures/lab04/loss_comparison.png, id=1535, 1084.05pt x 289.08pt>
 File: figures/lab04/loss_comparison.png Graphic file (type png)
 <use figures/lab04/loss_comparison.png>
 Package pdftex.def Info: figures/lab04/loss_comparison.png  used on input line 
 292.
 (pdftex.def)             Requested size: 355.08984pt x 94.69093pt.
-<figures/lab04/comparison_dual.png, id=1537, 1011.78pt x 289.08pt>
+<figures/lab04/comparison_dual.png, id=1536, 1011.78pt x 289.08pt>
 File: figures/lab04/comparison_dual.png Graphic file (type png)
 <use figures/lab04/comparison_dual.png>
 Package pdftex.def Info: figures/lab04/comparison_dual.png  used on input line 
@@ -5168,28 +5168,27 @@ sers/quangmanh/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/jknappen/ec/
 ecbx1728.600pk> </Users/quangmanh/Library/texlive/2026basic/texmf-var/fonts/pk/
 ljfour/jknappen/ec/ecrm0800.600pk> </Users/quangmanh/Library/texlive/2026basic/
 texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </Users/quangmanh/Library
-/texlive/2026basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </User
-s/quangmanh/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecb
-x1200.600pk> </Users/quangmanh/Library/texlive/2026basic/texmf-var/fonts/pk/ljf
-our/jknappen/ec/ecrm1440.600pk> </Users/quangmanh/Library/texlive/2026basic/tex
-mf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </Users/quangmanh/Library/te
-xlive/2026basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk></usr/loca
-l/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
-local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
-usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pf
-b></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8
-.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r12.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr6.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/
-amsfonts/symbols/msam10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type
-1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (127 pages, 44511461 bytes).
+/texlive/2026basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </User
+s/quangmanh/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecr
+m1200.600pk> </Users/quangmanh/Library/texlive/2026basic/texmf-var/fonts/pk/ljf
+our/jknappen/ec/ecrm1728.600pk> </Users/quangmanh/Library/texlive/2026basic/tex
+mf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk></usr/local/texlive/2026basic
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2026b
+asic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2
+026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texli
+ve/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/te
+xlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
+/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loc
+al/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/l
+ocal/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
+sr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+</usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+am10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/s
+ymbols/msbm10.pfb>
+Output written on main.pdf (127 pages, 44513815 bytes).
 PDF statistics:
- 2401 PDF objects out of 2487 (max. 8388607)
- 1362 compressed objects within 14 object streams
+ 2403 PDF objects out of 2487 (max. 8388607)
+ 1358 compressed objects within 14 object streams
  557 named destinations out of 1000 (max. 500000)
  1271 words of extra memory for PDF output out of 10000 (max. 10000000)
 
