@@ -1,55 +1,55 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Lab 3.1 — K-Means Image Segmentation}{88}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Lab 3.1 — K-Means Image Segmentation}{89}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:lab31}{{5}{88}{Lab 3.1 — K-Means Image Segmentation}{chapter.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Problem Definition}{88}{section.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Dataset}{88}{subsection.5.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Complete Workflow}{88}{section.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Setup and Reproducibility}{88}{subsection.5.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Load the Image}{89}{subsection.5.2.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Figure 5.1a: Primary image (\texttt  {picture.jpg}) — a landscape photograph with 47{,}119 unique RGB colors at $2560\times 1920$ original resolution.}}{89}{figure.caption.108}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Figure 5.1b: Auxiliary image 2 (\texttt  {picture\_2.jpg}) — 8{,}231 unique colors at $3648\times 5472$ original resolution.}}{90}{figure.caption.109}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Figure 5.1c: Auxiliary image 3 (\texttt  {picture\_3.jpg}) — 12{,}631 unique colors at $736\times 736$ original resolution.}}{91}{figure.caption.110}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Preprocess the Image}{91}{subsection.5.2.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Color space preview for the primary image: RGB (top), HSV (middle), LAB (bottom). Notice how LAB separates luminance from color channels, producing perceptually uniform distances.}}{92}{figure.caption.111}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Color space preview for \texttt  {picture\_2.jpg}.}}{92}{figure.caption.112}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Color space preview for \texttt  {picture\_3.jpg}.}}{92}{figure.caption.113}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.4}Inspect the K-Means Implementation}{92}{subsection.5.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.5}K-Means Grid Experiment}{93}{subsection.5.2.5}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Expected behavior per K value}}{93}{table.caption.114}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Metrics Collected Per Run}{93}{table.caption.114}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Elbow Method}{93}{table.caption.114}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Elbow curve for the primary image: inertia vs. K shows a clear bend at K=5. The steep drop from K=2 to K=5 (total 87.027\% reduction) contrasts with the shallow decline from K=5 to K=8 (39.813\% across three additional clusters).}}{94}{figure.caption.115}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Elbow curve for \texttt  {picture\_2.jpg}: with only 8{,}231 unique colors, the bend appears earlier at K=3.}}{94}{figure.caption.116}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Elbow curve for \texttt  {picture\_3.jpg}: bend at K=5, consistent with its 12{,}631 unique colors requiring more centroids for adequate representation.}}{95}{figure.caption.117}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Silhouette Analysis}{95}{figure.caption.117}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Silhouette analysis for the primary image at K=5. The dashed red line marks the average silhouette of 0.518. Uniformly thick bars across all five clusters confirm well-separated, compact color groups. No cluster shows bars near zero, indicating minimal overlap.}}{96}{figure.caption.118}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces Silhouette analysis for \texttt  {picture\_2.jpg} at K=3 (average 0.748). The three clusters are very well-separated, reflecting the image's simpler color structure with only 8{,}231 unique colors.}}{97}{figure.caption.119}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces Silhouette analysis for \texttt  {picture\_3.jpg} at K=5 (average 0.835). The exceptionally high silhouette indicates five nearly non-overlapping color populations — the strongest cluster structure across all images.}}{98}{figure.caption.120}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.6}Image Reconstruction}{98}{subsection.5.2.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces Original vs. K=5 segmented comparison for the primary image. The right panel shows the reconstructed image using only 5 colors — edges remain sharp, major color regions (sky, vegetation, water) are preserved, and fine texture is maintained despite the 9{,}423.800:1 compression ratio.}}{99}{figure.caption.121}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces Original vs. K=3 segmented comparison for \texttt  {picture\_2.jpg}. With only 8{,}231 unique colors originally, three centroids achieve a compression ratio of 2{,}743.667:1 while preserving the essential scene structure.}}{99}{figure.caption.122}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces Original vs. K=5 segmented comparison for \texttt  {picture\_3.jpg}. Compression ratio of 2{,}526.200:1 from 12{,}631 unique colors.}}{100}{figure.caption.123}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.7}Visualize Results}{100}{subsection.5.2.7}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.16}{\ignorespaces K-comparison grid for the primary image: original (left) alongside K=2, 3, 5, 8 segmented variants. The progression from harsh two-tone posterization at K=2 to near-photographic fidelity at K=8 is clearly visible. K=5 is the first value where textures and edges appear natural.}}{101}{figure.caption.124}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.17}{\ignorespaces Convergence plot for the primary image: inertia decreases monotonically for all K. K=8 requires the most iterations (49) due to the increased complexity of coordinating eight centroids, but the descent remains smooth without oscillation.}}{101}{figure.caption.125}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.18}{\ignorespaces Centroid color palette for the primary image at K=5. The five swatches are perceptually distinct, confirming that the algorithm has identified meaningful, separable color regions rather than degenerate or overlapping clusters.}}{102}{figure.caption.126}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.19}{\ignorespaces K-comparison grid for \texttt  {picture\_2.jpg} at its optimal K=3.}}{102}{figure.caption.127}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.20}{\ignorespaces K-comparison grid for \texttt  {picture\_3.jpg} at its optimal K=5.}}{103}{figure.caption.128}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.21}{\ignorespaces Convergence plot for \texttt  {picture\_2.jpg}: fast convergence (10 iterations at K=3) due to limited color diversity.}}{103}{figure.caption.129}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.22}{\ignorespaces Convergence plot for \texttt  {picture\_3.jpg}: 11 iterations at K=5, reflecting well-separated initial clusters.}}{104}{figure.caption.130}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.23}{\ignorespaces Centroid color palette for \texttt  {picture\_2.jpg} at K=3.}}{104}{figure.caption.131}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.24}{\ignorespaces Centroid color palette for \texttt  {picture\_3.jpg} at K=5.}}{104}{figure.caption.132}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.8}Color Space Comparison}{105}{subsection.5.2.8}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Color space comparison at K=5 for the primary image}}{105}{table.caption.133}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.9}Sklearn Sanity Check}{105}{subsection.5.2.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.10}Output Verification}{105}{subsection.5.2.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Results and Analysis}{106}{section.5.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces Segmentation metrics across K values for the primary image. K=5 (highlighted) is selected as the optimal trade-off: silhouette remains above 0.500 while inertia reduction from K=3 to K=5 (45.597\%) is substantial. K=8 adds marginal benefit (39.813\%) across three additional clusters with silhouette falling below 0.500.}}{106}{table.caption.134}\protected@file@percent }
+\newlabel{ch:lab31}{{5}{89}{Lab 3.1 — K-Means Image Segmentation}{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Problem Definition}{89}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Dataset}{89}{subsection.5.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Complete Workflow}{89}{section.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Setup and Reproducibility}{89}{subsection.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Load the Image}{90}{subsection.5.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Figure 5.1a: Primary image (\texttt  {picture.jpg}) — a landscape photograph with 47{,}119 unique RGB colors at $2560\times 1920$ original resolution.}}{90}{figure.caption.108}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Figure 5.1b: Auxiliary image 2 (\texttt  {picture\_2.jpg}) — 8{,}231 unique colors at $3648\times 5472$ original resolution.}}{91}{figure.caption.109}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Figure 5.1c: Auxiliary image 3 (\texttt  {picture\_3.jpg}) — 12{,}631 unique colors at $736\times 736$ original resolution.}}{92}{figure.caption.110}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Preprocess the Image}{92}{subsection.5.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Color space preview for the primary image: RGB (top), HSV (middle), LAB (bottom). Notice how LAB separates luminance from color channels, producing perceptually uniform distances.}}{93}{figure.caption.111}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Color space preview for \texttt  {picture\_2.jpg}.}}{93}{figure.caption.112}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Color space preview for \texttt  {picture\_3.jpg}.}}{93}{figure.caption.113}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.4}Inspect the K-Means Implementation}{93}{subsection.5.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.5}K-Means Grid Experiment}{94}{subsection.5.2.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Expected behavior per K value}}{94}{table.caption.114}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Metrics Collected Per Run}{94}{table.caption.114}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Elbow Method}{94}{table.caption.114}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Elbow curve for the primary image: inertia vs. K shows a clear bend at K=5. The steep drop from K=2 to K=5 (total 87.027\% reduction) contrasts with the shallow decline from K=5 to K=8 (39.813\% across three additional clusters).}}{95}{figure.caption.115}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Elbow curve for \texttt  {picture\_2.jpg}: with only 8{,}231 unique colors, the bend appears earlier at K=3.}}{95}{figure.caption.116}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Elbow curve for \texttt  {picture\_3.jpg}: bend at K=5, consistent with its 12{,}631 unique colors requiring more centroids for adequate representation.}}{96}{figure.caption.117}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Silhouette Analysis}{96}{figure.caption.117}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Silhouette analysis for the primary image at K=5. The dashed red line marks the average silhouette of 0.518. Uniformly thick bars across all five clusters confirm well-separated, compact color groups. No cluster shows bars near zero, indicating minimal overlap.}}{97}{figure.caption.118}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces Silhouette analysis for \texttt  {picture\_2.jpg} at K=3 (average 0.748). The three clusters are very well-separated, reflecting the image's simpler color structure with only 8{,}231 unique colors.}}{98}{figure.caption.119}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces Silhouette analysis for \texttt  {picture\_3.jpg} at K=5 (average 0.835). The exceptionally high silhouette indicates five nearly non-overlapping color populations — the strongest cluster structure across all images.}}{99}{figure.caption.120}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.6}Image Reconstruction}{99}{subsection.5.2.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces Original vs. K=5 segmented comparison for the primary image. The right panel shows the reconstructed image using only 5 colors — edges remain sharp, major color regions (sky, vegetation, water) are preserved, and fine texture is maintained despite the 9{,}423.800:1 compression ratio.}}{100}{figure.caption.121}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces Original vs. K=3 segmented comparison for \texttt  {picture\_2.jpg}. With only 8{,}231 unique colors originally, three centroids achieve a compression ratio of 2{,}743.667:1 while preserving the essential scene structure.}}{100}{figure.caption.122}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces Original vs. K=5 segmented comparison for \texttt  {picture\_3.jpg}. Compression ratio of 2{,}526.200:1 from 12{,}631 unique colors.}}{101}{figure.caption.123}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.7}Visualize Results}{101}{subsection.5.2.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.16}{\ignorespaces K-comparison grid for the primary image: original (left) alongside K=2, 3, 5, 8 segmented variants. The progression from harsh two-tone posterization at K=2 to near-photographic fidelity at K=8 is clearly visible. K=5 is the first value where textures and edges appear natural.}}{102}{figure.caption.124}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.17}{\ignorespaces Convergence plot for the primary image: inertia decreases monotonically for all K. K=8 requires the most iterations (49) due to the increased complexity of coordinating eight centroids, but the descent remains smooth without oscillation.}}{102}{figure.caption.125}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.18}{\ignorespaces Centroid color palette for the primary image at K=5. The five swatches are perceptually distinct, confirming that the algorithm has identified meaningful, separable color regions rather than degenerate or overlapping clusters.}}{103}{figure.caption.126}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.19}{\ignorespaces K-comparison grid for \texttt  {picture\_2.jpg} at its optimal K=3.}}{103}{figure.caption.127}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.20}{\ignorespaces K-comparison grid for \texttt  {picture\_3.jpg} at its optimal K=5.}}{104}{figure.caption.128}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.21}{\ignorespaces Convergence plot for \texttt  {picture\_2.jpg}: fast convergence (10 iterations at K=3) due to limited color diversity.}}{104}{figure.caption.129}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.22}{\ignorespaces Convergence plot for \texttt  {picture\_3.jpg}: 11 iterations at K=5, reflecting well-separated initial clusters.}}{105}{figure.caption.130}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.23}{\ignorespaces Centroid color palette for \texttt  {picture\_2.jpg} at K=3.}}{105}{figure.caption.131}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.24}{\ignorespaces Centroid color palette for \texttt  {picture\_3.jpg} at K=5.}}{105}{figure.caption.132}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.8}Color Space Comparison}{106}{subsection.5.2.8}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Color space comparison at K=5 for the primary image}}{106}{table.caption.133}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.9}Sklearn Sanity Check}{106}{subsection.5.2.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.10}Output Verification}{106}{subsection.5.2.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Results and Analysis}{107}{section.5.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces Segmentation metrics across K values for the primary image. K=5 (highlighted) is selected as the optimal trade-off: silhouette remains above 0.500 while inertia reduction from K=3 to K=5 (45.597\%) is substantial. K=8 adds marginal benefit (39.813\%) across three additional clusters with silhouette falling below 0.500.}}{107}{table.caption.134}\protected@file@percent }
 \@setckpt{chapters/05_lab31_image_seg}{
-\setcounter{page}{108}
+\setcounter{page}{109}
 \setcounter{equation}{0}
 \setcounter{enumi}{3}
 \setcounter{enumii}{0}
@@ -70,6 +70,7 @@
 \setcounter{section@level}{0}
 \setcounter{Item}{33}
 \setcounter{Hfootnote}{0}
+\setcounter{Hy@AnnotLevel}{0}
 \setcounter{bookmark@seq@number}{65}
 \setcounter{lstnumber}{23}
 \setcounter{tcbbreakpart}{1}

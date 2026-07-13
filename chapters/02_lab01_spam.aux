@@ -1,52 +1,52 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Lab 01 — Email Spam Classification}{4}{chapter.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Lab 01 — Email Spam Classification}{5}{chapter.2}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:lab01}{{2}{4}{Lab 01 — Email Spam Classification}{chapter.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Problem Definition}{4}{section.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Dataset}{4}{subsection.2.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Complete Workflow}{5}{section.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Raw Data Overview and EDA}{5}{subsection.2.2.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Raw data quality diagnostics}}{5}{table.caption.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Source $\times $ label heatmap — pure-source blocks reveal confounding: Enron is overwhelmingly ham, HuggingFace/Kaggle are pure spam. A model that learns to associate ``Enron vocabulary'' with ``ham'' is not learning what spam looks like.}}{6}{figure.caption.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Text Preprocessing Pipeline}{6}{subsection.2.2.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Text length distribution by class — reveals whether spam and ham have structurally different lengths, which can become a trivial feature for models.}}{7}{figure.caption.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Text length vs. unique word count — each point is one email. Clusters or outliers indicate data quality issues (e.g., HTML-only spam with 2 unique words replicated 500 times).}}{8}{figure.caption.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Source family distribution across the dataset — multiple sources contribute to the combined corpus, each with different label purity characteristics.}}{9}{figure.caption.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Vocabulary Analysis}{9}{subsection.2.2.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Top words by class — frequency comparison of most discriminative terms across ham and spam. Terms appearing with similar frequency in both classes provide no discriminative value.}}{10}{figure.caption.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Ham vocabulary — business and conversational terms dominating the legitimate email corpus.}}{10}{figure.caption.9}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Spam vocabulary — action-oriented marketing and solicitation terms characteristic of unsolicited bulk email.}}{11}{figure.caption.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}Imbalance Strategy Decision}{11}{subsection.2.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.5}Balanced Dataset Construction}{12}{subsection.2.2.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.6}Ham Data V2 (Diversity Supplement)}{12}{subsection.2.2.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.7}Fixed Train/Test Split}{12}{subsection.2.2.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.8}TF-IDF Feature Engineering}{12}{subsection.2.2.8}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces TF-IDF parameter choices}}{13}{table.caption.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.9}Nearest Centroid Baseline}{14}{subsection.2.2.9}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.1}{\ignorespaces Nearest Centroid: zero-training baseline}}{14}{lstlisting.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.10}Three Models From Scratch (Pure NumPy)}{14}{subsection.2.2.10}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Three scratch model implementations}}{15}{table.caption.12}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Logistic Regression — Core Training Loop}{15}{table.caption.12}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.2}{\ignorespaces Logistic Regression: Batch Gradient Descent with Binary Cross-Entropy}}{15}{lstlisting.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Linear SVM — Sub-Gradient Descent}{15}{lstnumber.2.2.13}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.3}{\ignorespaces Linear SVM: Sub-gradient descent with Hinge Loss}}{15}{lstlisting.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Loss Curve Diagnostics}{16}{lstnumber.2.3.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.11}Model Comparison and Double-Check}{16}{subsection.2.2.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Model Comparison at Default Operating Points}{16}{subsection.2.2.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Scratch vs. sklearn Verification}{17}{subsection.2.2.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.12}Threshold Tuning (Gold Standard Optimization)}{17}{subsection.2.2.12}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.4}{\ignorespaces Threshold sweep: find optimal operating point}}{17}{lstlisting.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Score Overlap Analysis}{18}{lstnumber.2.4.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Gold Standard Assessment}{19}{lstnumber.2.4.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.13}Failure Analysis}{19}{subsection.2.2.13}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Results and Analysis}{20}{section.2.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Confusion matrix for the Balanced (Text + Metadata) Linear SVM (Meta C1) configuration at the selected decision threshold $\tau = 0.089$. The overwhelming majority of predictions land on the diagonal (correct classifications), with only a handful of off-diagonal entries (2 false negatives, 10 false positives out of 1,978 test emails).}}{21}{figure.caption.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Severe class imbalance — approximately 73\% ham vs. 27\% spam. Without explicit handling (balancing, class weights, or threshold tuning), this imbalance causes the model to optimize for ham accuracy at the expense of spam recall.}}{22}{figure.caption.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Text length before vs. after cleaning — the preprocessing pipeline removes HTML markup, URLs, and formatting noise, compressing the length distribution and revealing the actual content-bearing word count.}}{23}{figure.caption.15}\protected@file@percent }
+\newlabel{ch:lab01}{{2}{5}{Lab 01 — Email Spam Classification}{chapter.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Problem Definition}{5}{section.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Dataset}{5}{subsection.2.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Complete Workflow}{6}{section.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Raw Data Overview and EDA}{6}{subsection.2.2.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Raw data quality diagnostics}}{6}{table.caption.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Source $\times $ label heatmap — pure-source blocks reveal confounding: Enron is overwhelmingly ham, HuggingFace/Kaggle are pure spam. A model that learns to associate ``Enron vocabulary'' with ``ham'' is not learning what spam looks like.}}{7}{figure.caption.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Text Preprocessing Pipeline}{7}{subsection.2.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Text length distribution by class — reveals whether spam and ham have structurally different lengths, which can become a trivial feature for models.}}{8}{figure.caption.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Text length vs. unique word count — each point is one email. Clusters or outliers indicate data quality issues (e.g., HTML-only spam with 2 unique words replicated 500 times).}}{9}{figure.caption.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Source family distribution across the dataset — multiple sources contribute to the combined corpus, each with different label purity characteristics.}}{10}{figure.caption.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Vocabulary Analysis}{10}{subsection.2.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Top words by class — frequency comparison of most discriminative terms across ham and spam. Terms appearing with similar frequency in both classes provide no discriminative value.}}{11}{figure.caption.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Ham vocabulary — business and conversational terms dominating the legitimate email corpus.}}{11}{figure.caption.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Spam vocabulary — action-oriented marketing and solicitation terms characteristic of unsolicited bulk email.}}{12}{figure.caption.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}Imbalance Strategy Decision}{12}{subsection.2.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.5}Balanced Dataset Construction}{13}{subsection.2.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.6}Ham Data V2 (Diversity Supplement)}{13}{subsection.2.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.7}Fixed Train/Test Split}{13}{subsection.2.2.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.8}TF-IDF Feature Engineering}{13}{subsection.2.2.8}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces TF-IDF parameter choices}}{14}{table.caption.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.9}Nearest Centroid Baseline}{15}{subsection.2.2.9}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.1}{\ignorespaces Nearest Centroid: zero-training baseline}}{15}{lstlisting.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.10}Three Models From Scratch (Pure NumPy)}{15}{subsection.2.2.10}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Three scratch model implementations}}{16}{table.caption.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Logistic Regression — Core Training Loop}{16}{table.caption.12}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.2}{\ignorespaces Logistic Regression: Batch Gradient Descent with Binary Cross-Entropy}}{16}{lstlisting.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Linear SVM — Sub-Gradient Descent}{16}{lstnumber.2.2.13}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.3}{\ignorespaces Linear SVM: Sub-gradient descent with Hinge Loss}}{16}{lstlisting.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Loss Curve Diagnostics}{17}{lstnumber.2.3.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.11}Model Comparison and Double-Check}{17}{subsection.2.2.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Model Comparison at Default Operating Points}{17}{subsection.2.2.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Scratch vs. sklearn Verification}{18}{subsection.2.2.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.12}Threshold Tuning (Gold Standard Optimization)}{18}{subsection.2.2.12}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.4}{\ignorespaces Threshold sweep: find optimal operating point}}{18}{lstlisting.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Score Overlap Analysis}{19}{lstnumber.2.4.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Gold Standard Assessment}{20}{lstnumber.2.4.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.13}Failure Analysis}{20}{subsection.2.2.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Results and Analysis}{21}{section.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Confusion matrix for the Balanced (Text + Metadata) Linear SVM (Meta C1) configuration at the selected decision threshold $\tau = 0.089$. The overwhelming majority of predictions land on the diagonal (correct classifications), with only a handful of off-diagonal entries (2 false negatives, 10 false positives out of 1,978 test emails).}}{22}{figure.caption.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Severe class imbalance — approximately 73\% ham vs. 27\% spam. Without explicit handling (balancing, class weights, or threshold tuning), this imbalance causes the model to optimize for ham accuracy at the expense of spam recall.}}{23}{figure.caption.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Text length before vs. after cleaning — the preprocessing pipeline removes HTML markup, URLs, and formatting noise, compressing the length distribution and revealing the actual content-bearing word count.}}{24}{figure.caption.15}\protected@file@percent }
 \@setckpt{chapters/02_lab01_spam}{
-\setcounter{page}{25}
+\setcounter{page}{26}
 \setcounter{equation}{0}
 \setcounter{enumi}{4}
 \setcounter{enumii}{0}
@@ -67,6 +67,7 @@
 \setcounter{section@level}{0}
 \setcounter{Item}{20}
 \setcounter{Hfootnote}{0}
+\setcounter{Hy@AnnotLevel}{0}
 \setcounter{bookmark@seq@number}{19}
 \setcounter{lstnumber}{8}
 \setcounter{tcbbreakpart}{1}

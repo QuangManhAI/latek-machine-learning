@@ -1,5 +1,4 @@
 \documentclass[12pt,a4paper,oneside]{report}
-\usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \usepackage[margin=2.5cm, headheight=22pt]{geometry}
 \usepackage{graphicx,float,hyperref,fancyhdr}
@@ -47,12 +46,35 @@
 \lstnewenvironment{pythoncode}[1][]{\lstset{style=pythonstyle,#1}}{}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 
-\title{\vspace{4cm}{\Huge\bfseries\color{titleblue} Machine Learning\\}\vspace{0.5cm}{\Huge\bfseries\color{titleblue} Laboratory Report\\}\vspace{1cm}{\Large\color{sectionblue} Comprehensive Analysis of Five Projects}\\\vspace{2cm}\begin{tikzpicture}[overlay,remember picture]\draw[line width=2pt,color=sectionblue] (-6,0) -- (6,0);\node[circle,fill=titleblue,minimum size=10pt] at (-6,0) {};\node[circle,fill=titleblue,minimum size=10pt] at (6,0) {};\node[circle,fill=greenaccent,minimum size=8pt] at (-3,0) {};\node[circle,fill=orangeaccent,minimum size=8pt] at (0,0) {};\node[circle,fill=redaccent,minimum size=8pt] at (3,0) {};\end{tikzpicture}\vspace{1.5cm}}
+\title{\vspace{3cm}{\Large\color{titleblue} University of Transport Ho Chi Minh City\\[0.5cm]}{\Huge\bfseries\color{titleblue} Machine Learning\\}\vspace{0.5cm}{\Huge\bfseries\color{titleblue} Laboratory Report\\}\vspace{1cm}{\Large\color{sectionblue} Comprehensive Analysis of Five Projects}\\\vspace{2cm}\begin{tikzpicture}[overlay,remember picture]\draw[line width=2pt,color=sectionblue] (-6,0) -- (6,0);\node[circle,fill=titleblue,minimum size=10pt] at (-6,0) {};\node[circle,fill=titleblue,minimum size=10pt] at (6,0) {};\node[circle,fill=greenaccent,minimum size=8pt] at (-3,0) {};\node[circle,fill=orangeaccent,minimum size=8pt] at (0,0) {};\node[circle,fill=redaccent,minimum size=8pt] at (3,0) {};\end{tikzpicture}\vspace{1.5cm}}
 \author{\Large\color{titleblue} [012012710408] - Machine Learning - 7460108369013}
-\date{\Large\color{sectionblue} PhD Nguyen Thi Khanh Tien \\[0.5cm] \normalsize\color{sectionblue}\today}
+\date{\Large\color{sectionblue} PhD Nguyen Thi Khanh Tien \\[0.5cm] \normalsize\color{sectionblue} Ho Chi Minh City, \today}
 
 \begin{document}
 \pagestyle{empty}\maketitle\newpage
+
+% Contribution table
+\vspace*{2cm}
+\begin{center}
+{\Large\bfseries\color{titleblue} CONTRIBUTION TABLE}\\[1em]
+\begin{tabular}{lcc}
+\toprule
+\rowcolor{tablehead}{\color{white}\bfseries Student ID} & {\color{white}\bfseries Name} & {\color{white}\bfseries Contribution}\\
+\midrule
+067206006852 & Nhữ Phạm Quang Mạnh & 40\%\\
+\rowcolor{tablerow}
+064206001720 & Phạm Thành Lưu & 20\%\\
+068206006075 & Đỗ Tiến Lợi & 20\%\\
+\rowcolor{tablerow}
+058206001232 & Nguyễn Ngọc Tiến Đạt & 20\%\\
+\midrule
+\multicolumn{2}{c}{\bfseries Total} & \bfseries 100\%\\
+\bottomrule
+\end{tabular}
+\end{center}
+\vfill
+\newpage
+
 \pagestyle{empty}\tableofcontents\newpage\pagestyle{fancy}
 
 \include{chapters/01_executive_summary}

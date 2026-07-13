@@ -1,104 +1,104 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Lab 02 — Store Sales Forecasting}{25}{chapter.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Lab 02 — Store Sales Forecasting}{26}{chapter.3}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:lab02}{{3}{25}{Lab 02 — Store Sales Forecasting}{chapter.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Problem Definition}{25}{section.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Dataset}{25}{subsection.3.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Complete Workflow}{25}{section.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Load Data \& Validate Schema}{25}{subsection.3.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Exploratory Data Analysis (8 Sub-steps)}{26}{subsection.3.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Missing Values}{26}{subsection.3.2.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Missing values analysis — oil prices are missing on weekends/holidays due to market closure; all other columns are complete.}}{26}{figure.caption.16}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Target Distribution}{26}{figure.caption.16}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Target distribution — raw + $\log _{1p}$ — showing right skew reduction after log transform.}}{27}{figure.caption.17}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Target boxplot by store segments — revealing order-of-magnitude differences in sales volume across store types.}}{27}{figure.caption.18}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Target distribution analysis: $\log _{1p}$ transform normalizes the heavily right-skewed sales data; 31.300\% of observations are zero-sales days.}}{27}{figure.caption.19}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Product Family Analysis}{28}{figure.caption.19}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Product family revenue breakdown — Pareto distribution with top 3 families accounting for a disproportionate share of total sales.}}{28}{figure.caption.20}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Revenue by category — confirming that grocery and beverages are the dominant product lines across all stores.}}{28}{figure.caption.21}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Trend and Seasonality}{28}{figure.caption.21}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Daily revenue rolling mean — confirming upward trend over 5 years with seasonal oscillations.}}{29}{figure.caption.22}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Monthly revenue patterns — December holiday spike and January post-holiday dip are the strongest seasonal signals.}}{29}{figure.caption.23}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Promotion Impact}{29}{figure.caption.23}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Promotion impact: \texttt  {onpromotion} vs. sales showing positive correlation with diminishing returns at high promotion levels.}}{30}{figure.caption.24}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Store Characteristics}{30}{figure.caption.24}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Store characteristics: sales distribution by store type and cluster. Type A dominates volume; intra-type variance signals location-specific effects beyond macro store category.}}{30}{figure.caption.25}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Oil Price Correlation}{30}{figure.caption.25}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Holidays and Transactions}{30}{figure.caption.25}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces Holiday analysis: sales patterns around national holidays — holiday dates show 15–25\% higher sales vs. comparable non-holiday dates.}}{31}{figure.caption.26}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces Revenue distribution — aggregate daily revenue histogram showing multi-modal pattern from weekday/weekend/holiday regimes.}}{31}{figure.caption.27}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces Revenue boxplot by store — per-store revenue distribution revealing order-of-magnitude variability across the 54 stores.}}{32}{figure.caption.28}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces Quantity vs. revenue — strong linear relationship confirming item count drives revenue more than unit price variation.}}{32}{figure.caption.29}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces Unit price vs. revenue — weaker relationship indicating that sales volume, not pricing, dominates revenue patterns.}}{32}{figure.caption.30}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces Revenue by region — geographic concentration in major urban centers.}}{33}{figure.caption.31}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.17}{\ignorespaces Top states by revenue — Pichincha (Quito) and Guayas (Guayaquil) dominate, consistent with population distribution.}}{33}{figure.caption.32}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.18}{\ignorespaces Top products by revenue — grocery staples dominate; long-tail of niche products contributes minimal revenue individually.}}{33}{figure.caption.33}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.19}{\ignorespaces Revenue by category detail — confirming that the top 5 of 33 families account for over 60\% of total revenue.}}{34}{figure.caption.34}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.20}{\ignorespaces Revenue distribution boxplot — highlighting outlier days driven by holidays and promotions.}}{34}{figure.caption.35}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.21}{\ignorespaces Revenue by customer segments — segment-level differences inform feature interactions.}}{34}{figure.caption.36}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.22}{\ignorespaces Time-series EDA patterns — multi-resolution view of temporal dynamics.}}{35}{figure.caption.37}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.23}{\ignorespaces Daily revenue rolling mean — long-term trend with seasonal oscillations confirmed.}}{35}{figure.caption.38}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.24}{\ignorespaces Product geography analysis — spatial distribution of product family sales across store locations.}}{36}{figure.caption.39}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.25}{\ignorespaces Feature relationship analysis — pairwise relationships among key numerical predictors.}}{36}{figure.caption.40}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.26}{\ignorespaces Numeric correlation heatmap — \texttt  {lag\_16}, \texttt  {lag\_28}, and \texttt  {transactions} show strongest correlation with target; \texttt  {dcoilwtico} shows weak but non-zero correlation.}}{37}{figure.caption.41}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.27}{\ignorespaces Feature scatter grid vs. revenue — systematic patterns in lag features confirm strong autoregressive signal.}}{37}{figure.caption.42}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.28}{\ignorespaces Advanced target distribution analysis — kernel density estimation with multiple bandwidths.}}{38}{figure.caption.43}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.29}{\ignorespaces Density comparison: original vs. scaled — confirming normalization improves distribution shape for linear models.}}{38}{figure.caption.44}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Data Cleaning}{38}{subsection.3.2.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Scaling strategy per model family — informed by each model's mathematical sensitivity to input scale}}{39}{table.caption.45}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Feature Engineering}{39}{subsection.3.2.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Complete feature set: 21 features across 5 groups, where 15 are numerical (calendar, promotion, external, time-series) and 6 are categorical (store metadata), producing 24 columns after one-hot encoding for Ridge/MLP pipelines}}{39}{table.caption.46}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.1}{\ignorespaces Lag and rolling features with shift-16 guard}}{40}{lstlisting.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.5}Time-Based Train/Validation Split}{40}{subsection.3.2.5}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Time-based split — all sets respect chronological order; validation and test periods are contiguous and non-overlapping}}{41}{table.caption.47}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.6}Metrics and Preprocessing Pipelines}{41}{subsection.3.2.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Why RMSLE over RMSE?}{41}{subsection.3.2.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.7}Time-Series Baselines}{42}{subsection.3.2.7}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Four baseline forecasts — each uses a different subset of historical sales to produce a prediction without any learned parameters}}{42}{table.caption.48}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.8}Train and Compare ML Models}{43}{subsection.3.2.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Ridge Regression — Closed-Form Solution}{43}{subsection.3.2.8}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.2}{\ignorespaces Ridge Regression: closed-form normal equation with intercept protection}}{43}{lstlisting.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Multi-Layer Perceptron — Mini-Batch SGD}{43}{lstnumber.3.2.9}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.3}{\ignorespaces MLP: forward pass, MSE loss, backward pass with ReLU derivative}}{43}{lstlisting.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{HistGradientBoosting — 160 Trees}{44}{lstnumber.3.3.16}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.9}Model Improvements}{44}{subsection.3.2.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.10}Model Diagnostics}{45}{subsection.3.2.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.11}Final Model and Submission}{46}{subsection.3.2.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Results and Analysis}{46}{section.3.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.5}{\ignorespaces Full model comparison on 16-day validation set (28,512 rows). RMSLE is the primary optimization metric; MAE and RMSE are on the original sales scale (unit count); R$^2$ measures variance explained. The HGB (raw target) configuration achieves the best MAE, RMSE, and R$^2$ individually at the cost of degraded RMSLE.}}{46}{table.caption.49}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.30}{\ignorespaces Loss curves: Ridge (closed-form, single-step solution), MLP (SGD convergence over epochs), HGB (boosting iterations with train/validation loss monitored post-hoc).}}{47}{figure.caption.50}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.31}{\ignorespaces EDA: target distribution analysis — raw sales (heavily skewed), $\log _{1p}$(sales) (approximately normal), and boxplot of outliers confirming 31.300\% zero-sales observations.}}{48}{figure.caption.51}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.32}{\ignorespaces RMSLE comparison across models. HGB (log features) achieves the lowest individual RMSLE (0.464); the ensemble achieves 0.483 with strong secondary metrics.}}{48}{figure.caption.52}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.33}{\ignorespaces RMSLE improvement deltas: HGB, MLP, and Ridge with log features all improve on the baselines; HGB log features provides the largest improvement over the best RMSLE baseline (Rolling\_Mean\_56\_Shift16 at 0.546).}}{48}{figure.caption.53}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.34}{\ignorespaces Log-scale loss curves — revealing fine-grained convergence behavior, especially for MLP where early epochs show rapid descent followed by gradual refinement.}}{49}{figure.caption.54}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.35}{\ignorespaces Monthly revenue trend — long-term upward trajectory with annual December peaks and January post-holiday corrections.}}{49}{figure.caption.55}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.36}{\ignorespaces Model A: predicted vs. actual sales — tight clustering around identity line confirms strong fit.}}{50}{figure.caption.56}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.37}{\ignorespaces Model B: predicted vs. actual sales — slightly wider spread due to absence of transaction count as a feature.}}{51}{figure.caption.57}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.38}{\ignorespaces Residuals: Model A — approximately symmetric distribution centered near zero, confirming unbiased predictions.}}{52}{figure.caption.58}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.39}{\ignorespaces Residuals: Model B — slightly wider residual spread without transaction quantity feature.}}{52}{figure.caption.59}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.40}{\ignorespaces Residuals by month: Model A — monthly residual patterns reveal seasonal bias (e.g., December residuals may skew positive if holiday effects are under-modeled).}}{53}{figure.caption.60}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.41}{\ignorespaces Residuals by month: Model B — similar seasonal patterns with larger magnitude due to missing transaction feature.}}{53}{figure.caption.61}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.42}{\ignorespaces Residuals by product category: Model A — identifies which product families the model predicts most accurately and which remain challenging.}}{54}{figure.caption.62}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.43}{\ignorespaces Residuals by product category: Model B — higher residual variance across all categories when transaction data is unavailable.}}{54}{figure.caption.63}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.44}{\ignorespaces Actual vs. predicted line plot — time-ordered comparison showing model's ability to track day-to-day sales fluctuations.}}{55}{figure.caption.64}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.45}{\ignorespaces Prediction analysis dashboard — multi-panel diagnostic view combining scatter, residual, and time-series plots.}}{55}{figure.caption.65}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.46}{\ignorespaces Epsilon-tube style plot — visualizes prediction bounds and identifies observations where error exceeds acceptable tolerance.}}{56}{figure.caption.66}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.47}{\ignorespaces Model A prediction plots — comprehensive diagnostic dashboard for the full-feature model.}}{56}{figure.caption.67}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.48}{\ignorespaces Ridge feature weights — coefficient magnitudes reveal which features contribute most to the linear prediction. Lag features dominate; store and product identifiers contribute smaller systematic adjustments.}}{57}{figure.caption.68}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.49}{\ignorespaces Full EDA dashboard — comprehensive summary of all exploratory analyses in a single view.}}{58}{figure.caption.69}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.50}{\ignorespaces Revenue distribution histogram — confirming multi-modal structure from weekday, weekend, and holiday regimes.}}{59}{figure.caption.70}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.51}{\ignorespaces Revenue boxplot — highlighting the wide range across stores and the presence of extreme outlier days.}}{59}{figure.caption.71}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.52}{\ignorespaces Revenue by region — geographic concentration in major metropolitan areas (Quito, Guayaquil).}}{60}{figure.caption.72}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.53}{\ignorespaces Revenue by product category — Pareto distribution with grocery and beverages dominating total sales.}}{60}{figure.caption.73}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.54}{\ignorespaces Quantity distribution — item count across transactions; right-skewed similar to sales.}}{61}{figure.caption.74}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.55}{\ignorespaces Quantity vs. revenue — strong positive correlation confirming volume is the primary revenue driver.}}{61}{figure.caption.75}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.56}{\ignorespaces Unit price vs. revenue — weaker relationship; revenue variation is dominated by quantity, not price.}}{62}{figure.caption.76}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.57}{\ignorespaces Top products by revenue — ranking confirms a small set of staple products generates the majority of revenue.}}{62}{figure.caption.77}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.58}{\ignorespaces Top states by revenue — Pichincha and Guayas together account for the majority of national sales.}}{63}{figure.caption.78}\protected@file@percent }
+\newlabel{ch:lab02}{{3}{26}{Lab 02 — Store Sales Forecasting}{chapter.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Problem Definition}{26}{section.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Dataset}{26}{subsection.3.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Complete Workflow}{26}{section.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Load Data \& Validate Schema}{26}{subsection.3.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Exploratory Data Analysis (8 Sub-steps)}{27}{subsection.3.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Missing Values}{27}{subsection.3.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Missing values analysis — oil prices are missing on weekends/holidays due to market closure; all other columns are complete.}}{27}{figure.caption.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Target Distribution}{27}{figure.caption.16}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Target distribution — raw + $\log _{1p}$ — showing right skew reduction after log transform.}}{28}{figure.caption.17}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Target boxplot by store segments — revealing order-of-magnitude differences in sales volume across store types.}}{28}{figure.caption.18}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Target distribution analysis: $\log _{1p}$ transform normalizes the heavily right-skewed sales data; 31.300\% of observations are zero-sales days.}}{28}{figure.caption.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Product Family Analysis}{29}{figure.caption.19}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Product family revenue breakdown — Pareto distribution with top 3 families accounting for a disproportionate share of total sales.}}{29}{figure.caption.20}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Revenue by category — confirming that grocery and beverages are the dominant product lines across all stores.}}{29}{figure.caption.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Trend and Seasonality}{29}{figure.caption.21}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Daily revenue rolling mean — confirming upward trend over 5 years with seasonal oscillations.}}{30}{figure.caption.22}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Monthly revenue patterns — December holiday spike and January post-holiday dip are the strongest seasonal signals.}}{30}{figure.caption.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Promotion Impact}{30}{figure.caption.23}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Promotion impact: \texttt  {onpromotion} vs. sales showing positive correlation with diminishing returns at high promotion levels.}}{31}{figure.caption.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Store Characteristics}{31}{figure.caption.24}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Store characteristics: sales distribution by store type and cluster. Type A dominates volume; intra-type variance signals location-specific effects beyond macro store category.}}{31}{figure.caption.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Oil Price Correlation}{31}{figure.caption.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Holidays and Transactions}{31}{figure.caption.25}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces Holiday analysis: sales patterns around national holidays — holiday dates show 15–25\% higher sales vs. comparable non-holiday dates.}}{32}{figure.caption.26}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces Revenue distribution — aggregate daily revenue histogram showing multi-modal pattern from weekday/weekend/holiday regimes.}}{32}{figure.caption.27}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces Revenue boxplot by store — per-store revenue distribution revealing order-of-magnitude variability across the 54 stores.}}{33}{figure.caption.28}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces Quantity vs. revenue — strong linear relationship confirming item count drives revenue more than unit price variation.}}{33}{figure.caption.29}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces Unit price vs. revenue — weaker relationship indicating that sales volume, not pricing, dominates revenue patterns.}}{33}{figure.caption.30}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces Revenue by region — geographic concentration in major urban centers.}}{34}{figure.caption.31}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.17}{\ignorespaces Top states by revenue — Pichincha (Quito) and Guayas (Guayaquil) dominate, consistent with population distribution.}}{34}{figure.caption.32}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.18}{\ignorespaces Top products by revenue — grocery staples dominate; long-tail of niche products contributes minimal revenue individually.}}{34}{figure.caption.33}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.19}{\ignorespaces Revenue by category detail — confirming that the top 5 of 33 families account for over 60\% of total revenue.}}{35}{figure.caption.34}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.20}{\ignorespaces Revenue distribution boxplot — highlighting outlier days driven by holidays and promotions.}}{35}{figure.caption.35}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.21}{\ignorespaces Revenue by customer segments — segment-level differences inform feature interactions.}}{35}{figure.caption.36}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.22}{\ignorespaces Time-series EDA patterns — multi-resolution view of temporal dynamics.}}{36}{figure.caption.37}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.23}{\ignorespaces Daily revenue rolling mean — long-term trend with seasonal oscillations confirmed.}}{36}{figure.caption.38}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.24}{\ignorespaces Product geography analysis — spatial distribution of product family sales across store locations.}}{37}{figure.caption.39}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.25}{\ignorespaces Feature relationship analysis — pairwise relationships among key numerical predictors.}}{37}{figure.caption.40}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.26}{\ignorespaces Numeric correlation heatmap — \texttt  {lag\_16}, \texttt  {lag\_28}, and \texttt  {transactions} show strongest correlation with target; \texttt  {dcoilwtico} shows weak but non-zero correlation.}}{38}{figure.caption.41}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.27}{\ignorespaces Feature scatter grid vs. revenue — systematic patterns in lag features confirm strong autoregressive signal.}}{38}{figure.caption.42}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.28}{\ignorespaces Advanced target distribution analysis — kernel density estimation with multiple bandwidths.}}{39}{figure.caption.43}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.29}{\ignorespaces Density comparison: original vs. scaled — confirming normalization improves distribution shape for linear models.}}{39}{figure.caption.44}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Data Cleaning}{39}{subsection.3.2.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Scaling strategy per model family — informed by each model's mathematical sensitivity to input scale}}{40}{table.caption.45}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Feature Engineering}{40}{subsection.3.2.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Complete feature set: 21 features across 5 groups, where 15 are numerical (calendar, promotion, external, time-series) and 6 are categorical (store metadata), producing 24 columns after one-hot encoding for Ridge/MLP pipelines}}{40}{table.caption.46}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.1}{\ignorespaces Lag and rolling features with shift-16 guard}}{41}{lstlisting.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.5}Time-Based Train/Validation Split}{41}{subsection.3.2.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Time-based split — all sets respect chronological order; validation and test periods are contiguous and non-overlapping}}{42}{table.caption.47}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.6}Metrics and Preprocessing Pipelines}{42}{subsection.3.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Why RMSLE over RMSE?}{42}{subsection.3.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.7}Time-Series Baselines}{43}{subsection.3.2.7}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Four baseline forecasts — each uses a different subset of historical sales to produce a prediction without any learned parameters}}{43}{table.caption.48}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.8}Train and Compare ML Models}{44}{subsection.3.2.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Ridge Regression — Closed-Form Solution}{44}{subsection.3.2.8}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.2}{\ignorespaces Ridge Regression: closed-form normal equation with intercept protection}}{44}{lstlisting.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Multi-Layer Perceptron — Mini-Batch SGD}{44}{lstnumber.3.2.9}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.3}{\ignorespaces MLP: forward pass, MSE loss, backward pass with ReLU derivative}}{44}{lstlisting.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{HistGradientBoosting — 160 Trees}{45}{lstnumber.3.3.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.9}Model Improvements}{45}{subsection.3.2.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.10}Model Diagnostics}{46}{subsection.3.2.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.11}Final Model and Submission}{47}{subsection.3.2.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Results and Analysis}{47}{section.3.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.5}{\ignorespaces Full model comparison on 16-day validation set (28,512 rows). RMSLE is the primary optimization metric; MAE and RMSE are on the original sales scale (unit count); R$^2$ measures variance explained. The HGB (raw target) configuration achieves the best MAE, RMSE, and R$^2$ individually at the cost of degraded RMSLE.}}{47}{table.caption.49}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.30}{\ignorespaces Loss curves: Ridge (closed-form, single-step solution), MLP (SGD convergence over epochs), HGB (boosting iterations with train/validation loss monitored post-hoc).}}{48}{figure.caption.50}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.31}{\ignorespaces EDA: target distribution analysis — raw sales (heavily skewed), $\log _{1p}$(sales) (approximately normal), and boxplot of outliers confirming 31.300\% zero-sales observations.}}{49}{figure.caption.51}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.32}{\ignorespaces RMSLE comparison across models. HGB (log features) achieves the lowest individual RMSLE (0.464); the ensemble achieves 0.483 with strong secondary metrics.}}{49}{figure.caption.52}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.33}{\ignorespaces RMSLE improvement deltas: HGB, MLP, and Ridge with log features all improve on the baselines; HGB log features provides the largest improvement over the best RMSLE baseline (Rolling\_Mean\_56\_Shift16 at 0.546).}}{49}{figure.caption.53}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.34}{\ignorespaces Log-scale loss curves — revealing fine-grained convergence behavior, especially for MLP where early epochs show rapid descent followed by gradual refinement.}}{50}{figure.caption.54}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.35}{\ignorespaces Monthly revenue trend — long-term upward trajectory with annual December peaks and January post-holiday corrections.}}{50}{figure.caption.55}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.36}{\ignorespaces Model A: predicted vs. actual sales — tight clustering around identity line confirms strong fit.}}{51}{figure.caption.56}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.37}{\ignorespaces Model B: predicted vs. actual sales — slightly wider spread due to absence of transaction count as a feature.}}{52}{figure.caption.57}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.38}{\ignorespaces Residuals: Model A — approximately symmetric distribution centered near zero, confirming unbiased predictions.}}{53}{figure.caption.58}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.39}{\ignorespaces Residuals: Model B — slightly wider residual spread without transaction quantity feature.}}{53}{figure.caption.59}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.40}{\ignorespaces Residuals by month: Model A — monthly residual patterns reveal seasonal bias (e.g., December residuals may skew positive if holiday effects are under-modeled).}}{54}{figure.caption.60}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.41}{\ignorespaces Residuals by month: Model B — similar seasonal patterns with larger magnitude due to missing transaction feature.}}{54}{figure.caption.61}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.42}{\ignorespaces Residuals by product category: Model A — identifies which product families the model predicts most accurately and which remain challenging.}}{55}{figure.caption.62}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.43}{\ignorespaces Residuals by product category: Model B — higher residual variance across all categories when transaction data is unavailable.}}{55}{figure.caption.63}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.44}{\ignorespaces Actual vs. predicted line plot — time-ordered comparison showing model's ability to track day-to-day sales fluctuations.}}{56}{figure.caption.64}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.45}{\ignorespaces Prediction analysis dashboard — multi-panel diagnostic view combining scatter, residual, and time-series plots.}}{56}{figure.caption.65}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.46}{\ignorespaces Epsilon-tube style plot — visualizes prediction bounds and identifies observations where error exceeds acceptable tolerance.}}{57}{figure.caption.66}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.47}{\ignorespaces Model A prediction plots — comprehensive diagnostic dashboard for the full-feature model.}}{57}{figure.caption.67}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.48}{\ignorespaces Ridge feature weights — coefficient magnitudes reveal which features contribute most to the linear prediction. Lag features dominate; store and product identifiers contribute smaller systematic adjustments.}}{58}{figure.caption.68}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.49}{\ignorespaces Full EDA dashboard — comprehensive summary of all exploratory analyses in a single view.}}{59}{figure.caption.69}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.50}{\ignorespaces Revenue distribution histogram — confirming multi-modal structure from weekday, weekend, and holiday regimes.}}{60}{figure.caption.70}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.51}{\ignorespaces Revenue boxplot — highlighting the wide range across stores and the presence of extreme outlier days.}}{60}{figure.caption.71}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.52}{\ignorespaces Revenue by region — geographic concentration in major metropolitan areas (Quito, Guayaquil).}}{61}{figure.caption.72}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.53}{\ignorespaces Revenue by product category — Pareto distribution with grocery and beverages dominating total sales.}}{61}{figure.caption.73}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.54}{\ignorespaces Quantity distribution — item count across transactions; right-skewed similar to sales.}}{62}{figure.caption.74}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.55}{\ignorespaces Quantity vs. revenue — strong positive correlation confirming volume is the primary revenue driver.}}{62}{figure.caption.75}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.56}{\ignorespaces Unit price vs. revenue — weaker relationship; revenue variation is dominated by quantity, not price.}}{63}{figure.caption.76}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.57}{\ignorespaces Top products by revenue — ranking confirms a small set of staple products generates the majority of revenue.}}{63}{figure.caption.77}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.58}{\ignorespaces Top states by revenue — Pichincha and Guayas together account for the majority of national sales.}}{64}{figure.caption.78}\protected@file@percent }
 \@setckpt{chapters/03_lab02_sales}{
-\setcounter{page}{64}
+\setcounter{page}{65}
 \setcounter{equation}{0}
 \setcounter{enumi}{2}
 \setcounter{enumii}{0}
@@ -119,6 +119,7 @@
 \setcounter{section@level}{0}
 \setcounter{Item}{22}
 \setcounter{Hfootnote}{0}
+\setcounter{Hy@AnnotLevel}{0}
 \setcounter{bookmark@seq@number}{35}
 \setcounter{lstnumber}{17}
 \setcounter{tcbbreakpart}{1}

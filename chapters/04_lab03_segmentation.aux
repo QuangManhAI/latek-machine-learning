@@ -1,57 +1,57 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Lab 03 --- Customer Segmentation}{64}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Lab 03 --- Customer Segmentation}{65}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:lab03}{{4}{64}{Lab 03 --- Customer Segmentation}{chapter.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Problem Definition}{64}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Dataset}{64}{subsection.4.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Complete Workflow}{64}{section.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Reproducibility Setup}{64}{subsection.4.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Raw Data Overview}{65}{subsection.4.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Data Quality Checks}{65}{subsection.4.2.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Missing values per column --- all columns show 0.000\% missing, confirming no imputation is needed.}}{65}{figure.caption.79}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Boxplots on original scale --- income exhibits a right-skewed distribution with a long upper tail; age and spending score are more symmetric.}}{66}{figure.caption.80}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Duplicate row summary --- 0 exact row matches detected, confirming the $(2200, 5)$ dataset has no redundant observations.}}{66}{figure.caption.81}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}EDA Before Preprocessing}{66}{subsection.4.2.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces EDA before preprocessing --- 6 diagnostic views}}{67}{table.caption.82}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Income vs.\ Spending Score --- five distinct point clouds are visible on the original scale, separated along both income and spending axes. This visual structure predicts strong clustering performance.}}{68}{figure.caption.83}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Pairwise scatter matrix --- the income-spending panel (bottom-left / top-right quadrant) exhibits the clearest cluster separation. Age-forming panels show diffuse overlap, suggesting age is a weaker discriminative feature.}}{69}{figure.caption.84}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Correlation heatmap --- no $|r| > 0.700$ redundancies, confirming all features contribute independent information. The weak correlations ($|r| < 0.300$ across all feature pairs) justify including all numeric features in the initial clustering search while keeping the feature set compact.}}{70}{figure.caption.85}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Age vs.\ Spending Score --- points are broadly scattered without clear cluster boundaries, indicating that age alone cannot segment customers by spending behavior.}}{71}{figure.caption.86}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Age vs.\ Annual Income --- no strong linear or monotonic relationship is visible; older customers are not systematically wealthier in this dataset.}}{72}{figure.caption.87}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces Age distribution --- roughly uniform between 20 and 70, with a slight concentration in the 30--40 band.}}{72}{figure.caption.88}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces Annual income distribution --- right-skewed with a median near \$60k and a long tail extending to \$137k. This skew motivates RobustScaler for distance-based clustering.}}{73}{figure.caption.89}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces Spending score distribution --- bimodal with peaks near 40--45 and 70--80, supporting the hypothesis of two broad behavioral groups (low-spending and high-spending) that further subdivide by income.}}{73}{figure.caption.90}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces Gender distribution --- note any imbalance that may affect segment interpretation.}}{74}{figure.caption.91}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.5}Preprocessing and Feature Scaling}{74}{subsection.4.2.5}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Scaler comparison for clustering}}{74}{table.caption.92}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.6}Clustering Experiments}{75}{subsection.4.2.6}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces Clustering algorithms evaluated}}{75}{table.caption.93}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces Four complementary clustering metrics}}{75}{table.caption.94}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces Elbow curve --- the inertia curve bends most sharply between $K=3$ and $K=5$, after which adding more clusters yields diminishing reductions in within-cluster variance.}}{76}{figure.caption.95}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces Silhouette vs.\ K --- the silhouette score peaks at $K=5$, indicating that five clusters achieve the optimal balance between intra-cluster compactness and inter-cluster separation.}}{77}{figure.caption.96}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{K-Means From Scratch --- Core Implementation}{77}{figure.caption.96}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.1}{\ignorespaces K-Means: k-means++ init + assignment-update loop}}{77}{lstlisting.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.7}Model Selection}{78}{subsection.4.2.7}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces The most important clustering result: $K=5$ clusters on Income vs.\ Spending Score with centroid markers --- 5 distinct, well-separated customer segments with no significant overlap between adjacent clusters.}}{79}{figure.caption.97}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Centroid Trajectory Visualization}{79}{figure.caption.97}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.16}{\ignorespaces Centroid trajectory: iteration-by-iteration movement from k-means++ initialization to convergence. Smooth paths within 8--12 iterations confirm stable optimization with no oscillation or divergence.}}{80}{figure.caption.98}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.8}Cluster Visualization}{80}{subsection.4.2.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.17}{\ignorespaces PCA 2D projection: first two principal components with cluster assignments. The separation visible in PC1--PC2 space confirms that the cluster structure persists even after linear dimensionality reduction, with PC1 capturing primarily income variation and PC2 capturing spending variation.}}{81}{figure.caption.99}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.18}{\ignorespaces Age vs.\ Spending Score --- cluster membership is projected onto the age-spending plane. The substantial overlap between clusters confirms that age is not a strong cluster discriminator, supporting the decision to exclude it from the final model.}}{81}{figure.caption.100}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.19}{\ignorespaces Age vs.\ Annual Income --- cluster colors are preserved from the income-spending model. The lack of clean separation along the age axis reinforces that age contributes minimal additional information.}}{82}{figure.caption.101}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.20}{\ignorespaces GMM on Income vs.\ Spending --- soft cluster memberships shown via color blending where points have non-trivial probability of belonging to multiple components.}}{83}{figure.caption.102}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.21}{\ignorespaces GMM covariance contours at $1\sigma $, $2\sigma $, and $3\sigma $ --- ellipses are roughly circular, confirming that cluster covariances are near-isotropic and supporting K-Means's spherical assumption.}}{84}{figure.caption.103}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.9}Segment Profiling}{84}{subsection.4.2.9}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.5}{\ignorespaces Five segments with recommended business actions}}{84}{table.caption.104}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.10}Deployment Check}{85}{subsection.4.2.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Results and Analysis}{85}{section.4.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.22}{\ignorespaces GMM with 4 components and covariance contours on Income vs.\ Spending scatter. Ellipses at $1\sigma $, $2\sigma $, and $3\sigma $ reveal cluster shape and orientation --- most components are near-circular, confirming that the spherical K-Means assumption holds well for these data.}}{86}{figure.caption.105}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.23}{\ignorespaces Cluster centers in original feature scale --- inverse-transformed from StandardScaler for business-interpretable segment profiles. The five centroids map cleanly onto the five behavioral archetypes identified in the segment profiling table.}}{86}{figure.caption.106}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.24}{\ignorespaces Agglomerative clustering dendrogram --- hierarchical view of cluster merging distances on a sample subset. The dendrogram confirms that five is a natural cut point: the merge distance increases sharply when reducing from 5 to 4 clusters, indicating that the five-cluster solution captures genuine structure rather than an arbitrary partition.}}{87}{figure.caption.107}\protected@file@percent }
+\newlabel{ch:lab03}{{4}{65}{Lab 03 --- Customer Segmentation}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Problem Definition}{65}{section.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Dataset}{65}{subsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Complete Workflow}{65}{section.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Reproducibility Setup}{65}{subsection.4.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Raw Data Overview}{66}{subsection.4.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Data Quality Checks}{66}{subsection.4.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Missing values per column --- all columns show 0.000\% missing, confirming no imputation is needed.}}{66}{figure.caption.79}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Boxplots on original scale --- income exhibits a right-skewed distribution with a long upper tail; age and spending score are more symmetric.}}{67}{figure.caption.80}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Duplicate row summary --- 0 exact row matches detected, confirming the $(2200, 5)$ dataset has no redundant observations.}}{67}{figure.caption.81}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}EDA Before Preprocessing}{67}{subsection.4.2.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces EDA before preprocessing --- 6 diagnostic views}}{68}{table.caption.82}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Income vs.\ Spending Score --- five distinct point clouds are visible on the original scale, separated along both income and spending axes. This visual structure predicts strong clustering performance.}}{69}{figure.caption.83}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Pairwise scatter matrix --- the income-spending panel (bottom-left / top-right quadrant) exhibits the clearest cluster separation. Age-forming panels show diffuse overlap, suggesting age is a weaker discriminative feature.}}{70}{figure.caption.84}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Correlation heatmap --- no $|r| > 0.700$ redundancies, confirming all features contribute independent information. The weak correlations ($|r| < 0.300$ across all feature pairs) justify including all numeric features in the initial clustering search while keeping the feature set compact.}}{71}{figure.caption.85}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Age vs.\ Spending Score --- points are broadly scattered without clear cluster boundaries, indicating that age alone cannot segment customers by spending behavior.}}{72}{figure.caption.86}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Age vs.\ Annual Income --- no strong linear or monotonic relationship is visible; older customers are not systematically wealthier in this dataset.}}{73}{figure.caption.87}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces Age distribution --- roughly uniform between 20 and 70, with a slight concentration in the 30--40 band.}}{73}{figure.caption.88}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces Annual income distribution --- right-skewed with a median near \$60k and a long tail extending to \$137k. This skew motivates RobustScaler for distance-based clustering.}}{74}{figure.caption.89}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces Spending score distribution --- bimodal with peaks near 40--45 and 70--80, supporting the hypothesis of two broad behavioral groups (low-spending and high-spending) that further subdivide by income.}}{74}{figure.caption.90}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces Gender distribution --- note any imbalance that may affect segment interpretation.}}{75}{figure.caption.91}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.5}Preprocessing and Feature Scaling}{75}{subsection.4.2.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Scaler comparison for clustering}}{75}{table.caption.92}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.6}Clustering Experiments}{76}{subsection.4.2.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces Clustering algorithms evaluated}}{76}{table.caption.93}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces Four complementary clustering metrics}}{76}{table.caption.94}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces Elbow curve --- the inertia curve bends most sharply between $K=3$ and $K=5$, after which adding more clusters yields diminishing reductions in within-cluster variance.}}{77}{figure.caption.95}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces Silhouette vs.\ K --- the silhouette score peaks at $K=5$, indicating that five clusters achieve the optimal balance between intra-cluster compactness and inter-cluster separation.}}{78}{figure.caption.96}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{K-Means From Scratch --- Core Implementation}{78}{figure.caption.96}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.1}{\ignorespaces K-Means: k-means++ init + assignment-update loop}}{78}{lstlisting.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.7}Model Selection}{79}{subsection.4.2.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces The most important clustering result: $K=5$ clusters on Income vs.\ Spending Score with centroid markers --- 5 distinct, well-separated customer segments with no significant overlap between adjacent clusters.}}{80}{figure.caption.97}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Centroid Trajectory Visualization}{80}{figure.caption.97}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.16}{\ignorespaces Centroid trajectory: iteration-by-iteration movement from k-means++ initialization to convergence. Smooth paths within 8--12 iterations confirm stable optimization with no oscillation or divergence.}}{81}{figure.caption.98}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.8}Cluster Visualization}{81}{subsection.4.2.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.17}{\ignorespaces PCA 2D projection: first two principal components with cluster assignments. The separation visible in PC1--PC2 space confirms that the cluster structure persists even after linear dimensionality reduction, with PC1 capturing primarily income variation and PC2 capturing spending variation.}}{82}{figure.caption.99}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.18}{\ignorespaces Age vs.\ Spending Score --- cluster membership is projected onto the age-spending plane. The substantial overlap between clusters confirms that age is not a strong cluster discriminator, supporting the decision to exclude it from the final model.}}{82}{figure.caption.100}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.19}{\ignorespaces Age vs.\ Annual Income --- cluster colors are preserved from the income-spending model. The lack of clean separation along the age axis reinforces that age contributes minimal additional information.}}{83}{figure.caption.101}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.20}{\ignorespaces GMM on Income vs.\ Spending --- soft cluster memberships shown via color blending where points have non-trivial probability of belonging to multiple components.}}{84}{figure.caption.102}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.21}{\ignorespaces GMM covariance contours at $1\sigma $, $2\sigma $, and $3\sigma $ --- ellipses are roughly circular, confirming that cluster covariances are near-isotropic and supporting K-Means's spherical assumption.}}{85}{figure.caption.103}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.9}Segment Profiling}{85}{subsection.4.2.9}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.5}{\ignorespaces Five segments with recommended business actions}}{85}{table.caption.104}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.10}Deployment Check}{86}{subsection.4.2.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Results and Analysis}{86}{section.4.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.22}{\ignorespaces GMM with 4 components and covariance contours on Income vs.\ Spending scatter. Ellipses at $1\sigma $, $2\sigma $, and $3\sigma $ reveal cluster shape and orientation --- most components are near-circular, confirming that the spherical K-Means assumption holds well for these data.}}{87}{figure.caption.105}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.23}{\ignorespaces Cluster centers in original feature scale --- inverse-transformed from StandardScaler for business-interpretable segment profiles. The five centroids map cleanly onto the five behavioral archetypes identified in the segment profiling table.}}{87}{figure.caption.106}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.24}{\ignorespaces Agglomerative clustering dendrogram --- hierarchical view of cluster merging distances on a sample subset. The dendrogram confirms that five is a natural cut point: the merge distance increases sharply when reducing from 5 to 4 clusters, indicating that the five-cluster solution captures genuine structure rather than an arbitrary partition.}}{88}{figure.caption.107}\protected@file@percent }
 \@setckpt{chapters/04_lab03_segmentation}{
-\setcounter{page}{88}
+\setcounter{page}{89}
 \setcounter{equation}{0}
 \setcounter{enumi}{5}
 \setcounter{enumii}{0}
@@ -72,6 +72,7 @@
 \setcounter{section@level}{0}
 \setcounter{Item}{27}
 \setcounter{Hfootnote}{0}
+\setcounter{Hy@AnnotLevel}{0}
 \setcounter{bookmark@seq@number}{50}
 \setcounter{lstnumber}{23}
 \setcounter{tcbbreakpart}{1}
