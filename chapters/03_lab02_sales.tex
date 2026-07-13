@@ -224,12 +224,12 @@ Time-series & 6 & \texttt{lag\_16}, \texttt{lag\_28}, \texttt{lag\_364}, rolling
 
 \textbf{Why lag features matter:} Sales data is fundamentally autoregressive — today's sales are the single best predictor of tomorrow's sales. Lag features operationalize this by creating shifted copies of the target variable aligned to specific temporal offsets:
 \begin{itemize}
-  \item \texttt{lag\_16}: captures the bi-weekly recurrence pattern. Since the forecast horizon itself is 16 days, the most recent observable sale is exactly at $t-16$. For products with stable bi-weekly inventory cycles, this is the strongest single predictor.
+  \item \texttt{lag\_16}: required because the forecast horizon itself is 16 days — the most recent observable sale is exactly at $t-16$. This feature ensures the model has access to the closest available ground-truth observation at every prediction point without look-ahead leakage.
   \item \texttt{lag\_28}: captures the 4-week (lunar-month) cycle. Because 28 = 4 $\times$ 7, this aligns with the weekly calendar — a Monday 28 days ago is also a Monday, capturing the same day-of-week position one month back. This makes \texttt{lag\_28} the strongest baseline feature given the dominant weekly seasonality.
   \item \texttt{lag\_364}: captures the annual cycle (364 = 52 $\times$ 7, one year on the weekly calendar). Same-day-last-year sales encode holiday seasonality, back-to-school effects, and other yearly patterns that are invisible to shorter lags.
   \item \texttt{rolling\_mean\_7\_shift16}: 7-day rolling average of the 16-day-shifted window (covering $t-22$ through $t-16$). Smooths daily noise while preserving the recent trend direction.
   \item \texttt{rolling\_mean\_28\_shift16}: 28-day rolling average (covering $t-43$ through $t-16$). Captures the monthly trend — is this product family in an upward or downward trajectory?
-  \item \texttt{rolling\_mean\_56\_shift16}: 56-day rolling average (covering $t-71$ through $t-16$). Provides the slow-moving quarterly trend, the most stable baseline for volatile product families.
+  \item \texttt{rolling\_mean\_56\_shift16}: 56-day rolling average (covering $t-71$ through $t-16$). Provides a stable two-month trend estimate, the smoothest baseline for volatile product families where shorter windows are too noisy.
 \end{itemize}
 
 \textbf{The shift-16 mechanism:} The forecast horizon is 16 days. On day 1 of the horizon, the most recent known sale is at $t-16$. Every lag and rolling feature must be shifted by at least 16 days relative to the prediction date. This is not an optimization detail — it is a hard constraint that separates a production-viable model from one that commits look-ahead bias:
@@ -310,11 +310,11 @@ Rolling\_Mean\_56\_Shift16 & $\mu(\text{sales}[t-72:t-16])$ & Very volatile prod
 \caption{Four baseline forecasts — each uses a different subset of historical sales to produce a prediction without any learned parameters}
 \end{table}
 
-The best baseline, Lag\_28, achieves RMSLE $= 0.627$, MAE $= 82.870$, RMSE $= 311.250$, and R$^2 = 0.938$. Its R$^2$ of 0.938 is surprisingly high — suggesting that weekly seasonality alone explains over 93\% of the variance in this dataset. The challenge for ML models is to capture the remaining 6.200\% of variance: promotion effects, holiday bumps, cross-store patterns, and macro-economic shifts that a pure seasonal baseline cannot detect. An ML model achieving RMSLE $< 0.500$ would represent a meaningful improvement.
+The best baseline by RMSLE is Rolling\_Mean\_56\_Shift16 with RMSLE $= 0.546$, MAE $= 100.770$, RMSE $= 328.103$, and R$^2 = 0.931$. The strongest baseline by secondary metrics (MAE and R$^2$) is Lag\_28, achieving MAE $= 82.871$, RMSE $= 311.247$, and R$^2 = 0.938$ with RMSLE $= 0.627$. This reveals a trade-off: the 56-day rolling average produces better relative error (RMSLE) by smoothing out daily noise, while the 28-day lag captures the weekly pattern more sharply on absolute metrics. The HGB LogFeat model (RMSLE $= 0.464$) improves on both simultaneously — reducing RMSLE by $0.082$ (14.900\%) compared to the best RMSLE baseline and achieving an R$^2$ of $0.914$. An ML model achieving RMSLE $< 0.500$ represents a meaningful improvement over all four baselines.
 
 \subsection{Train and Compare ML Models}
 
-Three model families are implemented from scratch — no scikit-learn or XGBoost dependencies for the core algorithms:
+Three model families are implemented: Ridge and MLP are built from scratch in pure NumPy (no ML library dependencies); HistGradientBoosting's boosting loop and histogram binning are custom-implemented, with sklearn's DecisionTreeRegressor as the base learner.
 
 \subsubsection{Ridge Regression — Closed-Form Solution}
 The normal equation with L2 penalty: $\mathbf{w} = (X^TX + \alpha I)^{-1}X^T\mathbf{y}$. The intercept term is not penalized (the penalty matrix has a 0 in position $(0,0)$), ensuring that the overall bias term remains unconstrained while coefficients are shrunk toward zero. Advantages: deterministic solution (no convergence tuning, no random seeds), interpretable coefficients (each weight directly measures the linear contribution of one feature), and millisecond-level training on 648,648 rows. Limitation: can only learn linear relationships — an interaction like ``promotions work better on weekends'' requires explicit feature engineering rather than being discovered automatically.
@@ -332,7 +332,7 @@ weights = np.linalg.pinv(A) @ x_design.T @ y_np.reshape(-1, 1)
 \end{pythoncode}
 
 \subsubsection{Multi-Layer Perceptron — Mini-Batch SGD}
-A single-hidden-layer network with ReLU activation, trained via mini-batch stochastic gradient descent. He initialization ($W \sim \mathcal{N}(0, \sqrt{2/\text{fan\_in}})$) is chosen over Xavier initialization because ReLU zeros out half the activations, requiring a factor of $\sqrt{2}$ compensation to maintain stable variance through the forward pass. Mini-batch training (batch size typically 64–256) provides a practical compromise: full-batch gradient descent is too expensive per iteration on 648,648 rows, while pure stochastic (batch size 1) produces high-variance gradient estimates that slow convergence.
+A single-hidden-layer network with ReLU activation, trained via mini-batch stochastic gradient descent. He initialization ($W \sim \mathcal{N}(0, \sqrt{2/\text{fan\_in}})$) is chosen over Xavier initialization because ReLU zeros out half the activations, requiring a factor of $\sqrt{2}$ compensation to maintain stable variance through the forward pass. Mini-batch training (batch size 1,024) provides a practical compromise: full-batch gradient descent is too expensive per iteration on 648,648 rows, while pure stochastic (batch size 1) produces high-variance gradient estimates that slow convergence.
 
 \begin{pythoncode}[caption={MLP: forward pass, MSE loss, backward pass with ReLU derivative}]
 # Forward
@@ -371,8 +371,8 @@ This blend works because the two components have \textbf{complementary error pro
 \textbf{Log-Transformed Features:} Right-skewed numerical features (\texttt{onpromotion}, \texttt{dcoilwtico}, all lag and rolling values) are $\log_{1p}$-transformed before scaling. Calendar and holiday features (already bounded integers) remain untransformed. The impact on model performance is substantial:
 
 \begin{itemize}
-  \item \textbf{Ridge:} RMSLE improves from 0.545 (raw features) to 0.513 (log features), a delta of $-$0.032. Linear models are highly sensitive to skew because extreme values exert disproportionate leverage on coefficient estimates. Log-transforming pulls in the right tail, reducing the influence of outlier observations.
-  \item \textbf{MLP:} RMSLE improves from 0.521 (raw features) to 0.480 (log features), a delta of $-$0.041. Gradient descent in skewed feature spaces produces elongated loss contours that slow convergence; log-transforming makes the optimization landscape more spherical.
+  \item \textbf{Ridge:} RMSLE improves from 0.799 (raw features) to 0.513 (log features), a substantial delta of $-$0.286. Linear models are highly sensitive to skew because extreme values exert disproportionate leverage on coefficient estimates. Log-transforming pulls in the right tail, reducing the influence of outlier observations.
+  \item \textbf{MLP:} RMSLE improves from 0.604 (raw features) to 0.480 (log features), a delta of $-$0.124. Gradient descent in skewed feature spaces produces elongated loss contours that slow convergence; log-transforming makes the optimization landscape more spherical.
   \item \textbf{HGB:} RMSLE unchanged at 0.464. Tree-based models are invariant to monotonic transformations — splitting on the raw value or its log produces identical partitions and identical predictions.
 \end{itemize}
 
@@ -388,12 +388,12 @@ Three diagnostic views provide insight beyond aggregate metrics:
 
 \subsection{Final Model and Submission}
 
-The best model is retrained on all 365 recent days (648,648 fit rows + 28,512 validation rows = 677,160 rows), incorporating the formerly held-out validation period to maximize the training signal before test prediction. The full \texttt{train.csv} and \texttt{test.csv} are concatenated and passed through \texttt{build\_feature\_frame()}, ensuring that lag features are computed seamlessly across the boundary between historical and future dates — the shift-16 guard automatically prevents any leakage into the test period. Predictions on \texttt{test.csv} produce a submission dataframe with two columns (\texttt{id}, \texttt{sales}), sorted by \texttt{id} for Kaggle compatibility.
+The best model is retrained on the full recent-year window. Instead of concatenating the original fit and validation sets directly, the final training set is reconstructed using condition $\texttt{max\_date} - 365\ \text{days}$, yielding 650,430 rows — the same 365-day recency window but recomputed to include the former validation period seamlessly. The full \texttt{train.csv} and \texttt{test.csv} are concatenated and passed through \texttt{build\_feature\_frame()}, ensuring that lag features are computed seamlessly across the boundary between historical and future dates — the shift-16 guard automatically prevents any leakage into the test period. Predictions on \texttt{test.csv} produce a submission dataframe with two columns (\texttt{id}, \texttt{sales}), sorted by \texttt{id} for Kaggle compatibility.
 
 \section{Results and Analysis}
 
 \begin{resultbox}
-The \textbf{HistGradientBoosting (160 trees)} achieves the lowest individual RMSLE at 0.464, and the \textbf{Ensemble Blend (60\% HGB + 40\% Lag\_28)} dominates on MAE, RMSE, and R$^2$, outperforming every individual model and baseline simultaneously through complementary error reduction.
+The \textbf{HistGradientBoosting (160 trees)} trained on log-transformed features achieves the lowest individual RMSLE at 0.464. The \textbf{Ensemble Blend (60\% HGB + 40\% Lag\_28)} balances strong RMSLE (0.483) with competitive secondary metrics (MAE 77.833, R$^2$ 0.949). The \textbf{HGB (raw target)} configuration achieves the best MAE (76.392), RMSE (260.231), and R$^2$ (0.957) among individual models at the cost of degraded RMSLE (0.996).
 \end{resultbox}
 
 \begin{table}[H]
@@ -401,31 +401,43 @@ The \textbf{HistGradientBoosting (160 trees)} achieves the lowest individual RMS
 \begin{tabular}{l c c c c}
 \toprule\rowcolor{tablehead!80}\color{white}\textbf{Model} &\color{white}\textbf{RMSLE} &\color{white}\textbf{MAE} &\color{white}\textbf{RMSE} &\color{white}\textbf{R²}\\
 \midrule
-Baseline: Lag\_28 & 0.627 & 82.870 & 311.250 & 0.938\\
-Ridge (scratch) & 0.545 & 98.450 & 420.310 & 0.887\\
-MLP (scratch) & 0.521 & 95.320 & 398.150 & 0.898\\
-HGB (scratch, 160 trees) & 0.464 & 90.529 & 365.373 & 0.914\\
-Ridge + log features & 0.513 & — & — & —\\
-MLP + log features & 0.480 & — & — & —\\
-\rowcolor{greenaccent!15}\textbf{Ensemble HGB + Lag\_28} & \textbf{0.483} & \textbf{77.830} & \textbf{283.250} & \textbf{0.949}\\
+\multicolumn{5}{c}{\textbf{Baselines (sorted by RMSLE)}}\\
+\midrule
+Rolling\_Mean\_56\_Shift16 & 0.546 & 100.770 & 328.103 & 0.931\\
+Rolling\_Mean\_28\_Shift16 & 0.550 & 99.041 & 322.125 & 0.933\\
+Lag\_28 & 0.627 & 82.871 & 311.247 & 0.938\\
+Lag\_16 & 0.697 & 145.226 & 510.078 & 0.833\\
+\midrule
+\multicolumn{5}{c}{\textbf{ML Models (sorted by RMSLE)}}\\
+\midrule
+HGB (log features, 160 trees) & 0.464 & 90.529 & 365.373 & 0.914\\
+MLP + log features & 0.480 & 95.396 & 306.064 & 0.940\\
+Ridge + log features & 0.513 & 99.474 & 337.436 & 0.927\\
+MLP (scratch, raw features) & 0.604 & 131.194 & 695.701 & 0.689\\
+Ridge (scratch, raw features) & 0.799 & 218.573 & 1368.935 & -0.203\\
+HGB (raw target, no log) & 0.996 & 76.392 & 260.231 & 0.957\\
+\midrule
+\multicolumn{5}{c}{\textbf{Ensemble}}\\
+\midrule
+\rowcolor{greenaccent!15}\textbf{Ensemble HGB + Lag\_28} & \textbf{0.483} & \textbf{77.833} & \textbf{283.245} & \textbf{0.949}\\
 \bottomrule
 \end{tabular}
-\caption{Full model comparison on 16-day validation set (28,512 rows). RMSLE is the primary optimization metric; MAE and RMSE provide interpretable dollar-scale error magnitudes; R$^2$ measures variance explained.}
+\caption{Full model comparison on 16-day validation set (28,512 rows). RMSLE is the primary optimization metric; MAE and RMSE are on the original sales scale (unit count); R$^2$ measures variance explained. The HGB (raw target) configuration achieves the best MAE, RMSE, and R$^2$ individually at the cost of degraded RMSLE.}
 \end{table}
 
 \textbf{Key findings from the results:}
 
 \begin{itemize}
-  \item \textbf{HGB is the strongest individual model} at RMSLE $= 0.464$, beating the Lag\_28 baseline by 0.163 (a 26.000\% relative improvement). Its tree-based architecture naturally handles non-linear relationships (promotions have diminishing returns, holiday effects interact with product categories) that linear models require explicit feature engineering to capture.
-  \item \textbf{Lag\_28 has the best R$^2$} (0.938) among individual models despite its simplicity. This underscores a fundamental truth in time-series retail forecasting: the seasonal baseline explains the overwhelming majority of variance, and model complexity buys incremental improvements on the remaining fraction.
-  \item \textbf{Ridge and MLP produce higher RMSE} (420.310 and 398.150 respectively) than Lag\_28 (311.250), despite lower RMSLE. This apparent contradiction is explained by RMSLE's log-scale computation: Lag\_28 achieves excellent average accuracy but makes a few very large errors on promotion/holiday days that inflate RMSE; Ridge and MLP smooth these large errors at the cost of slightly worse typical-day predictions.
-  \item \textbf{The ensemble blend resolves this tension.} By combining HGB (which corrects Lag\_28's holiday/promotion blind spots) with Lag\_28 (which stabilizes HGB's predictions on normal days), the ensemble achieves the best MAE (77.830) and RMSE (283.250), while maintaining competitive RMSLE (0.483). The ensemble's R$^2 = 0.949$ is the highest of all models, confirming the complementary nature of the two components.
-  \item \textbf{Log-transforming features benefits linear models disproportionately.} Ridge improves from 0.545 to 0.513 (delta $-$0.032); MLP improves from 0.521 to 0.480 (delta $-$0.041). HGB is invariant to this transformation by construction — its split-finding algorithm operates on rank order, not absolute values.
+  \item \textbf{HGB (log features) is the strongest individual model} at RMSLE $= 0.464$, improving on the best RMSLE baseline (Rolling\_Mean\_56\_Shift16 at 0.546) by 0.082 (a 14.900\% relative improvement). Its tree-based architecture naturally handles non-linear relationships — promotions have diminishing returns, holiday effects interact with product categories, and store–family interactions are discovered through multi-level splits — that linear models require explicit feature engineering to capture.
+  \item \textbf{HGB (raw target) achieves the best MAE, RMSE, and R$^2$} (76.392, 260.231, 0.957) among all individual configurations, but its RMSLE of 0.996 is worse than the simplest baselines. This is because predicting the raw (non-log-transformed) target optimizes absolute error on the original scale, where large values dominate the loss; the RMSLE metric penalizes proportional error, giving equal weight to small stores. The trade-off between RMSLE and absolute-error metrics depends on whether the deployment context prioritizes proportional or absolute accuracy.
+  \item \textbf{Log-transforming features has a dramatic impact on linear models.} Ridge improves from 0.799 to 0.513 (delta $-$0.286, a 35.800\% relative improvement); MLP improves from 0.604 to 0.480 (delta $-$0.124, a 20.500\% relative improvement). HGB is invariant to this transformation by construction — its split-finding algorithm operates on rank order, not absolute values. Without log features, Ridge actually underperforms the Lage\_28 baseline (0.799 vs. 0.627), demonstrating that linear models require careful feature transformations to be competitive in this domain.
+  \item \textbf{The ensemble blend provides a practical compromise.} By combining HGB (which captures promotion/holiday non-linearities) with Lag\_28 (which provides a stable seasonal anchor), the ensemble achieves RMSLE 0.483, MAE 77.833, and R$^2$ 0.949 — the second-highest R$^2$ after HGB (raw target). The 60/40 blend ratio weights the ML model slightly more heavily while retaining the baseline's stability on regular days.
+  \item \textbf{Baseline selection matters.} Rolling\_Mean\_56\_Shift16 is the best baseline by RMSLE (0.546), outperforming Lag\_28 (0.627) on the primary metric by 0.081. This is because a 56-day average smooths daily noise more effectively than a single 28-day lag value. However, Lag\_28 achieves the best baseline MAE (82.871) and R$^2$ (0.938), demonstrating that different baselines optimize for different error profiles.
 \end{itemize}
 
 \begin{figure}[H]\centering
 \includegraphics[width=0.82\textwidth]{figures/lab02/loss_curves_nolog.png}
-\caption{Loss curves: Ridge (closed-form, single-step solution), MLP (SGD convergence over epochs), HGB (boosting iterations with train/validation split monitoring for early stopping).}
+\caption{Loss curves: Ridge (closed-form, single-step solution), MLP (SGD convergence over epochs), HGB (boosting iterations with train/validation loss monitored post-hoc).}
 \end{figure}
 
 \begin{figure}[H]\centering
@@ -435,12 +447,12 @@ MLP + log features & 0.480 & — & — & —\\
 
 \begin{figure}[H]\centering
 \includegraphics[width=0.82\textwidth]{figures/lab02/rmsle_comparison.png}
-\caption{RMSLE comparison across models. HGB achieves the lowest individual RMSLE (0.464); the ensemble blend achieves 0.483 while dominating on MAE and RMSE.}
+\caption{RMSLE comparison across models. HGB (log features) achieves the lowest individual RMSLE (0.464); the ensemble achieves 0.483 with strong secondary metrics.}
 \end{figure}
 
 \begin{figure}[H]\centering
 \includegraphics[width=0.78\textwidth]{figures/lab02/rmsle_delta.png}
-\caption{RMSLE improvement deltas: all ML models improve over the Lag\_28 baseline (0.627); HGB provides the largest single-model improvement (0.163).}
+\caption{RMSLE improvement deltas: HGB, MLP, and Ridge with log features all improve on the baselines; HGB log features provides the largest improvement over the best RMSLE baseline (Rolling\_Mean\_56\_Shift16 at 0.546).}
 \end{figure}
 
 \begin{figure}[H]\centering
@@ -553,5 +565,5 @@ MLP + log features & 0.480 & — & — & —\\
 \end{figure}
 
 \begin{notebox}
-\textbf{HGB + Lag\_28 ensemble achieves the best overall forecast quality.} The combination of gradient boosting's non-linear pattern discovery (promotions, holidays, interactions) with a parameter-free seasonal baseline delivers the lowest MAE and RMSE while maintaining strong RMSLE. The 60/40 blend ratio balances model complexity against stability: the HGB component captures the 6.200\% of variance that the seasonal baseline misses, while Lag\_28 anchors predictions during regular periods where complex models risk overfitting. Lag features consistently dominate feature importance rankings — \texttt{lag\_16}, \texttt{lag\_28}, and \texttt{lag\_364} are the top three predictors across all tree-based analyses, confirming that in retail demand forecasting, the past is overwhelmingly the best predictor of the future.
+\textbf{HGB + Lag\_28 ensemble achieves strong balanced forecast quality.} The combination of gradient boosting's non-linear pattern discovery (promotions, holidays, interactions) with a parameter-free seasonal baseline delivers competitive performance across all metrics: RMSLE 0.483, MAE 77.833, and R$^2$ 0.949. While HGB trained on the raw target attains the best MAE and RMSE individually, its RMSLE of 0.996 renders it unsuitable as a deployment model under the primary evaluation criterion. The 60/40 blend ratio balances model complexity against stability: the HGB component adjusts for events that deviate from the seasonal norm, while Lag\_28 anchors predictions during regular periods where complex models risk overfitting. Lag features consistently dominate feature importance rankings — \texttt{lag\_16}, \texttt{lag\_28}, and \texttt{lag\_364} are the top three predictors across all tree-based analyses, confirming that in retail demand forecasting, the past is overwhelmingly the best predictor of the future.
 \end{notebox}
