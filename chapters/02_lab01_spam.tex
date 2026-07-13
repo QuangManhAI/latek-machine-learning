@@ -216,7 +216,7 @@ Three classifiers are implemented from scratch using only \texttt{numpy} — no 
 \toprule\rowcolor{tablehead!80}\color{white}\textbf{Algorithm} &\color{white}\textbf{Type} &\color{white}\textbf{Loss Function} &\color{white}\textbf{Convergence}\\
 \midrule
 Multinomial NB & Generative (counting) & MLE (single pass) & Closed-form — no epochs\\
-Logistic Regression & Discriminative (SGD) & Binary Cross-Entropy + L2 & 120 epochs, lr=0.800\\
+Logistic Regression & Discriminative (batch GD) & Binary Cross-Entropy + L2 & 120 epochs, lr=0.800\\
 Linear SVM & Discriminative (sub-gradient) & Hinge Loss + L2 & 120 epochs, lr=0.100\\
 \bottomrule
 \end{tabular}
@@ -225,9 +225,9 @@ Linear SVM & Discriminative (sub-gradient) & Hinge Loss + L2 & 120 epochs, lr=0.
 
 \subsubsection{Logistic Regression — Core Training Loop}
 
-Logistic regression estimates $P(\text{spam}) = \sigma(X\mathbf{w} + b)$ and minimizes binary cross-entropy via stochastic gradient descent. The learning rate of 0.800 is unusually high for SGD but works here because the sigmoid gradient is bounded and smooth — it never explodes. The L2 penalty of $10^{-4}$ prevents weight divergence in the 138,942-dimensional feature space: without it, weights for rare features would grow unboundedly on samples where those features perfectly predict the label.
+Logistic regression estimates $P(\text{spam}) = \sigma(X\mathbf{w} + b)$ and minimizes binary cross-entropy via batch gradient descent. The learning rate of 0.800 is unusually high for batch gradient descent but works here because the sigmoid gradient is bounded and smooth — it never explodes. The L2 penalty of $10^{-4}$ prevents weight divergence in the 138,942-dimensional feature space: without it, weights for rare features would grow unboundedly on samples where those features perfectly predict the label.
 
-\begin{pythoncode}[caption={Logistic Regression: SGD with Binary Cross-Entropy}]
+\begin{pythoncode}[caption={Logistic Regression: Batch Gradient Descent with Binary Cross-Entropy}]
 for epoch in range(self.epochs):
     scores = x @ self.weights_ + self.bias_
     probabilities = self._sigmoid(scores)
@@ -273,14 +273,14 @@ Loss-vs-epoch plots for LR and SVM reveal optimizer health:
 
 \subsection{Model Comparison and Double-Check}
 
-\subsubsection{Four-Panel Confusion Matrix (Default Threshold 0.500)}
+\subsubsection{Model Comparison at Default Operating Points}
 
-All four models (centroid, NB, LR, SVM) are evaluated on the \textbf{same} 1,978-row test set at the default threshold 0.500. At this threshold, the models achieve the following accuracies:
+All four models (centroid, NB, LR, SVM) are evaluated on the \textbf{same} 1,978-row test set at their respective default operating points: probability threshold 0.500 for NB and LR (class with highest posterior probability); decision score threshold 0 for SVM (positive score = spam); and cosine similarity comparison for the nearest centroid baseline. At these operating points, the models achieve the following accuracies:
 
 \begin{itemize}
   \item \textbf{Centroid:} 0.932 — the zero-training baseline.
   \item \textbf{Multinomial NB:} 0.969 — highest at default threshold because NB models word likelihoods directly, producing well-separated probability estimates even without calibration.
-  \item \textbf{Logistic Regression:} 0.918 — below the centroid baseline, revealing that the default 0.500 threshold is poorly calibrated for this imbalanced, high-dimensional problem. LR's probability estimates are compressed toward 0.500, so the hard cutoff misclassifies a significant fraction of borderline cases. After threshold tuning, LR performance improves substantially.
+  \item \textbf{Logistic Regression:} 0.918 — below the centroid baseline, revealing that the default probability threshold is poorly calibrated for this imbalanced, high-dimensional problem. LR's probability estimates are compressed toward 0.500, so the hard cutoff misclassifies a significant fraction of borderline cases. After threshold tuning, LR performance improves substantially.
   \item \textbf{Linear SVM:} 0.960 — competitive at default threshold because the hinge loss optimizes for margin separation rather than probability calibration, producing scores that spread across a wider range.
 \end{itemize}
 
@@ -288,7 +288,7 @@ Key patterns visible in the confusion matrices:
 
 \begin{itemize}
   \item All four models agree on the obviously spammy and obviously legitimate emails (the TP and TN quadrants are similar across models). Disagreement is concentrated in the FP and FN quadrants — the ``gray area'' emails.
-  \item A model with elevated FPs is too ``aggressive'' at threshold 0.500, classifying borderline ham as spam. A model with elevated FNs is too ``conservative,'' letting borderline spam through. The optimal threshold shifts each model along this spectrum without retraining weights.
+  \item A model with elevated FPs is too ``aggressive'' at the default operating point, classifying borderline ham as spam. A model with elevated FNs is too ``conservative,'' letting borderline spam through. The optimal threshold shifts each model along this spectrum without retraining weights.
   \item The centroid's FP/FN balance reveals whether centroids encode source signals rather than spam semantics. If the centroid shows a dramatically different FP/FN ratio than the trained models, it suggests the centroid vectors are dominated by source-specific vocabulary that the trained models have learned to discount.
 \end{itemize}
 
@@ -298,15 +298,15 @@ Every scratch prediction is compared against sklearn's reference implementation 
 
 \begin{itemize}
   \item \textbf{Multinomial NB:} Disagreement = 0.000 (agreement = 100.000\%). The MLE counting implementation is deterministic and has no optimizer variance, so perfect agreement is expected.
-  \item \textbf{Logistic Regression:} Disagreement = 0.043 (agreement = 95.700\%). The 4.300\% disagreement stems from sklearn using L-BFGS (a quasi-Newton second-order solver) while our implementation uses first-order SGD. Both solvers converge to near-optimal regions, but the exact weight vectors differ, and the 0.500 threshold amplifies these differences for borderline cases.
-  \item \textbf{Linear SVM:} Disagreement = 0.037 (agreement = 96.300\%). Similar to LR, sklearn uses SMO (a coordinate-descent solver) while ours uses sub-gradient SGD. The 3.700\% disagreement reflects solver-specific convergence paths rather than implementation bugs.
+  \item \textbf{Logistic Regression:} Disagreement = 0.043 (agreement = 95.700\%). The 4.300\% disagreement stems from sklearn using L-BFGS (a quasi-Newton second-order solver) while our implementation uses first-order batch gradient descent. Both solvers converge to near-optimal regions, but the exact weight vectors differ, and the 0.500 threshold amplifies these differences for borderline cases.
+  \item \textbf{Linear SVM:} Disagreement = 0.037 (agreement = 96.300\%). Similar to LR, sklearn uses SMO (a coordinate-descent solver) while ours uses sub-gradient descent. The 3.700\% disagreement reflects solver-specific convergence paths rather than implementation bugs.
 \end{itemize}
 
 Disagreement below 5.000\% for the two iterative models confirms that our gradient computations and update rules are correct — the residual gap is solver architecture, not algorithmic error. Perfect agreement for NB validates the deterministic counting implementation.
 
 \subsection{Threshold Tuning (Gold Standard Optimization)}
 
-This is the most critical optimization step. The model weights are \textit{not} retrained — only the decision threshold $\tau$ is tuned. The insight is that a model's raw scores contain far more information than a single 0.500 cutoff reveals; choosing the right threshold extracts that information.
+This is the most critical optimization step. The model weights are \textit{not} retrained — only the decision threshold $\tau$ is tuned. The insight is that a model's raw scores contain far more information than any single fixed cutoff reveals; choosing the right threshold extracts that information.
 
 \textbf{Why not tune on the test set?} Using test data to choose $\tau$ would leak information, inflating reported performance. Instead, we split the training data into \textbf{train (75\%) / validation (25\%)}. The threshold is chosen based on validation performance alone; the test set serves only for the final, one-time evaluation.
 
@@ -328,7 +328,7 @@ threshold_context = utils.run_threshold_tuning(
   \item \textbf{Models:} For the Text-only feature set, all three models (NB, LR, SVM) are evaluated. For the Text + Metadata set, only the Linear SVM is evaluated (at two regularization strengths: C=0.5 and C=1.0), because metadata features are high-dimensional and SVM's margin formulation handles them most robustly. Each produces different score distributions, and the optimal threshold varies by model.
 \end{itemize}
 
-This yields exactly $3 \times (3 + 2) = 15$ combinations. For each combination, thresholds are swept from 0.000 to 0.990 in increments of 0.001 (1,000 evaluation points per combination), producing 15,000 total evaluation points. For each combination, the threshold that maximizes TPR while keeping validation FPR $\le$ 0.008 is selected.
+This yields exactly $3 \times (3 + 2) = 15$ combinations. For each combination, candidate thresholds are generated automatically from the unique prediction scores via sklearn's roc_curve() function. For each combination, the threshold that maximizes TPR while keeping validation FPR $\le$ 0.010 is selected.
 
 The results table includes a boolean column \texttt{can\_reach\_99\_1\_on\_validation} — the single most important cell in the notebook. A \texttt{True} value means that for that combination, there exists at least one threshold where validation FPR $\le$ 0.010 and validation TPR $\ge$ 0.990 simultaneously.
 
@@ -374,18 +374,18 @@ The 15-combination threshold sweep identified the optimal configuration:
 \begin{itemize}
   \item \textbf{Model:} Linear SVM — selected over NB and LR because the hinge loss produces wider score separation, giving more ``room'' to place the threshold between the ham and spam distributions.
   \item \textbf{Strategy:} Balanced (Text + Metadata features, designated Meta C1) — the training pool was downsampled to an equal number of ham and spam emails, eliminating the class-imbalance bias in the loss function. The supplementary ham data (V2 Merged) was evaluated as an alternative but the Balanced + Meta SVM configuration achieved the best validation operating point.
-  \item \textbf{Selected threshold:} $\tau = 0.089$ — significantly below the default 0.500, meaning the classifier only labels an email as spam when the model is extremely confident. At this threshold, ham emails (which cluster near score 0.000) are almost never misclassified, while spam emails (which cluster near score 0.950--1.000) are still caught because the score distributions are well-separated.
+  \item \textbf{Selected threshold:} $\tau = 0.089$ — slightly above the SVM default decision threshold of 0, meaning the classifier is slightly more conservative when assigning the spam label. The Linear SVM outputs decision scores (not probabilities): ham emails generally receive negative scores, whereas spam emails generally receive positive scores.
   \item \textbf{Validation performance:} TPR = 0.999, FPR = 0.006 at the FPR limit of 0.010 — exceeding the gold standard requirements on held-out validation data.
-  \item \textbf{Final test performance:} TPR = 0.998, FPR = 0.009 on the 1,978-row test set. The corresponding accuracy, precision, recall, and F1-score at the selected threshold $\tau = 0.089$ are: accuracy = 0.994, precision = 0.991, recall = 0.998, F1-score = 0.995.
+  \item \textbf{Final test performance:} TPR = 0.998, FPR = 0.009 on the 1,978-row test set. The corresponding accuracy, precision, recall, and F1-score at the selected threshold $\tau = 0.089$ are: accuracy = 0.994, precision = 0.989, recall = 0.998, F1-score = 0.993.
   \item \textbf{Gold standard:} \textbf{ACHIEVED} — TPR $\ge$ 0.990 AND FPR $\le$ 0.010.
 \end{itemize}
 
-The key insight: \textbf{threshold tuning matters more than model choice.} At the default threshold of 0.500, the four models (centroid, NB, LR, SVM) cluster within a 0.051 accuracy range (0.918--0.969). After threshold tuning, the gap between default and optimized performance dwarfs the gap between models. The bottleneck is not the model architecture — it is the decision rule. By shifting $\tau$ from 0.500 to 0.089, we exploit the fact that the SVM's score distributions for ham and spam are well-separated: ham emails receive scores tightly clustered near 0.000, while spam emails receive scores near 1.000. This wide separation creates a ``safe zone'' between 0.089 and approximately 0.900 where FPR stays below 0.010 while TPR stays above 0.990.
+The key insight: \textbf{threshold tuning matters more than model choice.} At the default operating points, the four models (centroid, NB using probability 0.500, LR using probability 0.500, SVM using decision score 0) cluster within a 0.051 accuracy range (0.918--0.969). After threshold tuning, the gap between default and optimized performance dwarfs the gap between models. The bottleneck is not the model architecture — it is the decision rule. By shifting $\tau$ from the SVM default of 0 to 0.089, we exploit the fact that the SVM's decision scores for ham and spam are well-separated: ham emails receive negative scores, while spam emails receive positive scores. This wide separation creates a ``safe zone'' between 0.089 and approximately 0.900 where FPR stays below 0.010 while TPR stays above 0.990.
 \end{resultbox}
 
 \begin{figure}[H]\centering
 \includegraphics[width=0.70\textwidth]{figures/lab01/confusion_matrix.png}
-\caption{Four-panel confusion matrix: centroid baseline vs. three scratch models at default threshold 0.500. The TN and TP quadrants are similar across models — the centroid already captures obvious cases. Differences emerge in FP and FN corners, where model-specific score distributions produce different error patterns at the same threshold.}
+\caption{Confusion matrix for the Balanced (Text + Metadata) Linear SVM (Meta C1) configuration at the selected decision threshold $\tau = 0.089$. The overwhelming majority of predictions land on the diagonal (correct classifications), with only a handful of off-diagonal entries (2 false negatives, 10 false positives out of 1,978 test emails).}
 \end{figure}
 
 \begin{figure}[H]
@@ -400,7 +400,7 @@ The key insight: \textbf{threshold tuning matters more than model choice.} At th
 \end{figure}
 
 \begin{notebox}
-\textbf{Threshold tuning is more impactful than model choice, but model choice determines how tunable the threshold is.} At the default threshold 0.500, all models show broadly similar behavior because the 0.500 cutoff is arbitrary — it was not designed for this dataset or this metric. After tuning, the performance gap is determined by how cleanly each model's score distributions separate. The Linear SVM produces the widest separation because the hinge loss explicitly optimizes for margin: it pushes spam scores toward $+\infty$ and ham scores toward $-\infty$, creating room to place a threshold. Logistic regression, by contrast, produces probability estimates that can be compressed or miscalibrated, leaving less room for threshold adjustment. NB's generative approach produces well-separated scores but is sensitive to the independence assumption — when word co-occurrence patterns differ between training and test sources, NB's calibrated probabilities degrade.
+\textbf{Threshold tuning is more impactful than model choice, but model choice determines how tunable the threshold is.} At the default operating points, all models show broadly similar behavior because the default cutoffs (probability 0.500 for NB and LR, decision score 0 for SVM) are arbitrary — they were not designed for this dataset or this metric. After tuning, the performance gap is determined by how cleanly each model's score distributions separate. The Linear SVM produces the widest separation because the hinge loss explicitly optimizes for margin: it pushes spam decision scores toward $+\infty$ and ham scores toward $-\infty$, creating room to place a threshold. Logistic regression, by contrast, produces probability estimates that can be compressed or miscalibrated, leaving less room for threshold adjustment. NB's generative approach produces well-separated probability scores but is sensitive to the independence assumption — when word co-occurrence patterns differ between training and test sources, NB's calibrated probabilities degrade.
 
 The Balanced strategy with Text + Metadata features (Meta C1) achieves the best TPR at the 0.010 FPR constraint. Despite discarding roughly half the ham data, the balanced training pool eliminates the loss-function bias that would otherwise favor the majority class. The metadata features (sender, source, subject) provide explicit provenance that the SVM can learn to discount, rather than relying on implicit source signals encoded in vocabulary patterns. The V2 Merged strategy was also competitive, but the Balanced configuration achieved superior TPR at the required FPR limit on validation, demonstrating that careful threshold selection on a balanced pool can outperform simply adding more data.
 \end{notebox}
