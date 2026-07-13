@@ -18,7 +18,7 @@
 \contentsline {subsubsection}{Linear SVM — Sub-Gradient Descent}{15}{lstnumber.2.2.13}%
 \contentsline {subsubsection}{Loss Curve Diagnostics}{16}{lstnumber.2.3.10}%
 \contentsline {subsection}{\numberline {2.2.11}Model Comparison and Double-Check}{16}{subsection.2.2.11}%
-\contentsline {subsubsection}{Four-Panel Confusion Matrix (Default Threshold 0.500)}{16}{subsection.2.2.11}%
+\contentsline {subsubsection}{Model Comparison at Default Operating Points}{16}{subsection.2.2.11}%
 \contentsline {subsubsection}{Scratch vs. sklearn Verification}{17}{subsection.2.2.11}%
 \contentsline {subsection}{\numberline {2.2.12}Threshold Tuning (Gold Standard Optimization)}{17}{subsection.2.2.12}%
 \contentsline {subsubsection}{Score Overlap Analysis}{18}{lstnumber.2.4.7}%

@@ -29,12 +29,12 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.10}Three Models From Scratch (Pure NumPy)}{14}{subsection.2.2.10}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Three scratch model implementations}}{15}{table.caption.12}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Logistic Regression — Core Training Loop}{15}{table.caption.12}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.2}{\ignorespaces Logistic Regression: SGD with Binary Cross-Entropy}}{15}{lstlisting.2.2}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.2}{\ignorespaces Logistic Regression: Batch Gradient Descent with Binary Cross-Entropy}}{15}{lstlisting.2.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Linear SVM — Sub-Gradient Descent}{15}{lstnumber.2.2.13}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {2.3}{\ignorespaces Linear SVM: Sub-gradient descent with Hinge Loss}}{15}{lstlisting.2.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Loss Curve Diagnostics}{16}{lstnumber.2.3.10}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.11}Model Comparison and Double-Check}{16}{subsection.2.2.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Four-Panel Confusion Matrix (Default Threshold 0.500)}{16}{subsection.2.2.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Model Comparison at Default Operating Points}{16}{subsection.2.2.11}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Scratch vs. sklearn Verification}{17}{subsection.2.2.11}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.12}Threshold Tuning (Gold Standard Optimization)}{17}{subsection.2.2.12}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {2.4}{\ignorespaces Threshold sweep: find optimal operating point}}{17}{lstlisting.2.4}\protected@file@percent }
@@ -42,7 +42,7 @@
 \@writefile{toc}{\contentsline {subsubsection}{Gold Standard Assessment}{19}{lstnumber.2.4.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.13}Failure Analysis}{19}{subsection.2.2.13}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Results and Analysis}{20}{section.2.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Four-panel confusion matrix: centroid baseline vs. three scratch models at default threshold 0.500. The TN and TP quadrants are similar across models — the centroid already captures obvious cases. Differences emerge in FP and FN corners, where model-specific score distributions produce different error patterns at the same threshold.}}{21}{figure.caption.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Confusion matrix for the Balanced (Text + Metadata) Linear SVM (Meta C1) configuration at the selected decision threshold $\tau = 0.089$. The overwhelming majority of predictions land on the diagonal (correct classifications), with only a handful of off-diagonal entries (2 false negatives, 10 false positives out of 1,978 test emails).}}{21}{figure.caption.13}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Severe class imbalance — approximately 73\% ham vs. 27\% spam. Without explicit handling (balancing, class weights, or threshold tuning), this imbalance causes the model to optimize for ham accuracy at the expense of spam recall.}}{22}{figure.caption.14}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Text length before vs. after cleaning — the preprocessing pipeline removes HTML markup, URLs, and formatting noise, compressing the length distribution and revealing the actual content-bearing word count.}}{23}{figure.caption.15}\protected@file@percent }
 \@setckpt{chapters/02_lab01_spam}{
